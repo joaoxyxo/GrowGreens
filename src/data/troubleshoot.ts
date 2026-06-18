@@ -85,4 +85,26 @@ export const SYMPTOMS: Symptom[] = [
       'Algumas (salsa, cenoura) são MESMO lentas: espera 2-3 semanas.',
     ],
   },
+  {
+    id: 'flores-caem',
+    emoji: '🌸',
+    label: 'Flores que caem sem dar fruto',
+    likely: 'Falta de polinização ou stress (calor, sede) — comum em tomate, pepino, abóbora e courgette.',
+    whatToDo: [
+      'Atrai polinizadores (flores à volta) ou poliniza à mão com um pincel de flor em flor.',
+      'Rega de forma regular: oscilações de água fazem cair as flores.',
+      'Nas aboboráceas, as primeiras flores macho caírem é normal — espera pelas fêmeas (com fruto pequeno atrás).',
+    ],
+  },
+  {
+    id: 'ponta-podre',
+    emoji: '🍅',
+    label: 'Frutos a apodrecer na ponta',
+    likely: 'Podridão apical: falta de cálcio causada por rega irregular (tomate, pimento, courgette).',
+    whatToDo: [
+      'Rega de forma regular e constante — a causa é quase sempre a água, não o solo.',
+      'Aplica uma camada de cobertura (mulch) para o solo não secar e voltar a encharcar.',
+      'Remove os frutos afetados; os seguintes vêm sãos quando a rega estabiliza.',
+    ],
+  },
 ]
