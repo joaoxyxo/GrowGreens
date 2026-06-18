@@ -23,7 +23,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P2) Cobrir com testes a lógica de streak/freeze do progresso (perda, proteção, refill) — ficheiros: src/stores/progress.ts, tests/ — validação: novo teste passa em `npm run test`. ✓ Feito: tests/streak.test.ts (7 casos) cobre applyActivity — mesmo dia, consecutivo, freeze consumido, reset com/sem freeze, falha longa, refill. 42 testes verdes.
 - [ ] (P3) Reagendar corretamente lembretes recorrentes a partir da data de conclusão, não de hoje — ficheiros: src/repositories/index.ts (remindersRepo.complete) — validação: teste de recorrência.
 - [ ] (P3) Exportação .ics de lembretes com fuso/àncora corretos — ficheiros: src/features/profile, utils — validação: ficheiro .ics válido (VEVENT) num teste.
-- [ ] (P3) Garantir que apagar uma planta remove lembretes e diário em transação (já existe — adicionar teste) — ficheiros: tests/repositories.test.ts — validação: teste cobre cascata.
+- [x] (P3) Garantir que apagar uma planta remove lembretes e diário em transação (já existe — adicionar teste) — ficheiros: tests/repositories.test.ts — validação: teste cobre cascata. ✓ Já coberto: tests/repositories.test.ts:88 "remover planta apaga diário e lembretes" valida a cascata. Sem alteração necessária.
 - [ ] (P4) Marcar planta como "perdida"/"colhida" atualiza estado e remove lembretes pendentes — ficheiros: src/repositories/index.ts, src/features/garden — validação: teste de transição de estado.
 - [ ] (P4) Avisos de boa/má vizinhança no planeador usam companions/antagonists corretamente — ficheiros: src/features/planner/BedView.vue — validação: teste de função de vizinhança.
 - [ ] (P5) Sucessão de sementeira: sugerir próxima data para culturas de corte (alface, rúcula) — ficheiros: src/features/calendar ou recommendations — validação: build OK; sugestão aparece.
@@ -47,7 +47,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P2) Corrigir os warnings reais de lint em ficheiros src/ (após ignorar trash) — ficheiros: src/features/**/*.vue — validação: `npm run lint` sem warnings em src/. ✓ Feito: `npm run lint:fix` corrigiu indentação em PlantDetailView, ReviewView, ChallengeView e BedView; lint 0 problemas.
 - [ ] (P3) Adicionar teste para a lógica de desbloqueio de dias do desafio (unlockedDay) — ficheiros: tests/ — validação: `npm run test` com novo teste verde.
 - [ ] (P3) Centralizar tipos de domínio repetidos e remover duplicação entre catalog.ts e models.ts — ficheiros: src/types/* — validação: typecheck OK; sem tipos duplicados.
-- [ ] (P3) Adicionar `.editorconfig` e config Prettier alinhada com regras do ESLint — ficheiros: raiz — validação: formatação consistente; lint não conflitua.
+- [x] (P3) Adicionar `.editorconfig` e config Prettier alinhada com regras do ESLint — ficheiros: raiz — validação: formatação consistente; lint não conflitua. ✓ Feito: .editorconfig (2 espaços, LF, utf-8) + .prettierrc.json (sem semi, aspas simples, trailing comma all) a espelhar o estilo do código. Lint continua a 0.
 - [ ] (P4) Adicionar workflow de PR preview/typecheck separado do deploy — ficheiros: .github/workflows — validação: workflow válido (`gh workflow view`).
 - [ ] (P4) Documentar variáveis de ambiente e cloud opcional no README/.env.example coerentes — ficheiros: README.md, .env.example — validação: chaves coincidem.
 - [ ] (P5) Adicionar cobertura de testes (vitest run --coverage) e badge/relatório — ficheiros: vitest.config.ts — validação: `npm run test -- --coverage` gera relatório.
