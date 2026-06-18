@@ -26,4 +26,12 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Tutorar', emoji: '🪵', definition: 'Dar um apoio (cana, rede) para a planta trepar ou não tombar (ex.: tomate, ervilha).' },
   { term: 'Microgreens', emoji: '🌱', definition: 'Plantinhas comestíveis colhidas muito cedo (5-10 dias), cheias de sabor e nutrientes.' },
   { term: 'Composto', emoji: '♻️', definition: 'Adubo natural feito de restos orgânicos (cascas, folhas) que alimenta o solo.' },
+  { term: 'Espigar', emoji: '🌾', definition: 'Quando a planta de folha (alface, rúcula, coentros) dispara em flor com o calor. A folha fica amarga e dura — sinal de fim de colheita.' },
+  { term: 'Blackout', emoji: '🌑', definition: 'No cultivo de microgreens, os primeiros dias com as sementes tapadas no escuro, para germinarem fortes antes de verem luz.' },
+  { term: 'Corta-e-volta', emoji: '🔁', definition: 'Colher só as folhas de fora e deixar o centro — a planta volta a crescer e dá várias colheitas (ex.: alface, acelga).' },
+  { term: 'Branquear', emoji: '🤍', definition: 'Amontoar terra à volta do caule (alho-francês) para ele crescer branco, tenro e mais suave.' },
+  { term: 'Vivaz', emoji: '🌳', definition: 'Planta que vive vários anos e rebenta de novo a cada estação (ex.: cebolinho, orégãos, tomilho).' },
+  { term: 'Pinçar', emoji: '🤏', definition: 'Cortar as pontas tenras dos rebentos para a planta ramificar e ficar mais cheia (ou travar pragas, como na fava).' },
+  { term: 'Demolha', emoji: '💧', definition: 'Deixar as sementes grandes de molho em água umas horas antes de semear, para germinarem mais depressa.' },
+  { term: 'Sucessão', emoji: '📅', definition: 'Semear pouco e de poucas em poucas semanas, em vez de tudo de uma vez, para ter colheita escalonada e contínua.' },
 ]
