@@ -6,9 +6,9 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 
 ## Conteúdo
 - [ ] (P2) Adicionar lição de curso sobre rega e clima atlântico húmido (míldio/oídio) — ficheiros: src/data/course.ts — validação: `npm run test` (data-integrity "curso coerente") passa e LESSONS.length aumenta.
-- [ ] (P3) Adicionar 2-3 variedades de microgreens ao desafio (girassol, ervilha, couve-roxa) — ficheiros: src/data/microgreens.ts — validação: `npm run test` passa; MICROGREENS.length ≥ 7.
+- [x] (P3) Adicionar 2-3 variedades de microgreens ao desafio (girassol, ervilha, couve-roxa) — ficheiros: src/data/microgreens.ts — validação: `npm run test` passa; MICROGREENS.length ≥ 7. ✓ Feito: girassol/ervilha já existiam; adicionadas beterraba, couve-roxa e coentros → 9 variedades. Tests verdes.
 - [ ] (P3) Adicionar receitas para as novas culturas (ex.: salada de pepino, creme de abóbora, favada) — ficheiros: src/data/recipes.ts — validação: data-integrity ("receitas referem plantas existentes") passa; RECIPES.length aumenta; atualizar campo `recipes` das plantas-alvo.
-- [ ] (P3) Expandir glossário (apenas ~29 linhas) com termos usados na app: "espigar", "desbastar", "blackout", "corta-e-volta", "consociação" — ficheiros: src/data/glossary.ts — validação: build OK e cada termo presente em GLOSSARY.
+- [x] (P3) Expandir glossário (apenas ~29 linhas) com termos usados na app: "espigar", "desbastar", "blackout", "corta-e-volta", "consociação" — ficheiros: src/data/glossary.ts — validação: build OK e cada termo presente em GLOSSARY. ✓ Feito: +8 termos (espigar, blackout, corta-e-volta, branquear, vivaz, pinçar, demolha, sucessão); 28 termos no total. (desbastar/consociação já existiam.)
 - [ ] (P3) Adicionar entradas de troubleshooting por sintomas para frutos de verão (oídio em pepino/abóbora, flores que caem) — ficheiros: src/data/troubleshoot.ts — validação: build OK; ecrã Diagnóstico mostra novos sintomas.
 - [ ] (P4) Rever consistência de `family`/`scientificName` em todas as plantas (acentos, nomenclatura binomial) — ficheiros: src/data/plants.ts — validação: script ad-hoc confirma todas as famílias num conjunto conhecido.
 - [ ] (P3) Acrescentar dica sazonal por mês no calendário (texto curto) para meses sem destaque — ficheiros: src/data/calendar.ts, src/features/calendar — validação: build OK; cada mês tem dica.
