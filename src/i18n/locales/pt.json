@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "GrowGreens",
+    "tagline": "Da semente à colheita"
+  },
+  "nav": {
+    "home": "Início",
+    "garden": "Horta",
+    "course": "Curso",
+    "calendar": "Calendário",
+    "profile": "Perfil"
+  },
+  "common": {
+    "continue": "Continuar",
+    "back": "Voltar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "done": "Feito",
+    "add": "Adicionar"
+  }
+}

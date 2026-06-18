@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-green-50: #f0f7f0;
+  --color-green-100: #dceedd;
+  --color-green-200: #b9ddbc;
+  --color-green-300: #8ec894;
+  --color-green-400: #62b06b;
+  --color-green-500: #3fa34d;
+  --color-green-600: #2f8a3c;
+  --color-green-700: #246b2f;
+  --color-green-800: #1d5526;
+  --color-green-900: #163f1d;
+
+  --color-earth-100: #efe3d8;
+  --color-earth-300: #cdab8f;
+  --color-earth-500: #8b5e3c;
+  --color-earth-700: #5e3e26;
+
+  --color-sun-400: #f4b740;
+  --color-sun-500: #e0a325;
+  --color-flame-500: #f2682c;
+  --color-sky-400: #4fb0e5;
+  --color-sky-500: #2f97d0;
+
+  --color-cream-50: #fafbfa;
+  --color-cream-100: #f3f5f2;
+
+  --color-neutral-50: #fafbfa;
+  --color-neutral-100: #f1f3f1;
+  --color-neutral-200: #e3e8e3;
+  --color-neutral-300: #cdd5cd;
+  --color-neutral-400: #9aa89c;
+  --color-neutral-500: #718173;
+  --color-neutral-600: #5b6b5e;
+  --color-neutral-700: #44503f;
+  --color-neutral-800: #2a3328;
+  --color-neutral-900: #1c2a1e;
+
+  --color-dark-bg: #10160f;
+  --color-dark-surface: #1a231a;
+  --color-dark-surface2: #212c20;
+
+  --color-success: #3fa34d;
+  --color-error: #d64545;
+  --color-warning: #e5a33d;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-neutral-100);
+  }
+}
+
+.dark body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-neutral-100);
+}
+
+/* Safe areas for installed PWA (notch / home indicator) */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Thin scrollbars for horizontal chip rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
