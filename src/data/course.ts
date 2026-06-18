@@ -44,7 +44,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'O maior desafio do clima atlântico: a humidade.',
     emoji: '🛡️',
     color: 'flame',
-    lessonIds: ['l5-1', 'l5-2'],
+    lessonIds: ['l5-1', 'l5-2', 'l5-3'],
   },
 ]
 
@@ -373,6 +373,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'Manjericão + tomate é o par clássico — na horta e no prato.',
       },
       { kind: 'summary', bullets: ['Manjericão protege o tomate.', 'Leguminosas enriquecem o solo.', 'Brássicas e tomate NÃO se dão bem.'] },
+    ],
+  },
+  {
+    id: 'l5-3',
+    unitId: 'u5',
+    title: 'Regar na medida certa',
+    subtitle: 'Nem a mais, nem a menos.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '💧',
+        title: 'O teste do dedo',
+        body: 'Antes de regar, mete o dedo ~2 cm no substrato. Se estiver húmido, espera. Se estiver seco, rega. A maioria das plantas que morrem em casa é por excesso de água, não por falta.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🪴',
+        title: 'Drenagem primeiro',
+        body: 'No nosso clima húmido, o excesso de água apodrece as raízes. Garante furos no fundo do vaso e nunca deixes o prato cheio de água parada (exceto no agrião, que adora pés molhados).',
+      },
+      {
+        kind: 'truefalse',
+        question: 'No clima do litoral, regar pouco e deixar drenar é mais seguro do que regar muito.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 0,
+        explanation: 'Com humidade ambiente alta, o maior risco é o excesso de água e o apodrecimento das raízes.',
+      },
+      { kind: 'summary', bullets: ['Usa o teste do dedo antes de regar.', 'Excesso de água mata mais que a falta.', 'Drenagem é essencial no litoral húmido.'] },
     ],
   },
 ]
