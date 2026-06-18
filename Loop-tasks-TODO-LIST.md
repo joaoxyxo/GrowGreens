@@ -42,7 +42,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 
 ## Organização
 - [x] (P1) Adicionar `.nm_trash_5` (e quaisquer dirs de lixo) aos `ignores` do ESLint — ficheiros: eslint.config.js — validação: `npm run lint` deixa de reportar erros em `.nm_trash_5` (total de erros cai de >14000 para <100). ✓ Feito: lint passou de 14834 erros para 0 (restam 5 warnings de formatação em src). Commit nesta iteração.
-- [ ] (P2) Criar CLAUDE.md com stack, scripts, arquitetura e convenções — ficheiros: CLAUDE.md — validação: ficheiro existe e descreve build/test/lint.
+- [x] (P2) Criar CLAUDE.md com stack, scripts, arquitetura e convenções — ficheiros: CLAUDE.md — validação: ficheiro existe e descreve build/test/lint. ✓ Feito: CLAUDE.md com stack, scripts, camadas, convenções de dados e deploy. Commit nesta iteração.
 - [ ] (P2) Adicionar script `lint:fix` ("eslint . --fix") ao package.json — ficheiros: package.json — validação: `npm run lint:fix` corre.
 - [ ] (P2) Corrigir os warnings reais de lint em ficheiros src/ (após ignorar trash) — ficheiros: src/features/**/*.vue — validação: `npm run lint` sem warnings em src/.
 - [ ] (P3) Adicionar teste para a lógica de desbloqueio de dias do desafio (unlockedDay) — ficheiros: tests/ — validação: `npm run test` com novo teste verde.
