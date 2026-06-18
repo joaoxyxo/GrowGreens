@@ -82,6 +82,8 @@ async function onPhoto(e: Event) {
 
 async function markDone(day: number, photo?: Blob) {
   if (!run.value) return
+  // Defesa: não permitir concluir um dia ainda trancado (saltar à frente).
+  if (dayState(day) === 'locked') return
   const ok = await safe(() => challengeRepo.completeDay(run.value!.id, day, photo))
   if (ok === undefined) return
   progress.addXp(10)
