@@ -18,7 +18,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 
 ## Regras de Negócio
 - [ ] (P2) Definir `wateringEveryDays` por defeito a partir de `waterNeed` da planta ao criar uma planta na horta — ficheiros: src/features/garden, src/repositories/index.ts — validação: teste unitário de mapeamento waterNeed→dias.
-- [ ] (P2) Validar `zoneCode` no onboarding contra CLIMATE_ZONES antes de gravar — ficheiros: src/features/onboarding/OnboardingView.vue, src/stores/settings.ts — validação: teste/typecheck; zona inválida cai no default.
+- [x] (P2) Validar `zoneCode` no onboarding contra CLIMATE_ZONES antes de gravar — ficheiros: src/features/onboarding/OnboardingView.vue, src/stores/settings.ts — validação: teste/typecheck; zona inválida cai no default. ✓ Feito: `sanitizeZone()` no store (load + completeOnboarding); tests/settings.test.ts (4 casos) + polyfill matchMedia em setup.ts. 32 testes verdes.
 - [ ] (P3) Impedir conclusão de dias do desafio fora de ordem (saltar dias trancados) — ficheiros: src/features/microgreens/ChallengeView.vue — validação: teste de `dayState`/markDone; dia trancado não completa.
 - [ ] (P2) Cobrir com testes a lógica de streak/freeze do progresso (perda, proteção, refill) — ficheiros: src/stores/progress.ts, tests/ — validação: novo teste passa em `npm run test`.
 - [ ] (P3) Reagendar corretamente lembretes recorrentes a partir da data de conclusão, não de hoje — ficheiros: src/repositories/index.ts (remindersRepo.complete) — validação: teste de recorrência.
