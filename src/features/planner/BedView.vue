@@ -11,6 +11,7 @@ import { PLANTS, getPlant } from '@/data/plants'
 import { useUiStore } from '@/stores/ui'
 import { useProgressStore } from '@/stores/progress'
 import { safe } from '@/utils/safe'
+import { defaultWateringDays } from '@/utils/growth'
 import { isOverdue, isDueToday } from '@/utils/date'
 import type { GardenBed, Reminder } from '@/types/models'
 
@@ -105,7 +106,7 @@ async function trackInGarden() {
   if (!selectedKey.value || !selectedCell.value) return
   const plant = getPlant(selectedCell.value.plantSlug)
   if (!plant) return
-  const waterEvery = { baixa: 5, moderada: 3, alta: 2 }[plant.waterNeed] ?? 3
+  const waterEvery = defaultWateringDays(plant.waterNeed)
   const planting = await plantingsRepo.create({
     plantSlug: plant.slug,
     nickname: `${plant.name} (${bed.value?.name})`,

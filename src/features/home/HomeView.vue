@@ -11,6 +11,7 @@ import { getPlant } from '@/data/plants'
 import { LESSONS } from '@/data/course'
 import { plantSowableThisMonth } from '@/data/calendar'
 import { recommendPlants } from '@/utils/recommend'
+import { defaultWateringDays } from '@/utils/growth'
 import { currentMonth, MONTH_NAMES, isOverdue, isDueToday } from '@/utils/date'
 import StatChip from '@/components/ui/StatChip.vue'
 import AppCard from '@/components/ui/AppCard.vue'
@@ -59,7 +60,7 @@ const recommendations = computed(() =>
 async function addRecommended(slug: string) {
   const plant = getPlant(slug)
   if (!plant) return
-  const waterEvery = { baixa: 5, moderada: 3, alta: 2 }[plant.waterNeed] ?? 3
+  const waterEvery = defaultWateringDays(plant.waterNeed)
   await plantingsRepo.create({
     plantSlug: slug,
     nickname: plant.name,

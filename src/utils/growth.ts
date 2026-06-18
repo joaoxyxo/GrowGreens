@@ -1,4 +1,12 @@
-import type { Plant } from '@/types/catalog'
+import type { Plant, WaterNeed } from '@/types/catalog'
+
+// Dias entre regas recomendados por necessidade hídrica da planta.
+const WATERING_DAYS_BY_NEED: Record<WaterNeed, number> = { baixa: 5, moderada: 3, alta: 2 }
+
+/** Intervalo de rega (em dias) sugerido a partir da necessidade hídrica da espécie. */
+export function defaultWateringDays(waterNeed: WaterNeed): number {
+  return WATERING_DAYS_BY_NEED[waterNeed] ?? 3
+}
 
 const STAGE_LABELS: Record<string, string> = {
   germinacao: 'Germinação',

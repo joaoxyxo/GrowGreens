@@ -17,7 +17,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [ ] (P5) Adicionar prevenção específica de litoral atlântico (humidade) a cada doença fúngica — ficheiros: src/data/pestsDiseases.ts — validação: build OK; campo prevention menciona arejamento/rega de manhã.
 
 ## Regras de Negócio
-- [ ] (P2) Definir `wateringEveryDays` por defeito a partir de `waterNeed` da planta ao criar uma planta na horta — ficheiros: src/features/garden, src/repositories/index.ts — validação: teste unitário de mapeamento waterNeed→dias.
+- [x] (P2) Definir `wateringEveryDays` por defeito a partir de `waterNeed` da planta ao criar uma planta na horta — ficheiros: src/features/garden, src/repositories/index.ts — validação: teste unitário de mapeamento waterNeed→dias. ✓ Feito: extraído `defaultWateringDays()` em utils/growth.ts (DRY — eliminada duplicação em HomeView, BedView e PlantDetailView); teste tests/watering.test.ts (3 casos). 35 testes verdes.
 - [x] (P2) Validar `zoneCode` no onboarding contra CLIMATE_ZONES antes de gravar — ficheiros: src/features/onboarding/OnboardingView.vue, src/stores/settings.ts — validação: teste/typecheck; zona inválida cai no default. ✓ Feito: `sanitizeZone()` no store (load + completeOnboarding); tests/settings.test.ts (4 casos) + polyfill matchMedia em setup.ts. 32 testes verdes.
 - [ ] (P3) Impedir conclusão de dias do desafio fora de ordem (saltar dias trancados) — ficheiros: src/features/microgreens/ChallengeView.vue — validação: teste de `dayState`/markDone; dia trancado não completa.
 - [ ] (P2) Cobrir com testes a lógica de streak/freeze do progresso (perda, proteção, refill) — ficheiros: src/stores/progress.ts, tests/ — validação: novo teste passa em `npm run test`.

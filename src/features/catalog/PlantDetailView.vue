@@ -16,6 +16,7 @@ import { useSettingsStore } from '@/stores/settings'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { MONTH_NAMES } from '@/utils/date'
+import { defaultWateringDays } from '@/utils/growth'
 
 const route = useRoute()
 const router = useRouter()
@@ -25,7 +26,6 @@ const ui = useUiStore()
 
 const plant = computed(() => getPlant(route.params.slug as string))
 
-const waterDefaults: Record<string, number> = { baixa: 5, moderada: 3, alta: 2 }
 const sunLabels: Record<string, string> = {
   sol_pleno: 'Sol pleno',
   meia_sombra: 'Meia-sombra',
@@ -48,7 +48,7 @@ const waterEvery = ref(3)
 function openAdd() {
   if (!plant.value) return
   nickname.value = plant.value.name
-  waterEvery.value = waterDefaults[plant.value.waterNeed] ?? 3
+  waterEvery.value = defaultWateringDays(plant.value.waterNeed)
   showAdd.value = true
 }
 
