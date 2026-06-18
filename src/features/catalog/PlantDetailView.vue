@@ -168,7 +168,7 @@ async function confirmAdd() {
             <p class="text-sm font-semibold capitalize text-green-700 dark:text-green-300">
               {{ s.stage.replace('_', ' ') }}
               <span v-if="s.durationDays" class="font-normal text-neutral-400"
-                >· {{ s.durationDays[0] }}–{{ s.durationDays[1] }} dias</span
+              >· {{ s.durationDays[0] }}–{{ s.durationDays[1] }} dias</span
               >
             </p>
             <p class="text-sm text-neutral-700 dark:text-neutral-200 mt-0.5">{{ s.text }}</p>
@@ -188,7 +188,8 @@ async function confirmAdd() {
           </p>
         </AppCard>
         <AppCard v-if="plant.pollination !== 'nao_aplicavel'">
-          <p class="text-sm"><strong>🐝 Polinização:</strong>
+          <p class="text-sm">
+            <strong>🐝 Polinização:</strong>
             <span v-if="plant.pollination === 'autofertil'"> Autofértil — em interior, abana a planta na floração para os frutos vingarem.</span>
             <span v-else-if="plant.pollination === 'insetos'"> Precisa de insetos. Em varanda alta, poliniza à mão.</span>
             <span v-else-if="plant.pollination === 'manual'"> Precisa de polinização manual.</span>

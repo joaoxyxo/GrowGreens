@@ -192,7 +192,7 @@ async function removeBed() {
                 v-if="plantingDue(cellAt(bed, r - 1, c - 1)?.plantingId)"
                 class="absolute -top-1 -right-1 text-xs"
                 title="Precisa de rega"
-                >💧</span
+              >💧</span
               >
             </button>
           </template>

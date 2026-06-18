@@ -81,7 +81,7 @@ function leave() {
         Acertaste {{ correctCount }} de {{ total }}.
       </p>
       <span class="mt-3 rounded-full bg-sun-400/15 px-3 py-1 text-sm font-semibold text-sun-500"
-        >+{{ correctCount * 5 }} XP de revisão</span
+      >+{{ correctCount * 5 }} XP de revisão</span
       >
       <BaseButton class="mt-8" block @click="leave">Concluir</BaseButton>
     </div>

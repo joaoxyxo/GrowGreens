@@ -147,7 +147,7 @@ async function shareHarvest() {
               <span
                 v-if="m.beginner"
                 class="ml-2 rounded-full bg-green-100 dark:bg-green-900/30 px-2 py-0.5 text-xs text-green-700 dark:text-green-300"
-                >recomendado</span
+              >recomendado</span
               >
               <span class="block text-xs text-neutral-500 dark:text-neutral-400">
                 {{ m.flavour }} · {{ m.daysToHarvest[0] }}–{{ m.daysToHarvest[1] }} dias
