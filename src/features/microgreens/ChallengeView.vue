@@ -11,6 +11,7 @@ import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { MICROGREENS, MICROGREENS_BY_SLUG, CHALLENGE_DAYS } from '@/data/microgreens'
 import { daysSince } from '@/utils/date'
+import { computeUnlockedDay, challengeDayState } from '@/utils/challenge'
 import { compressImage } from '@/utils/image'
 import { safe } from '@/utils/safe'
 import { buildAchievementCard, shareOrDownload } from '@/utils/share'
@@ -25,13 +26,9 @@ const selectedVariety = ref('rabanete')
 const openDay = ref<number | null>(null)
 
 const currentDay = computed(() => (run.value ? Math.min(7, daysSince(run.value.startedAt)) : 0))
-const completed = computed(() => new Set(run.value?.completedDays ?? []))
 // Os dias desbloqueiam com o tempo real de calendário OU à medida que concluis cada
 // passo — assim podes avançar ao teu ritmo sem ficar preso à espera de 7 dias.
-const maxCompleted = computed(() =>
-  run.value?.completedDays.length ? Math.max(...run.value.completedDays) : -1,
-)
-const unlockedDay = computed(() => Math.min(7, Math.max(currentDay.value, maxCompleted.value + 1)))
+const unlockedDay = computed(() => computeUnlockedDay(currentDay.value, run.value?.completedDays ?? []))
 const progressPct = computed(() => ((run.value?.completedDays.length ?? 0) / 8) * 100)
 const variety = computed(() =>
   run.value ? MICROGREENS_BY_SLUG[run.value.varietySlug] : MICROGREENS_BY_SLUG[selectedVariety.value],
@@ -61,11 +58,8 @@ async function start() {
   ui.toast('Desafio iniciado! Boa sementeira 🌱')
 }
 
-function dayState(day: number): 'done' | 'today' | 'locked' | 'available' {
-  if (completed.value.has(day)) return 'done'
-  if (day < unlockedDay.value) return 'available'
-  if (day === unlockedDay.value) return 'today'
-  return 'locked'
+function dayState(day: number) {
+  return challengeDayState(day, unlockedDay.value, run.value?.completedDays ?? [])
 }
 
 const fileInput = ref<HTMLInputElement | null>(null)
