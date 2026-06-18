@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useSettingsStore } from '@/stores/settings'
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
     return { top: 0 }
   },

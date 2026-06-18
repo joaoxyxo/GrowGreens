@@ -5,7 +5,13 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => {
+  // Project site no GitHub Pages: https://joaoxyxo.github.io/GrowGreens/
+  // Em dev mantemos a raiz; no build de produção servimos a partir do subdiretório.
+  const base = command === 'build' ? '/GrowGreens/' : '/'
+
+  return {
+  base,
   plugins: [
     vue(),
     tailwindcss(),
@@ -21,7 +27,9 @@ export default defineConfig({
         theme_color: '#3FA34D',
         background_color: '#FAFBFA',
         display: 'standalone',
-        start_url: '/',
+        id: base,
+        start_url: base,
+        scope: base,
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
@@ -31,7 +39,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         cleanupOutdatedCaches: true,
-        navigateFallback: '/index.html',
+        navigateFallback: `${base}index.html`,
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.href.includes('api.ipma.pt'),
@@ -54,4 +62,5 @@ export default defineConfig({
   // Porta dedicada para não colidir com outras apps locais (ex.: a app de poker no 5173).
   server: { port: 5390, strictPort: true },
   preview: { port: 5390, strictPort: true },
+  }
 })
