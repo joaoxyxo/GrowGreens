@@ -83,6 +83,50 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'hortela', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7, 8, 9, 10] },
   { plant: 'alecrim', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
   { plant: 'alecrim', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+
+  // --- Novas culturas ---
+  // Folhas
+  { plant: 'acelga', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 5, 8, 9] },
+  { plant: 'acelga', zone: 'litoral_norte', action: 'colheita', months: [6, 7, 8, 11, 12, 1, 2] },
+  { plant: 'agriao', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 5, 8, 9, 10] },
+  { plant: 'agriao', zone: 'litoral_norte', action: 'colheita', months: [4, 5, 6, 9, 10, 11] },
+  // Brássicas
+  { plant: 'couve-flor', zone: 'litoral_norte', action: 'sementeira_interior', months: [6, 7, 8] },
+  { plant: 'couve-flor', zone: 'litoral_norte', action: 'transplante', months: [8, 9] },
+  { plant: 'couve-flor', zone: 'litoral_norte', action: 'colheita', months: [11, 12, 1, 2, 3] },
+  { plant: 'couve-lombarda', zone: 'litoral_norte', action: 'sementeira_interior', months: [6, 7, 8] },
+  { plant: 'couve-lombarda', zone: 'litoral_norte', action: 'transplante', months: [8, 9] },
+  { plant: 'couve-lombarda', zone: 'litoral_norte', action: 'colheita', months: [11, 12, 1, 2, 3] },
+  // Raízes
+  { plant: 'nabo', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 8, 9, 10] },
+  { plant: 'nabo', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 10, 11, 12] },
+  { plant: 'alho-frances', zone: 'litoral_norte', action: 'sementeira_interior', months: [3, 4] },
+  { plant: 'alho-frances', zone: 'litoral_norte', action: 'transplante', months: [6, 7] },
+  { plant: 'alho-frances', zone: 'litoral_norte', action: 'colheita', months: [10, 11, 12, 1, 2, 3] },
+  { plant: 'batata', zone: 'litoral_norte', action: 'sementeira_direta', months: [2, 3, 4] },
+  { plant: 'batata', zone: 'litoral_norte', action: 'colheita', months: [6, 7, 8] },
+  // Frutos
+  { plant: 'pepino', zone: 'litoral_norte', action: 'sementeira_direta', months: [4, 5, 6] },
+  { plant: 'pepino', zone: 'litoral_norte', action: 'colheita', months: [7, 8, 9] },
+  { plant: 'abobora', zone: 'litoral_norte', action: 'sementeira_direta', months: [4, 5, 6] },
+  { plant: 'abobora', zone: 'litoral_norte', action: 'colheita', months: [9, 10, 11] },
+  { plant: 'beringela', zone: 'litoral_norte', action: 'sementeira_interior', months: [2, 3] },
+  { plant: 'beringela', zone: 'litoral_norte', action: 'transplante', months: [5, 6] },
+  { plant: 'beringela', zone: 'litoral_norte', action: 'colheita', months: [8, 9, 10] },
+  // Leguminosas
+  { plant: 'fava', zone: 'litoral_norte', action: 'sementeira_direta', months: [10, 11, 12] },
+  { plant: 'fava', zone: 'litoral_norte', action: 'colheita', months: [3, 4, 5] },
+  { plant: 'feijao-frade', zone: 'litoral_norte', action: 'sementeira_direta', months: [5, 6, 7] },
+  { plant: 'feijao-frade', zone: 'litoral_norte', action: 'colheita', months: [8, 9, 10] },
+  // Aromáticas
+  { plant: 'coentros', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 5, 8, 9] },
+  { plant: 'coentros', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7, 9, 10] },
+  { plant: 'cebolinho', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9] },
+  { plant: 'cebolinho', zone: 'litoral_norte', action: 'colheita', months: [4, 5, 6, 7, 8, 9, 10] },
+  { plant: 'tomilho', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
+  { plant: 'tomilho', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  { plant: 'oregaos', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
+  { plant: 'oregaos', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7, 8, 9, 10] },
 ]
 
 export const CALENDAR_ACTION_LABELS: Record<string, { label: string; emoji: string }> = {
