@@ -37,4 +37,8 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Mulch (cobertura)', emoji: '🍂', definition: 'Uma camada (palha, folhas, casca) sobre o solo que mantém a humidade, trava ervas e protege as raízes.' },
   { term: 'Polinização cruzada', emoji: '🐝', definition: 'Quando o pólen de uma planta fecunda a flor de outra, muitas vezes pelos insetos. Importante em frutos como aboboráceas.' },
   { term: 'Vernalização', emoji: '❄️', definition: 'O frio do inverno que algumas plantas precisam de sentir para depois florir ou formar cabeça (ex.: couves, alho).' },
+  { term: 'Rega por capilaridade', emoji: '🪣', definition: 'Regar por baixo: a água sobe do prato/reservatório pelo substrato. Mantém a humidade estável e não molha as folhas.' },
+  { term: 'Sachar', emoji: '🪛', definition: 'Mexer ligeiramente a camada de cima do solo para arejar e arrancar ervas daninhas pequenas.' },
+  { term: 'Amontoa', emoji: '⛰️', definition: 'Chegar terra à base da planta (batata, alho-francês) para proteger, branquear o caule ou fazer mais tubérculos.' },
+  { term: 'Tutoragem', emoji: '🪵', definition: 'Dar apoio (cana, rede, estaca) para a planta trepar ou não tombar — essencial em tomate, ervilha e pepino.' },
 ]
