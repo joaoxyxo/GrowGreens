@@ -25,7 +25,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal. ✓ Feito: utils/backup.ts exportData() (inclui plantings/journal/reminders/beds/meta) + tests; ProfileView passa a usar o backup COMPLETO (a export inline antiga perdia a horta).
 - [x] (P4) Apagar todos os dados (reset) com confirmação — ficheiros: features/profile, lib/db — validação: limpa tabelas; teste de repo. ✓ Feito: clearAllData() (transação, todas as tabelas) + teste; botão 'Apagar todos os dados' na ProfileView com confirm.
 - [ ] (P5) Marcar todos os lembretes de uma planta como feitos — ficheiros: src/repositories/index.ts — validação: teste.
-- [ ] (P5) `estimateStage` em planta sem durações nas fases (edge) — ficheiros: tests/growth.test.ts — validação: não rebenta; devolve fase válida.
+- [x] (P5) `estimateStage` em planta sem durações nas fases (edge) — ficheiros: tests/growth.test.ts — validação: não rebenta; devolve fase válida. ✓ Feito: teste com fases sem durationDays — devolve índice/label válidos sem rebentar.
 - [ ] (P5) Validar `setCell` do planeador ignora chaves fora da grelha — ficheiros: src/repositories/index.ts — validação: teste.
 
 ## Performance
@@ -38,7 +38,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado.
 - [ ] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão.
 - [ ] (P5) Analisar deps não usadas (depcheck manual) e remover — ficheiros: package.json — validação: build após remoção.
-- [ ] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes.
+- [x] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes. ✓ Feito: cache por chave zona-mês (computeCalendarFor interno); resultado read-only nos callers. Testes calendar verdes.
 
 ## Organização
 - [x] (P3) Infra de testes de componente (@vue/test-utils + jsdom já presentes) — primeiro teste a passar — ficheiros: tests/ — validação: mount de um componente passa. ✓ Feito: adicionado @vitejs/plugin-vue ao vitest.config (com cast para o conflito de tipos vite/vitest); mount() de componentes a funcionar. 97 testes.

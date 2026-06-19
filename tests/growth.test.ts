@@ -30,6 +30,19 @@ describe('estimateStage', () => {
     expect(r.index).toBe(3)
     expect(r.total).toBe(4)
   })
+
+  it('não rebenta com fases sem durationDays (devolve fase válida)', () => {
+    const semDuracao = {
+      stages: [
+        { stage: 'germinacao', text: '' },
+        { stage: 'colheita', text: '' },
+      ],
+    } as unknown as Plant
+    const r = estimateStage(semDuracao, 999)
+    expect(r.index).toBeGreaterThanOrEqual(0)
+    expect(r.index).toBeLessThan(r.total)
+    expect(r.label).toBeTruthy()
+  })
 })
 
 describe('successionDays', () => {
