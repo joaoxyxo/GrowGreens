@@ -10,22 +10,38 @@ function toICSDate(d: Date): string {
   )
 }
 
+function toICSStamp(d: Date): string {
+  // Formato UTC: AAAAMMDDTHHMMSSZ (obrigatório no campo DTSTAMP)
+  return (
+    d.getUTCFullYear().toString() +
+    String(d.getUTCMonth() + 1).padStart(2, '0') +
+    String(d.getUTCDate()).padStart(2, '0') +
+    'T' +
+    String(d.getUTCHours()).padStart(2, '0') +
+    String(d.getUTCMinutes()).padStart(2, '0') +
+    String(d.getUTCSeconds()).padStart(2, '0') +
+    'Z'
+  )
+}
+
 /**
  * Gera um ficheiro .ics com os lembretes (eventos de dia inteiro, com recorrência
  * quando aplicável). Funciona em qualquer calendário (iOS, Android, Google, Outlook).
  */
-export function buildICS(reminders: Reminder[]): string {
+export function buildICS(reminders: Reminder[], stamp: Date = new Date()): string {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//GrowGreens//PT//',
     'CALSCALE:GREGORIAN',
   ]
+  const dtstamp = toICSStamp(stamp)
   for (const r of reminders) {
     if (r.done) continue
     const start = parseISO(r.dueAt)
     lines.push('BEGIN:VEVENT')
     lines.push(`UID:${r.id}@growgreens`)
+    lines.push(`DTSTAMP:${dtstamp}`)
     lines.push(`DTSTART;VALUE=DATE:${toICSDate(start)}`)
     lines.push(`SUMMARY:🌱 ${r.label}`)
     if (r.recurrenceDays) lines.push(`RRULE:FREQ=DAILY;INTERVAL=${r.recurrenceDays}`)
