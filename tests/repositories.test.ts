@@ -82,6 +82,36 @@ describe('repositórios (local-first)', () => {
     expect(Object.keys(saved!.cells)).toHaveLength(1)
   })
 
+  it('snooze adia o lembrete para hoje + N dias e reativa-o', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'alface',
+      nickname: 'Alface',
+      location: 'varanda',
+      wateringEveryDays: 3,
+    })
+    const r = (await db.reminders.where('plantingId').equals(p.id).toArray())[0]
+    await remindersRepo.snooze(r.id, 5)
+    const after = await db.reminders.get(r.id)
+    expect(after?.done).toBe(false)
+    expect(after?.dueAt).toBe(addDaysISO(todayISO(), 5))
+  })
+
+  it('journalRepo.add rejeita plantingId inexistente', async () => {
+    await expect(journalRepo.add({ plantingId: 'nao-existe', type: 'nota', note: 'x' })).rejects.toThrow()
+  })
+
+  it('marcar planta como perdida regista nota no diário', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'rucula',
+      nickname: 'Rúcula',
+      location: 'varanda',
+      wateringEveryDays: 2,
+    })
+    await plantingsRepo.update(p.id, { status: 'perdida' })
+    const journal = await db.journal.where('plantingId').equals(p.id).toArray()
+    expect(journal.some((e) => e.note.includes('perdida'))).toBe(true)
+  })
+
   it('marca todos os lembretes de uma planta como feitos', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'tomate',

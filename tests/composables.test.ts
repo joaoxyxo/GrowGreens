@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { weatherTypeInfo } from '@/composables/useWeather'
 import { useOnlineStatus } from '@/composables/useOnlineStatus'
+import { useReminders } from '@/composables/useReminders'
 
 describe('weatherTypeInfo', () => {
   it('devolve label/emoji para um tipo conhecido', () => {
@@ -35,5 +36,11 @@ describe('useOnlineStatus', () => {
 
     // repõe
     Object.defineProperty(navigator, 'onLine', { configurable: true, value: true })
+  })
+})
+
+describe('useReminders', () => {
+  it('devolve sempre a mesma instância (subscrição partilhada)', () => {
+    expect(useReminders()).toBe(useReminders())
   })
 })

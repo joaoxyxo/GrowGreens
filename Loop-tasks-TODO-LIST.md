@@ -19,14 +19,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Regras de Negócio
 - [x] (P3) Testar `weatherTypeInfo` (useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: tests/composables.test.ts (tipo conhecido + fallback).
 - [x] (P3) Testar `useOnlineStatus` (estado inicial + eventos) — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: mount + simulação de evento offline (navigator.onLine mockado). 107 testes.
-- [ ] (P4) Testar `useReminders` devolve a mesma instância (singleton) — ficheiros: tests/ — validação: teste de identidade.
-- [ ] (P4) Reminder: snooze (adiar X dias) — ficheiros: src/repositories/index.ts — validação: teste de nova dueAt.
-- [ ] (P4) `journalRepo.add` valida que plantingId existe — ficheiros: src/repositories/index.ts — validação: teste.
+- [x] (P4) Testar `useReminders` devolve a mesma instância (singleton) — ficheiros: tests/ — validação: teste de identidade. ✓ Feito: teste confirma useReminders()===useReminders().
+- [x] (P4) Reminder: snooze (adiar X dias) — ficheiros: src/repositories/index.ts — validação: teste de nova dueAt. ✓ Feito: remindersRepo.snooze(id, days) → dueAt=hoje+N, done=false; teste verde.
+- [x] (P4) `journalRepo.add` valida que plantingId existe — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: add() lança se a planta não existir; teste rejects.toThrow.
 - [ ] (P4) `compressImage`: documentar/bound de bytes máx — ficheiros: src/utils/image.ts — validação: revisão.
 - [ ] (P5) Teste de componente: ProgressBar (clamping 0-100) — ficheiros: tests/ — validação: mount passa.
 - [ ] (P5) Teste de componente: Badge/StatChip render — ficheiros: tests/ — validação: mount passa.
 - [ ] (P5) `recommendPlants` determinístico (ordenação estável) — ficheiros: tests/recommend.test.ts — validação: teste.
-- [ ] (P5) Marcar planta perdida cria evento de diário (à semelhança de colhida) — ficheiros: src/repositories/index.ts — validação: teste.
+- [x] (P5) Marcar planta perdida cria evento de diário (à semelhança de colhida) — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: status 'perdida' regista nota no diário; teste verde. 111 testes.
 
 ## Performance
 - [ ] (P4) E2E: fluxo de pesquisa do catálogo (Playwright) — ficheiros: tests/e2e/ — validação: spec passa.
