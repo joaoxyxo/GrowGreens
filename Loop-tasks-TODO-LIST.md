@@ -1,5 +1,5 @@
 # Loop Tasks — TODO List
-Ciclo: 2 · Atualizado: 2026-06-19 01:46
+Ciclo: 2 · Atualizado: 2026-06-19 (CONCLUÍDO: 38 ✓ · 2 bloqueadas · 0 pendentes)
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest + Playwright. Lint: ESLint. npm. Ver CLAUDE.md.
@@ -14,7 +14,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Rever e preencher `companions`/`antagonists` vazios das plantas originais — ficheiros: src/data/plants.ts — validação: data-integrity (refs válidas); menos arrays vazios. ✓ Revisto: todas as plantas têm companions preenchidos; os antagonists vazios são corretos para estas culturas (folhas/raízes/aromáticas — boas companheiras, sem antagonismos no vocabulário). Não fabriquei dados agronómicos falsos.
 - [x] (P5) Adicionar mais sintomas ao diagnóstico (folhas com furos/lesmas vs lagartas; pontas castanhas por sal) — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta. ✓ Feito: +sintoma 'pontas-castanhas' (excesso de sais/adubo, tip burn). (lesmas vs lagartas já no sintoma 'bichos'.) Build + 89 testes.
 - [x] (P5) Adicionar variedades recomendadas PT às fichas (ex.: alface 'Maravilha de Verão', couve 'Penca') no texto — ficheiros: src/data/plants.ts — validação: build; texto presente. ✓ Feito: variedades PT em growingTips de alface (Maravilha 4 Estações/Batavia/Romana), tomate (Coração de Boi/Chucha/cherry) e couve-galega (Penca). Build + 89 testes.
-- [ ] (P5) Uniformizar `in30Seconds` (3 bullets) e tom de `commonMistake` nas plantas originais — ficheiros: src/data/plants.ts — validação: build; consistência por revisão.
+- [x] (P5) Uniformizar `in30Seconds` (3 bullets) e tom de `commonMistake` nas plantas originais — ficheiros: src/data/plants.ts — validação: build; consistência por revisão. ✓ Verificado: as 39 plantas já têm exatamente 3 bullets em in30Seconds; tom de commonMistake já consistente. Nada a alterar.
 
 ## Regras de Negócio
 - [x] (P3) Testar `estimateStage` (utils/growth) — fases por dias decorridos — ficheiros: tests/growth.test.ts — validação: novo teste verde. ✓ Feito: tests/growth.test.ts cobre estimateStage (germinação→colheita). 76 testes.
@@ -35,7 +35,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Partilhar a live query de `reminders` (evitar múltiplas subscrições idênticas) — ficheiros: features/garden, composables — validação: revisão de código. ✓ Feito: composable singleton useReminders() (uma subscrição) usado em HomeView, GardenView e BedView (antes 3 live queries idênticas). TC/lint/test/build OK.
 - [!] (P5) `v-once`/keys estáveis em listas estáticas (categorias, filtros) — ficheiros: features/* — validação: revisão; sem re-render desnecessário. PARCIAL/BLOQUEADA — keys já estáveis (`:key="c.v"`, `:key="p.slug"`); v-once NÃO aplicável: os botões de filtro têm `:class` reativo (destaque do filtro ativo) e v-once congelaria esse estado. Nada a alterar com segurança.
 - [x] (P5) Reduzir trabalho do `sowableSet` recomputado por mês (memo por zona+mês) — ficheiros: features/catalog/calendar — validação: revisão. ✓ Feito: plantSowableThisMonth com cache por `zona-mês` (calendário é estático/determinístico); evita reiterar o CALENDAR em catálogo/calendário/recomendações. Resultado read-only nos callers. 89 testes.
-- [ ] (P5) Otimizar/pré-dimensionar ícones PWA (tamanho do precache) — ficheiros: public/icons — validação: build; precache não cresce.
+- [!] (P5) Otimizar/pré-dimensionar ícones PWA (tamanho do precache) — ficheiros: public/icons — validação: build; precache não cresce. BLOQUEADA — ícones já pequenos (192:15KB, 512:44KB, maskable:37KB ≈ 96KB); re-otimizar exige ferramenta de imagem (pngquant/oxipng) indisponível neste ambiente e o ganho é marginal.
 - [x] (P5) Definir `chunkSizeWarningLimit` adequado e confirmar sem chunks gigantes — ficheiros: vite.config.ts — validação: build sem avisos de tamanho. ✓ Feito: chunkSizeWarningLimit 600 (vendor ~294KB); build sem avisos de tamanho.
 - [x] (P5) Lazy-load do `share`/`buildAchievementCard` (canvas) só quando usado — ficheiros: utils/share, microgreens — validação: build; share em chunk separado. ✓ Feito: import() dinâmico em shareHarvest → share-*.js (1.3KB) em chunk próprio, fora do ChallengeView. TC/lint/test OK.
 - [x] (P5) Evitar importar todo o date-fns/locale; confirmar import só do locale pt — ficheiros: utils/date.ts — validação: build; bundle não inclui locales extra. ✓ Verificado: date.ts importa só `{ pt } from 'date-fns/locale'` e funções nomeadas de date-fns — tree-shakeable, sem locales extra.
