@@ -12,6 +12,7 @@ import { CLIMATE_ZONES } from '@/data/calendar'
 import { LESSONS } from '@/data/course'
 import { remindersRepo } from '@/repositories'
 import { downloadICS } from '@/utils/ics'
+import { exportData as buildBackup, downloadBackup, clearAllData } from '@/utils/backup'
 import { setMeta } from '@/lib/db/meta'
 
 const settings = useSettingsStore()
@@ -25,20 +26,18 @@ const levelPct = computed(() => {
   return Math.round(((progress.state.xp - cur) / (nxt - cur)) * 100)
 })
 
-function exportData() {
-  const data = {
-    settings: settings.state,
-    progress: progress.state,
-    exportedAt: new Date().toISOString(),
-  }
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = 'growgreens-dados.json'
-  a.click()
-  URL.revokeObjectURL(url)
+async function exportData() {
+  // Backup completo: inclui a horta (plantings/diário/lembretes/canteiros) e settings/progress.
+  downloadBackup(await buildBackup())
   ui.toast('Dados exportados')
+}
+
+async function resetData() {
+  if (!confirm('Apagar TODOS os dados (horta, diário, progresso)? Esta ação é irreversível.')) return
+  await clearAllData()
+  ui.toast('Todos os dados foram apagados')
+  // Recarrega para reinicializar stores a partir do estado vazio.
+  setTimeout(() => location.reload(), 600)
 }
 
 function notify() {
@@ -221,6 +220,7 @@ async function importData(e: Event) {
           <input type="file" accept="application/json" class="hidden" @change="importData" />
         </label>
         <RouterLink to="/legal" class="text-sm text-neutral-500 underline">Privacidade e termos</RouterLink>
+        <button class="mt-1 text-left text-sm font-medium text-error" @click="resetData">🗑️ Apagar todos os dados</button>
       </div>
     </div>
   </div>

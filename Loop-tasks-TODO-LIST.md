@@ -22,8 +22,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) Testar `settings` store: load aplica defaults e applyTheme não rebenta — ficheiros: tests/settings.test.ts — validação: teste verde. ✓ Feito: teste de load() (defaults, loaded=true) e applyTheme() (não lança). 98 testes.
 - [x] (P4) Teste de componente BaseButton (disabled bloqueia click; emite click) — ficheiros: tests/ — validação: @vue/test-utils mount passa. ✓ Feito: tests/components.test.ts cobre slot, atributo disabled, reencaminhamento de click e classe da variante.
 - [x] (P4) Teste de componente PlantCard (renderiza nome/emoji/badges) — ficheiros: tests/ — validação: mount passa. ✓ Feito: tests/components.test.ts monta PlantCard (RouterLink stubbed) e verifica nome + emoji.
-- [ ] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal.
-- [ ] (P4) Apagar todos os dados (reset) com confirmação — ficheiros: features/profile, lib/db — validação: limpa tabelas; teste de repo.
+- [x] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal. ✓ Feito: utils/backup.ts exportData() (inclui plantings/journal/reminders/beds/meta) + tests; ProfileView passa a usar o backup COMPLETO (a export inline antiga perdia a horta).
+- [x] (P4) Apagar todos os dados (reset) com confirmação — ficheiros: features/profile, lib/db — validação: limpa tabelas; teste de repo. ✓ Feito: clearAllData() (transação, todas as tabelas) + teste; botão 'Apagar todos os dados' na ProfileView com confirm.
 - [ ] (P5) Marcar todos os lembretes de uma planta como feitos — ficheiros: src/repositories/index.ts — validação: teste.
 - [ ] (P5) `estimateStage` em planta sem durações nas fases (edge) — ficheiros: tests/growth.test.ts — validação: não rebenta; devolve fase válida.
 - [ ] (P5) Validar `setCell` do planeador ignora chaves fora da grelha — ficheiros: src/repositories/index.ts — validação: teste.
