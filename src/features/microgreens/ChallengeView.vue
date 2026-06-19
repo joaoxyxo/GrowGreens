@@ -152,7 +152,7 @@ async function shareHarvest() {
               >recomendado</span
               >
               <span class="block text-xs text-neutral-500 dark:text-neutral-400">
-                {{ m.flavour }} · {{ m.daysToHarvest[0] }}–{{ m.daysToHarvest[1] }} dias
+                {{ m.flavour }} · {{ m.daysToHarvest[0] }}–{{ m.daysToHarvest[1] }} dias<template v-if="m.soakHours > 0"> · 💧 demolha {{ m.soakHours }}h</template>
               </span>
             </span>
           </button>
