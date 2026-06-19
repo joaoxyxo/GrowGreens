@@ -6,14 +6,18 @@ import { todayKey } from '@/utils/date'
 import { applyActivity } from '@/utils/streak'
 import { ACHIEVEMENTS } from '@/data/achievements'
 
-const DEFAULT: ProgressState = {
-  xp: 0,
-  streak: 0,
-  lastActiveDay: '',
-  completedLessons: [],
-  achievements: [],
-  freezes: 1,
-  freezeRefillAt: '',
+// Factory (não constante partilhada): garante arrays novos a cada uso, senão
+// `completedLessons`/`achievements` seriam partilhados por referência e poluíam-se.
+function defaultProgress(): ProgressState {
+  return {
+    xp: 0,
+    streak: 0,
+    lastActiveDay: '',
+    completedLessons: [],
+    achievements: [],
+    freezes: 1,
+    freezeRefillAt: '',
+  }
 }
 
 const LEVELS = [
@@ -25,11 +29,11 @@ const LEVELS = [
 ]
 
 export const useProgressStore = defineStore('progress', () => {
-  const state = ref<ProgressState>({ ...DEFAULT })
+  const state = ref<ProgressState>(defaultProgress())
   const loaded = ref(false)
 
   async function load() {
-    state.value = { ...DEFAULT, ...(await getMeta<ProgressState>('progress', DEFAULT)) }
+    state.value = { ...defaultProgress(), ...(await getMeta<ProgressState>('progress', defaultProgress())) }
     loaded.value = true
   }
 
