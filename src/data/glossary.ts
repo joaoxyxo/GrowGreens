@@ -41,4 +41,7 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Sachar', emoji: '🪛', definition: 'Mexer ligeiramente a camada de cima do solo para arejar e arrancar ervas daninhas pequenas.' },
   { term: 'Amontoa', emoji: '⛰️', definition: 'Chegar terra à base da planta (batata, alho-francês) para proteger, branquear o caule ou fazer mais tubérculos.' },
   { term: 'Tutoragem', emoji: '🪵', definition: 'Dar apoio (cana, rede, estaca) para a planta trepar ou não tombar — essencial em tomate, ervilha e pepino.' },
+  { term: 'Rotação de culturas', emoji: '🔄', definition: 'Não plantar a mesma família no mesmo sítio anos seguidos — evita esgotar o solo e a acumulação de pragas/doenças.' },
+  { term: 'Adubo verde', emoji: '🌾', definition: 'Plantas (ex.: favas, tremoço) semeadas para enriquecer o solo e depois enterradas, em vez de colhidas.' },
+  { term: 'pH', emoji: '🧪', definition: 'A acidez do solo (0-14). A maioria das hortícolas prefere ligeiramente ácido a neutro (6,0-7,0).' },
 ]
