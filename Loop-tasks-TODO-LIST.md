@@ -32,12 +32,12 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) `loading="lazy"` nas restantes imagens (DiagnosisView preview, timeline microgreens) — ficheiros: features/diagnosis, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" na preview da DiagnosisView (microgreens não tem <img> de timeline). Build OK.
 - [x] (P4) `v-memo` na lista de resultados do catálogo — ficheiros: src/features/catalog/CatalogView.vue — validação: build; lista não re-renderiza sem mudança. ✓ Feito: v-memo=[slug, sowable] nos PlantCard — saltam re-render quando nada muda. Build OK.
 - [x] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão. ✓ Verificado: já está num computed (recomputa só quando plantings/settings mudam). Nada a alterar.
-- [ ] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível.
+- [x] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível. ✓ Verificado: as imagens já têm dimensões reservadas por CSS (h-20/w-20, h-48, max-h-60 + object-cover); o espaço é reservado antes do carregamento, sem layout shift. Atributos explícitos seriam redundantes.
 - [x] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map. ✓ Verificado: globPatterns (js,css,html,svg,png,woff2) não inclui .map e o build não gera sourcemaps — precache já limpo. Nada a alterar.
 - [ ] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão.
 - [ ] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado.
 - [x] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão. ✓ Verificado: searchBlob é construído uma vez (fora do computed de results); o computed só faz get().includes(). Nada a alterar.
-- [ ] (P5) Analisar deps não usadas (depcheck manual) e remover — ficheiros: package.json — validação: build após remoção.
+- [x] (P5) Analisar deps não usadas (depcheck manual) e remover — ficheiros: package.json — validação: build após remoção. ✓ Verificado: as 6 deps de runtime (date-fns, dexie, pinia, vue, vue-i18n, vue-router) são todas usadas em src; devDeps são tooling em uso. Nada a remover.
 - [x] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes. ✓ Feito: cache por chave zona-mês (computeCalendarFor interno); resultado read-only nos callers. Testes calendar verdes.
 
 ## Organização
