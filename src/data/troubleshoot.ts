@@ -123,4 +123,16 @@ export const SYMPTOMS: Symptom[] = [
       'Em interior, afasta de fontes de calor e aumenta um pouco a humidade.',
     ],
   },
+  {
+    id: 'damping-off',
+    emoji: '💀',
+    label: 'Plântulas tombam e morrem à base (logo após nascer)',
+    likely: 'Damping-off: fungos do solo favorecidos por excesso de água e pouco arejamento.',
+    whatToDo: [
+      'Rega menos e por baixo (capilaridade); deixa a superfície secar entre regas.',
+      'Mais luz e ar a circular; não semeies demasiado denso.',
+      'Usa substrato limpo de sementeira; as plântulas tombadas não recuperam — recomeça.',
+    ],
+    related: ['mildio'],
+  },
 ]
