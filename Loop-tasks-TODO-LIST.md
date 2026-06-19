@@ -29,14 +29,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Marcar planta colhida cria entrada de diário 'colheita' automática — ficheiros: src/repositories/index.ts — validação: teste; diário tem evento de colheita. ✓ Feito: update regista um marco 'colheita' no diário (na mesma transação); teste verde.
 
 ## Performance
-- [ ] (P4) `loading="lazy"` em imagens de diário/linha do tempo de fotos — ficheiros: features/garden, microgreens — validação: build; atributo presente.
+- [x] (P4) `loading="lazy"` em imagens de diário/linha do tempo de fotos — ficheiros: features/garden, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" nas miniaturas e foto da timeline do diário (PlantingDetailView). Build OK.
 - [ ] (P4) Debounce ligeiro na pesquisa do catálogo (input) — ficheiros: src/features/catalog/CatalogView.vue — validação: revisão; filtro não corre a cada tecla imediatamente.
 - [x] (P4) Confirmar que todas as rotas são lazy (import dinâmico) no router — ficheiros: src/router/index.ts — validação: build; cada view em chunk próprio. ✓ Verificado: as 19 rotas com componente usam `() => import(...)`; a 20.ª é um catch-all redirect sem componente. Sem imports estáticos de views. Nada a fazer.
 - [ ] (P4) Partilhar a live query de `reminders` (evitar múltiplas subscrições idênticas) — ficheiros: features/garden, composables — validação: revisão de código.
 - [ ] (P5) `v-once`/keys estáveis em listas estáticas (categorias, filtros) — ficheiros: features/* — validação: revisão; sem re-render desnecessário.
 - [ ] (P5) Reduzir trabalho do `sowableSet` recomputado por mês (memo por zona+mês) — ficheiros: features/catalog/calendar — validação: revisão.
 - [ ] (P5) Otimizar/pré-dimensionar ícones PWA (tamanho do precache) — ficheiros: public/icons — validação: build; precache não cresce.
-- [ ] (P5) Definir `chunkSizeWarningLimit` adequado e confirmar sem chunks gigantes — ficheiros: vite.config.ts — validação: build sem avisos de tamanho.
+- [x] (P5) Definir `chunkSizeWarningLimit` adequado e confirmar sem chunks gigantes — ficheiros: vite.config.ts — validação: build sem avisos de tamanho. ✓ Feito: chunkSizeWarningLimit 600 (vendor ~294KB); build sem avisos de tamanho.
 - [ ] (P5) Lazy-load do `share`/`buildAchievementCard` (canvas) só quando usado — ficheiros: utils/share, microgreens — validação: build; share em chunk separado.
 - [ ] (P5) Evitar importar todo o date-fns/locale; confirmar import só do locale pt — ficheiros: utils/date.ts — validação: build; bundle não inclui locales extra.
 

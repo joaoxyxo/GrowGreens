@@ -60,6 +60,8 @@ export default defineConfig(({ command }) => {
     },
   },
   build: {
+    // Vendor (~290KB) fica num chunk próprio; limite com folga para evitar falsos avisos.
+    chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
         // Separa as dependências (raramente mudam) num chunk próprio: reduz o
