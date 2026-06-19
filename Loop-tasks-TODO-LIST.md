@@ -31,7 +31,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Performance
 - [x] (P4) E2E: fluxo de pesquisa do catálogo (Playwright) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'catálogo: a pesquisa filtra as plantas' (verde). BÓNUS: corrigido o base path do e2e (BASE_PATH=/) que tinha o preview/e2e a falhar — o spec pré-existente voltou a passar.
 - [x] (P4) E2E: adicionar planta à horta e ver lembrete — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'horta: adicionar uma planta e vê-la na horta' (onboarding→catálogo→adicionar→horta). 3 specs e2e verdes.
-- [ ] (P5) Atributos `width`/`height` explícitos nas imagens de tamanho fixo — ficheiros: features/* — validação: build.
+- [x] (P5) Atributos `width`/`height` explícitos nas imagens de tamanho fixo — ficheiros: features/* — validação: build. ✓ Feito: miniatura 80×80 do diário com width/height (as restantes são w-full responsivas, já com altura reservada por CSS).
 - [x] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build. ✓ Feito: grid de resultados com [content-visibility:auto] + contain-intrinsic-size (salta render fora do ecrã).
 - [x] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build. ✓ Feito: HomeView pré-carrega o chunk do CatalogView no onMounted.
 - [x] (P5) Confirmar manualChunks coerente com deps atuais — ficheiros: vite.config.ts — validação: build. ✓ Verificado: build gera 1 chunk vendor (~294KB/102KB gzip) com todos os node_modules; sem duplicação nem avisos. Coerente.
@@ -47,7 +47,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) CI: passo de cobertura (não bloqueia PR) — ficheiros: .github/workflows/ci.yml — validação: workflow válido. ✓ Feito: passo `npm run test:coverage` com continue-on-error: true no job quality. YAML válido.
 - [x] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido. ✓ Feito: dependabot.yml (npm + github-actions, semanal, devDeps agrupadas).
 - [x] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes. ✓ Feito: +robots, apple-mobile-web-app-* e Open Graph (description já existia). Presentes no dist.
-- [ ] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão.
+- [x] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão. ✓ Feito: regra global :focus-visible (outline verde) no main.css — garante foco de teclado visível em todos os elementos focáveis.
 - [ ] (P5) Consolidar tipos de UI repetidos (tone/variant) — ficheiros: components/ui — validação: typecheck.
 - [ ] (P5) Contraste das badges (revisão WCAG AA) — ficheiros: components/ui — validação: revisão.
 - [x] (P5) Atualizar CLAUDE.md com nº de plantas/testes atuais — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: linha de escala (45 plantas, 115 testes, lint 0).
