@@ -257,7 +257,13 @@ watch(
         >
           <span aria-hidden="true">{{ p!.emoji }}</span> {{ p!.name }}
         </RouterLink>
-        <span v-if="!sowable.length" class="text-sm text-neutral-500">Nada a destacar este mês.</span>
+        <RouterLink
+          v-if="!sowable.length"
+          to="/desafio"
+          class="text-sm text-neutral-500"
+        >
+          Mês mais calmo para semear ao ar livre — que tal microgreens? Dão o ano todo, em casa. 🌱
+        </RouterLink>
       </div>
     </section>
   </div>

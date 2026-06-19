@@ -13,7 +13,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Curso: lição/quiz de revisão de planeamento da horta — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente". ✓ Feito: lição l3-3 "Planear a horta" (conceitos + choice + order). data-integrity verde.
 - [x] (P5) Pragas: detalhar tratamento biológico (auxiliares: joaninhas, crisopas) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: tratamento do afídeo inclui controlo biológico (joaninhas/crisopas, flores que as atraem, evitar largo espetro).
 - [x] (P5) Troubleshoot: referência cruzada de sintomas para pragas/doenças por slug — ficheiros: src/data/troubleshoot.ts (+tipo) — validação: build; refs válidas. ✓ Feito: campo Symptom.related (po-branco→oidio, manchas→mildio, bichos→afideo/lesma/lagarta) + teste data-integrity que valida os slugs. 104 testes.
-- [ ] (P5) Recomendações: mensagem amigável quando nada é semeável no mês — ficheiros: src/features/home ou recommend — validação: build; estado tratado.
+- [x] (P5) Recomendações: mensagem amigável quando nada é semeável no mês — ficheiros: src/features/home ou recommend — validação: build; estado tratado. ✓ Feito: estado vazio de "Semear este mês" passou de texto seco a mensagem amigável e acionável (sugere microgreens, link para /desafio).
 - [x] (P5) Adicionar 1-2 receitas de microgreens (sandes, batido) ligadas ao desafio — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: +2 receitas (sandes e batido verde de microgreens). data-integrity verde.
 
 ## Regras de Negócio
