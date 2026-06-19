@@ -184,6 +184,11 @@ async function removeBed() {
                   ? 'bg-green-100 dark:bg-green-900/30 border-green-400'
                   : 'bg-white/70 dark:bg-dark-surface/60 border-dashed border-neutral-300 dark:border-dark-surface2'
               "
+              :aria-label="
+                cellAt(bed, r - 1, c - 1)
+                  ? `${getPlant(cellAt(bed, r - 1, c - 1)!.plantSlug)?.name ?? 'Planta'} (linha ${r}, coluna ${c})`
+                  : `Célula vazia (linha ${r}, coluna ${c})`
+              "
               @click="tapCell(r - 1, c - 1)"
             >
               <span v-if="cellAt(bed, r - 1, c - 1)" aria-hidden="true">
@@ -248,7 +253,7 @@ async function removeBed() {
     <div v-if="showPicker" class="fixed inset-0 z-[60] flex flex-col bg-white dark:bg-dark-bg">
       <div class="border-b border-neutral-200 dark:border-dark-surface2 p-4 safe-top">
         <div class="flex items-center gap-2">
-          <button class="text-xl text-neutral-400" @click="showPicker = false">✕</button>
+          <button class="text-xl text-neutral-400" aria-label="Fechar" @click="showPicker = false">✕</button>
           <input
             v-model="query"
             type="search"
