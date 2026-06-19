@@ -5,7 +5,7 @@ Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, @vitest/coverage-v8) + Playwright. Lint: ESLint. Format: Prettier. npm. Ver CLAUDE.md / docs/ARQUITETURA.md. 39 plantas, 89 testes.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2-3 culturas ao catálogo (couve-chinesa/pak-choi, aipo, malagueta) com schema completo + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
+- [x] (P3) Adicionar 2-3 culturas ao catálogo (couve-chinesa/pak-choi, aipo, malagueta) com schema completo + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (couve-chinesa, aipo, malagueta com toxicNote) + calendário → 42 plantas. data-integrity + 97 testes.
 - [ ] (P3) Adicionar receita que combina várias colheitas (ex.: "sopa da horta") — ficheiros: src/data/recipes.ts — validação: data-integrity; plants[] válidos.
 - [ ] (P4) Glossário: +termos (rega por capilaridade, sacha, amontoa, tutoragem) — ficheiros: src/data/glossary.ts — validação: build; termos presentes.
 - [ ] (P4) Saúde: adicionar `caution` onde aplicável (oxalatos em espinafre/acelga; nitratos em folhas) — ficheiros: src/data/health.ts — validação: build; campo caution presente.

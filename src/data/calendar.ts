@@ -134,6 +134,14 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'melao', zone: 'litoral_norte', action: 'sementeira_interior', months: [3, 4] },
   { plant: 'melao', zone: 'litoral_norte', action: 'sementeira_direta', months: [5] },
   { plant: 'melao', zone: 'litoral_norte', action: 'colheita', months: [8, 9] },
+  { plant: 'couve-chinesa', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 8, 9] },
+  { plant: 'couve-chinesa', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 10, 11] },
+  { plant: 'aipo', zone: 'litoral_norte', action: 'sementeira_interior', months: [2, 3] },
+  { plant: 'aipo', zone: 'litoral_norte', action: 'transplante', months: [5, 6] },
+  { plant: 'aipo', zone: 'litoral_norte', action: 'colheita', months: [9, 10, 11] },
+  { plant: 'malagueta', zone: 'litoral_norte', action: 'sementeira_interior', months: [2, 3] },
+  { plant: 'malagueta', zone: 'litoral_norte', action: 'transplante', months: [5] },
+  { plant: 'malagueta', zone: 'litoral_norte', action: 'colheita', months: [8, 9, 10] },
 ]
 
 export const CALENDAR_ACTION_LABELS: Record<string, { label: string; emoji: string }> = {
