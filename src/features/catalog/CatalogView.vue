@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
 import PlantCard from '@/components/PlantCard.vue'
 import EmptyState from '@/components/ui/EmptyState.vue'
@@ -11,6 +11,15 @@ import type { PlantCategory, Difficulty } from '@/types/catalog'
 
 const settings = useSettingsStore()
 const query = ref('')
+// Debounce ligeiro: o filtro só corre 150 ms depois de parar de escrever.
+const debouncedQuery = ref('')
+let queryTimer: ReturnType<typeof setTimeout> | undefined
+watch(query, (q) => {
+  clearTimeout(queryTimer)
+  queryTimer = setTimeout(() => {
+    debouncedQuery.value = q
+  }, 150)
+})
 const catFilter = ref<PlantCategory | 'todas'>('todas')
 const diffFilter = ref<Difficulty | 'todas'>('todas')
 const locFilter = ref<'todas' | 'interior' | 'exterior'>('todas')
@@ -42,7 +51,7 @@ const searchBlob = new Map(
 )
 
 const results = computed(() => {
-  const q = normalize(query.value.trim())
+  const q = normalize(debouncedQuery.value.trim())
   return PLANTS.filter((p) => {
     if (q && !searchBlob.get(p.slug)!.includes(q)) return false
     if (catFilter.value !== 'todas' && p.category !== catFilter.value) return false

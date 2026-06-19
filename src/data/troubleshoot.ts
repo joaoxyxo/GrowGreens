@@ -107,4 +107,15 @@ export const SYMPTOMS: Symptom[] = [
       'Remove os frutos afetados; os seguintes vêm sãos quando a rega estabiliza.',
     ],
   },
+  {
+    id: 'pontas-castanhas',
+    emoji: '🟫',
+    label: 'Pontas ou bordos das folhas castanhos e secos',
+    likely: 'Excesso de adubo/sais no substrato, ou ar muito seco — queima as pontas (tip burn).',
+    whatToDo: [
+      'Rega abundante uma vez para "lavar" os sais em excesso (deixa escorrer bem).',
+      'Reduz a frequência/dose de adubo nas próximas semanas.',
+      'Em interior, afasta de fontes de calor e aumenta um pouco a humidade.',
+    ],
+  },
 ]

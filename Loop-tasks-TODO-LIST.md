@@ -12,7 +12,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Expandir glossário com termos em falta (vernalização, polinização cruzada, mulch/cobertura) — ficheiros: src/data/glossary.ts — validação: build; termos presentes. ✓ Feito: +3 termos (Mulch/cobertura, Polinização cruzada, Vernalização). Build OK.
 - [ ] (P4) Adicionar conteúdo de saúde/nutrição para o grupo das aromáticas e novas culturas — ficheiros: src/data/health.ts — validação: data-integrity; NUTRIENT_GROUPS coerentes.
 - [ ] (P4) Rever e preencher `companions`/`antagonists` vazios das plantas originais — ficheiros: src/data/plants.ts — validação: data-integrity (refs válidas); menos arrays vazios.
-- [ ] (P5) Adicionar mais sintomas ao diagnóstico (folhas com furos/lesmas vs lagartas; pontas castanhas por sal) — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta.
+- [x] (P5) Adicionar mais sintomas ao diagnóstico (folhas com furos/lesmas vs lagartas; pontas castanhas por sal) — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta. ✓ Feito: +sintoma 'pontas-castanhas' (excesso de sais/adubo, tip burn). (lesmas vs lagartas já no sintoma 'bichos'.) Build + 89 testes.
 - [ ] (P5) Adicionar variedades recomendadas PT às fichas (ex.: alface 'Maravilha de Verão', couve 'Penca') no texto — ficheiros: src/data/plants.ts — validação: build; texto presente.
 - [ ] (P5) Uniformizar `in30Seconds` (3 bullets) e tom de `commonMistake` nas plantas originais — ficheiros: src/data/plants.ts — validação: build; consistência por revisão.
 
@@ -30,7 +30,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Performance
 - [x] (P4) `loading="lazy"` em imagens de diário/linha do tempo de fotos — ficheiros: features/garden, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" nas miniaturas e foto da timeline do diário (PlantingDetailView). Build OK.
-- [ ] (P4) Debounce ligeiro na pesquisa do catálogo (input) — ficheiros: src/features/catalog/CatalogView.vue — validação: revisão; filtro não corre a cada tecla imediatamente.
+- [x] (P4) Debounce ligeiro na pesquisa do catálogo (input) — ficheiros: src/features/catalog/CatalogView.vue — validação: revisão; filtro não corre a cada tecla imediatamente. ✓ Feito: debouncedQuery atualiza 150ms após parar de escrever; o computed de resultados passa a depender dele. TC/lint/build OK.
 - [x] (P4) Confirmar que todas as rotas são lazy (import dinâmico) no router — ficheiros: src/router/index.ts — validação: build; cada view em chunk próprio. ✓ Verificado: as 19 rotas com componente usam `() => import(...)`; a 20.ª é um catch-all redirect sem componente. Sem imports estáticos de views. Nada a fazer.
 - [ ] (P4) Partilhar a live query de `reminders` (evitar múltiplas subscrições idênticas) — ficheiros: features/garden, composables — validação: revisão de código.
 - [ ] (P5) `v-once`/keys estáveis em listas estáticas (categorias, filtros) — ficheiros: features/* — validação: revisão; sem re-render desnecessário.

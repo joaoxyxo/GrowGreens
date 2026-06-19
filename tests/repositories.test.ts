@@ -49,7 +49,7 @@ describe('repositórios (local-first)', () => {
       location: 'varanda',
       wateringEveryDays: 2,
     })
-    const r = (await db.reminders.where('plantingId').equals(p.id).toArray())[0]
+    const r = (await db.reminders.where('plantingId').equals(p.id).toArray()).find((x) => x.type === 'rega')!
     await remindersRepo.complete(r.id)
     const after = await db.reminders.get(r.id)
     expect(after?.done).toBe(false) // recorrente: reagendado
