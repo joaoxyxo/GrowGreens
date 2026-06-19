@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSettingsStore } from '@/stores/settings'
 import { CLIMATE_ZONES } from '@/data/calendar'
@@ -8,6 +8,12 @@ import ProgressBar from '@/components/ui/ProgressBar.vue'
 
 const router = useRouter()
 const settings = useSettingsStore()
+
+// Pré-carrega o chunk do Desafio (destino ao terminar o onboarding) para uma
+// transição instantânea. Mesmo specifier do router → mesmo chunk (deduplicado).
+onMounted(() => {
+  import('@/features/microgreens/ChallengeView.vue').catch(() => {})
+})
 
 const step = ref(0)
 const name = ref('')
