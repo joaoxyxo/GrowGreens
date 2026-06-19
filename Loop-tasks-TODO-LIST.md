@@ -38,13 +38,13 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Otimizar/pré-dimensionar ícones PWA (tamanho do precache) — ficheiros: public/icons — validação: build; precache não cresce.
 - [x] (P5) Definir `chunkSizeWarningLimit` adequado e confirmar sem chunks gigantes — ficheiros: vite.config.ts — validação: build sem avisos de tamanho. ✓ Feito: chunkSizeWarningLimit 600 (vendor ~294KB); build sem avisos de tamanho.
 - [ ] (P5) Lazy-load do `share`/`buildAchievementCard` (canvas) só quando usado — ficheiros: utils/share, microgreens — validação: build; share em chunk separado.
-- [ ] (P5) Evitar importar todo o date-fns/locale; confirmar import só do locale pt — ficheiros: utils/date.ts — validação: build; bundle não inclui locales extra.
+- [x] (P5) Evitar importar todo o date-fns/locale; confirmar import só do locale pt — ficheiros: utils/date.ts — validação: build; bundle não inclui locales extra. ✓ Verificado: date.ts importa só `{ pt } from 'date-fns/locale'` e funções nomeadas de date-fns — tree-shakeable, sem locales extra.
 
 ## Organização
 - [x] (P3) Adicionar testes para `defaultWateringDays`/`areCompanions` já existem; cobrir `successionDays` — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: successionDays coberto em tests/growth.test.ts (intervalo p/ culturas de corte; null caso contrário).
 - [x] (P3) Definir thresholds de cobertura mínimos no vitest (ex.: utils 70%) — ficheiros: vitest.config.ts — validação: `npm run test:coverage` aplica thresholds. ✓ Feito: thresholds lines/statements/functions 55, branches 75 (abaixo do atual ~63/85 para travar regressões sem falhar). test:coverage exit 0. (70% partiria — utils está a 60%.)
 - [x] (P4) Adicionar badge de CI e secção de testes/cobertura ao README — ficheiros: README.md — validação: README renderiza badge; comandos corretos. ✓ Feito: badge do workflow CI no topo + secção "Testes" (com test:coverage) + link para docs/ARQUITETURA.md.
-- [ ] (P4) Adicionar JSDoc curto às funções públicas dos utils (date, growth, challenge) — ficheiros: src/utils/* — validação: typecheck; doc presente.
+- [x] (P4) Adicionar JSDoc curto às funções públicas dos utils (date, growth, challenge) — ficheiros: src/utils/* — validação: typecheck; doc presente. ✓ Feito: JSDoc em todas as funções de date.ts (growth/challenge/streak/ics já tinham). TC OK.
 - [x] (P4) Adicionar `engines` (node) e `packageManager` ao package.json — ficheiros: package.json — validação: build; campos presentes. ✓ Feito: engines.node ">=20" + packageManager "npm@11.11.0". package.json válido, build OK.
 - [x] (P4) Criar `docs/ARQUITETURA.md` curto (camadas, fluxo de dados) ligado no README — ficheiros: docs/ — validação: ficheiro existe e é referenciado. ✓ Feito: docs/ARQUITETURA.md (camadas UI→stores→repos→Dexie, dados estáticos, fluxo de exemplo) referenciado no README.
 - [x] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: .nvmrc com "20" (alinhado com o CI).
