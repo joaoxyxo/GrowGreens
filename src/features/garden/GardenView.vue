@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import PageHeader from '@/components/PageHeader.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
@@ -9,6 +9,8 @@ import { useLiveQuery } from '@/composables/useLiveQuery'
 import { db } from '@/lib/db/dexie'
 import { getPlant } from '@/data/plants'
 import { daysSince, isOverdue, isDueToday } from '@/utils/date'
+import { useProgressStore } from '@/stores/progress'
+import { useUiStore } from '@/stores/ui'
 import type { Planting } from '@/types/models'
 
 const plantings = useLiveQuery(
@@ -30,6 +32,20 @@ function waterState(plantingId: string): { label: string; tone: 'green' | 'sky' 
 }
 
 const count = computed(() => plantings.value.length)
+
+const progress = useProgressStore()
+const ui = useUiStore()
+// Conquistas ligadas à horta/catálogo: 5 plantas em simultâneo e 10 espécies
+// diferentes já cultivadas (ativas ou colhidas).
+watch(
+  [plantings, harvested],
+  () => {
+    if (plantings.value.length >= 5 && progress.unlock('mao_verde')) ui.toast('Conquista: Mão Verde 🌿')
+    const species = new Set([...plantings.value, ...harvested.value].map((p) => p.plantSlug))
+    if (species.size >= 10 && progress.unlock('colecionador')) ui.toast('Conquista: Colecionador 🌻')
+  },
+  { immediate: true },
+)
 </script>
 
 <template>

@@ -54,6 +54,12 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     description: 'Aprendeste a prevenir o míldio e o oídio.',
     emoji: '🛡️',
   },
+  {
+    code: 'colecionador',
+    name: 'Colecionador',
+    description: 'Cultivaste 10 espécies diferentes do catálogo.',
+    emoji: '🌻',
+  },
 ]
 
 export function achievementDef(code: string): AchievementDef | undefined {
