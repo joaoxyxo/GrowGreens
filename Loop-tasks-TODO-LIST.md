@@ -29,7 +29,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [ ] (P5) Sucessão de sementeira: sugerir próxima data para culturas de corte (alface, rúcula) — ficheiros: src/features/calendar ou recommendations — validação: build OK; sugestão aparece.
 
 ## Performance
-- [ ] (P3) Garantir lazy-loading dos chunks de dados grandes (course.ts, health.ts) à semelhança de plants — ficheiros: src/features/*, imports — validação: `npm run build` mostra course/health em chunks separados.
+- [x] (P3) Garantir lazy-loading dos chunks de dados grandes (course.ts, health.ts) à semelhança de plants — ficheiros: src/features/*, imports — validação: `npm run build` mostra course/health em chunks separados. ✓ Já garantido: o build produz course-*.js (11KB), health-*.js (3.6KB) e plants-*.js (73KB) como chunks próprios (importados por vistas lazy de rota). Nada a fazer.
 - [ ] (P3) Reduzir o chunk index (304KB) movendo dados estáticos para imports dinâmicos onde aplicável — ficheiros: src/router, features — validação: build; index < 300KB gzip menor.
 - [ ] (P4) Rever qualidade/limite de `compressImage` para fotos do diário (memória IndexedDB) — ficheiros: src/utils/image.ts — validação: blob resultante < 300KB num teste.
 - [ ] (P4) Indexar consultas Dexie usadas (plantings por status, journal por plantingId) — ficheiros: src/lib/db/dexie.ts — validação: schema com índices; testes de repo passam.
@@ -46,7 +46,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P2) Adicionar script `lint:fix` ("eslint . --fix") ao package.json — ficheiros: package.json — validação: `npm run lint:fix` corre. ✓ Feito: script adicionado e a funcionar.
 - [x] (P2) Corrigir os warnings reais de lint em ficheiros src/ (após ignorar trash) — ficheiros: src/features/**/*.vue — validação: `npm run lint` sem warnings em src/. ✓ Feito: `npm run lint:fix` corrigiu indentação em PlantDetailView, ReviewView, ChallengeView e BedView; lint 0 problemas.
 - [x] (P3) Adicionar teste para a lógica de desbloqueio de dias do desafio (unlockedDay) — ficheiros: tests/ — validação: `npm run test` com novo teste verde. ✓ Feito: extraída lógica para src/utils/challenge.ts (computeUnlockedDay + challengeDayState), ChallengeView refatorado a usá-la; tests/challenge.test.ts (9 casos). 51 testes verdes.
-- [ ] (P3) Centralizar tipos de domínio repetidos e remover duplicação entre catalog.ts e models.ts — ficheiros: src/types/* — validação: typecheck OK; sem tipos duplicados.
+- [x] (P3) Centralizar tipos de domínio repetidos e remover duplicação entre catalog.ts e models.ts — ficheiros: src/types/* — validação: typecheck OK; sem tipos duplicados. ✓ Verificado: zero nomes de tipo em comum entre models.ts (domínio do utilizador) e catalog.ts (catálogo estático). Domínios distintos, sem duplicação a remover.
 - [x] (P3) Adicionar `.editorconfig` e config Prettier alinhada com regras do ESLint — ficheiros: raiz — validação: formatação consistente; lint não conflitua. ✓ Feito: .editorconfig (2 espaços, LF, utf-8) + .prettierrc.json (sem semi, aspas simples, trailing comma all) a espelhar o estilo do código. Lint continua a 0.
 - [ ] (P4) Adicionar workflow de PR preview/typecheck separado do deploy — ficheiros: .github/workflows — validação: workflow válido (`gh workflow view`).
 - [ ] (P4) Documentar variáveis de ambiente e cloud opcional no README/.env.example coerentes — ficheiros: README.md, .env.example — validação: chaves coincidem.
