@@ -162,6 +162,42 @@ describe('repositórios (local-first)', () => {
     expect(rsAlface.some((r) => r.type === 'aduba')).toBe(false)
   })
 
+  it('completar lembrete NÃO recorrente marca done=true', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'alface',
+      nickname: 'Alface',
+      location: 'varanda',
+      wateringEveryDays: 3,
+    })
+    const r = (await db.reminders.where('plantingId').equals(p.id).toArray())[0]
+    await db.reminders.update(r.id, { recurrenceDays: undefined }) // torna não-recorrente
+    await remindersRepo.complete(r.id)
+    expect((await db.reminders.get(r.id))?.done).toBe(true)
+  })
+
+  it('plantingsRepo.all exclui plantas perdidas', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'rucula',
+      nickname: 'Rúcula',
+      location: 'varanda',
+      wateringEveryDays: 2,
+    })
+    await plantingsRepo.update(p.id, { status: 'perdida' })
+    const all = await plantingsRepo.all()
+    expect(all.find((x) => x.id === p.id)).toBeUndefined()
+  })
+
+  it('update clampa wateringEveryDays a ≥ 1', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'alface',
+      nickname: 'Alface',
+      location: 'varanda',
+      wateringEveryDays: 3,
+    })
+    await plantingsRepo.update(p.id, { wateringEveryDays: 0 })
+    expect((await plantingsRepo.get(p.id))?.wateringEveryDays).toBeGreaterThanOrEqual(1)
+  })
+
   it('saneia nickname vazio e intervalo de rega inválido ao criar', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'rucula',

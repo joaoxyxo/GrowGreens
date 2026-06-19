@@ -20,13 +20,13 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste de componente: EmptyState — ficheiros: tests/ — validação: mount passa. ✓ Feito: emoji/título/descrição.
 - [x] (P4) Teste de componente: StatChip — ficheiros: tests/ — validação: mount passa. ✓ Feito: valor/ícone visíveis; label no title.
 - [x] (P4) Teste de componente: DifficultyDots — ficheiros: tests/ — validação: mount passa. ✓ Feito: nº de pontos preenchidos por dificuldade + label.
-- [ ] (P4) Teste: buildICS escapa vírgulas/; em SUMMARY (RFC) — ficheiros: tests/ics.test.ts — validação: teste.
-- [ ] (P4) `remindersRepo.complete` de não-recorrente marca done=true — ficheiros: tests/ — validação: teste.
-- [ ] (P5) `plantingsRepo.all` exclui 'perdida' (teste do filtro) — ficheiros: tests/ — validação: teste.
-- [ ] (P5) `safe()` util: devolve undefined e loga em erro — ficheiros: tests/ — validação: teste.
-- [ ] (P5) `estimateStage` clamp de daysOld negativo — ficheiros: src/utils/growth.ts, tests/ — validação: teste.
-- [ ] (P5) Teste: calendarFor desloca litoral_sul (-1) — ficheiros: tests/calendar.test.ts — validação: teste.
-- [ ] (P5) Clamp de `wateringEveryDays` também no update — ficheiros: src/repositories/index.ts — validação: teste.
+- [x] (P4) Teste: buildICS escapa vírgulas/; em SUMMARY (RFC) — ficheiros: tests/ics.test.ts — validação: teste. ✓ Feito: escapeICS() (\, \; \\ \n) no SUMMARY + teste.
+- [x] (P4) `remindersRepo.complete` de não-recorrente marca done=true — ficheiros: tests/ — validação: teste. ✓ Feito: teste em repositories.test.
+- [x] (P5) `plantingsRepo.all` exclui 'perdida' (teste do filtro) — ficheiros: tests/ — validação: teste. ✓ Feito: teste confirma exclusão.
+- [x] (P5) `safe()` util: devolve undefined e loga em erro — ficheiros: tests/ — validação: teste. ✓ Feito: tests/safe.test.ts (sucesso + erro).
+- [x] (P5) `estimateStage` clamp de daysOld negativo — ficheiros: src/utils/growth.ts, tests/ — validação: teste. ✓ Feito: Math.max(0, daysOld) + teste.
+- [x] (P5) Teste: calendarFor desloca litoral_sul (-1) — ficheiros: tests/calendar.test.ts — validação: teste. ✓ Feito: teste do shift -1.
+- [x] (P5) Clamp de `wateringEveryDays` também no update — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: clamp ≥1 no update + teste. 128 testes.
 
 ## Performance
 - [ ] (P4) E2E: percorrer uma lição do curso — ficheiros: tests/e2e/ — validação: spec passa.

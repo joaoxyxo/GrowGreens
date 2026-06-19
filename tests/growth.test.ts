@@ -31,6 +31,10 @@ describe('estimateStage', () => {
     expect(r.total).toBe(4)
   })
 
+  it('daysOld negativo não recua a fase (clamp a 0)', () => {
+    expect(estimateStage(p, -5).index).toBe(0)
+  })
+
   it('não rebenta com fases sem durationDays (devolve fase válida)', () => {
     const semDuracao = {
       stages: [

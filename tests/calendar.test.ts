@@ -18,6 +18,15 @@ describe('calendarForPlant', () => {
   })
 })
 
+describe('calendarFor — desfasamento de zona', () => {
+  it('litoral_sul antecipa as sementeiras em 1 mês', () => {
+    const norte = calendarForPlant('tomate', 'litoral_norte').find((e) => e.action === 'sementeira_interior')!
+    const sul = calendarForPlant('tomate', 'litoral_sul').find((e) => e.action === 'sementeira_interior')!
+    // -1 mês (com wrap de 12 meses)
+    expect(sul.months).toEqual(norte.months.map((m) => ((m - 2 + 12) % 12) + 1))
+  })
+})
+
 describe('plantSowableThisMonth', () => {
   it('inclui culturas com sementeira no mês (março: alface, rúcula)', () => {
     const set = plantSowableThisMonth('litoral_norte', 3)
