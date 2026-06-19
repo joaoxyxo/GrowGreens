@@ -1,5 +1,5 @@
 # Loop Tasks — TODO List
-Ciclo: 3 · Atualizado: 2026-06-19 03:46
+Ciclo: 3 · Atualizado: 2026-06-19 (CONCLUÍDO: 39 ✓ · 1 bloqueada · 0 pendentes)
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, @vitest/coverage-v8) + Playwright. Lint: ESLint. Format: Prettier. npm. Ver CLAUDE.md / docs/ARQUITETURA.md. 39 plantas, 89 testes.
@@ -34,8 +34,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão. ✓ Verificado: já está num computed (recomputa só quando plantings/settings mudam). Nada a alterar.
 - [x] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível. ✓ Verificado: as imagens já têm dimensões reservadas por CSS (h-20/w-20, h-48, max-h-60 + object-cover); o espaço é reservado antes do carregamento, sem layout shift. Atributos explícitos seriam redundantes.
 - [x] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map. ✓ Verificado: globPatterns (js,css,html,svg,png,woff2) não inclui .map e o build não gera sourcemaps — precache já limpo. Nada a alterar.
-- [ ] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão.
-- [ ] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado.
+- [x] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão. ✓ Verificado: nenhum new Date() dentro de map/filter/for; todas as chamadas são únicas por invocação. Nada a alterar.
+- [!] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado. BLOQUEADA — não justificado: todas as vistas já são lazy por rota (chunks próprios) e o único código pesado pontual (canvas de partilha) já é import() dinâmico. Sem modal pesado isolado que beneficie.
 - [x] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão. ✓ Verificado: searchBlob é construído uma vez (fora do computed de results); o computed só faz get().includes(). Nada a alterar.
 - [x] (P5) Analisar deps não usadas (depcheck manual) e remover — ficheiros: package.json — validação: build após remoção. ✓ Verificado: as 6 deps de runtime (date-fns, dexie, pinia, vue, vue-i18n, vue-router) são todas usadas em src; devDeps são tooling em uso. Nada a remover.
 - [x] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes. ✓ Feito: cache por chave zona-mês (computeCalendarFor interno); resultado read-only nos callers. Testes calendar verdes.
