@@ -55,6 +55,33 @@ export const PESTS: Pest[] = [
     prevention: 'Rede de proteção; não desbastar ao entardecer (o cheiro atrai a mosca); associar com cebola/alho.',
     treatment: 'Sobretudo prevenção com rede; rotação de culturas.',
   },
+  {
+    slug: 'cochonilha',
+    name: 'Cochonilha',
+    emoji: '🛡️',
+    description: 'Pequenas carapaças ou bolas algodoadas agarradas a caules e nervuras, sobretudo em aromáticas e plantas de interior.',
+    symptoms: 'Pontos imóveis castanhos/brancos, melada pegajosa e fumagina (bolor preto) nas folhas.',
+    prevention: 'Inspeciona plantas novas antes de juntar às outras; bom arejamento; evita excesso de azoto.',
+    treatment: 'Limpa com cotonete embebido em álcool; pulveriza com óleo de nim ou sabão potássico.',
+  },
+  {
+    slug: 'acaro-aranha',
+    name: 'Ácaro-aranha',
+    emoji: '🕷️',
+    description: 'Ácaros minúsculos que proliferam em ar quente e seco, tecendo teias finas no verso das folhas.',
+    symptoms: 'Pontilhado amarelo/bronzeado nas folhas e teias muito finas; folhas que secam.',
+    prevention: 'Aumenta a humidade (borrifa as folhas); evita stress hídrico; o calor seco favorece-os.',
+    treatment: 'Jatos de água no verso das folhas; óleo de nim; remove folhas muito atacadas.',
+  },
+  {
+    slug: 'tripes',
+    name: 'Tripes',
+    emoji: '🐜',
+    description: 'Insetos minúsculos e alongados que raspam as folhas e flores para se alimentarem.',
+    symptoms: 'Manchas prateadas/esbranquiçadas e pontos pretos (dejetos); flores deformadas.',
+    prevention: 'Armadilhas adesivas azuis; rega adequada; remove ervas hospedeiras à volta.',
+    treatment: 'Óleo de nim ou sabão potássico; introduz predadores naturais; remove partes muito afetadas.',
+  },
 ]
 
 export const DISEASES: Disease[] = [
