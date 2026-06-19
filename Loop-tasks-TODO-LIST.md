@@ -43,14 +43,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Organização
 - [ ] (P3) A11y: `aria-label` em botões só-ícone (recomeçar, fechar, etc.) — ficheiros: components/features — validação: revisão; sem botões sem nome acessível.
 - [x] (P4) Teste de componente: AppCard e ProgressBar — ficheiros: tests/ — validação: mount passa. ✓ Feito: AppCard renderiza slot; ProgressBar com clamping. 115 testes.
-- [ ] (P4) Adicionar `SECURITY.md` (como reportar problemas) — ficheiros: raiz — validação: ficheiro existe.
+- [x] (P4) Adicionar `SECURITY.md` (como reportar problemas) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: SECURITY.md (reporte via GitHub Security Advisories; âmbito local-first/Supabase).
 - [ ] (P4) CI: passo de cobertura (não bloqueia PR) — ficheiros: .github/workflows/ci.yml — validação: workflow válido.
 - [ ] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido.
 - [ ] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes.
 - [ ] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão.
 - [ ] (P5) Consolidar tipos de UI repetidos (tone/variant) — ficheiros: components/ui — validação: typecheck.
 - [ ] (P5) Contraste das badges (revisão WCAG AA) — ficheiros: components/ui — validação: revisão.
-- [ ] (P5) Atualizar CLAUDE.md com nº de plantas/testes atuais — ficheiros: CLAUDE.md — validação: coerente.
+- [x] (P5) Atualizar CLAUDE.md com nº de plantas/testes atuais — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: linha de escala (45 plantas, 115 testes, lint 0).
 
 ## Arquivo (ciclos concluídos)
 

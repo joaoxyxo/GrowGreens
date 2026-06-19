@@ -2,6 +2,8 @@
 
 PWA local-first que ensina horticultura a principiantes, da semente à colheita, calibrada para o clima de Portugal (litoral atlântico). Funciona offline e instala-se como app. Interface em **pt-PT**.
 
+> Escala atual (referência): **45 plantas** no catálogo · **115 testes** (Vitest) verdes · lint 0.
+
 ## Stack
 
 - **Vue 3** (`<script setup>`, Composition API) + **TypeScript**
