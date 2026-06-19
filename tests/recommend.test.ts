@@ -29,4 +29,10 @@ describe('recommendPlants', () => {
     const r = recommendPlants(settings({ space: 'interior' }), 3)
     expect(r.some((p) => p.location === 'exterior')).toBe(false)
   })
+
+  it('é determinístico para os mesmos settings (ordenação estável)', () => {
+    const a = recommendPlants(settings(), 5).map((p) => p.slug)
+    const b = recommendPlants(settings(), 5).map((p) => p.slug)
+    expect(a).toEqual(b)
+  })
 })

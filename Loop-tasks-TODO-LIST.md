@@ -10,10 +10,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Curso: 2.ª lição de rega/clima (capilaridade, drenagem) — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: lição l5-4 'Rega por capilaridade e drenagem' (u5). data-integrity verde.
 - [x] (P4) Glossário: +termos ("rotação de culturas", "adubo verde", "pH") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (rotação de culturas, adubo verde, pH).
 - [x] (P4) Receitas: ligar receitas existentes a mais plantas (cenoura, beterraba) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: cenoura no creme-abóbora; beterraba na sopa-da-horta (ingredientes + plants). cenoura/beterraba passam a ter receitas no detalhe. 115 testes.
-- [ ] (P5) Saúde: `caution` em frutos/raízes onde aplicável (ex.: batata verde) — ficheiros: src/data/health.ts — validação: build.
+- [x] (P5) Saúde: `caution` em frutos/raízes onde aplicável (ex.: batata verde) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: caution no grupo frutos/raízes (solanina — batata verde/partes verdes).
 - [ ] (P5) Microgreens: mostrar demolha (soakHours) por variedade na vista — ficheiros: features/microgreens — validação: build.
 - [ ] (P5) Calendário: nota de geada por zona (lastFrost/firstFrost) na vista — ficheiros: features/calendar — validação: build.
-- [ ] (P5) Troubleshoot: +sintoma "plântulas tombam (damping-off)" — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta.
+- [x] (P5) Troubleshoot: +sintoma "plântulas tombam (damping-off)" — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta. ✓ Feito: sintoma damping-off (excesso de água/fungos; related: mildio).
 - [ ] (P5) Recomendações: priorizar culturas semeáveis este mês — ficheiros: src/utils/recommend.ts — validação: teste.
 
 ## Regras de Negócio
@@ -25,7 +25,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) `compressImage`: documentar/bound de bytes máx — ficheiros: src/utils/image.ts — validação: revisão. ✓ Feito: JSDoc documenta o teto prático (~80-250KB a 1280px/q0.72, devolve o menor) e como apertar.
 - [x] (P5) Teste de componente: ProgressBar (clamping 0-100) — ficheiros: tests/ — validação: mount passa. ✓ Feito: testa largura 50% e clamping 0/100.
 - [x] (P5) Teste de componente: Badge/StatChip render — ficheiros: tests/ — validação: mount passa. ✓ Feito: Badge monta slot + ícone.
-- [ ] (P5) `recommendPlants` determinístico (ordenação estável) — ficheiros: tests/recommend.test.ts — validação: teste.
+- [x] (P5) `recommendPlants` determinístico (ordenação estável) — ficheiros: tests/recommend.test.ts — validação: teste. ✓ Feito: desempate explícito por slug + teste de determinismo. 116 testes.
 - [x] (P5) Marcar planta perdida cria evento de diário (à semelhança de colhida) — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: status 'perdida' regista nota no diário; teste verde. 111 testes.
 
 ## Performance
