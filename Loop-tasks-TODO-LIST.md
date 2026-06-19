@@ -20,8 +20,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) Testar o `ui` store (toast adiciona, dismiss remove, ids únicos) — ficheiros: tests/ui.test.ts — validação: novo teste verde. ✓ Feito: tests/ui.test.ts (adicionar, kind default, ids únicos, dismiss). 92 testes.
 - [x] (P3) Limitar nº de toasts visíveis em simultâneo (ex.: máx. 3) + teste — ficheiros: src/stores/ui.ts, tests/ — validação: teste de limite. ✓ Feito: cap MAX_TOASTS=3 (descarta os mais antigos); teste confirma que ficam os 3 mais recentes.
 - [ ] (P3) Testar `settings` store: load aplica defaults e applyTheme não rebenta — ficheiros: tests/settings.test.ts — validação: teste verde.
-- [ ] (P4) Teste de componente BaseButton (disabled bloqueia click; emite click) — ficheiros: tests/ — validação: @vue/test-utils mount passa.
-- [ ] (P4) Teste de componente PlantCard (renderiza nome/emoji/badges) — ficheiros: tests/ — validação: mount passa.
+- [x] (P4) Teste de componente BaseButton (disabled bloqueia click; emite click) — ficheiros: tests/ — validação: @vue/test-utils mount passa. ✓ Feito: tests/components.test.ts cobre slot, atributo disabled, reencaminhamento de click e classe da variante.
+- [x] (P4) Teste de componente PlantCard (renderiza nome/emoji/badges) — ficheiros: tests/ — validação: mount passa. ✓ Feito: tests/components.test.ts monta PlantCard (RouterLink stubbed) e verifica nome + emoji.
 - [ ] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal.
 - [ ] (P4) Apagar todos os dados (reset) com confirmação — ficheiros: features/profile, lib/db — validação: limpa tabelas; teste de repo.
 - [ ] (P5) Marcar todos os lembretes de uma planta como feitos — ficheiros: src/repositories/index.ts — validação: teste.
@@ -41,7 +41,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes.
 
 ## Organização
-- [ ] (P3) Infra de testes de componente (@vue/test-utils + jsdom já presentes) — primeiro teste a passar — ficheiros: tests/ — validação: mount de um componente passa.
+- [x] (P3) Infra de testes de componente (@vue/test-utils + jsdom já presentes) — primeiro teste a passar — ficheiros: tests/ — validação: mount de um componente passa. ✓ Feito: adicionado @vitejs/plugin-vue ao vitest.config (com cast para o conflito de tipos vite/vitest); mount() de componentes a funcionar. 97 testes.
 - [ ] (P4) Criar CONTRIBUTING.md (como correr, testar, convenções de commit) — ficheiros: raiz — validação: ficheiro existe e é coerente.
 - [ ] (P4) Adicionar LICENSE (decidir licença; por defeito propor MIT) — ficheiros: raiz — validação: ficheiro existe.
 - [ ] (P4) Tipar `Toast['kind']` e exportar o tipo do ui store — ficheiros: src/stores/ui.ts — validação: typecheck.

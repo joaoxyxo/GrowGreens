@@ -1,7 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitest/config'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  // cast: o vitest traz a sua própria cópia de vite, cujo tipo de Plugin difere
+  // do @vitejs/plugin-vue; em runtime é compatível.
+  plugins: [vue() as never],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
