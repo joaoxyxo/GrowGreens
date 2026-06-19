@@ -164,9 +164,21 @@ function shiftMonth(m: number, delta: number): number {
   return ((m - 1 + delta + 12) % 12) + 1
 }
 
+// Cache por zona+mês (calendário estático e determinístico).
+const calendarForCache = new Map<string, ReturnType<typeof computeCalendarFor>>()
+
 // Devolve o calendário para QUALQUER zona, derivando das entradas base do litoral norte
 // com um desfasamento sazonal. Garante que nenhuma zona fica sem dados.
 export function calendarFor(zone: string, month: number) {
+  const key = `${zone}-${month}`
+  const cached = calendarForCache.get(key)
+  if (cached) return cached
+  const result = computeCalendarFor(zone, month)
+  calendarForCache.set(key, result)
+  return result
+}
+
+function computeCalendarFor(zone: string, month: number) {
   const delta = ZONE_SHIFT[zone] ?? 0
   return CALENDAR.filter((base) => {
     const months =
