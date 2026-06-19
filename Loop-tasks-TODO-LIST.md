@@ -32,7 +32,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P3) Garantir lazy-loading dos chunks de dados grandes (course.ts, health.ts) à semelhança de plants — ficheiros: src/features/*, imports — validação: `npm run build` mostra course/health em chunks separados. ✓ Já garantido: o build produz course-*.js (11KB), health-*.js (3.6KB) e plants-*.js (73KB) como chunks próprios (importados por vistas lazy de rota). Nada a fazer.
 - [ ] (P3) Reduzir o chunk index (304KB) movendo dados estáticos para imports dinâmicos onde aplicável — ficheiros: src/router, features — validação: build; index < 300KB gzip menor.
 - [ ] (P4) Rever qualidade/limite de `compressImage` para fotos do diário (memória IndexedDB) — ficheiros: src/utils/image.ts — validação: blob resultante < 300KB num teste.
-- [ ] (P4) Indexar consultas Dexie usadas (plantings por status, journal por plantingId) — ficheiros: src/lib/db/dexie.ts — validação: schema com índices; testes de repo passam.
+- [x] (P4) Indexar consultas Dexie usadas (plantings por status, journal por plantingId) — ficheiros: src/lib/db/dexie.ts — validação: schema com índices; testes de repo passam. ✓ Já indexado: plantings: 'id, plantSlug, status, updatedAt' e journal: 'id, plantingId, createdAt'. Índices já cobrem as consultas. Nada a fazer.
 - [ ] (P4) Virtualizar/paginação na lista do catálogo (36+ plantas) se houver jank — ficheiros: src/features/catalog/CatalogView.vue — validação: lista renderiza sem custo O(n) pesado; build OK.
 - [ ] (P4) Memoizar pesquisa do catálogo (normalização de acentos) com computed/índice — ficheiros: src/features/catalog — validação: pesquisa não recalcula tudo a cada tecla (revisão de código).
 - [ ] (P4) Pré-carregar (prefetch) a rota /desafio a partir do onboarding — ficheiros: router/onboarding — validação: build; chunk do desafio com modulepreload.
@@ -49,7 +49,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P3) Centralizar tipos de domínio repetidos e remover duplicação entre catalog.ts e models.ts — ficheiros: src/types/* — validação: typecheck OK; sem tipos duplicados. ✓ Verificado: zero nomes de tipo em comum entre models.ts (domínio do utilizador) e catalog.ts (catálogo estático). Domínios distintos, sem duplicação a remover.
 - [x] (P3) Adicionar `.editorconfig` e config Prettier alinhada com regras do ESLint — ficheiros: raiz — validação: formatação consistente; lint não conflitua. ✓ Feito: .editorconfig (2 espaços, LF, utf-8) + .prettierrc.json (sem semi, aspas simples, trailing comma all) a espelhar o estilo do código. Lint continua a 0.
 - [ ] (P4) Adicionar workflow de PR preview/typecheck separado do deploy — ficheiros: .github/workflows — validação: workflow válido (`gh workflow view`).
-- [ ] (P4) Documentar variáveis de ambiente e cloud opcional no README/.env.example coerentes — ficheiros: README.md, .env.example — validação: chaves coincidem.
+- [x] (P4) Documentar variáveis de ambiente e cloud opcional no README/.env.example coerentes — ficheiros: README.md, .env.example — validação: chaves coincidem. ✓ Verificado: README e .env.example partilham exatamente as mesmas 4 chaves (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, KINDWISE_API_KEY, OPENAI_API_KEY). Coerentes.
 - [ ] (P5) Adicionar cobertura de testes (vitest run --coverage) e badge/relatório — ficheiros: vitest.config.ts — validação: `npm run test -- --coverage` gera relatório.
 
 ## Arquivo (ciclos concluídos)
