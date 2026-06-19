@@ -3,6 +3,21 @@ import { setActivePinia, createPinia } from 'pinia'
 import { useSettingsStore, sanitizeZone } from '@/stores/settings'
 import { CLIMATE_ZONES } from '@/data/calendar'
 
+describe('settings — load e tema', () => {
+  beforeEach(() => setActivePinia(createPinia()))
+
+  it('load() aplica defaults, marca loaded e não rebenta com applyTheme', async () => {
+    const settings = useSettingsStore()
+    expect(settings.loaded).toBe(false)
+    await settings.load()
+    expect(settings.loaded).toBe(true)
+    expect(settings.state.zoneCode).toBe('litoral_norte') // default
+    expect(settings.state.onboardingComplete).toBe(false)
+    // applyTheme usa document/matchMedia (polyfill em setup) — não deve lançar
+    expect(() => settings.applyTheme()).not.toThrow()
+  })
+})
+
 describe('settings — validação de zona', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
