@@ -33,7 +33,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) `v-memo` na lista de resultados do catálogo — ficheiros: src/features/catalog/CatalogView.vue — validação: build; lista não re-renderiza sem mudança. ✓ Feito: v-memo=[slug, sowable] nos PlantCard — saltam re-render quando nada muda. Build OK.
 - [x] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão. ✓ Verificado: já está num computed (recomputa só quando plantings/settings mudam). Nada a alterar.
 - [ ] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível.
-- [ ] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map.
+- [x] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map. ✓ Verificado: globPatterns (js,css,html,svg,png,woff2) não inclui .map e o build não gera sourcemaps — precache já limpo. Nada a alterar.
 - [ ] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão.
 - [ ] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado.
 - [x] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão. ✓ Verificado: searchBlob é construído uma vez (fora do computed de results); o computed só faz get().includes(). Nada a alterar.
@@ -46,7 +46,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Adicionar LICENSE (decidir licença; por defeito propor MIT) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: LICENSE MIT (2026 GrowGreens) — o dono pode trocar se preferir outra.
 - [x] (P4) Tipar `Toast['kind']` e exportar o tipo do ui store — ficheiros: src/stores/ui.ts — validação: typecheck. ✓ Feito: tipo `ToastKind` exportado e usado em Toast/toast(). TC OK.
 - [x] (P4) Templates de issue/PR em .github/ — ficheiros: .github/ — validação: ficheiros válidos. ✓ Feito: ISSUE_TEMPLATE (bug, feature) + pull_request_template.md com checklist de qualidade.
-- [ ] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde.
+- [x] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde. ✓ Feito: +noUnusedLocals/Parameters, noImplicitReturns, noFallthroughCasesInSwitch. Apanhou e corrigiu 2 reais: param unitIndex não usado e guarda do router sem return. TC verde.
 - [x] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage. ✓ Verificado: .gitignore inclui dist e coverage; git status limpo após build/coverage.
 - [ ] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente.
 - [x] (P5) Verificar/atualizar `description` e `keywords` no package.json — ficheiros: package.json — validação: campos coerentes. ✓ Feito: adicionados keywords (horticultura, pwa, vue, local-first, portugal, microgreens); description já coerente.

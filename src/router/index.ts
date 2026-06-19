@@ -77,4 +77,5 @@ router.beforeEach((to) => {
   if (settings.state.onboardingComplete && to.name === 'onboarding') {
     return { name: 'home' }
   }
+  return true
 })

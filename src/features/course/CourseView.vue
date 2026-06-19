@@ -12,7 +12,7 @@ const progress = useProgressStore()
 const done = computed(() => new Set(progress.state.completedLessons))
 const overall = computed(() => Math.round((done.value.size / LESSONS.length) * 100))
 
-function lessonState(unitIndex: number, lessonId: string): 'done' | 'current' | 'locked' {
+function lessonState(_unitIndex: number, lessonId: string): 'done' | 'current' | 'locked' {
   if (done.value.has(lessonId)) return 'done'
   // primeira lição não concluída em ordem é a "atual"
   for (const u of COURSE_UNITS) {
