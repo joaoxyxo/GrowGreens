@@ -26,7 +26,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'Ler o teu espaço e dar à planta a luz que precisa.',
     emoji: '☀️',
     color: 'sun',
-    lessonIds: ['l3-1', 'l3-2'],
+    lessonIds: ['l3-1', 'l3-2', 'l3-3'],
   },
   {
     id: 'u4',
@@ -274,6 +274,41 @@ export const LESSONS: Lesson[] = [
         explanation: 'Falso — é sinal de falta de luz. Aproxima-a da janela ou de uma luz.',
       },
       { kind: 'summary', bullets: ['Caule comprido e pálido = pouca luz.', 'No inverno de Aveiro, pode ser preciso luz de apoio.'] },
+    ],
+  },
+  {
+    id: 'l3-3',
+    unitId: 'u3',
+    title: 'Planear a horta',
+    subtitle: 'Revisão: espaço, sucessão e vizinhança.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🗺️',
+        title: 'Começa pelo espaço e pela luz',
+        body: 'Antes de semear, vê quanto sol tem cada zona e que espaço cada planta precisa. Folhas e ervas dão-se em meia-sombra; frutos (tomate, pepino) querem sol pleno.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🤝',
+        title: 'Sucessão e boas vizinhanças',
+        body: 'Semeia culturas rápidas (alface, rúcula) em sucessão, de poucas em poucas semanas. Junta boas companheiras (manjericão + tomate) e separa as más (funcho à parte).',
+      },
+      {
+        kind: 'choice',
+        question: 'Onde plantarias o tomate?',
+        options: ['Num canto à sombra', 'No sítio com mais sol pleno', 'Junto ao funcho'],
+        correctIndex: 1,
+        explanation: 'O tomate é uma planta de fruto: quer sol pleno. O funcho é mau companheiro de quase tudo.',
+      },
+      {
+        kind: 'order',
+        title: 'Ordena os passos de planeamento',
+        items: ['Semear/transplantar', 'Avaliar sol e espaço', 'Escolher culturas da época', 'Marcar boas/más vizinhanças'],
+        correctOrder: [1, 2, 3, 0],
+      },
+      { kind: 'summary', bullets: ['Primeiro o sol e o espaço.', 'Culturas da época + sucessão.', 'Boas vizinhanças juntas; funcho à parte.'] },
     ],
   },
   {

@@ -7,10 +7,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Conteúdo
 - [x] (P3) Adicionar 2-3 culturas ao catálogo (couve-chinesa/pak-choi, aipo, malagueta) com schema completo + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (couve-chinesa, aipo, malagueta com toxicNote) + calendário → 42 plantas. data-integrity + 97 testes.
 - [x] (P3) Adicionar receita que combina várias colheitas (ex.: "sopa da horta") — ficheiros: src/data/recipes.ts — validação: data-integrity; plants[] válidos. ✓ Feito: receita 'sopa-da-horta' ligada a 7 culturas (cebola, alho-francês, batata, cenoura, couve, acelga, feijão-verde). data-integrity verde.
-- [ ] (P4) Glossário: +termos (rega por capilaridade, sacha, amontoa, tutoragem) — ficheiros: src/data/glossary.ts — validação: build; termos presentes.
-- [ ] (P4) Saúde: adicionar `caution` onde aplicável (oxalatos em espinafre/acelga; nitratos em folhas) — ficheiros: src/data/health.ts — validação: build; campo caution presente.
-- [ ] (P4) Microgreens: nota de segurança (evitar microgreens de solanáceas/feijão — tóxicos) — ficheiros: src/data/microgreens.ts ou troubleshoot — validação: build; texto presente.
-- [ ] (P4) Curso: lição/quiz de revisão de planeamento da horta — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente".
+- [x] (P4) Glossário: +termos (rega por capilaridade, sacha, amontoa, tutoragem) — ficheiros: src/data/glossary.ts — validação: build; termos presentes. ✓ Feito: +4 termos (rega por capilaridade, sachar, amontoa, tutoragem).
+- [x] (P4) Saúde: adicionar `caution` onde aplicável (oxalatos em espinafre/acelga; nitratos em folhas) — ficheiros: src/data/health.ts — validação: build; campo caution presente. ✓ Feito: caution nas folhas verdes (oxalatos/nitratos); HealthDetailView já o mostra.
+- [x] (P4) Microgreens: nota de segurança (evitar microgreens de solanáceas/feijão — tóxicos) — ficheiros: src/data/microgreens.ts ou troubleshoot — validação: build; texto presente. ✓ Feito: aviso de segurança no ChallengeView (só variedades comestíveis; evitar solanáceas/feijão).
+- [x] (P4) Curso: lição/quiz de revisão de planeamento da horta — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente". ✓ Feito: lição l3-3 "Planear a horta" (conceitos + choice + order). data-integrity verde.
 - [ ] (P5) Pragas: detalhar tratamento biológico (auxiliares: joaninhas, crisopas) — ficheiros: src/data/pestsDiseases.ts — validação: build.
 - [ ] (P5) Troubleshoot: referência cruzada de sintomas para pragas/doenças por slug — ficheiros: src/data/troubleshoot.ts (+tipo) — validação: build; refs válidas.
 - [ ] (P5) Recomendações: mensagem amigável quando nada é semeável no mês — ficheiros: src/features/home ou recommend — validação: build; estado tratado.
