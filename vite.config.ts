@@ -59,6 +59,17 @@ export default defineConfig(({ command }) => {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Separa as dependências (raramente mudam) num chunk próprio: reduz o
+        // chunk de entrada da app e melhora o cache do browser entre deploys.
+        manualChunks(id) {
+          if (id.includes('node_modules')) return 'vendor'
+        },
+      },
+    },
+  },
   // Porta dedicada para não colidir com outras apps locais (ex.: a app de poker no 5173).
   server: { port: 5390, strictPort: true },
   preview: { port: 5390, strictPort: true },
