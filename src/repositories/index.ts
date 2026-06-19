@@ -24,14 +24,17 @@ export const plantingsRepo = {
     wateringEveryDays: number
   }): Promise<Planting> {
     const now = todayISO()
+    // Saneamento: nome com fallback e intervalo de rega válido (≥ 1 dia).
+    const nickname = data.nickname.trim() || data.plantSlug
+    const wateringEveryDays = Math.max(1, Math.round(data.wateringEveryDays) || 1)
     const planting: Planting = {
       id: newId(),
       plantSlug: data.plantSlug,
-      nickname: data.nickname,
+      nickname,
       location: data.location,
       sownAt: data.sownAt ?? now,
       status: 'ativa',
-      wateringEveryDays: data.wateringEveryDays,
+      wateringEveryDays,
       createdAt: now,
       updatedAt: now,
     }
@@ -41,13 +44,13 @@ export const plantingsRepo = {
       plantingId: planting.id,
       type: 'rega',
       label: `Regar ${planting.nickname}`,
-      dueAt: addDaysISO(now, data.wateringEveryDays),
-      recurrenceDays: data.wateringEveryDays,
+      dueAt: addDaysISO(now, wateringEveryDays),
+      recurrenceDays: wateringEveryDays,
     })
     return planting
   },
   async update(id: string, patch: Partial<Planting>) {
-    await db.transaction('rw', db.plantings, db.reminders, async () => {
+    await db.transaction('rw', db.plantings, db.reminders, db.journal, async () => {
       await db.plantings.update(id, { ...patch, updatedAt: todayISO() })
       // Planta colhida ou perdida: já não faz sentido continuar a lembrar de a regar.
       if (patch.status === 'colhida' || patch.status === 'perdida') {
@@ -55,6 +58,16 @@ export const plantingsRepo = {
         for (const r of pending) {
           if (!r.done) await db.reminders.update(r.id, { done: true, recurrenceDays: undefined })
         }
+      }
+      // Colheita: regista automaticamente um marco no diário.
+      if (patch.status === 'colhida') {
+        await db.journal.add({
+          id: newId(),
+          plantingId: id,
+          type: 'colheita',
+          note: 'Colheita registada. 🧺',
+          createdAt: new Date().toISOString(),
+        })
       }
     })
   },

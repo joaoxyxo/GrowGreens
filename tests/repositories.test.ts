@@ -88,6 +88,17 @@ describe('repositórios (local-first)', () => {
     expect(bed.cols).toBeGreaterThanOrEqual(1)
   })
 
+  it('saneia nickname vazio e intervalo de rega inválido ao criar', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'rucula',
+      nickname: '   ',
+      location: 'varanda',
+      wateringEveryDays: 0,
+    })
+    expect(p.nickname).toBe('rucula') // fallback para o slug
+    expect(p.wateringEveryDays).toBeGreaterThanOrEqual(1)
+  })
+
   it('marcar planta como colhida conclui os lembretes pendentes', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'alface',
@@ -100,6 +111,26 @@ describe('repositórios (local-first)', () => {
     await plantingsRepo.update(p.id, { status: 'colhida' })
     pendentes = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
     expect(pendentes.length).toBe(0)
+  })
+
+  it('marcar planta como colhida regista um marco no diário', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'rabanete',
+      nickname: 'Rabanetes',
+      location: 'parapeito',
+      wateringEveryDays: 2,
+    })
+    await plantingsRepo.update(p.id, { status: 'colhida' })
+    const journal = await db.journal.where('plantingId').equals(p.id).toArray()
+    expect(journal.some((e) => e.type === 'colheita')).toBe(true)
+  })
+
+  it('challengeRepo.reset apaga o run', async () => {
+    const run = await challengeRepo.start('rabanete')
+    await challengeRepo.completeDay(run.id, 0)
+    await challengeRepo.reset(run.id)
+    expect(await challengeRepo.get(run.id)).toBeUndefined()
+    expect(await challengeRepo.current()).toBeUndefined()
   })
 
   it('remover planta apaga diário e lembretes', async () => {

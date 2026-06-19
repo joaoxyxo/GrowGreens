@@ -23,10 +23,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) Testar `wateringAdvice` (composables/useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: tests/weather.test.ts (chuva hoje/amanhã, calor, dia ameno, vazio).
 - [ ] (P4) Garantir que concluir a mesma lição não duplica XP nem o registo — ficheiros: src/features/course/LessonView.vue, stores/progress.ts — validação: teste de idempotência.
 - [ ] (P4) Lembrete de adubação opcional ao criar planta (com base em feedingNotes/categoria) — ficheiros: src/repositories/index.ts — validação: teste cria lembrete 'aduba'.
-- [ ] (P4) Validar `nickname` não vazio e `wateringEveryDays > 0` ao criar/editar planta — ficheiros: src/repositories/index.ts, features/garden — validação: teste de limites.
-- [ ] (P4) Testar `challengeRepo.reset` limpa run e fotos — ficheiros: tests/repositories.test.ts — validação: após reset, current() não devolve o run.
+- [x] (P4) Validar `nickname` não vazio e `wateringEveryDays > 0` ao criar/editar planta — ficheiros: src/repositories/index.ts, features/garden — validação: teste de limites. ✓ Feito: create saneia nickname (fallback p/ slug) e clampa wateringEveryDays≥1; teste em repositories.test.ts.
+- [x] (P4) Testar `challengeRepo.reset` limpa run e fotos — ficheiros: tests/repositories.test.ts — validação: após reset, current() não devolve o run. ✓ Feito: teste confirma que após reset, get() e current() devolvem undefined.
 - [ ] (P5) Conquista 'estudioso'/'constante' — confirmar trigger e cobrir com teste de progress store — ficheiros: tests/ — validação: teste de unlock por contagem/streak.
-- [ ] (P5) Marcar planta colhida cria entrada de diário 'colheita' automática — ficheiros: src/repositories/index.ts — validação: teste; diário tem evento de colheita.
+- [x] (P5) Marcar planta colhida cria entrada de diário 'colheita' automática — ficheiros: src/repositories/index.ts — validação: teste; diário tem evento de colheita. ✓ Feito: update regista um marco 'colheita' no diário (na mesma transação); teste verde.
 
 ## Performance
 - [ ] (P4) `loading="lazy"` em imagens de diário/linha do tempo de fotos — ficheiros: features/garden, microgreens — validação: build; atributo presente.
