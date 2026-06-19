@@ -70,13 +70,21 @@ export const plantingsRepo = {
           if (!r.done) await db.reminders.update(r.id, { done: true, recurrenceDays: undefined })
         }
       }
-      // Colheita: regista automaticamente um marco no diário.
+      // Marco automático no diário ao mudar de estado.
       if (patch.status === 'colhida') {
         await db.journal.add({
           id: newId(),
           plantingId: id,
           type: 'colheita',
           note: 'Colheita registada. 🧺',
+          createdAt: new Date().toISOString(),
+        })
+      } else if (patch.status === 'perdida') {
+        await db.journal.add({
+          id: newId(),
+          plantingId: id,
+          type: 'nota',
+          note: 'Planta dada como perdida.',
           createdAt: new Date().toISOString(),
         })
       }
@@ -101,6 +109,9 @@ export const journalRepo = {
     note: string
     photo?: Blob
   }): Promise<JournalEntry> {
+    // Garante que a planta existe antes de registar no diário (integridade).
+    const planting = await db.plantings.get(data.plantingId)
+    if (!planting) throw new Error(`Planta inexistente: ${data.plantingId}`)
     const entry: JournalEntry = {
       id: newId(),
       plantingId: data.plantingId,
@@ -159,6 +170,10 @@ export const remindersRepo = {
     } else {
       await db.reminders.update(id, { done: true })
     }
+  },
+  // Adia um lembrete por `days` dias a partir de hoje (reativa-o).
+  async snooze(id: string, days: number) {
+    await db.reminders.update(id, { dueAt: addDaysISO(todayISO(), Math.max(1, days)), done: false })
   },
   // Marca todos os lembretes pendentes de uma planta como feitos (não reagenda).
   async completeAllForPlanting(plantingId: string) {
