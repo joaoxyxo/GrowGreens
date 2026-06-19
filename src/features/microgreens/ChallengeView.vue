@@ -14,7 +14,6 @@ import { daysSince } from '@/utils/date'
 import { computeUnlockedDay, challengeDayState } from '@/utils/challenge'
 import { compressImage } from '@/utils/image'
 import { safe } from '@/utils/safe'
-import { buildAchievementCard, shareOrDownload } from '@/utils/share'
 
 const progress = useProgressStore()
 const ui = useUiStore()
@@ -103,6 +102,8 @@ function resetChallenge() {
 }
 
 async function shareHarvest() {
+  // Lazy-load: o código de canvas/partilha só é carregado ao partilhar.
+  const { buildAchievementCard, shareOrDownload } = await import('@/utils/share')
   const card = await buildAchievementCard({
     title: 'Cultivei microgreens em 7 dias!',
     subtitle: `${variety.value?.name ?? 'Microgreens'} · da semente ao prato`,
