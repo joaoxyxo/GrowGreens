@@ -20,7 +20,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) Testar `estimateStage` (utils/growth) — fases por dias decorridos — ficheiros: tests/growth.test.ts — validação: novo teste verde. ✓ Feito: tests/growth.test.ts cobre estimateStage (germinação→colheita). 76 testes.
 - [x] (P3) Testar `recommendPlants` (utils/recommend) — respeita espaço/zona/limite — ficheiros: tests/recommend.test.ts — validação: novo teste verde. ✓ Feito: tests/recommend.test.ts (limite, objetos válidos, só-interior sem exterior no topo).
 - [x] (P3) Testar `plantSowableThisMonth` e `calendarForPlant` — ficheiros: tests/calendar.test.ts — validação: novo teste verde. ✓ Feito: tests/calendar.test.ts (filtro por planta, shift de zona, sementeira do mês).
-- [ ] (P3) Testar `wateringAdvice` (composables/useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde.
+- [x] (P3) Testar `wateringAdvice` (composables/useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: tests/weather.test.ts (chuva hoje/amanhã, calor, dia ameno, vazio).
 - [ ] (P4) Garantir que concluir a mesma lição não duplica XP nem o registo — ficheiros: src/features/course/LessonView.vue, stores/progress.ts — validação: teste de idempotência.
 - [ ] (P4) Lembrete de adubação opcional ao criar planta (com base em feedingNotes/categoria) — ficheiros: src/repositories/index.ts — validação: teste cria lembrete 'aduba'.
 - [ ] (P4) Validar `nickname` não vazio e `wateringEveryDays > 0` ao criar/editar planta — ficheiros: src/repositories/index.ts, features/garden — validação: teste de limites.
@@ -50,7 +50,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe.
 - [ ] (P5) Normalizar mensagens de toast (um helper único de texto de conquista) — ficheiros: stores/ui, features — validação: revisão; sem strings duplicadas.
 - [ ] (P5) Adicionar script `format` (prettier --write) ao package.json — ficheiros: package.json — validação: `npm run format` corre (se prettier instalado) ou documentado.
-- [ ] (P5) Verificação de dados como teste: cada planta tem stages ordenadas e durações coerentes — ficheiros: tests/data-integrity.test.ts — validação: novo teste verde.
+- [x] (P5) Verificação de dados como teste: cada planta tem stages ordenadas e durações coerentes — ficheiros: tests/data-integrity.test.ts — validação: novo teste verde. ✓ Feito: teste garante durationDays com min ≤ max e ≥ 0 em todas as fases. 81 testes verdes.
 
 ## Arquivo (ciclos concluídos)
 

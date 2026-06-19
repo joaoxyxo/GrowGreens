@@ -55,6 +55,17 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('as fases de cada planta têm durações coerentes (min ≤ max)', () => {
+    for (const p of PLANTS) {
+      for (const s of p.stages) {
+        if (s.durationDays) {
+          expect(s.durationDays[0], `${p.slug}/${s.stage}`).toBeLessThanOrEqual(s.durationDays[1])
+          expect(s.durationDays[0], `${p.slug}/${s.stage}`).toBeGreaterThanOrEqual(0)
+        }
+      }
+    }
+  })
+
   it('o calendário só refere plantas existentes e meses válidos', () => {
     for (const e of CALENDAR) {
       expect(PLANTS_BY_SLUG[e.plant], e.plant).toBeTruthy()
