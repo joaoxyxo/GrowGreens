@@ -46,6 +46,10 @@ npm run lint          # ESLint
 
 Lógica de domínio (utils, stores, repositórios) coberta por testes unitários (Vitest) e testes E2E (Playwright). A integridade dos dados do catálogo é validada em `tests/data-integrity.test.ts`. Corre `npm run test:coverage` para o relatório de cobertura (mínimos configurados em `vitest.config.ts`).
 
+## Tamanho do bundle
+
+Referência (build de produção, gzip): **vendor** (Vue/Pinia/Router/Dexie/i18n) ~102 KB · **app** (entrada) ~9 KB · catálogo (`plants`, lazy) ~21 KB. As dependências ficam num chunk `vendor` separado (cacheável entre deploys) via `manualChunks`; as rotas e os dados grandes são lazy-loaded.
+
 ## Arquitetura
 
 Visão geral das camadas e do fluxo de dados em [`docs/ARQUITETURA.md`](./docs/ARQUITETURA.md).

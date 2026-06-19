@@ -34,10 +34,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Atributos `width`/`height` explícitos nas imagens de tamanho fixo — ficheiros: features/* — validação: build.
 - [ ] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build.
 - [ ] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build.
-- [ ] (P5) Confirmar manualChunks coerente com deps atuais — ficheiros: vite.config.ts — validação: build.
+- [x] (P5) Confirmar manualChunks coerente com deps atuais — ficheiros: vite.config.ts — validação: build. ✓ Verificado: build gera 1 chunk vendor (~294KB/102KB gzip) com todos os node_modules; sem duplicação nem avisos. Coerente.
 - [ ] (P5) Evitar watchers profundos desnecessários (stores) — ficheiros: stores — validação: revisão.
-- [ ] (P5) Medir e registar tamanho do bundle no README — ficheiros: README.md — validação: números coerentes.
-- [ ] (P5) Confirmar tree-shaking do vue-i18n (só o necessário) — ficheiros: i18n — validação: build.
+- [x] (P5) Medir e registar tamanho do bundle no README — ficheiros: README.md — validação: números coerentes. ✓ Feito: secção 'Tamanho do bundle' (vendor ~102KB gzip, app ~9KB, plants ~21KB).
+- [x] (P5) Confirmar tree-shaking do vue-i18n (só o necessário) — ficheiros: i18n — validação: build. ✓ Verificado: createI18n com legacy:false (Composition API only — build tree-shaken); incluído no vendor. Nada a alterar.
 - [ ] (P5) Revisão de transições/`will-change` só onde necessário — ficheiros: components/ui — validação: revisão.
 
 ## Organização
