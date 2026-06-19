@@ -160,6 +160,13 @@ export const remindersRepo = {
       await db.reminders.update(id, { done: true })
     }
   },
+  // Marca todos os lembretes pendentes de uma planta como feitos (não reagenda).
+  async completeAllForPlanting(plantingId: string) {
+    const reminders = await db.reminders.where('plantingId').equals(plantingId).toArray()
+    await Promise.all(
+      reminders.filter((r) => !r.done).map((r) => db.reminders.update(r.id, { done: true, recurrenceDays: undefined })),
+    )
+  },
   remove: (id: string) => db.reminders.delete(id),
 }
 
@@ -224,6 +231,11 @@ export const bedsRepo = {
   async setCell(id: string, key: string, cell: BedCell) {
     const bed = await db.beds.get(id)
     if (!bed) return
+    // Ignora chaves fora da grelha (formato "linha-coluna" dentro de rows/cols).
+    const [r, c] = key.split('-').map(Number)
+    if (!Number.isInteger(r) || !Number.isInteger(c) || r < 0 || c < 0 || r >= bed.rows || c >= bed.cols) {
+      return
+    }
     bed.cells[key] = cell
     await db.beds.update(id, { cells: bed.cells, updatedAt: todayISO() })
   },
