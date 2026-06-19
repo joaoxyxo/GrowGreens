@@ -82,6 +82,30 @@ describe('repositórios (local-first)', () => {
     expect(Object.keys(saved!.cells)).toHaveLength(1)
   })
 
+  it('marca todos os lembretes de uma planta como feitos', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'tomate',
+      nickname: 'Tomateiro',
+      location: 'varanda',
+      wateringEveryDays: 2,
+    })
+    // tomate cria lembrete de rega + adubação (ambos pendentes)
+    let pend = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pend.length).toBeGreaterThanOrEqual(2)
+    await remindersRepo.completeAllForPlanting(p.id)
+    pend = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pend).toHaveLength(0)
+  })
+
+  it('planeador: setCell ignora chaves fora da grelha', async () => {
+    const bed = await bedsRepo.create({ name: 'C', kind: 'canteiro', rows: 3, cols: 3 })
+    await bedsRepo.setCell(bed.id, '5-5', { plantSlug: 'alface' }) // fora da grelha 3x3
+    await bedsRepo.setCell(bed.id, '1-1', { plantSlug: 'tomate' }) // válida
+    const saved = await bedsRepo.get(bed.id)
+    expect(saved!.cells['5-5']).toBeUndefined()
+    expect(saved!.cells['1-1']).toBeTruthy()
+  })
+
   it('planeador: limita o tamanho da grelha (1-12)', async () => {
     const bed = await bedsRepo.create({ name: 'X', kind: 'vaso', rows: 99, cols: 0 })
     expect(bed.rows).toBeLessThanOrEqual(12)

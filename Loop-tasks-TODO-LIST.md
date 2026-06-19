@@ -24,9 +24,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste de componente PlantCard (renderiza nome/emoji/badges) — ficheiros: tests/ — validação: mount passa. ✓ Feito: tests/components.test.ts monta PlantCard (RouterLink stubbed) e verifica nome + emoji.
 - [x] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal. ✓ Feito: utils/backup.ts exportData() (inclui plantings/journal/reminders/beds/meta) + tests; ProfileView passa a usar o backup COMPLETO (a export inline antiga perdia a horta).
 - [x] (P4) Apagar todos os dados (reset) com confirmação — ficheiros: features/profile, lib/db — validação: limpa tabelas; teste de repo. ✓ Feito: clearAllData() (transação, todas as tabelas) + teste; botão 'Apagar todos os dados' na ProfileView com confirm.
-- [ ] (P5) Marcar todos os lembretes de uma planta como feitos — ficheiros: src/repositories/index.ts — validação: teste.
+- [x] (P5) Marcar todos os lembretes de uma planta como feitos — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: remindersRepo.completeAllForPlanting() + teste (todos os pendentes ficam done).
 - [x] (P5) `estimateStage` em planta sem durações nas fases (edge) — ficheiros: tests/growth.test.ts — validação: não rebenta; devolve fase válida. ✓ Feito: teste com fases sem durationDays — devolve índice/label válidos sem rebentar.
-- [ ] (P5) Validar `setCell` do planeador ignora chaves fora da grelha — ficheiros: src/repositories/index.ts — validação: teste.
+- [x] (P5) Validar `setCell` do planeador ignora chaves fora da grelha — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: setCell rejeita chaves fora de rows/cols; teste confirma 5-5 ignorada e 1-1 aceite.
 
 ## Performance
 - [x] (P4) `loading="lazy"` nas restantes imagens (DiagnosisView preview, timeline microgreens) — ficheiros: features/diagnosis, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" na preview da DiagnosisView (microgreens não tem <img> de timeline). Build OK.
