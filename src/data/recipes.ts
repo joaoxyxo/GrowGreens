@@ -273,6 +273,29 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['alho-frances', 'tomilho'],
   },
+  {
+    slug: 'sopa-da-horta',
+    title: 'Sopa da horta',
+    emoji: '🍲',
+    description: 'O destino perfeito para um pouco de tudo o que colheres — aproveita o que tiveres à mão.',
+    prepMinutes: 40,
+    difficulty: 'facil',
+    season: ['outono', 'inverno', 'primavera'],
+    ingredients: [
+      '1 cebola e 1 alho-francês',
+      '1 batata e 1 cenoura',
+      'Um punhado de couve, acelga ou espinafre',
+      'Feijão-verde ou ervilhas (opcional)',
+      'Azeite, sal, água ou caldo',
+    ],
+    steps: [
+      'Refoga a cebola e o alho-francês em azeite.',
+      'Junta a batata, a cenoura e água a cobrir; coze até macio.',
+      'Tritura a base; junta a folha picada e as leguminosas e coze mais 5-10 min.',
+      'Tempera e serve com um fio de azeite.',
+    ],
+    plants: ['cebola', 'alho-frances', 'batata', 'cenoura', 'couve-galega', 'acelga', 'feijao-verde'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

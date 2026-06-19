@@ -6,7 +6,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Conteúdo
 - [x] (P3) Adicionar 2-3 culturas ao catálogo (couve-chinesa/pak-choi, aipo, malagueta) com schema completo + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (couve-chinesa, aipo, malagueta com toxicNote) + calendário → 42 plantas. data-integrity + 97 testes.
-- [ ] (P3) Adicionar receita que combina várias colheitas (ex.: "sopa da horta") — ficheiros: src/data/recipes.ts — validação: data-integrity; plants[] válidos.
+- [x] (P3) Adicionar receita que combina várias colheitas (ex.: "sopa da horta") — ficheiros: src/data/recipes.ts — validação: data-integrity; plants[] válidos. ✓ Feito: receita 'sopa-da-horta' ligada a 7 culturas (cebola, alho-francês, batata, cenoura, couve, acelga, feijão-verde). data-integrity verde.
 - [ ] (P4) Glossário: +termos (rega por capilaridade, sacha, amontoa, tutoragem) — ficheiros: src/data/glossary.ts — validação: build; termos presentes.
 - [ ] (P4) Saúde: adicionar `caution` onde aplicável (oxalatos em espinafre/acelga; nitratos em folhas) — ficheiros: src/data/health.ts — validação: build; campo caution presente.
 - [ ] (P4) Microgreens: nota de segurança (evitar microgreens de solanáceas/feijão — tóxicos) — ficheiros: src/data/microgreens.ts ou troubleshoot — validação: build; texto presente.
@@ -19,7 +19,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Regras de Negócio
 - [x] (P3) Testar o `ui` store (toast adiciona, dismiss remove, ids únicos) — ficheiros: tests/ui.test.ts — validação: novo teste verde. ✓ Feito: tests/ui.test.ts (adicionar, kind default, ids únicos, dismiss). 92 testes.
 - [x] (P3) Limitar nº de toasts visíveis em simultâneo (ex.: máx. 3) + teste — ficheiros: src/stores/ui.ts, tests/ — validação: teste de limite. ✓ Feito: cap MAX_TOASTS=3 (descarta os mais antigos); teste confirma que ficam os 3 mais recentes.
-- [ ] (P3) Testar `settings` store: load aplica defaults e applyTheme não rebenta — ficheiros: tests/settings.test.ts — validação: teste verde.
+- [x] (P3) Testar `settings` store: load aplica defaults e applyTheme não rebenta — ficheiros: tests/settings.test.ts — validação: teste verde. ✓ Feito: teste de load() (defaults, loaded=true) e applyTheme() (não lança). 98 testes.
 - [x] (P4) Teste de componente BaseButton (disabled bloqueia click; emite click) — ficheiros: tests/ — validação: @vue/test-utils mount passa. ✓ Feito: tests/components.test.ts cobre slot, atributo disabled, reencaminhamento de click e classe da variante.
 - [x] (P4) Teste de componente PlantCard (renderiza nome/emoji/badges) — ficheiros: tests/ — validação: mount passa. ✓ Feito: tests/components.test.ts monta PlantCard (RouterLink stubbed) e verifica nome + emoji.
 - [ ] (P4) Exportar dados do utilizador para JSON (backup local) — ficheiros: src/repositories ou utils, features/profile — validação: gera ficheiro com plantings/journal.
