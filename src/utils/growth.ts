@@ -8,6 +8,16 @@ export function defaultWateringDays(waterNeed: WaterNeed): number {
   return WATERING_DAYS_BY_NEED[waterNeed] ?? 3
 }
 
+/** Duas plantas são boas vizinhas se qualquer uma listar a outra como companheira. */
+export function areCompanions(a: Plant, b: Plant): boolean {
+  return a.companions.includes(b.slug) || b.companions.includes(a.slug)
+}
+
+/** Duas plantas são más vizinhas se qualquer uma listar a outra como antagonista. */
+export function areAntagonists(a: Plant, b: Plant): boolean {
+  return a.antagonists.includes(b.slug) || b.antagonists.includes(a.slug)
+}
+
 const STAGE_LABELS: Record<string, string> = {
   germinacao: 'Germinação',
   plantula: 'Plântula',

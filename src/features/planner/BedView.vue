@@ -11,7 +11,7 @@ import { PLANTS, getPlant } from '@/data/plants'
 import { useUiStore } from '@/stores/ui'
 import { useProgressStore } from '@/stores/progress'
 import { safe } from '@/utils/safe'
-import { defaultWateringDays } from '@/utils/growth'
+import { defaultWateringDays, areCompanions, areAntagonists } from '@/utils/growth'
 import { isOverdue, isDueToday } from '@/utils/date'
 import type { GardenBed, Reminder } from '@/types/models'
 
@@ -77,8 +77,8 @@ function neighborFeedback(key: string, slug: string): { good: string[]; bad: str
     if (!cell) continue
     const np = getPlant(cell.plantSlug)
     if (!np) continue
-    if (plant.companions.includes(np.slug) || np.companions.includes(plant.slug)) good.push(np.name)
-    if (plant.antagonists.includes(np.slug) || np.antagonists.includes(plant.slug)) bad.push(np.name)
+    if (areCompanions(plant, np)) good.push(np.name)
+    if (areAntagonists(plant, np)) bad.push(np.name)
   }
   return { good, bad }
 }

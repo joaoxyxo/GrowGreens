@@ -25,7 +25,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P3) Exportação .ics de lembretes com fuso/àncora corretos — ficheiros: src/features/profile, utils — validação: ficheiro .ics válido (VEVENT) num teste. ✓ Feito: adicionado DTSTAMP (campo obrigatório RFC 5545, UTC) ao buildICS, com stamp parametrizável; tests/ics.test.ts (5 casos). 56 testes verdes. (Eventos de dia inteiro VALUE=DATE são corretos sem TZID.)
 - [x] (P3) Garantir que apagar uma planta remove lembretes e diário em transação (já existe — adicionar teste) — ficheiros: tests/repositories.test.ts — validação: teste cobre cascata. ✓ Já coberto: tests/repositories.test.ts:88 "remover planta apaga diário e lembretes" valida a cascata. Sem alteração necessária.
 - [ ] (P4) Marcar planta como "perdida"/"colhida" atualiza estado e remove lembretes pendentes — ficheiros: src/repositories/index.ts, src/features/garden — validação: teste de transição de estado.
-- [ ] (P4) Avisos de boa/má vizinhança no planeador usam companions/antagonists corretamente — ficheiros: src/features/planner/BedView.vue — validação: teste de função de vizinhança.
+- [x] (P4) Avisos de boa/má vizinhança no planeador usam companions/antagonists corretamente — ficheiros: src/features/planner/BedView.vue — validação: teste de função de vizinhança. ✓ Feito: extraídas areCompanions/areAntagonists (relação simétrica) para utils/growth.ts, usadas no BedView; tests/companions.test.ts (5 casos). 63 testes verdes.
 - [ ] (P5) Sucessão de sementeira: sugerir próxima data para culturas de corte (alface, rúcula) — ficheiros: src/features/calendar ou recommendations — validação: build OK; sugestão aparece.
 
 ## Performance
