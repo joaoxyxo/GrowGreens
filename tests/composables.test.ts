@@ -1,0 +1,39 @@
+import { describe, it, expect } from 'vitest'
+import { mount } from '@vue/test-utils'
+import { weatherTypeInfo } from '@/composables/useWeather'
+import { useOnlineStatus } from '@/composables/useOnlineStatus'
+
+describe('weatherTypeInfo', () => {
+  it('devolve label/emoji para um tipo conhecido', () => {
+    const info = weatherTypeInfo(1)
+    expect(info.label).toBe('Céu limpo')
+    expect(info.emoji).toBeTruthy()
+  })
+
+  it('cai num fallback para tipo desconhecido', () => {
+    const info = weatherTypeInfo(9999)
+    expect(info.label).toBe('—')
+    expect(info.emoji).toBe('🌡️')
+  })
+})
+
+describe('useOnlineStatus', () => {
+  it('expõe o estado online inicial e reage a eventos', async () => {
+    const wrapper = mount({
+      template: '<span>{{ isOnline }}</span>',
+      setup: () => useOnlineStatus(),
+    })
+    // jsdom arranca online
+    expect(typeof wrapper.vm.isOnline).toBe('boolean')
+    expect(wrapper.vm.isOnline).toBe(true)
+
+    // simula ficar offline
+    Object.defineProperty(navigator, 'onLine', { configurable: true, value: false })
+    window.dispatchEvent(new Event('offline'))
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.isOnline).toBe(false)
+
+    // repõe
+    Object.defineProperty(navigator, 'onLine', { configurable: true, value: true })
+  })
+})
