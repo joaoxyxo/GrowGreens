@@ -88,6 +88,20 @@ describe('repositórios (local-first)', () => {
     expect(bed.cols).toBeGreaterThanOrEqual(1)
   })
 
+  it('marcar planta como colhida conclui os lembretes pendentes', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'alface',
+      nickname: 'Alface',
+      location: 'varanda',
+      wateringEveryDays: 3,
+    })
+    let pendentes = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pendentes.length).toBe(1)
+    await plantingsRepo.update(p.id, { status: 'colhida' })
+    pendentes = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pendentes.length).toBe(0)
+  })
+
   it('remover planta apaga diário e lembretes', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'rucula',

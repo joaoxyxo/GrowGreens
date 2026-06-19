@@ -47,7 +47,16 @@ export const plantingsRepo = {
     return planting
   },
   async update(id: string, patch: Partial<Planting>) {
-    await db.plantings.update(id, { ...patch, updatedAt: todayISO() })
+    await db.transaction('rw', db.plantings, db.reminders, async () => {
+      await db.plantings.update(id, { ...patch, updatedAt: todayISO() })
+      // Planta colhida ou perdida: já não faz sentido continuar a lembrar de a regar.
+      if (patch.status === 'colhida' || patch.status === 'perdida') {
+        const pending = await db.reminders.where('plantingId').equals(id).toArray()
+        for (const r of pending) {
+          if (!r.done) await db.reminders.update(r.id, { done: true, recurrenceDays: undefined })
+        }
+      }
+    })
   },
   async remove(id: string) {
     await db.transaction('rw', db.plantings, db.journal, db.reminders, async () => {
