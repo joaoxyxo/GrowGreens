@@ -48,6 +48,13 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('nome científico é binomial e família termina em -aceae', () => {
+    for (const p of PLANTS) {
+      expect(p.scientificName.trim().split(/\s+/).length, `${p.slug}: ${p.scientificName}`).toBeGreaterThanOrEqual(2)
+      expect(p.family, `${p.slug}: ${p.family}`).toMatch(/aceae$/)
+    }
+  })
+
   it('o calendário só refere plantas existentes e meses válidos', () => {
     for (const e of CALENDAR) {
       expect(PLANTS_BY_SLUG[e.plant], e.plant).toBeTruthy()
