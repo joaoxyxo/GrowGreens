@@ -44,7 +44,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'O maior desafio do clima atlântico: a humidade.',
     emoji: '🛡️',
     color: 'flame',
-    lessonIds: ['l5-1', 'l5-2', 'l5-3'],
+    lessonIds: ['l5-1', 'l5-2', 'l5-3', 'l5-4'],
   },
   {
     id: 'u6',
@@ -504,6 +504,39 @@ export const LESSONS: Lesson[] = [
         explanation: 'A humidade a mais acelera o apodrecimento — seca bem antes de guardar.',
       },
       { kind: 'summary', bullets: ['Folhas: lavar, secar e guardar frescas.', 'Raízes: fresco e escuro.', 'Aromáticas: secar ou congelar.'] },
+    ],
+  },
+  {
+    id: 'l5-4',
+    unitId: 'u5',
+    title: 'Rega por capilaridade e drenagem',
+    subtitle: 'Regar por baixo e não encharcar.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🪣',
+        title: 'Regar por baixo (capilaridade)',
+        body: 'Pôr o vaso num prato com água deixa o substrato beber o que precisa, de baixo para cima. Mantém a humidade estável e as folhas secas — menos fungos. Esvazia o prato passado um pouco para não encharcar.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🕳️',
+        title: 'Drenagem é meio caminho',
+        body: 'No clima húmido do litoral, o maior risco é a água parada. Garante furos no fundo do vaso e um substrato leve; raízes encharcadas apodrecem.',
+      },
+      {
+        kind: 'choice',
+        question: 'Qual a vantagem de regar por capilaridade (por baixo)?',
+        options: [
+          'Molha as folhas e arrefece a planta',
+          'Mantém a humidade estável sem molhar as folhas',
+          'Permite regar só uma vez por mês',
+        ],
+        correctIndex: 1,
+        explanation: 'A água sobe pelo substrato; as folhas ficam secas, reduzindo o risco de fungos.',
+      },
+      { kind: 'summary', bullets: ['Capilaridade = regar por baixo, folhas secas.', 'Esvazia o prato para não encharcar.', 'Drenagem e substrato leve evitam apodrecimento.'] },
     ],
   },
 ]
