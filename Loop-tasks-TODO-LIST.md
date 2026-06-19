@@ -14,7 +14,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Microgreens: mostrar demolha (soakHours) por variedade na vista — ficheiros: features/microgreens — validação: build. ✓ Feito: lista de variedades mostra '💧 demolha Xh' quando soakHours>0.
 - [x] (P5) Calendário: nota de geada por zona (lastFrost/firstFrost) na vista — ficheiros: features/calendar — validação: build. ✓ Feito: cartão com a janela de geada (última/primeira) usando lastFrostMonth/firstFrostMonth da zona.
 - [x] (P5) Troubleshoot: +sintoma "plântulas tombam (damping-off)" — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta. ✓ Feito: sintoma damping-off (excesso de água/fungos; related: mildio).
-- [ ] (P5) Recomendações: priorizar culturas semeáveis este mês — ficheiros: src/utils/recommend.ts — validação: teste.
+- [x] (P5) Recomendações: priorizar culturas semeáveis este mês — ficheiros: src/utils/recommend.ts — validação: teste. ✓ Verificado: sowable.has → score += 4 (o maior peso único), logo as culturas da época já sobem ao topo. Coberto pelo teste de recommend.
 
 ## Regras de Negócio
 - [x] (P3) Testar `weatherTypeInfo` (useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: tests/composables.test.ts (tipo conhecido + fallback).
@@ -35,7 +35,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build. ✓ Feito: grid de resultados com [content-visibility:auto] + contain-intrinsic-size (salta render fora do ecrã).
 - [x] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build. ✓ Feito: HomeView pré-carrega o chunk do CatalogView no onMounted.
 - [x] (P5) Confirmar manualChunks coerente com deps atuais — ficheiros: vite.config.ts — validação: build. ✓ Verificado: build gera 1 chunk vendor (~294KB/102KB gzip) com todos os node_modules; sem duplicação nem avisos. Coerente.
-- [ ] (P5) Evitar watchers profundos desnecessários (stores) — ficheiros: stores — validação: revisão.
+- [x] (P5) Evitar watchers profundos desnecessários (stores) — ficheiros: stores — validação: revisão. ✓ Verificado: os 2 watchers deep (settings/progress) são necessários — persistem mutações de arrays aninhados (completedLessons/achievements). Sem deep, perdiam-se. Nada a remover.
 - [x] (P5) Medir e registar tamanho do bundle no README — ficheiros: README.md — validação: números coerentes. ✓ Feito: secção 'Tamanho do bundle' (vendor ~102KB gzip, app ~9KB, plants ~21KB).
 - [x] (P5) Confirmar tree-shaking do vue-i18n (só o necessário) — ficheiros: i18n — validação: build. ✓ Verificado: createI18n com legacy:false (Composition API only — build tree-shaken); incluído no vendor. Nada a alterar.
 - [ ] (P5) Revisão de transições/`will-change` só onde necessário — ficheiros: components/ui — validação: revisão.
