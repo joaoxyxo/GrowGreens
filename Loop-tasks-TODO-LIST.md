@@ -17,9 +17,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Calendário: dica de preparação de solo por estação — ficheiros: src/data/calendar.ts — validação: build.
 
 ## Regras de Negócio
-- [ ] (P4) Teste de componente: EmptyState — ficheiros: tests/ — validação: mount passa.
-- [ ] (P4) Teste de componente: StatChip — ficheiros: tests/ — validação: mount passa.
-- [ ] (P4) Teste de componente: DifficultyDots — ficheiros: tests/ — validação: mount passa.
+- [x] (P4) Teste de componente: EmptyState — ficheiros: tests/ — validação: mount passa. ✓ Feito: emoji/título/descrição.
+- [x] (P4) Teste de componente: StatChip — ficheiros: tests/ — validação: mount passa. ✓ Feito: valor/ícone visíveis; label no title.
+- [x] (P4) Teste de componente: DifficultyDots — ficheiros: tests/ — validação: mount passa. ✓ Feito: nº de pontos preenchidos por dificuldade + label.
 - [ ] (P4) Teste: buildICS escapa vírgulas/; em SUMMARY (RFC) — ficheiros: tests/ics.test.ts — validação: teste.
 - [ ] (P4) `remindersRepo.complete` de não-recorrente marca done=true — ficheiros: tests/ — validação: teste.
 - [ ] (P5) `plantingsRepo.all` exclui 'perdida' (teste do filtro) — ficheiros: tests/ — validação: teste.
@@ -42,7 +42,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Organização
 - [ ] (P4) A11y: skip-link "saltar para o conteúdo" + landmark main — ficheiros: App.vue — validação: revisão.
-- [ ] (P4) Teste de componente: PageHeader — ficheiros: tests/ — validação: mount passa.
+- [x] (P4) Teste de componente: PageHeader — ficheiros: tests/ — validação: mount passa. ✓ Feito: título/subtítulo (router em memória). 120 testes.
 - [ ] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente.
 - [ ] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build.
 - [ ] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação.

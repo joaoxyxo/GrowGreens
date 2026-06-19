@@ -1,10 +1,15 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { createRouter, createMemoryHistory } from 'vue-router'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import PlantCard from '@/components/PlantCard.vue'
 import ProgressBar from '@/components/ui/ProgressBar.vue'
 import Badge from '@/components/ui/Badge.vue'
 import AppCard from '@/components/ui/AppCard.vue'
+import EmptyState from '@/components/ui/EmptyState.vue'
+import StatChip from '@/components/ui/StatChip.vue'
+import DifficultyDots from '@/components/ui/DifficultyDots.vue'
+import PageHeader from '@/components/PageHeader.vue'
 import type { Plant } from '@/types/catalog'
 
 describe('BaseButton', () => {
@@ -57,6 +62,48 @@ describe('AppCard', () => {
   it('renderiza o conteúdo do slot', () => {
     const w = mount(AppCard, { slots: { default: 'Conteúdo' } })
     expect(w.text()).toContain('Conteúdo')
+  })
+})
+
+describe('EmptyState', () => {
+  it('renderiza emoji, título e descrição', () => {
+    const w = mount(EmptyState, { props: { emoji: '🔍', title: 'Sem resultados', description: 'Tenta outra coisa.' } })
+    expect(w.text()).toContain('🔍')
+    expect(w.text()).toContain('Sem resultados')
+    expect(w.text()).toContain('Tenta outra coisa.')
+  })
+})
+
+describe('StatChip', () => {
+  it('mostra valor e ícone; label vai no title', () => {
+    const w = mount(StatChip, { props: { icon: '🔥', value: 7, label: 'dias' } })
+    expect(w.text()).toContain('7')
+    expect(w.text()).toContain('🔥')
+    expect(w.attributes('title')).toBe('dias')
+  })
+})
+
+describe('DifficultyDots', () => {
+  it('preenche o nº certo de pontos por dificuldade', () => {
+    const facil = mount(DifficultyDots, { props: { level: 'facil' } })
+    expect(facil.text()).toContain('Fácil')
+    expect(facil.findAll('.bg-green-500')).toHaveLength(1)
+    const dificil = mount(DifficultyDots, { props: { level: 'dificil' } })
+    expect(dificil.findAll('.bg-green-500')).toHaveLength(3)
+    expect(dificil.text()).toContain('Exigente')
+  })
+})
+
+describe('PageHeader', () => {
+  const router = createRouter({ history: createMemoryHistory(), routes: [{ path: '/', component: { template: '<div/>' } }] })
+
+  it('renderiza título e subtítulo', () => {
+    const w = mount(PageHeader, {
+      props: { title: 'Catálogo', subtitle: 'Descobre' },
+      global: { plugins: [router] },
+    })
+    expect(w.text()).toContain('Catálogo')
+    expect(w.text()).toContain('Descobre')
   })
 })
 
