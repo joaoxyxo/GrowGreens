@@ -13,7 +13,8 @@ import { useProgressStore } from '@/stores/progress'
 import { safe } from '@/utils/safe'
 import { defaultWateringDays, areCompanions, areAntagonists } from '@/utils/growth'
 import { isOverdue, isDueToday } from '@/utils/date'
-import type { GardenBed, Reminder } from '@/types/models'
+import { useReminders } from '@/composables/useReminders'
+import type { GardenBed } from '@/types/models'
 
 const route = useRoute()
 const router = useRouter()
@@ -22,7 +23,7 @@ const progress = useProgressStore()
 
 const id = computed(() => route.params.id as string)
 const bed = useLiveQuery(() => db.beds.get(id.value), undefined)
-const reminders = useLiveQuery(() => db.reminders.toArray(), [] as Reminder[])
+const reminders = useReminders()
 
 // célula selecionada
 const selectedKey = ref<string | null>(null)

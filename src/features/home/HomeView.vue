@@ -5,6 +5,7 @@ import { useSettingsStore } from '@/stores/settings'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { useLiveQuery } from '@/composables/useLiveQuery'
+import { useReminders } from '@/composables/useReminders'
 import { db } from '@/lib/db/dexie'
 import { remindersRepo, plantingsRepo } from '@/repositories'
 import { getPlant } from '@/data/plants'
@@ -21,7 +22,7 @@ const settings = useSettingsStore()
 const progress = useProgressStore()
 const ui = useUiStore()
 
-const reminders = useLiveQuery(() => db.reminders.toArray(), [])
+const reminders = useReminders()
 const plantings = useLiveQuery(() => db.plantings.where('status').equals('ativa').toArray(), [])
 const challenge = useLiveQuery(() => db.challengeRuns.toArray(), [])
 

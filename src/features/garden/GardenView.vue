@@ -6,6 +6,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import EmptyState from '@/components/ui/EmptyState.vue'
 import Badge from '@/components/ui/Badge.vue'
 import { useLiveQuery } from '@/composables/useLiveQuery'
+import { useReminders } from '@/composables/useReminders'
 import { db } from '@/lib/db/dexie'
 import { getPlant } from '@/data/plants'
 import { daysSince, isOverdue, isDueToday } from '@/utils/date'
@@ -21,7 +22,7 @@ const harvested = useLiveQuery(
   () => db.plantings.where('status').equals('colhida').reverse().sortBy('updatedAt'),
   [] as Planting[],
 )
-const reminders = useLiveQuery(() => db.reminders.toArray(), [])
+const reminders = useReminders()
 const showHistory = ref(false)
 
 function waterState(plantingId: string): { label: string; tone: 'green' | 'sky' | 'warning' } {
