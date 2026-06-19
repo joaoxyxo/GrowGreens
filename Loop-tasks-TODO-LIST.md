@@ -29,9 +29,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Validar `setCell` do planeador ignora chaves fora da grelha — ficheiros: src/repositories/index.ts — validação: teste.
 
 ## Performance
-- [ ] (P4) `loading="lazy"` nas restantes imagens (DiagnosisView preview, timeline microgreens) — ficheiros: features/diagnosis, microgreens — validação: build; atributo presente.
+- [x] (P4) `loading="lazy"` nas restantes imagens (DiagnosisView preview, timeline microgreens) — ficheiros: features/diagnosis, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" na preview da DiagnosisView (microgreens não tem <img> de timeline). Build OK.
 - [ ] (P4) `v-memo` na lista de resultados do catálogo — ficheiros: src/features/catalog/CatalogView.vue — validação: build; lista não re-renderiza sem mudança.
-- [ ] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão.
+- [x] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão. ✓ Verificado: já está num computed (recomputa só quando plantings/settings mudam). Nada a alterar.
 - [ ] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível.
 - [ ] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map.
 - [ ] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão.
@@ -47,7 +47,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Tipar `Toast['kind']` e exportar o tipo do ui store — ficheiros: src/stores/ui.ts — validação: typecheck. ✓ Feito: tipo `ToastKind` exportado e usado em Toast/toast(). TC OK.
 - [ ] (P4) Templates de issue/PR em .github/ — ficheiros: .github/ — validação: ficheiros válidos.
 - [ ] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde.
-- [ ] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage.
+- [x] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage. ✓ Verificado: .gitignore inclui dist e coverage; git status limpo após build/coverage.
 - [ ] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente.
 - [ ] (P5) Verificar/atualizar `description` e `keywords` no package.json — ficheiros: package.json — validação: campos coerentes.
 - [ ] (P5) Adicionar verificação de i18n: confirmar se vue-i18n é usado ou remover da stack — ficheiros: src, package.json — validação: decisão documentada; build verde.
