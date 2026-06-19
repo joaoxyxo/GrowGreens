@@ -35,10 +35,16 @@ function normalize(s: string) {
     .replace(/[̀-ͯ]/g, '')
 }
 
+// Índice de pesquisa pré-normalizado (uma só vez) — evita re-normalizar os textos
+// de todas as plantas a cada tecla premida.
+const searchBlob = new Map(
+  PLANTS.map((p) => [p.slug, normalize(`${p.name} ${p.scientificName} ${p.shortDescription}`)]),
+)
+
 const results = computed(() => {
   const q = normalize(query.value.trim())
   return PLANTS.filter((p) => {
-    if (q && !normalize(p.name + ' ' + p.scientificName + ' ' + p.shortDescription).includes(q)) return false
+    if (q && !searchBlob.get(p.slug)!.includes(q)) return false
     if (catFilter.value !== 'todas' && p.category !== catFilter.value) return false
     if (diffFilter.value !== 'todas' && p.difficulty !== diffFilter.value) return false
     if (locFilter.value === 'interior' && p.location === 'exterior') return false

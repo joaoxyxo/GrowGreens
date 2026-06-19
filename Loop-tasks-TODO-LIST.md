@@ -34,11 +34,11 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [ ] (P4) Rever qualidade/limite de `compressImage` para fotos do diário (memória IndexedDB) — ficheiros: src/utils/image.ts — validação: blob resultante < 300KB num teste.
 - [x] (P4) Indexar consultas Dexie usadas (plantings por status, journal por plantingId) — ficheiros: src/lib/db/dexie.ts — validação: schema com índices; testes de repo passam. ✓ Já indexado: plantings: 'id, plantSlug, status, updatedAt' e journal: 'id, plantingId, createdAt'. Índices já cobrem as consultas. Nada a fazer.
 - [ ] (P4) Virtualizar/paginação na lista do catálogo (36+ plantas) se houver jank — ficheiros: src/features/catalog/CatalogView.vue — validação: lista renderiza sem custo O(n) pesado; build OK.
-- [ ] (P4) Memoizar pesquisa do catálogo (normalização de acentos) com computed/índice — ficheiros: src/features/catalog — validação: pesquisa não recalcula tudo a cada tecla (revisão de código).
+- [x] (P4) Memoizar pesquisa do catálogo (normalização de acentos) com computed/índice — ficheiros: src/features/catalog — validação: pesquisa não recalcula tudo a cada tecla (revisão de código). ✓ Feito: índice searchBlob pré-normalizado (Map por slug) construído uma vez; o computed só faz includes() — deixa de re-normalizar 36 textos por tecla. TC/lint/build OK.
 - [ ] (P4) Pré-carregar (prefetch) a rota /desafio a partir do onboarding — ficheiros: router/onboarding — validação: build; chunk do desafio com modulepreload.
 - [ ] (P5) Revisar runtimeCaching do PWA para o catálogo de imagens/ícones — ficheiros: vite.config.ts — validação: build; sw.js inclui regras.
-- [ ] (P5) Evitar `db.challengeRuns.toArray()` repetido — cache via useLiveQuery único — ficheiros: src/features/microgreens/ChallengeView.vue — validação: revisão de código.
-- [ ] (P5) Tree-shaking de date-fns (imports nomeados, não default) — ficheiros: src/utils/date.ts — validação: build; sem aumento do bundle.
+- [x] (P5) Evitar `db.challengeRuns.toArray()` repetido — cache via useLiveQuery único — ficheiros: src/features/microgreens/ChallengeView.vue — validação: revisão de código. ✓ Verificado: ChallengeView já usa um único useLiveQuery (`runs`), com `run` derivado por computed. Sem repetição.
+- [x] (P5) Tree-shaking de date-fns (imports nomeados, não default) — ficheiros: src/utils/date.ts — validação: build; sem aumento do bundle. ✓ Verificado: date.ts já usa imports nomeados (`import { format, ... } from 'date-fns'`), tree-shakeable. Nada a fazer.
 
 ## Organização
 - [x] (P1) Adicionar `.nm_trash_5` (e quaisquer dirs de lixo) aos `ignores` do ESLint — ficheiros: eslint.config.js — validação: `npm run lint` deixa de reportar erros em `.nm_trash_5` (total de erros cai de >14000 para <100). ✓ Feito: lint passou de 14834 erros para 0 (restam 5 warnings de formatação em src). Commit nesta iteração.
