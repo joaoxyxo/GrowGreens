@@ -8,6 +8,7 @@ import Badge from '@/components/ui/Badge.vue'
 import DifficultyDots from '@/components/ui/DifficultyDots.vue'
 import EmptyState from '@/components/ui/EmptyState.vue'
 import { getPlant } from '@/data/plants'
+import { achievementToast } from '@/data/achievements'
 import { PESTS_BY_SLUG, DISEASES_BY_SLUG } from '@/data/pestsDiseases'
 import { recipesForPlant } from '@/data/recipes'
 import { calendarForPlant as calendarForPlantZone, CALENDAR_ACTION_LABELS } from '@/data/calendar'
@@ -69,7 +70,7 @@ async function confirmAdd() {
     wateringEveryDays: waterEvery.value,
   })
   progress.touchStreak()
-  if (progress.unlock('semeador')) ui.toast('Conquista: Semeador 🪴')
+  if (progress.unlock('semeador')) ui.toast(achievementToast('semeador'))
   ui.toast(`${plant.value.name} adicionada à tua horta 🌱`)
   showAdd.value = false
   router.push('/jardim')

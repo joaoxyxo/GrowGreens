@@ -10,6 +10,7 @@ import { challengeRepo } from '@/repositories'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { MICROGREENS, MICROGREENS_BY_SLUG, CHALLENGE_DAYS } from '@/data/microgreens'
+import { achievementToast } from '@/data/achievements'
 import { daysSince } from '@/utils/date'
 import { computeUnlockedDay, challengeDayState } from '@/utils/challenge'
 import { compressImage } from '@/utils/image'
@@ -52,7 +53,7 @@ function varietyNote(day: number): string | null {
 async function start() {
   await challengeRepo.start(selectedVariety.value)
   progress.touchStreak()
-  if (progress.unlock('semeador')) ui.toast('Conquista: Semeador 🪴')
+  if (progress.unlock('semeador')) ui.toast(achievementToast('semeador'))
   openDay.value = 0
   ui.toast('Desafio iniciado! Boa sementeira 🌱')
 }
@@ -87,7 +88,7 @@ async function markDone(day: number, photo?: Blob) {
   if (ok === undefined) return
   progress.addXp(10)
   if (day >= 7) {
-    if (progress.unlock('primeira_colheita')) ui.toast('🏆 Conquista: Primeira Colheita!')
+    if (progress.unlock('primeira_colheita')) ui.toast(achievementToast('primeira_colheita'))
     else ui.toast('Parabéns pela colheita! 🌿')
   } else {
     ui.toast('+10 XP · feito! 🌱')

@@ -65,3 +65,9 @@ export const ACHIEVEMENTS: AchievementDef[] = [
 export function achievementDef(code: string): AchievementDef | undefined {
   return ACHIEVEMENTS.find((a) => a.code === code)
 }
+
+/** Texto único para o toast de uma conquista desbloqueada (nome + emoji da definição). */
+export function achievementToast(code: string): string {
+  const a = achievementDef(code)
+  return a ? `Conquista: ${a.name} ${a.emoji}` : 'Conquista desbloqueada! 🏆'
+}

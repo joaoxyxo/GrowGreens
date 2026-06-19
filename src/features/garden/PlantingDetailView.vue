@@ -8,6 +8,7 @@ import { useLiveQuery } from '@/composables/useLiveQuery'
 import { db } from '@/lib/db/dexie'
 import { plantingsRepo, journalRepo, remindersRepo } from '@/repositories'
 import { getPlant } from '@/data/plants'
+import { achievementToast } from '@/data/achievements'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { daysSince, fmtDate, isOverdue, isDueToday } from '@/utils/date'
@@ -124,7 +125,7 @@ async function addEntry() {
   })
   progress.addXp(5)
   const total = (await db.journal.count()) ?? 0
-  if (total >= 10 && progress.unlock('diarista')) ui.toast('Conquista: Diarista 📸')
+  if (total >= 10 && progress.unlock('diarista')) ui.toast(achievementToast('diarista'))
   note.value = ''
   pendingPhoto.value = null
   pendingPhotoUrl.value = null

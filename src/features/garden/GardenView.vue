@@ -9,6 +9,7 @@ import { useLiveQuery } from '@/composables/useLiveQuery'
 import { useReminders } from '@/composables/useReminders'
 import { db } from '@/lib/db/dexie'
 import { getPlant } from '@/data/plants'
+import { achievementToast } from '@/data/achievements'
 import { daysSince, isOverdue, isDueToday } from '@/utils/date'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
@@ -41,9 +42,9 @@ const ui = useUiStore()
 watch(
   [plantings, harvested],
   () => {
-    if (plantings.value.length >= 5 && progress.unlock('mao_verde')) ui.toast('Conquista: Mão Verde 🌿')
+    if (plantings.value.length >= 5 && progress.unlock('mao_verde')) ui.toast(achievementToast('mao_verde'))
     const species = new Set([...plantings.value, ...harvested.value].map((p) => p.plantSlug))
-    if (species.size >= 10 && progress.unlock('colecionador')) ui.toast('Conquista: Colecionador 🌻')
+    if (species.size >= 10 && progress.unlock('colecionador')) ui.toast(achievementToast('colecionador'))
   },
   { immediate: true },
 )
