@@ -76,7 +76,8 @@ export const DISEASES: Disease[] = [
     isFungal: true,
     description: 'Fungo que cobre as folhas com um pó branco; comum no fim do verão húmido em courgette, couves e morango.',
     symptoms: 'Pó branco farinhento nas folhas, que depois amarelecem e secam.',
-    prevention: 'Arejamento, espaçamento, rega na base. Evita stress hídrico.',
+    prevention:
+      'No litoral húmido: arejamento e espaçamento generoso, rega de manhã e na base (nunca à noite nem sobre as folhas) e evita o stress hídrico que o favorece.',
     treatment: 'Remove folhas atacadas; pulveriza com leite diluído (1:9) ou enxofre; bicarbonato de sódio diluído.',
   },
 ]
