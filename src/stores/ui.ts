@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+export type ToastKind = 'success' | 'info' | 'error'
+
 export interface Toast {
   id: number
   message: string
-  kind: 'success' | 'info' | 'error'
+  kind: ToastKind
 }
 
 const MAX_TOASTS = 3
@@ -14,7 +16,7 @@ export const useUiStore = defineStore('ui', () => {
   const needsRefresh = ref(false)
   let counter = 0
 
-  function toast(message: string, kind: Toast['kind'] = 'success') {
+  function toast(message: string, kind: ToastKind = 'success') {
     const id = ++counter
     toasts.value.push({ id, message, kind })
     // Limita os toasts visíveis: descarta os mais antigos para não empilhar.
