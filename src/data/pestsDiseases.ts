@@ -8,7 +8,7 @@ export const PESTS: Pest[] = [
     description: 'Pequenos insetos (verdes, pretos ou rosados) que se agrupam nos rebentos tenros e por baixo das folhas.',
     symptoms: 'Folhas enroladas e pegajosas, rebentos deformados, presença de formigas.',
     prevention: 'Plantas saudáveis resistem melhor. Atrai joaninhas com flores; evita excesso de azoto.',
-    treatment: 'Jato de água, sabão potássico ou óleo de nim. Esmaga as colónias pequenas à mão.',
+    treatment: 'Jato de água, sabão potássico ou óleo de nim. Esmaga as colónias pequenas à mão. Controlo biológico: joaninhas e larvas de crisopa devoram pulgões — atrai-as com flores (calêndula, funcho a florir) e evita inseticidas de largo espetro.',
   },
   {
     slug: 'lesma',
