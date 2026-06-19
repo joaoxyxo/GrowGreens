@@ -9,7 +9,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P3) Adicionar unidade/lições de curso sobre colheita e conservação — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente"; nº de lições aumenta.
 - [ ] (P3) Adicionar fichas de pragas em falta comuns no litoral (cochonilha, ácaro-aranha, tripes) — ficheiros: src/data/pestsDiseases.ts — validação: build; PESTS_BY_SLUG inclui novos; plantas podem referenciá-los.
 - [ ] (P4) Adicionar 2-3 aromáticas/frutos ao catálogo (louro, funcho, melão) com schema completo — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
-- [ ] (P4) Expandir glossário com termos em falta (vernalização, polinização cruzada, mulch/cobertura) — ficheiros: src/data/glossary.ts — validação: build; termos presentes.
+- [x] (P4) Expandir glossário com termos em falta (vernalização, polinização cruzada, mulch/cobertura) — ficheiros: src/data/glossary.ts — validação: build; termos presentes. ✓ Feito: +3 termos (Mulch/cobertura, Polinização cruzada, Vernalização). Build OK.
 - [ ] (P4) Adicionar conteúdo de saúde/nutrição para o grupo das aromáticas e novas culturas — ficheiros: src/data/health.ts — validação: data-integrity; NUTRIENT_GROUPS coerentes.
 - [ ] (P4) Rever e preencher `companions`/`antagonists` vazios das plantas originais — ficheiros: src/data/plants.ts — validação: data-integrity (refs válidas); menos arrays vazios.
 - [ ] (P5) Adicionar mais sintomas ao diagnóstico (folhas com furos/lesmas vs lagartas; pontas castanhas por sal) — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta.
@@ -45,9 +45,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P3) Definir thresholds de cobertura mínimos no vitest (ex.: utils 70%) — ficheiros: vitest.config.ts — validação: `npm run test:coverage` aplica thresholds.
 - [ ] (P4) Adicionar badge de CI e secção de testes/cobertura ao README — ficheiros: README.md — validação: README renderiza badge; comandos corretos.
 - [ ] (P4) Adicionar JSDoc curto às funções públicas dos utils (date, growth, challenge) — ficheiros: src/utils/* — validação: typecheck; doc presente.
-- [ ] (P4) Adicionar `engines` (node) e `packageManager` ao package.json — ficheiros: package.json — validação: build; campos presentes.
+- [x] (P4) Adicionar `engines` (node) e `packageManager` ao package.json — ficheiros: package.json — validação: build; campos presentes. ✓ Feito: engines.node ">=20" + packageManager "npm@11.11.0". package.json válido, build OK.
 - [ ] (P4) Criar `docs/ARQUITETURA.md` curto (camadas, fluxo de dados) ligado no README — ficheiros: docs/ — validação: ficheiro existe e é referenciado.
-- [ ] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe.
+- [x] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: .nvmrc com "20" (alinhado com o CI).
 - [ ] (P5) Normalizar mensagens de toast (um helper único de texto de conquista) — ficheiros: stores/ui, features — validação: revisão; sem strings duplicadas.
 - [ ] (P5) Adicionar script `format` (prettier --write) ao package.json — ficheiros: package.json — validação: `npm run format` corre (se prettier instalado) ou documentado.
 - [x] (P5) Verificação de dados como teste: cada planta tem stages ordenadas e durações coerentes — ficheiros: tests/data-integrity.test.ts — validação: novo teste verde. ✓ Feito: teste garante durationDays com min ≤ max e ≥ 0 em todas as fases. 81 testes verdes.

@@ -34,4 +34,7 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Pinçar', emoji: '🤏', definition: 'Cortar as pontas tenras dos rebentos para a planta ramificar e ficar mais cheia (ou travar pragas, como na fava).' },
   { term: 'Demolha', emoji: '💧', definition: 'Deixar as sementes grandes de molho em água umas horas antes de semear, para germinarem mais depressa.' },
   { term: 'Sucessão', emoji: '📅', definition: 'Semear pouco e de poucas em poucas semanas, em vez de tudo de uma vez, para ter colheita escalonada e contínua.' },
+  { term: 'Mulch (cobertura)', emoji: '🍂', definition: 'Uma camada (palha, folhas, casca) sobre o solo que mantém a humidade, trava ervas e protege as raízes.' },
+  { term: 'Polinização cruzada', emoji: '🐝', definition: 'Quando o pólen de uma planta fecunda a flor de outra, muitas vezes pelos insetos. Importante em frutos como aboboráceas.' },
+  { term: 'Vernalização', emoji: '❄️', definition: 'O frio do inverno que algumas plantas precisam de sentir para depois florir ou formar cabeça (ex.: couves, alho).' },
 ]
