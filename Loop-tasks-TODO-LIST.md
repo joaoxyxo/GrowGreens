@@ -36,7 +36,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map.
 - [ ] (P5) Evitar `new Date()` repetido em loops/format — usar valor único — ficheiros: utils/features — validação: revisão.
 - [ ] (P5) `defineAsyncComponent` para vistas/modais pesados pontuais — ficheiros: features — validação: build; chunk separado.
-- [ ] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão.
+- [x] (P5) Confirmar que o catálogo não recalcula `searchBlob` (já fora do computed) — ficheiros: catalog — validação: revisão. ✓ Verificado: searchBlob é construído uma vez (fora do computed de results); o computed só faz get().includes(). Nada a alterar.
 - [ ] (P5) Analisar deps não usadas (depcheck manual) e remover — ficheiros: package.json — validação: build após remoção.
 - [x] (P5) Cache do `calendarFor` por zona+mês (à semelhança de plantSowable) — ficheiros: src/data/calendar.ts — validação: testes calendar verdes. ✓ Feito: cache por chave zona-mês (computeCalendarFor interno); resultado read-only nos callers. Testes calendar verdes.
 
@@ -49,8 +49,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde.
 - [x] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage. ✓ Verificado: .gitignore inclui dist e coverage; git status limpo após build/coverage.
 - [ ] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente.
-- [ ] (P5) Verificar/atualizar `description` e `keywords` no package.json — ficheiros: package.json — validação: campos coerentes.
-- [ ] (P5) Adicionar verificação de i18n: confirmar se vue-i18n é usado ou remover da stack — ficheiros: src, package.json — validação: decisão documentada; build verde.
+- [x] (P5) Verificar/atualizar `description` e `keywords` no package.json — ficheiros: package.json — validação: campos coerentes. ✓ Feito: adicionados keywords (horticultura, pwa, vue, local-first, portugal, microgreens); description já coerente.
+- [x] (P5) Adicionar verificação de i18n: confirmar se vue-i18n é usado ou remover da stack — ficheiros: src, package.json — validação: decisão documentada; build verde. ✓ Decisão: MANTER — está ligado no main.ts (pt.json), scaffolding pt-PT para localização futura; app single-language por agora. Documentado em src/i18n/index.ts.
 
 ## Arquivo (ciclos concluídos)
 

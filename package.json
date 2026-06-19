@@ -4,6 +4,15 @@
   "private": true,
   "type": "module",
   "description": "GrowGreens — da semente à colheita. PWA que ensina horticultura a principiantes, calibrada para Portugal.",
+  "keywords": [
+    "horticultura",
+    "jardinagem",
+    "pwa",
+    "vue",
+    "local-first",
+    "portugal",
+    "microgreens"
+  ],
   "engines": {
     "node": ">=20"
   },
