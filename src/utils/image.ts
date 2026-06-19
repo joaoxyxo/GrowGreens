@@ -1,6 +1,7 @@
 // Comprime uma imagem (File/Blob) para WebP, redimensionando até maxSize px no lado maior.
 // Reduz drasticamente o espaço ocupado no IndexedDB. Degrada graciosamente se algo falhar.
-export async function compressImage(file: Blob, maxSize = 1600, quality = 0.72): Promise<Blob> {
+// 1280px é suficiente para fotos de diário vistas no telemóvel e mantém o IndexedDB leve.
+export async function compressImage(file: Blob, maxSize = 1280, quality = 0.72): Promise<Blob> {
   try {
     const bitmap = await createImageBitmap(file)
     const scale = Math.min(1, maxSize / Math.max(bitmap.width, bitmap.height))
