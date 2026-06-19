@@ -155,17 +155,17 @@ export const RECIPES: Recipe[] = [
     season: ['outono', 'inverno'],
     ingredients: [
       '500 g de abóbora aos cubos',
-      '1 cebola e 1 batata',
+      '1 cebola, 1 batata e 1 cenoura',
       '1 fio de azeite',
       'Água ou caldo de legumes',
       'Sal, pimenta, fio de azeite a finalizar',
     ],
     steps: [
-      'Aloura a cebola em azeite; junta a abóbora e a batata.',
+      'Aloura a cebola em azeite; junta a abóbora, a batata e a cenoura.',
       'Cobre com água/caldo e coze até ficar tudo macio (~20 min).',
       'Tritura até cremoso, tempera e serve com um fio de azeite.',
     ],
-    plants: ['abobora', 'cebola', 'batata'],
+    plants: ['abobora', 'cebola', 'batata', 'cenoura'],
   },
   {
     slug: 'favada',
@@ -283,18 +283,18 @@ export const RECIPES: Recipe[] = [
     season: ['outono', 'inverno', 'primavera'],
     ingredients: [
       '1 cebola e 1 alho-francês',
-      '1 batata e 1 cenoura',
+      '1 batata, 1 cenoura e 1 beterraba (opcional, dá cor)',
       'Um punhado de couve, acelga ou espinafre',
       'Feijão-verde ou ervilhas (opcional)',
       'Azeite, sal, água ou caldo',
     ],
     steps: [
       'Refoga a cebola e o alho-francês em azeite.',
-      'Junta a batata, a cenoura e água a cobrir; coze até macio.',
+      'Junta a batata, a cenoura (e a beterraba) e água a cobrir; coze até macio.',
       'Tritura a base; junta a folha picada e as leguminosas e coze mais 5-10 min.',
       'Tempera e serve com um fio de azeite.',
     ],
-    plants: ['cebola', 'alho-frances', 'batata', 'cenoura', 'couve-galega', 'acelga', 'feijao-verde'],
+    plants: ['cebola', 'alho-frances', 'batata', 'cenoura', 'beterraba', 'couve-galega', 'acelga', 'feijao-verde'],
   },
   {
     slug: 'sandes-microgreens',
