@@ -51,12 +51,13 @@ const STAGE_LABELS: Record<string, string> = {
  */
 export function estimateStage(plant: Plant, daysOld: number): { label: string; index: number; total: number } {
   const stages = plant.stages
+  const days = Math.max(0, daysOld) // datas no futuro não recuam a fase
   let acc = 0
   for (let i = 0; i < stages.length; i++) {
     const s = stages[i]
     const dur = s.durationDays ? s.durationDays[1] : Number.MAX_SAFE_INTEGER
     acc += dur
-    if (daysOld <= acc || i === stages.length - 1) {
+    if (days <= acc || i === stages.length - 1) {
       return { label: STAGE_LABELS[s.stage] ?? s.stage, index: i, total: stages.length }
     }
   }

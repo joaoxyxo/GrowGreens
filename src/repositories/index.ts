@@ -61,6 +61,10 @@ export const plantingsRepo = {
     return planting
   },
   async update(id: string, patch: Partial<Planting>) {
+    // Clamp do intervalo de rega também na edição (≥ 1 dia).
+    if (patch.wateringEveryDays !== undefined) {
+      patch = { ...patch, wateringEveryDays: Math.max(1, Math.round(patch.wateringEveryDays) || 1) }
+    }
     await db.transaction('rw', db.plantings, db.reminders, db.journal, async () => {
       await db.plantings.update(id, { ...patch, updatedAt: todayISO() })
       // Planta colhida ou perdida: já não faz sentido continuar a lembrar de a regar.
