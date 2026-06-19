@@ -50,7 +50,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P3) Adicionar `.editorconfig` e config Prettier alinhada com regras do ESLint — ficheiros: raiz — validação: formatação consistente; lint não conflitua. ✓ Feito: .editorconfig (2 espaços, LF, utf-8) + .prettierrc.json (sem semi, aspas simples, trailing comma all) a espelhar o estilo do código. Lint continua a 0.
 - [x] (P4) Adicionar workflow de PR preview/typecheck separado do deploy — ficheiros: .github/workflows — validação: workflow válido (`gh workflow view`). ✓ Já existe: ci.yml corre em pull_request (lint/typecheck/test/build + e2e), separado do deploy.yml (só push em main). Nada a fazer.
 - [x] (P4) Documentar variáveis de ambiente e cloud opcional no README/.env.example coerentes — ficheiros: README.md, .env.example — validação: chaves coincidem. ✓ Verificado: README e .env.example partilham exatamente as mesmas 4 chaves (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, KINDWISE_API_KEY, OPENAI_API_KEY). Coerentes.
-- [ ] (P5) Adicionar cobertura de testes (vitest run --coverage) e badge/relatório — ficheiros: vitest.config.ts — validação: `npm run test -- --coverage` gera relatório.
+- [x] (P5) Adicionar cobertura de testes (vitest run --coverage) e badge/relatório — ficheiros: vitest.config.ts — validação: `npm run test -- --coverage` gera relatório. ✓ Feito: @vitest/coverage-v8 + script test:coverage + config (provider v8, foco em utils/stores/repositories). Relatório gera (geral 58%, repositories 95%). coverage/ já no .gitignore.
 
 ## Arquivo (ciclos concluídos)
 _(vazio — primeiro ciclo)_

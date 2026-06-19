@@ -13,5 +13,11 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     include: ['tests/**/*.test.ts', 'src/**/*.test.ts'],
     exclude: ['tests/e2e/**', 'node_modules/**'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      // Foco na lógica testável (utils/stores/repos); dados estáticos e UI ficam de fora.
+      include: ['src/utils/**', 'src/stores/**', 'src/repositories/**'],
+    },
   },
 })
