@@ -46,6 +46,15 @@ export const COURSE_UNITS: CourseUnit[] = [
     color: 'flame',
     lessonIds: ['l5-1', 'l5-2', 'l5-3'],
   },
+  {
+    id: 'u6',
+    order: 6,
+    title: 'Colher e conservar',
+    description: 'O ponto certo de colheita e como guardar o que colheste.',
+    emoji: '🧺',
+    color: 'earth',
+    lessonIds: ['l6-1', 'l6-2'],
+  },
 ]
 
 export const LESSONS: Lesson[] = [
@@ -402,6 +411,64 @@ export const LESSONS: Lesson[] = [
         explanation: 'Com humidade ambiente alta, o maior risco é o excesso de água e o apodrecimento das raízes.',
       },
       { kind: 'summary', bullets: ['Usa o teste do dedo antes de regar.', 'Excesso de água mata mais que a falta.', 'Drenagem é essencial no litoral húmido.'] },
+    ],
+  },
+  {
+    id: 'l6-1',
+    unitId: 'u6',
+    title: 'O ponto certo de colheita',
+    subtitle: 'Colher na hora certa, da forma certa.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🧺',
+        title: 'Colhe de manhã',
+        body: 'As folhas estão mais túrgidas e doces de manhã, depois do fresco da noite. Colhe folhas de fora primeiro (corta-e-volta) para a planta continuar a produzir.',
+      },
+      {
+        kind: 'concept',
+        emoji: '✂️',
+        title: 'Colher cedo e muitas vezes',
+        body: 'Em alfaces, rúcula e ervas, colher novo e com frequência mantém o sabor suave e atrasa o espigamento. Frutos como o pepino: quanto mais colhes, mais a planta produz.',
+      },
+      {
+        kind: 'choice',
+        question: 'Qual é a melhor altura do dia para colher folhas?',
+        options: ['Ao meio-dia, com sol forte', 'De manhã cedo', 'À noite, depois de regar'],
+        correctIndex: 1,
+        explanation: 'De manhã as folhas estão mais frescas e túrgidas — duram mais e sabem melhor.',
+      },
+      { kind: 'summary', bullets: ['Colhe de manhã.', 'Corta-e-volta: folhas de fora primeiro.', 'Colher muitas vezes = mais produção.'] },
+    ],
+  },
+  {
+    id: 'l6-2',
+    unitId: 'u6',
+    title: 'Conservar a colheita',
+    subtitle: 'Que a tua colheita dure mais.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🥬',
+        title: 'Folhas: frescas e húmidas',
+        body: 'Lava, seca bem e guarda as folhas no frigorífico num pano ou caixa com um papel — duram vários dias. Não guardes molhadas (apodrecem).',
+      },
+      {
+        kind: 'concept',
+        emoji: '🧅',
+        title: 'Raízes e aromáticas',
+        body: 'Raízes (cenoura, nabo) duram em sítio fresco e escuro. Aromáticas secam-se em ramos pendurados ou congelam-se em cubos de gelo com azeite.',
+      },
+      {
+        kind: 'truefalse',
+        question: 'Guardar folhas ainda molhadas no frigorífico ajuda a conservá-las.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 1,
+        explanation: 'A humidade a mais acelera o apodrecimento — seca bem antes de guardar.',
+      },
+      { kind: 'summary', bullets: ['Folhas: lavar, secar e guardar frescas.', 'Raízes: fresco e escuro.', 'Aromáticas: secar ou congelar.'] },
     ],
   },
 ]

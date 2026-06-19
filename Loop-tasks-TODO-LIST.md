@@ -6,7 +6,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Conteúdo
 - [x] (P3) Adicionar receitas para culturas sem receita ligada (couve-flor, beringela, ervilha, alho-francês) — ficheiros: src/data/recipes.ts — validação: data-integrity passa; recipesForPlant() devolve resultado para esses slugs. ✓ Feito: +4 receitas (couve-flor assada, beringela grelhada, ervilhas guisadas, alho-francês salteado). data-integrity + 76 testes verdes.
-- [ ] (P3) Adicionar unidade/lições de curso sobre colheita e conservação — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente"; nº de lições aumenta.
+- [x] (P3) Adicionar unidade/lições de curso sobre colheita e conservação — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente"; nº de lições aumenta. ✓ Feito: unidade u6 "Colher e conservar" com l6-1 (ponto de colheita) e l6-2 (conservação). data-integrity + 84 testes verdes.
 - [x] (P3) Adicionar fichas de pragas em falta comuns no litoral (cochonilha, ácaro-aranha, tripes) — ficheiros: src/data/pestsDiseases.ts — validação: build; PESTS_BY_SLUG inclui novos; plantas podem referenciá-los. ✓ Feito: +3 fichas (cochonilha, acaro-aranha, tripes) com descrição/sintomas/prevenção/tratamento. Build + 84 testes.
 - [ ] (P4) Adicionar 2-3 aromáticas/frutos ao catálogo (louro, funcho, melão) com schema completo — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
 - [x] (P4) Expandir glossário com termos em falta (vernalização, polinização cruzada, mulch/cobertura) — ficheiros: src/data/glossary.ts — validação: build; termos presentes. ✓ Feito: +3 termos (Mulch/cobertura, Polinização cruzada, Vernalização). Build OK.
@@ -31,7 +31,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Performance
 - [ ] (P4) `loading="lazy"` em imagens de diário/linha do tempo de fotos — ficheiros: features/garden, microgreens — validação: build; atributo presente.
 - [ ] (P4) Debounce ligeiro na pesquisa do catálogo (input) — ficheiros: src/features/catalog/CatalogView.vue — validação: revisão; filtro não corre a cada tecla imediatamente.
-- [ ] (P4) Confirmar que todas as rotas são lazy (import dinâmico) no router — ficheiros: src/router/index.ts — validação: build; cada view em chunk próprio.
+- [x] (P4) Confirmar que todas as rotas são lazy (import dinâmico) no router — ficheiros: src/router/index.ts — validação: build; cada view em chunk próprio. ✓ Verificado: as 19 rotas com componente usam `() => import(...)`; a 20.ª é um catch-all redirect sem componente. Sem imports estáticos de views. Nada a fazer.
 - [ ] (P4) Partilhar a live query de `reminders` (evitar múltiplas subscrições idênticas) — ficheiros: features/garden, composables — validação: revisão de código.
 - [ ] (P5) `v-once`/keys estáveis em listas estáticas (categorias, filtros) — ficheiros: features/* — validação: revisão; sem re-render desnecessário.
 - [ ] (P5) Reduzir trabalho do `sowableSet` recomputado por mês (memo por zona+mês) — ficheiros: features/catalog/calendar — validação: revisão.
