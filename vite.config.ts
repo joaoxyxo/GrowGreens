@@ -8,7 +8,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig(({ command }) => {
   // Project site no GitHub Pages: https://joaoxyxo.github.io/GrowGreens/
   // Em dev mantemos a raiz; no build de produção servimos a partir do subdiretório.
-  const base = command === 'build' ? '/GrowGreens/' : '/'
+  // BASE_PATH permite override (ex.: e2e/preview servem em '/').
+  const base = process.env.BASE_PATH ?? (command === 'build' ? '/GrowGreens/' : '/')
 
   return {
   base,

@@ -9,7 +9,8 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npm run build && npm run preview -- --port 4173',
+    // e2e serve a partir da raiz (BASE_PATH=/) — o deploy usa o base /GrowGreens/.
+    command: 'BASE_PATH=/ npm run build && npm run preview -- --port 4173',
     url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,

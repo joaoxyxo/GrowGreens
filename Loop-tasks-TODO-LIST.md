@@ -29,8 +29,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Marcar planta perdida cria evento de diário (à semelhança de colhida) — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: status 'perdida' regista nota no diário; teste verde. 111 testes.
 
 ## Performance
-- [ ] (P4) E2E: fluxo de pesquisa do catálogo (Playwright) — ficheiros: tests/e2e/ — validação: spec passa.
-- [ ] (P4) E2E: adicionar planta à horta e ver lembrete — ficheiros: tests/e2e/ — validação: spec passa.
+- [x] (P4) E2E: fluxo de pesquisa do catálogo (Playwright) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'catálogo: a pesquisa filtra as plantas' (verde). BÓNUS: corrigido o base path do e2e (BASE_PATH=/) que tinha o preview/e2e a falhar — o spec pré-existente voltou a passar.
+- [x] (P4) E2E: adicionar planta à horta e ver lembrete — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'horta: adicionar uma planta e vê-la na horta' (onboarding→catálogo→adicionar→horta). 3 specs e2e verdes.
 - [ ] (P5) Atributos `width`/`height` explícitos nas imagens de tamanho fixo — ficheiros: features/* — validação: build.
 - [ ] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build.
 - [ ] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build.
