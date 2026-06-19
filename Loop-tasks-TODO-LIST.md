@@ -11,10 +11,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Saúde: adicionar `caution` onde aplicável (oxalatos em espinafre/acelga; nitratos em folhas) — ficheiros: src/data/health.ts — validação: build; campo caution presente. ✓ Feito: caution nas folhas verdes (oxalatos/nitratos); HealthDetailView já o mostra.
 - [x] (P4) Microgreens: nota de segurança (evitar microgreens de solanáceas/feijão — tóxicos) — ficheiros: src/data/microgreens.ts ou troubleshoot — validação: build; texto presente. ✓ Feito: aviso de segurança no ChallengeView (só variedades comestíveis; evitar solanáceas/feijão).
 - [x] (P4) Curso: lição/quiz de revisão de planeamento da horta — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente". ✓ Feito: lição l3-3 "Planear a horta" (conceitos + choice + order). data-integrity verde.
-- [ ] (P5) Pragas: detalhar tratamento biológico (auxiliares: joaninhas, crisopas) — ficheiros: src/data/pestsDiseases.ts — validação: build.
+- [x] (P5) Pragas: detalhar tratamento biológico (auxiliares: joaninhas, crisopas) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: tratamento do afídeo inclui controlo biológico (joaninhas/crisopas, flores que as atraem, evitar largo espetro).
 - [ ] (P5) Troubleshoot: referência cruzada de sintomas para pragas/doenças por slug — ficheiros: src/data/troubleshoot.ts (+tipo) — validação: build; refs válidas.
 - [ ] (P5) Recomendações: mensagem amigável quando nada é semeável no mês — ficheiros: src/features/home ou recommend — validação: build; estado tratado.
-- [ ] (P5) Adicionar 1-2 receitas de microgreens (sandes, batido) ligadas ao desafio — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P5) Adicionar 1-2 receitas de microgreens (sandes, batido) ligadas ao desafio — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: +2 receitas (sandes e batido verde de microgreens). data-integrity verde.
 
 ## Regras de Negócio
 - [x] (P3) Testar o `ui` store (toast adiciona, dismiss remove, ids únicos) — ficheiros: tests/ui.test.ts — validação: novo teste verde. ✓ Feito: tests/ui.test.ts (adicionar, kind default, ids únicos, dismiss). 92 testes.

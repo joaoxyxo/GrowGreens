@@ -296,6 +296,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['cebola', 'alho-frances', 'batata', 'cenoura', 'couve-galega', 'acelga', 'feijao-verde'],
   },
+  {
+    slug: 'sandes-microgreens',
+    title: 'Sandes de microgreens',
+    emoji: '🥪',
+    description: 'A forma mais rápida de provar a tua primeira colheita de microgreens.',
+    prepMinutes: 5,
+    difficulty: 'facil',
+    season: ['primavera', 'verao', 'outono', 'inverno'],
+    ingredients: [
+      'Pão a gosto',
+      'Mão-cheia de microgreens acabados de cortar',
+      'Queijo creme, abacate ou húmus',
+      'Sal, pimenta, fio de azeite',
+    ],
+    steps: [
+      'Barra o pão com queijo creme, abacate ou húmus.',
+      'Cobre generosamente com os microgreens.',
+      'Tempera e fecha a sandes.',
+    ],
+    plants: ['rabanete'],
+  },
+  {
+    slug: 'batido-verde-microgreens',
+    title: 'Batido verde com microgreens',
+    emoji: '🥤',
+    description: 'Um impulso de nutrientes com a colheita do desafio.',
+    prepMinutes: 5,
+    difficulty: 'facil',
+    season: ['primavera', 'verao', 'outono', 'inverno'],
+    ingredients: [
+      '1 banana e 1/2 maçã',
+      'Mão-cheia de microgreens (girassol/ervilha são suaves)',
+      '200 ml de água ou bebida vegetal',
+      'Sumo de meio limão',
+    ],
+    steps: [
+      'Junta tudo no copo do liquidificador.',
+      'Tritura até ficar liso.',
+      'Bebe logo, ainda fresco.',
+    ],
+    plants: ['rabanete'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(
