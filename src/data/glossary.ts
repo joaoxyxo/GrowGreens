@@ -44,4 +44,7 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Rotação de culturas', emoji: '🔄', definition: 'Não plantar a mesma família no mesmo sítio anos seguidos — evita esgotar o solo e a acumulação de pragas/doenças.' },
   { term: 'Adubo verde', emoji: '🌾', definition: 'Plantas (ex.: favas, tremoço) semeadas para enriquecer o solo e depois enterradas, em vez de colhidas.' },
   { term: 'pH', emoji: '🧪', definition: 'A acidez do solo (0-14). A maioria das hortícolas prefere ligeiramente ácido a neutro (6,0-7,0).' },
+  { term: 'Estaca', emoji: '🌱', definition: 'Um pedaço de caule cortado de uma planta-mãe que, posto em água ou substrato, cria raízes e origina uma nova planta (ex.: alecrim, hortelã).' },
+  { term: 'Estratificação', emoji: '❄️', definition: 'Expor as sementes ao frio (ex.: no frigorífico) durante umas semanas para "quebrar a dormência" e germinarem — preciso em algumas espécies.' },
+  { term: 'Rega de fundo', emoji: '🪣', definition: 'Pôr o vaso num prato com água: o substrato bebe por baixo (capilaridade). Mantém a folha seca e a humidade estável.' },
 ]
