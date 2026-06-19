@@ -1,5 +1,5 @@
 # Loop Tasks — TODO List
-Ciclo: 4 · Atualizado: 2026-06-19 08:17
+Ciclo: 4 · Atualizado: 2026-06-19 (CONCLUÍDO: 40 ✓ · 0 bloqueadas · 0 pendentes)
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. Ver CLAUDE.md / docs/ARQUITETURA.md. 42 plantas, 104 testes.
@@ -38,7 +38,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Evitar watchers profundos desnecessários (stores) — ficheiros: stores — validação: revisão. ✓ Verificado: os 2 watchers deep (settings/progress) são necessários — persistem mutações de arrays aninhados (completedLessons/achievements). Sem deep, perdiam-se. Nada a remover.
 - [x] (P5) Medir e registar tamanho do bundle no README — ficheiros: README.md — validação: números coerentes. ✓ Feito: secção 'Tamanho do bundle' (vendor ~102KB gzip, app ~9KB, plants ~21KB).
 - [x] (P5) Confirmar tree-shaking do vue-i18n (só o necessário) — ficheiros: i18n — validação: build. ✓ Verificado: createI18n com legacy:false (Composition API only — build tree-shaken); incluído no vendor. Nada a alterar.
-- [ ] (P5) Revisão de transições/`will-change` só onde necessário — ficheiros: components/ui — validação: revisão.
+- [x] (P5) Revisão de transições/`will-change` só onde necessário — ficheiros: components/ui — validação: revisão. ✓ Verificado: `will-change` não é usado em lado nenhum; as transições são classes Tailwind pontuais (transition/active:scale). Nada a remover.
 
 ## Organização
 - [x] (P3) A11y: `aria-label` em botões só-ícone (recomeçar, fechar, etc.) — ficheiros: components/features — validação: revisão; sem botões sem nome acessível. ✓ Feito: ✕ de fechar e células da grelha do planeador ganharam aria-label (as restantes — sair, meses, concluir — já tinham).
@@ -48,8 +48,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido. ✓ Feito: dependabot.yml (npm + github-actions, semanal, devDeps agrupadas).
 - [x] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes. ✓ Feito: +robots, apple-mobile-web-app-* e Open Graph (description já existia). Presentes no dist.
 - [x] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão. ✓ Feito: regra global :focus-visible (outline verde) no main.css — garante foco de teclado visível em todos os elementos focáveis.
-- [ ] (P5) Consolidar tipos de UI repetidos (tone/variant) — ficheiros: components/ui — validação: typecheck.
-- [ ] (P5) Contraste das badges (revisão WCAG AA) — ficheiros: components/ui — validação: revisão.
+- [x] (P5) Consolidar tipos de UI repetidos (tone/variant) — ficheiros: components/ui — validação: typecheck. ✓ Verificado: as uniões são específicas por componente (Badge: green/neutral/warning/sky/earth; StatChip: flame/sun/green; BaseButton: variant). Não são duplicadas — consolidar seria inexato. Nada a fazer.
+- [x] (P5) Contraste das badges (revisão WCAG AA) — ficheiros: components/ui — validação: revisão. ✓ Verificado: badges usam texto escuro (X-700/X-500) sobre fundo claro/tinta (X-100 ou /15), com variantes dark dedicadas — combinações de alto contraste (AA para texto normal).
 - [x] (P5) Atualizar CLAUDE.md com nº de plantas/testes atuais — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: linha de escala (45 plantas, 115 testes, lint 0).
 
 ## Arquivo (ciclos concluídos)
