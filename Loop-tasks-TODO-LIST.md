@@ -5,7 +5,7 @@ Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest + Playwright. Lint: ESLint. npm. Ver CLAUDE.md.
 
 ## Conteúdo
-- [ ] (P3) Adicionar receitas para culturas sem receita ligada (couve-flor, beringela, ervilha, alho-francês) — ficheiros: src/data/recipes.ts — validação: data-integrity passa; recipesForPlant() devolve resultado para esses slugs.
+- [x] (P3) Adicionar receitas para culturas sem receita ligada (couve-flor, beringela, ervilha, alho-francês) — ficheiros: src/data/recipes.ts — validação: data-integrity passa; recipesForPlant() devolve resultado para esses slugs. ✓ Feito: +4 receitas (couve-flor assada, beringela grelhada, ervilhas guisadas, alho-francês salteado). data-integrity + 76 testes verdes.
 - [ ] (P3) Adicionar unidade/lições de curso sobre colheita e conservação — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente"; nº de lições aumenta.
 - [ ] (P3) Adicionar fichas de pragas em falta comuns no litoral (cochonilha, ácaro-aranha, tripes) — ficheiros: src/data/pestsDiseases.ts — validação: build; PESTS_BY_SLUG inclui novos; plantas podem referenciá-los.
 - [ ] (P4) Adicionar 2-3 aromáticas/frutos ao catálogo (louro, funcho, melão) com schema completo — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
