@@ -180,11 +180,18 @@ export function calendarForPlant(plant: string, zone: string) {
   }))
 }
 
+// Cache por zona+mês: o calendário é estático, logo o resultado é determinístico.
+const sowableCache = new Map<string, Set<string>>()
+
 export function plantSowableThisMonth(zone: string, month: number): Set<string> {
+  const key = `${zone}-${month}`
+  const cached = sowableCache.get(key)
+  if (cached) return cached
   const set = new Set<string>()
   for (const e of calendarFor(zone, month)) {
     if (e.action === 'sementeira_direta' || e.action === 'sementeira_interior') set.add(e.plant)
   }
+  sowableCache.set(key, set)
   return set
 }
 
