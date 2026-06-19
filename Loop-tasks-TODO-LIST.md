@@ -5,7 +5,7 @@ Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 45 plantas, 116 testes (+3 e2e).
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2-3 culturas (mizuna, beldroega/portulaca, segurelha) com schema + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
+- [x] (P3) Adicionar 2-3 culturas (mizuna, beldroega/portulaca, segurelha) com schema + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (mizuna, beldroega, segurelha) + calendário → 48 plantas. data-integrity verde.
 - [ ] (P4) Glossário: +termos ("estaca", "estratificação", "rega de fundo") — ficheiros: src/data/glossary.ts — validação: build.
 - [ ] (P4) FAQ: +3 dúvidas (interior vs exterior, quando colher, pragas em casa) — ficheiros: src/data/faq.ts — validação: build.
 - [ ] (P4) Curso: lição sobre rotação de culturas e famílias — ficheiros: src/data/course.ts — validação: data-integrity.
