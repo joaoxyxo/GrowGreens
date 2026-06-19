@@ -116,7 +116,7 @@ const results = computed(() => {
       </div>
 
       <!-- Resultados -->
-      <div v-if="results.length" class="grid grid-cols-2 gap-3">
+      <div v-if="results.length" class="grid grid-cols-2 gap-3 [content-visibility:auto] [contain-intrinsic-size:auto_140px]">
         <PlantCard
           v-for="p in results"
           :key="p.slug"

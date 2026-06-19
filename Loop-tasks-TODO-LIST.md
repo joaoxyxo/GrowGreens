@@ -32,8 +32,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) E2E: fluxo de pesquisa do catálogo (Playwright) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'catálogo: a pesquisa filtra as plantas' (verde). BÓNUS: corrigido o base path do e2e (BASE_PATH=/) que tinha o preview/e2e a falhar — o spec pré-existente voltou a passar.
 - [x] (P4) E2E: adicionar planta à horta e ver lembrete — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'horta: adicionar uma planta e vê-la na horta' (onboarding→catálogo→adicionar→horta). 3 specs e2e verdes.
 - [ ] (P5) Atributos `width`/`height` explícitos nas imagens de tamanho fixo — ficheiros: features/* — validação: build.
-- [ ] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build.
-- [ ] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build.
+- [x] (P5) `content-visibility: auto` em secções longas (catálogo) — ficheiros: features/catalog — validação: build. ✓ Feito: grid de resultados com [content-visibility:auto] + contain-intrinsic-size (salta render fora do ecrã).
+- [x] (P5) Pré-carregar rota do catálogo a partir do Home — ficheiros: features/home — validação: build. ✓ Feito: HomeView pré-carrega o chunk do CatalogView no onMounted.
 - [x] (P5) Confirmar manualChunks coerente com deps atuais — ficheiros: vite.config.ts — validação: build. ✓ Verificado: build gera 1 chunk vendor (~294KB/102KB gzip) com todos os node_modules; sem duplicação nem avisos. Coerente.
 - [ ] (P5) Evitar watchers profundos desnecessários (stores) — ficheiros: stores — validação: revisão.
 - [x] (P5) Medir e registar tamanho do bundle no README — ficheiros: README.md — validação: números coerentes. ✓ Feito: secção 'Tamanho do bundle' (vendor ~102KB gzip, app ~9KB, plants ~21KB).
