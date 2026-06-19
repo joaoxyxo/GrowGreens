@@ -1,0 +1,7 @@
+dist
+dev-dist
+coverage
+node_modules
+.nm_trash_5
+package-lock.json
+*.md

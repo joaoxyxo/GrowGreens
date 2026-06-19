@@ -49,7 +49,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Criar `docs/ARQUITETURA.md` curto (camadas, fluxo de dados) ligado no README — ficheiros: docs/ — validação: ficheiro existe e é referenciado. ✓ Feito: docs/ARQUITETURA.md (camadas UI→stores→repos→Dexie, dados estáticos, fluxo de exemplo) referenciado no README.
 - [x] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: .nvmrc com "20" (alinhado com o CI).
 - [ ] (P5) Normalizar mensagens de toast (um helper único de texto de conquista) — ficheiros: stores/ui, features — validação: revisão; sem strings duplicadas.
-- [ ] (P5) Adicionar script `format` (prettier --write) ao package.json — ficheiros: package.json — validação: `npm run format` corre (se prettier instalado) ou documentado.
+- [x] (P5) Adicionar script `format` (prettier --write) ao package.json — ficheiros: package.json — validação: `npm run format` corre (se prettier instalado) ou documentado. ✓ Feito: instalado prettier + scripts format/format:check + .prettierignore. prettier corre (date.ts já conforme ao .prettierrc).
 - [x] (P5) Verificação de dados como teste: cada planta tem stages ordenadas e durações coerentes — ficheiros: tests/data-integrity.test.ts — validação: novo teste verde. ✓ Feito: teste garante durationDays com min ≤ max e ≥ 0 em todas as fases. 81 testes verdes.
 
 ## Arquivo (ciclos concluídos)
