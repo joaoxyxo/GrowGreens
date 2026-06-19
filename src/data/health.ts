@@ -18,6 +18,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Fibra', effect: 'Digestão e saciedade.' },
     ],
     tip: 'O efeito do alimento inteiro supera o dos suplementos — come as folhas, não pastilhas.',
+    caution: 'Espinafre e acelga têm oxalatos (quem tem pedras nos rins deve moderar). Folhas muito adubadas acumulam nitratos — colhe-as bem desenvolvidas e varia a alimentação.',
   },
   {
     code: 'brassicas',
