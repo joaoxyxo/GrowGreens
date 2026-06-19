@@ -13,7 +13,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [ ] (P4) Rever consistência de `family`/`scientificName` em todas as plantas (acentos, nomenclatura binomial) — ficheiros: src/data/plants.ts — validação: script ad-hoc confirma todas as famílias num conjunto conhecido.
 - [ ] (P3) Acrescentar dica sazonal por mês no calendário (texto curto) para meses sem destaque — ficheiros: src/data/calendar.ts, src/features/calendar — validação: build OK; cada mês tem dica.
 - [ ] (P4) Adicionar conquistas (achievements) ligadas ao catálogo (ex.: "10 plantas diferentes na horta") — ficheiros: src/data/achievements.ts, src/stores/progress.ts — validação: build OK; conquista desbloqueável.
-- [ ] (P4) Rever notas de toxicidade/petSafe em todas as plantas para coerência (Allium, Solanaceae) — ficheiros: src/data/plants.ts — validação: script confirma toxicNote presente onde petSafe=false.
+- [x] (P4) Rever notas de toxicidade/petSafe em todas as plantas para coerência (Allium, Solanaceae) — ficheiros: src/data/plants.ts — validação: script confirma toxicNote presente onde petSafe=false. ✓ Feito: verificado (7 plantas petSafe=false, todas com toxicNote) e adicionado teste em data-integrity que garante o invariante. 57 testes verdes.
 - [ ] (P5) Adicionar prevenção específica de litoral atlântico (humidade) a cada doença fúngica — ficheiros: src/data/pestsDiseases.ts — validação: build OK; campo prevention menciona arejamento/rega de manhã.
 
 ## Regras de Negócio

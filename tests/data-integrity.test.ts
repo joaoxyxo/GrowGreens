@@ -40,6 +40,14 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('plantas não seguras para animais (petSafe=false) têm nota de toxicidade', () => {
+    for (const p of PLANTS) {
+      if (!p.petSafe) {
+        expect(p.toxicNote, `${p.slug} é petSafe=false mas sem toxicNote`).toBeTruthy()
+      }
+    }
+  })
+
   it('o calendário só refere plantas existentes e meses válidos', () => {
     for (const e of CALENDAR) {
       expect(PLANTS_BY_SLUG[e.plant], e.plant).toBeTruthy()
