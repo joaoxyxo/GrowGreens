@@ -120,6 +120,7 @@ const results = computed(() => {
         <PlantCard
           v-for="p in results"
           :key="p.slug"
+          v-memo="[p.slug, sowableSet.has(p.slug)]"
           :plant="p"
           :sowable="sowableSet.has(p.slug)"
         />
