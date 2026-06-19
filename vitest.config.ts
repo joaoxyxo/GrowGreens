@@ -18,6 +18,14 @@ export default defineConfig({
       reporter: ['text', 'html'],
       // Foco na lógica testável (utils/stores/repos); dados estáticos e UI ficam de fora.
       include: ['src/utils/**', 'src/stores/**', 'src/repositories/**'],
+      // Mínimos abaixo do atual (linhas ~63%, branches ~85%) para travar regressões
+      // sem falhar a build. Subir à medida que se adicionam testes.
+      thresholds: {
+        lines: 55,
+        statements: 55,
+        functions: 55,
+        branches: 75,
+      },
     },
   },
 })
