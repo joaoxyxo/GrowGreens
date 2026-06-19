@@ -5,6 +5,8 @@ export interface Symptom {
   label: string
   likely: string
   whatToDo: string[]
+  /** Slugs de pragas/doenças relacionadas (de pestsDiseases) para saber mais. */
+  related?: string[]
 }
 
 export const SYMPTOMS: Symptom[] = [
@@ -51,6 +53,7 @@ export const SYMPTOMS: Symptom[] = [
       'Melhora o arejamento; rega na base, nunca por cima.',
       'Pulveriza com leite diluído (1 parte para 9 de água) ou enxofre.',
     ],
+    related: ['oidio'],
   },
   {
     id: 'manchas',
@@ -62,6 +65,7 @@ export const SYMPTOMS: Symptom[] = [
       'Dá mais espaço entre plantas para o ar circular.',
       'Rega de manhã e só na base. Calda bordalesa em prevenção.',
     ],
+    related: ['mildio'],
   },
   {
     id: 'bichos',
@@ -73,6 +77,7 @@ export const SYMPTOMS: Symptom[] = [
       'Buracos e rastos prateados → lesmas: apanha à noite, casca de ovo à volta.',
       'Buracos grandes nas couves → lagartas: apanha à mão, rede de proteção.',
     ],
+    related: ['afideo', 'lesma', 'lagarta'],
   },
   {
     id: 'nao-germina',

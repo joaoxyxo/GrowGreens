@@ -6,6 +6,7 @@ import { NUTRIENT_GROUPS_BY_CODE } from '@/data/health'
 import { PESTS_BY_SLUG, DISEASES_BY_SLUG } from '@/data/pestsDiseases'
 import { MICROGREENS } from '@/data/microgreens'
 import { LESSONS, COURSE_UNITS, LESSONS_BY_ID } from '@/data/course'
+import { SYMPTOMS } from '@/data/troubleshoot'
 
 describe('integridade do núcleo agronómico', () => {
   it('tem um conjunto razoável de plantas', () => {
@@ -62,6 +63,14 @@ describe('integridade do núcleo agronómico', () => {
           expect(s.durationDays[0], `${p.slug}/${s.stage}`).toBeLessThanOrEqual(s.durationDays[1])
           expect(s.durationDays[0], `${p.slug}/${s.stage}`).toBeGreaterThanOrEqual(0)
         }
+      }
+    }
+  })
+
+  it('sintomas: refs cruzadas (related) apontam para pragas/doenças existentes', () => {
+    for (const sym of SYMPTOMS) {
+      for (const slug of sym.related ?? []) {
+        expect(PESTS_BY_SLUG[slug] || DISEASES_BY_SLUG[slug], `${sym.id} -> ${slug}`).toBeTruthy()
       }
     }
   })

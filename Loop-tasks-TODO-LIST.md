@@ -12,7 +12,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Microgreens: nota de segurança (evitar microgreens de solanáceas/feijão — tóxicos) — ficheiros: src/data/microgreens.ts ou troubleshoot — validação: build; texto presente. ✓ Feito: aviso de segurança no ChallengeView (só variedades comestíveis; evitar solanáceas/feijão).
 - [x] (P4) Curso: lição/quiz de revisão de planeamento da horta — ficheiros: src/data/course.ts — validação: data-integrity "curso coerente". ✓ Feito: lição l3-3 "Planear a horta" (conceitos + choice + order). data-integrity verde.
 - [x] (P5) Pragas: detalhar tratamento biológico (auxiliares: joaninhas, crisopas) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: tratamento do afídeo inclui controlo biológico (joaninhas/crisopas, flores que as atraem, evitar largo espetro).
-- [ ] (P5) Troubleshoot: referência cruzada de sintomas para pragas/doenças por slug — ficheiros: src/data/troubleshoot.ts (+tipo) — validação: build; refs válidas.
+- [x] (P5) Troubleshoot: referência cruzada de sintomas para pragas/doenças por slug — ficheiros: src/data/troubleshoot.ts (+tipo) — validação: build; refs válidas. ✓ Feito: campo Symptom.related (po-branco→oidio, manchas→mildio, bichos→afideo/lesma/lagarta) + teste data-integrity que valida os slugs. 104 testes.
 - [ ] (P5) Recomendações: mensagem amigável quando nada é semeável no mês — ficheiros: src/features/home ou recommend — validação: build; estado tratado.
 - [x] (P5) Adicionar 1-2 receitas de microgreens (sandes, batido) ligadas ao desafio — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: +2 receitas (sandes e batido verde de microgreens). data-integrity verde.
 
@@ -48,7 +48,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Templates de issue/PR em .github/ — ficheiros: .github/ — validação: ficheiros válidos. ✓ Feito: ISSUE_TEMPLATE (bug, feature) + pull_request_template.md com checklist de qualidade.
 - [x] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde. ✓ Feito: +noUnusedLocals/Parameters, noImplicitReturns, noFallthroughCasesInSwitch. Apanhou e corrigiu 2 reais: param unitIndex não usado e guarda do router sem return. TC verde.
 - [x] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage. ✓ Verificado: .gitignore inclui dist e coverage; git status limpo após build/coverage.
-- [ ] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente.
+- [x] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente. ✓ Feito: secção 'Estrutura de dados' (models.ts vs catalog.ts, tabelas Dexie, backup) na Arquitetura.
 - [x] (P5) Verificar/atualizar `description` e `keywords` no package.json — ficheiros: package.json — validação: campos coerentes. ✓ Feito: adicionados keywords (horticultura, pwa, vue, local-first, portugal, microgreens); description já coerente.
 - [x] (P5) Adicionar verificação de i18n: confirmar se vue-i18n é usado ou remover da stack — ficheiros: src, package.json — validação: decisão documentada; build verde. ✓ Decisão: MANTER — está ligado no main.ts (pt.json), scaffolding pt-PT para localização futura; app single-language por agora. Documentado em src/i18n/index.ts.
 
