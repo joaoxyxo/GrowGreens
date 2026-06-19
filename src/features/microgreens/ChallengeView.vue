@@ -128,6 +128,10 @@ async function shareHarvest() {
             <strong>sementes, um tabuleiro raso, substrato</strong> (ou fibra de coco), água e uma janela com luz.
             Podes começar com menos de 20€.
           </p>
+          <p class="mt-2 rounded-xl bg-warning/10 px-3 py-2 text-xs text-neutral-700 dark:text-neutral-200">
+            ⚠️ <strong>Segurança:</strong> cultiva só microgreens de variedades comestíveis (as desta lista). Evita
+            microgreens de solanáceas (tomate, batata, beringela, pimento) e de feijão comum — as plântulas são tóxicas.
+          </p>
         </AppCard>
 
         <h2 class="mb-2 font-semibold">Escolhe a tua semente</h2>
