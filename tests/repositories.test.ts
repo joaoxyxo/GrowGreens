@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { db } from '@/lib/db/dexie'
 import { plantingsRepo, journalRepo, remindersRepo, challengeRepo, bedsRepo } from '@/repositories'
+import { addDaysISO, todayISO } from '@/utils/date'
 
 describe('repositórios (local-first)', () => {
   beforeEach(async () => {
@@ -52,6 +53,8 @@ describe('repositórios (local-first)', () => {
     await remindersRepo.complete(r.id)
     const after = await db.reminders.get(r.id)
     expect(after?.done).toBe(false) // recorrente: reagendado
+    // Reagenda a partir da data de conclusão (hoje), não da data anterior.
+    expect(after?.dueAt).toBe(addDaysISO(todayISO(), 2))
     const journal = await db.journal.where('plantingId').equals(p.id).toArray()
     expect(journal.some((e) => e.type === 'rega')).toBe(true)
   })
