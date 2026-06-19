@@ -45,8 +45,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste de componente: AppCard e ProgressBar — ficheiros: tests/ — validação: mount passa. ✓ Feito: AppCard renderiza slot; ProgressBar com clamping. 115 testes.
 - [x] (P4) Adicionar `SECURITY.md` (como reportar problemas) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: SECURITY.md (reporte via GitHub Security Advisories; âmbito local-first/Supabase).
 - [x] (P4) CI: passo de cobertura (não bloqueia PR) — ficheiros: .github/workflows/ci.yml — validação: workflow válido. ✓ Feito: passo `npm run test:coverage` com continue-on-error: true no job quality. YAML válido.
-- [ ] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido.
-- [ ] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes.
+- [x] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido. ✓ Feito: dependabot.yml (npm + github-actions, semanal, devDeps agrupadas).
+- [x] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes. ✓ Feito: +robots, apple-mobile-web-app-* e Open Graph (description já existia). Presentes no dist.
 - [ ] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão.
 - [ ] (P5) Consolidar tipos de UI repetidos (tone/variant) — ficheiros: components/ui — validação: typecheck.
 - [ ] (P5) Contraste das badges (revisão WCAG AA) — ficheiros: components/ui — validação: revisão.
