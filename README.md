@@ -1,5 +1,7 @@
 # 🌱 GrowGreens
 
+[![CI](https://github.com/joaoxyxo/GrowGreens/actions/workflows/ci.yml/badge.svg)](https://github.com/joaoxyxo/GrowGreens/actions/workflows/ci.yml)
+
 App web (PWA) que ensina horticultura a principiantes, **da semente à colheita**, calibrada para o clima de Portugal (litoral atlântico — Ovar/Aveiro). Funciona **100% offline** e instala-se como aplicação no telemóvel ou computador.
 
 > Da semente à colheita — começa com microgreens prontos a comer em 7 dias.
@@ -32,14 +34,21 @@ npm run dev      # http://localhost:5173
 Outros comandos:
 
 ```bash
-npm run build      # vue-tsc + build de produção (dist/)
-npm run preview    # pré-visualizar o build
-npm run test       # testes (Vitest)
-npm run typecheck  # verificação de tipos
-npm run lint       # ESLint
+npm run build         # vue-tsc + build de produção (dist/)
+npm run preview       # pré-visualizar o build
+npm run test          # testes (Vitest)
+npm run test:coverage # testes com relatório de cobertura
+npm run typecheck     # verificação de tipos
+npm run lint          # ESLint
 ```
 
+## Testes
+
+Lógica de domínio (utils, stores, repositórios) coberta por testes unitários (Vitest) e testes E2E (Playwright). A integridade dos dados do catálogo é validada em `tests/data-integrity.test.ts`. Corre `npm run test:coverage` para o relatório de cobertura (mínimos configurados em `vitest.config.ts`).
+
 ## Arquitetura
+
+Visão geral das camadas e do fluxo de dados em [`docs/ARQUITETURA.md`](./docs/ARQUITETURA.md).
 
 - **Local-first:** todos os dados do utilizador (plantas, diário, fotos, progresso) vivem no dispositivo (Dexie/IndexedDB). Não é preciso conta nem internet.
 - **Catálogo:** dados estáticos e versionados em `src/data/` (plantas, microgreens, calendário, pragas/doenças, saúde, receitas, curso).

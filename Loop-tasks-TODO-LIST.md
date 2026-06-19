@@ -43,10 +43,10 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Organização
 - [x] (P3) Adicionar testes para `defaultWateringDays`/`areCompanions` já existem; cobrir `successionDays` — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: successionDays coberto em tests/growth.test.ts (intervalo p/ culturas de corte; null caso contrário).
 - [x] (P3) Definir thresholds de cobertura mínimos no vitest (ex.: utils 70%) — ficheiros: vitest.config.ts — validação: `npm run test:coverage` aplica thresholds. ✓ Feito: thresholds lines/statements/functions 55, branches 75 (abaixo do atual ~63/85 para travar regressões sem falhar). test:coverage exit 0. (70% partiria — utils está a 60%.)
-- [ ] (P4) Adicionar badge de CI e secção de testes/cobertura ao README — ficheiros: README.md — validação: README renderiza badge; comandos corretos.
+- [x] (P4) Adicionar badge de CI e secção de testes/cobertura ao README — ficheiros: README.md — validação: README renderiza badge; comandos corretos. ✓ Feito: badge do workflow CI no topo + secção "Testes" (com test:coverage) + link para docs/ARQUITETURA.md.
 - [ ] (P4) Adicionar JSDoc curto às funções públicas dos utils (date, growth, challenge) — ficheiros: src/utils/* — validação: typecheck; doc presente.
 - [x] (P4) Adicionar `engines` (node) e `packageManager` ao package.json — ficheiros: package.json — validação: build; campos presentes. ✓ Feito: engines.node ">=20" + packageManager "npm@11.11.0". package.json válido, build OK.
-- [ ] (P4) Criar `docs/ARQUITETURA.md` curto (camadas, fluxo de dados) ligado no README — ficheiros: docs/ — validação: ficheiro existe e é referenciado.
+- [x] (P4) Criar `docs/ARQUITETURA.md` curto (camadas, fluxo de dados) ligado no README — ficheiros: docs/ — validação: ficheiro existe e é referenciado. ✓ Feito: docs/ARQUITETURA.md (camadas UI→stores→repos→Dexie, dados estáticos, fluxo de exemplo) referenciado no README.
 - [x] (P5) Adicionar `.nvmrc` com a versão de Node usada no CI (20) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: .nvmrc com "20" (alinhado com o CI).
 - [ ] (P5) Normalizar mensagens de toast (um helper único de texto de conquista) — ficheiros: stores/ui, features — validação: revisão; sem strings duplicadas.
 - [ ] (P5) Adicionar script `format` (prettier --write) ao package.json — ficheiros: package.json — validação: `npm run format` corre (se prettier instalado) ou documentado.
