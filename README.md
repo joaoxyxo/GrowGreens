@@ -65,6 +65,15 @@ src/
   lib/db/       # Dexie + meta
 ```
 
+### Estrutura de dados
+
+Dois grupos de tipos, ambos em `src/types/`:
+
+- **Domínio do utilizador** (`models.ts`): `Planting`, `JournalEntry`, `Reminder`, `GardenBed`/`BedCell`, `ChallengeRun`, `ProgressState`, `SettingsState`. Guardado localmente em Dexie (`src/lib/db/dexie.ts`) — tabelas `plantings`, `journal`, `reminders`, `challengeRuns`, `beds` e `meta` (chave-valor para settings/progress).
+- **Catálogo estático** (`catalog.ts`): `Plant`, `MicrogreenInfo`, `CalendarEntry`, `Recipe`, `Lesson`/`CourseUnit`, `Pest`/`Disease`, `NutrientGroup`, etc. Dados versionados em `src/data/`. As referências entre dados (companheiras, pragas, receitas, grupos) são validadas por `tests/data-integrity.test.ts`.
+
+Backup/reposição: ver `src/utils/backup.ts` (exportar JSON / apagar tudo).
+
 ## Cloud (opcional, para mais tarde)
 
 A app está pronta para sincronização na cloud, mas **desativada por defeito** — não precisas de nada disto para a usar.
