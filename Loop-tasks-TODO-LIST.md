@@ -9,7 +9,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P4) Adicionar FAQ/dúvidas frequentes de principiante (rega, luz, vasos) — ficheiros: src/data/ (+vista) ou troubleshoot — validação: build; conteúdo acessível.
 - [x] (P4) Curso: 2.ª lição de rega/clima (capilaridade, drenagem) — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: lição l5-4 'Rega por capilaridade e drenagem' (u5). data-integrity verde.
 - [x] (P4) Glossário: +termos ("rotação de culturas", "adubo verde", "pH") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (rotação de culturas, adubo verde, pH).
-- [ ] (P4) Receitas: ligar receitas existentes a mais plantas (cenoura, beterraba) — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P4) Receitas: ligar receitas existentes a mais plantas (cenoura, beterraba) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: cenoura no creme-abóbora; beterraba na sopa-da-horta (ingredientes + plants). cenoura/beterraba passam a ter receitas no detalhe. 115 testes.
 - [ ] (P5) Saúde: `caution` em frutos/raízes onde aplicável (ex.: batata verde) — ficheiros: src/data/health.ts — validação: build.
 - [ ] (P5) Microgreens: mostrar demolha (soakHours) por variedade na vista — ficheiros: features/microgreens — validação: build.
 - [ ] (P5) Calendário: nota de geada por zona (lastFrost/firstFrost) na vista — ficheiros: features/calendar — validação: build.
@@ -44,7 +44,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) A11y: `aria-label` em botões só-ícone (recomeçar, fechar, etc.) — ficheiros: components/features — validação: revisão; sem botões sem nome acessível. ✓ Feito: ✕ de fechar e células da grelha do planeador ganharam aria-label (as restantes — sair, meses, concluir — já tinham).
 - [x] (P4) Teste de componente: AppCard e ProgressBar — ficheiros: tests/ — validação: mount passa. ✓ Feito: AppCard renderiza slot; ProgressBar com clamping. 115 testes.
 - [x] (P4) Adicionar `SECURITY.md` (como reportar problemas) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: SECURITY.md (reporte via GitHub Security Advisories; âmbito local-first/Supabase).
-- [ ] (P4) CI: passo de cobertura (não bloqueia PR) — ficheiros: .github/workflows/ci.yml — validação: workflow válido.
+- [x] (P4) CI: passo de cobertura (não bloqueia PR) — ficheiros: .github/workflows/ci.yml — validação: workflow válido. ✓ Feito: passo `npm run test:coverage` com continue-on-error: true no job quality. YAML válido.
 - [ ] (P5) Dependabot (config de atualizações) — ficheiros: .github/dependabot.yml — validação: ficheiro válido.
 - [ ] (P5) Meta tags básicas (description/robots) no index.html — ficheiros: index.html — validação: build; tags presentes.
 - [ ] (P5) A11y: foco visível consistente (focus-visible) — ficheiros: components/ui — validação: revisão.

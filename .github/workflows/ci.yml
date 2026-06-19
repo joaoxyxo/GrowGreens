@@ -18,6 +18,9 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run test
+      # Relatório de cobertura (não bloqueia o PR: continua mesmo abaixo do threshold)
+      - run: npm run test:coverage
+        continue-on-error: true
       - run: npm run build
 
   e2e:
