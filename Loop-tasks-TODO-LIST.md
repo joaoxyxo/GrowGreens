@@ -17,9 +17,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Uniformizar `in30Seconds` (3 bullets) e tom de `commonMistake` nas plantas originais — ficheiros: src/data/plants.ts — validação: build; consistência por revisão.
 
 ## Regras de Negócio
-- [ ] (P3) Testar `estimateStage` (utils/growth) — fases por dias decorridos — ficheiros: tests/growth.test.ts — validação: novo teste verde.
-- [ ] (P3) Testar `recommendPlants` (utils/recommend) — respeita espaço/zona/limite — ficheiros: tests/recommend.test.ts — validação: novo teste verde.
-- [ ] (P3) Testar `plantSowableThisMonth` e `calendarForPlant` — ficheiros: tests/calendar.test.ts — validação: novo teste verde.
+- [x] (P3) Testar `estimateStage` (utils/growth) — fases por dias decorridos — ficheiros: tests/growth.test.ts — validação: novo teste verde. ✓ Feito: tests/growth.test.ts cobre estimateStage (germinação→colheita). 76 testes.
+- [x] (P3) Testar `recommendPlants` (utils/recommend) — respeita espaço/zona/limite — ficheiros: tests/recommend.test.ts — validação: novo teste verde. ✓ Feito: tests/recommend.test.ts (limite, objetos válidos, só-interior sem exterior no topo).
+- [x] (P3) Testar `plantSowableThisMonth` e `calendarForPlant` — ficheiros: tests/calendar.test.ts — validação: novo teste verde. ✓ Feito: tests/calendar.test.ts (filtro por planta, shift de zona, sementeira do mês).
 - [ ] (P3) Testar `wateringAdvice` (composables/useWeather) como função pura — ficheiros: tests/ — validação: novo teste verde.
 - [ ] (P4) Garantir que concluir a mesma lição não duplica XP nem o registo — ficheiros: src/features/course/LessonView.vue, stores/progress.ts — validação: teste de idempotência.
 - [ ] (P4) Lembrete de adubação opcional ao criar planta (com base em feedingNotes/categoria) — ficheiros: src/repositories/index.ts — validação: teste cria lembrete 'aduba'.
@@ -41,7 +41,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Evitar importar todo o date-fns/locale; confirmar import só do locale pt — ficheiros: utils/date.ts — validação: build; bundle não inclui locales extra.
 
 ## Organização
-- [ ] (P3) Adicionar testes para `defaultWateringDays`/`areCompanions` já existem; cobrir `successionDays` — ficheiros: tests/ — validação: novo teste verde.
+- [x] (P3) Adicionar testes para `defaultWateringDays`/`areCompanions` já existem; cobrir `successionDays` — ficheiros: tests/ — validação: novo teste verde. ✓ Feito: successionDays coberto em tests/growth.test.ts (intervalo p/ culturas de corte; null caso contrário).
 - [ ] (P3) Definir thresholds de cobertura mínimos no vitest (ex.: utils 70%) — ficheiros: vitest.config.ts — validação: `npm run test:coverage` aplica thresholds.
 - [ ] (P4) Adicionar badge de CI e secção de testes/cobertura ao README — ficheiros: README.md — validação: README renderiza badge; comandos corretos.
 - [ ] (P4) Adicionar JSDoc curto às funções públicas dos utils (date, growth, challenge) — ficheiros: src/utils/* — validação: typecheck; doc presente.
