@@ -41,6 +41,11 @@ describe('buildICS', () => {
     expect(ics).not.toContain('BEGIN:VEVENT')
   })
 
+  it('escapa vírgulas e ponto-e-vírgula no SUMMARY (RFC 5545)', () => {
+    const ics = buildICS([reminder({ label: 'Regar alface, tomate; já' })], STAMP)
+    expect(ics).toContain('SUMMARY:🌱 Regar alface\\, tomate\\; já')
+  })
+
   it('tem o mesmo número de BEGIN e END de VEVENT', () => {
     const ics = buildICS([reminder({ id: 'a' }), reminder({ id: 'b' })], STAMP)
     const begins = ics.match(/BEGIN:VEVENT/g)?.length ?? 0

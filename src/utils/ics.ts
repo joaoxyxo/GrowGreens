@@ -10,6 +10,11 @@ function toICSDate(d: Date): string {
   )
 }
 
+// Escapa o texto para valores de propriedade do iCalendar (RFC 5545).
+function escapeICS(text: string): string {
+  return text.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n')
+}
+
 function toICSStamp(d: Date): string {
   // Formato UTC: AAAAMMDDTHHMMSSZ (obrigatório no campo DTSTAMP)
   return (
@@ -43,7 +48,7 @@ export function buildICS(reminders: Reminder[], stamp: Date = new Date()): strin
     lines.push(`UID:${r.id}@growgreens`)
     lines.push(`DTSTAMP:${dtstamp}`)
     lines.push(`DTSTART;VALUE=DATE:${toICSDate(start)}`)
-    lines.push(`SUMMARY:🌱 ${r.label}`)
+    lines.push(`SUMMARY:🌱 ${escapeICS(r.label)}`)
     if (r.recurrenceDays) lines.push(`RRULE:FREQ=DAILY;INTERVAL=${r.recurrenceDays}`)
     lines.push('END:VEVENT')
   }
