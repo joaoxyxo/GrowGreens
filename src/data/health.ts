@@ -5,7 +5,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'folhas_verdes',
     name: 'Folhas verdes',
     emoji: '🥬',
-    plants: ['alface', 'espinafre'],
+    plants: ['alface', 'espinafre', 'acelga', 'agriao'],
     whyGood: [
       'Muito baixas em calorias e ricas em fibra — saciam sem pesar.',
       'Das melhores fontes de folato e vitamina K, importantes para o sangue e os ossos.',
@@ -23,7 +23,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'brassicas',
     name: 'Brássicas (crucíferas)',
     emoji: '🥦',
-    plants: ['brocolos', 'rabanete', 'rucula', 'couve-galega'],
+    plants: ['brocolos', 'rabanete', 'rucula', 'couve-galega', 'couve-flor', 'couve-lombarda', 'nabo'],
     whyGood: [
       'Contêm glucosinolatos, precursores do sulforafano, estudado pelo seu potencial anticancerígeno.',
       'O consumo regular associa-se a menor mortalidade por todas as causas.',
@@ -41,7 +41,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'frutos_raizes',
     name: 'Frutos e raízes',
     emoji: '🍅',
-    plants: ['tomate', 'pimento', 'cenoura', 'beterraba'],
+    plants: ['tomate', 'pimento', 'cenoura', 'beterraba', 'courgette', 'pepino', 'abobora', 'beringela', 'melao', 'batata', 'alho-frances'],
     whyGood: [
       'O tomate é a principal fonte de licopeno, ligado à saúde cardiovascular.',
       'Cenoura e beterraba dão beta-caroteno e nitratos benéficos.',
@@ -58,7 +58,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'leguminosas',
     name: 'Leguminosas',
     emoji: '🫛',
-    plants: ['feijao-verde', 'ervilha'],
+    plants: ['feijao-verde', 'ervilha', 'fava', 'feijao-frade'],
     whyGood: [
       'Fonte económica de proteína vegetal e fibra solúvel.',
       'Ajudam a baixar o colesterol LDL e a controlar a glicemia (baixo índice glicémico).',
@@ -75,11 +75,12 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'aromaticas',
     name: 'Aromáticas',
     emoji: '🌿',
-    plants: ['manjericao', 'salsa', 'hortela', 'alecrim'],
+    plants: ['manjericao', 'salsa', 'hortela', 'alecrim', 'coentros', 'cebolinho', 'tomilho', 'oregaos', 'louro', 'funcho'],
     whyGood: [
       'Concentram antioxidantes e óleos essenciais num volume pequeno.',
       'Dão muito sabor — ajudam a reduzir o sal nas refeições.',
       'A salsa é rica em vitaminas A, C e K; o manjericão tem eugenol anti-inflamatório.',
+      'Coentros e funcho ajudam a digestão; o tomilho e os orégãos são ricos em compostos antimicrobianos.',
     ],
     nutrients: [
       { nutrient: 'Antioxidantes (polifenóis)', effect: 'Combatem o stress oxidativo.' },
