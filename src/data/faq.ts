@@ -36,4 +36,19 @@ export const FAQ: FaqItem[] = [
     q: 'Apareceram bichos/manchas — e agora?',
     a: 'Vai a "A minha planta não está bem" e identifica pelo sintoma. No litoral húmido, a maioria dos problemas é fungo (rega de manhã e na base ajuda a prevenir).',
   },
+  {
+    emoji: '🏠',
+    q: 'Interior ou exterior?',
+    a: 'Folhas e ervas crescem bem num parapeito soalheiro; frutos (tomate, pepino) precisam de muito sol e ficam melhor numa varanda/quintal. Os microgreens fazem-se sempre em casa, o ano todo.',
+  },
+  {
+    emoji: '🧺',
+    q: 'Quando é que sei que está pronto para colher?',
+    a: 'Cada ficha do catálogo indica os dias até à colheita e o ponto certo. Em geral: folhas colhem-se jovens (corta-e-volta), frutos quando bem corados e firmes, raízes quando engrossam.',
+  },
+  {
+    emoji: '🪟',
+    q: 'Tenho pragas dentro de casa — é normal?',
+    a: 'Sim, sobretudo pulgões, mosca-branca e cochonilha em plantas de interior. Areja o espaço, limpa as folhas e usa sabão potássico ou óleo de nim. Evita regar a mais.',
+  },
 ]
