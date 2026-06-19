@@ -6,7 +6,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Conteúdo
 - [x] (P3) Adicionar 2-3 culturas (couve-de-bruxelas, alface-de-cordeiro/canónigos, cebolinho-chinês) com schema + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (couve-de-bruxelas, canónigos, cebolinho-chinês) + calendário → 45 plantas. data-integrity + 111 testes.
-- [ ] (P4) Adicionar FAQ/dúvidas frequentes de principiante (rega, luz, vasos) — ficheiros: src/data/ (+vista) ou troubleshoot — validação: build; conteúdo acessível.
+- [x] (P4) Adicionar FAQ/dúvidas frequentes de principiante (rega, luz, vasos) — ficheiros: src/data/ (+vista) ou troubleshoot — validação: build; conteúdo acessível. ✓ Feito: src/data/faq.ts (6 dúvidas: rega, luz, vasos, começar, adubo, pragas) mostradas na GlossaryView quando não há pesquisa.
 - [x] (P4) Curso: 2.ª lição de rega/clima (capilaridade, drenagem) — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: lição l5-4 'Rega por capilaridade e drenagem' (u5). data-integrity verde.
 - [x] (P4) Glossário: +termos ("rotação de culturas", "adubo verde", "pH") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (rotação de culturas, adubo verde, pH).
 - [x] (P4) Receitas: ligar receitas existentes a mais plantas (cenoura, beterraba) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: cenoura no creme-abóbora; beterraba na sopa-da-horta (ingredientes + plants). cenoura/beterraba passam a ter receitas no detalhe. 115 testes.
