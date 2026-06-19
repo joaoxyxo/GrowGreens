@@ -89,6 +89,15 @@ watch(() => settings.state.zoneCode, (z) => fetchFor(z))
         <p class="text-sm"><strong>🌿 Este mês:</strong> {{ MONTHLY_TIPS[month] }}</p>
       </AppCard>
 
+      <!-- Nota de geada por zona -->
+      <AppCard v-if="zone" class="mb-4 bg-sky-400/5 border-sky-400/30">
+        <p class="text-sm">
+          <strong>❄️ Geada em {{ zone.name }}:</strong>
+          última provável por volta de {{ MONTH_NAMES[zone.lastFrostMonth - 1] }}; primeira por volta de
+          {{ MONTH_NAMES[zone.firstFrostMonth - 1] }}. Protege as culturas sensíveis ao frio fora desta janela.
+        </p>
+      </AppCard>
+
       <!-- Secções -->
       <div class="space-y-5">
         <section v-for="s in sections" :key="s.action">

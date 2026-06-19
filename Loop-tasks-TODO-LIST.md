@@ -11,8 +11,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Glossário: +termos ("rotação de culturas", "adubo verde", "pH") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (rotação de culturas, adubo verde, pH).
 - [x] (P4) Receitas: ligar receitas existentes a mais plantas (cenoura, beterraba) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: cenoura no creme-abóbora; beterraba na sopa-da-horta (ingredientes + plants). cenoura/beterraba passam a ter receitas no detalhe. 115 testes.
 - [x] (P5) Saúde: `caution` em frutos/raízes onde aplicável (ex.: batata verde) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: caution no grupo frutos/raízes (solanina — batata verde/partes verdes).
-- [ ] (P5) Microgreens: mostrar demolha (soakHours) por variedade na vista — ficheiros: features/microgreens — validação: build.
-- [ ] (P5) Calendário: nota de geada por zona (lastFrost/firstFrost) na vista — ficheiros: features/calendar — validação: build.
+- [x] (P5) Microgreens: mostrar demolha (soakHours) por variedade na vista — ficheiros: features/microgreens — validação: build. ✓ Feito: lista de variedades mostra '💧 demolha Xh' quando soakHours>0.
+- [x] (P5) Calendário: nota de geada por zona (lastFrost/firstFrost) na vista — ficheiros: features/calendar — validação: build. ✓ Feito: cartão com a janela de geada (última/primeira) usando lastFrostMonth/firstFrostMonth da zona.
 - [x] (P5) Troubleshoot: +sintoma "plântulas tombam (damping-off)" — ficheiros: src/data/troubleshoot.ts — validação: build; SYMPTOMS aumenta. ✓ Feito: sintoma damping-off (excesso de água/fungos; related: mildio).
 - [ ] (P5) Recomendações: priorizar culturas semeáveis este mês — ficheiros: src/utils/recommend.ts — validação: teste.
 
