@@ -1,5 +1,5 @@
 # Loop Tasks — TODO List
-Ciclo: 1 · Atualizado: 2026-06-18 19:44
+Ciclo: 1 · Atualizado: 2026-06-19 (CONCLUÍDO: 38 ✓ · 2 bloqueadas/sem objeto · 0 pendentes)
 
 Estados: `[ ]` pendente · `[x]` concluída (+ nota/commit) · `[!]` bloqueada (+ motivo).
 Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie (IndexedDB), Tailwind v4. Testes: Vitest + Playwright. Lint: ESLint flat config. Gestor: npm. Scripts: dev, build, preview, typecheck, lint, test, test:e2e.
@@ -26,7 +26,7 @@ Stack detetado: Vue 3 + TypeScript + Vite (PWA), Pinia, Vue Router, Vue I18n, De
 - [x] (P3) Garantir que apagar uma planta remove lembretes e diário em transação (já existe — adicionar teste) — ficheiros: tests/repositories.test.ts — validação: teste cobre cascata. ✓ Já coberto: tests/repositories.test.ts:88 "remover planta apaga diário e lembretes" valida a cascata. Sem alteração necessária.
 - [x] (P4) Marcar planta como "perdida"/"colhida" atualiza estado e remove lembretes pendentes — ficheiros: src/repositories/index.ts, src/features/garden — validação: teste de transição de estado. ✓ Feito: plantingsRepo.update conclui (done=true) os lembretes pendentes quando status passa a colhida/perdida, em transação; teste em repositories.test.ts. 64 testes verdes.
 - [x] (P4) Avisos de boa/má vizinhança no planeador usam companions/antagonists corretamente — ficheiros: src/features/planner/BedView.vue — validação: teste de função de vizinhança. ✓ Feito: extraídas areCompanions/areAntagonists (relação simétrica) para utils/growth.ts, usadas no BedView; tests/companions.test.ts (5 casos). 63 testes verdes.
-- [ ] (P5) Sucessão de sementeira: sugerir próxima data para culturas de corte (alface, rúcula) — ficheiros: src/features/calendar ou recommendations — validação: build OK; sugestão aparece.
+- [x] (P5) Sucessão de sementeira: sugerir próxima data para culturas de corte (alface, rúcula) — ficheiros: src/features/calendar ou recommendations — validação: build OK; sugestão aparece. ✓ Feito: helper successionDays() (alface/rúcula/espinafre/acelga/agrião/coentros/rabanete/nabo) + dica no PlantDetailView com a próxima data sugerida. TC/lint/build + 64 testes OK.
 
 ## Performance
 - [x] (P3) Garantir lazy-loading dos chunks de dados grandes (course.ts, health.ts) à semelhança de plants — ficheiros: src/features/*, imports — validação: `npm run build` mostra course/health em chunks separados. ✓ Já garantido: o build produz course-*.js (11KB), health-*.js (3.6KB) e plants-*.js (73KB) como chunks próprios (importados por vistas lazy de rota). Nada a fazer.

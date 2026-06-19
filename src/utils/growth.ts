@@ -18,6 +18,24 @@ export function areAntagonists(a: Plant, b: Plant): boolean {
   return a.antagonists.includes(b.slug) || b.antagonists.includes(a.slug)
 }
 
+// Culturas rápidas de corte/raiz que se ganham em semear em sucessão (várias levas
+// espaçadas) para ter colheita contínua em vez de tudo de uma vez.
+const SUCCESSION_INTERVAL_DAYS: Record<string, number> = {
+  alface: 14,
+  rucula: 14,
+  espinafre: 14,
+  acelga: 21,
+  agriao: 14,
+  coentros: 14,
+  rabanete: 10,
+  nabo: 14,
+}
+
+/** Intervalo de sucessão (dias) recomendado para a planta, ou null se não se aplicar. */
+export function successionDays(slug: string): number | null {
+  return SUCCESSION_INTERVAL_DAYS[slug] ?? null
+}
+
 const STAGE_LABELS: Record<string, string> = {
   germinacao: 'Germinação',
   plantula: 'Plântula',

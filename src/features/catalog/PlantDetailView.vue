@@ -15,8 +15,8 @@ import { plantingsRepo } from '@/repositories'
 import { useSettingsStore } from '@/stores/settings'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
-import { MONTH_NAMES } from '@/utils/date'
-import { defaultWateringDays } from '@/utils/growth'
+import { MONTH_NAMES, fmtDate, addDaysISO, todayISO } from '@/utils/date'
+import { defaultWateringDays, successionDays } from '@/utils/growth'
 
 const route = useRoute()
 const router = useRouter()
@@ -38,6 +38,14 @@ const plantCalendar = computed(() =>
 )
 
 const recipes = computed(() => (plant.value ? recipesForPlant(plant.value.slug) : []))
+
+// Sugestão de sementeira em sucessão (culturas de corte rápidas).
+const succession = computed(() => {
+  if (!plant.value) return null
+  const days = successionDays(plant.value.slug)
+  if (!days) return null
+  return { days, nextDate: fmtDate(addDaysISO(todayISO(), days)) }
+})
 
 // Modal de adicionar
 const showAdd = ref(false)
@@ -143,6 +151,14 @@ async function confirmAdd() {
       <!-- Expectativas -->
       <AppCard class="mt-3 bg-sky-400/5 border-sky-400/30">
         <p class="text-sm"><strong>📅 O que esperar:</strong> {{ plant.expectations }}</p>
+      </AppCard>
+
+      <!-- Sucessão de sementeira -->
+      <AppCard v-if="succession" class="mt-3 bg-green-500/5 border-green-500/30">
+        <p class="text-sm">
+          <strong>🔁 Semeia em sucessão:</strong> para teres colheita contínua, semeia outra leva a cada
+          ~{{ succession.days }} dias. A próxima seria por volta de <strong>{{ succession.nextDate }}</strong>.
+        </p>
       </AppCard>
 
       <!-- Calendário -->
