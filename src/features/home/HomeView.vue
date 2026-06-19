@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, watch, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useSettingsStore } from '@/stores/settings'
 import { useProgressStore } from '@/stores/progress'
@@ -57,6 +57,11 @@ const sowable = computed(() => {
 const recommendations = computed(() =>
   plantings.value.length < 3 ? recommendPlants(settings.state, 3) : [],
 )
+
+// Pré-carrega o chunk do catálogo (destino frequente a partir do Home) em segundo plano.
+onMounted(() => {
+  import('@/features/catalog/CatalogView.vue').catch(() => {})
+})
 
 async function addRecommended(slug: string) {
   const plant = getPlant(slug)
