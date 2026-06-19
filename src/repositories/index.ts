@@ -10,6 +10,7 @@ import type {
   BedCell,
 } from '@/types/models'
 import { todayISO, addDaysISO } from '@/utils/date'
+import { getPlant } from '@/data/plants'
 
 // ---------- Plantings ----------
 export const plantingsRepo = {
@@ -47,6 +48,16 @@ export const plantingsRepo = {
       dueAt: addDaysISO(now, wateringEveryDays),
       recurrenceDays: wateringEveryDays,
     })
+    // Plantas de fruto são gulosas: lembrete de adubação periódica (cada ~3 semanas).
+    if (getPlant(data.plantSlug)?.category === 'fruto') {
+      await remindersRepo.create({
+        plantingId: planting.id,
+        type: 'aduba',
+        label: `Adubar ${nickname}`,
+        dueAt: addDaysISO(now, 21),
+        recurrenceDays: 21,
+      })
+    }
     return planting
   },
   async update(id: string, patch: Partial<Planting>) {

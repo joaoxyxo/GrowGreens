@@ -88,6 +88,26 @@ describe('repositórios (local-first)', () => {
     expect(bed.cols).toBeGreaterThanOrEqual(1)
   })
 
+  it('cria lembrete de adubação para plantas de fruto, mas não para folhas', async () => {
+    const tomate = await plantingsRepo.create({
+      plantSlug: 'tomate',
+      nickname: 'Tomateiro',
+      location: 'varanda',
+      wateringEveryDays: 2,
+    })
+    const rsTomate = await db.reminders.where('plantingId').equals(tomate.id).toArray()
+    expect(rsTomate.some((r) => r.type === 'aduba')).toBe(true)
+
+    const alface = await plantingsRepo.create({
+      plantSlug: 'alface',
+      nickname: 'Alface',
+      location: 'varanda',
+      wateringEveryDays: 3,
+    })
+    const rsAlface = await db.reminders.where('plantingId').equals(alface.id).toArray()
+    expect(rsAlface.some((r) => r.type === 'aduba')).toBe(false)
+  })
+
   it('saneia nickname vazio e intervalo de rega inválido ao criar', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'rucula',
