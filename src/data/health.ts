@@ -54,6 +54,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Potássio', effect: 'Equilíbrio de fluidos e tensão arterial.' },
     ],
     tip: 'O tomate cozinhado com um fio de azeite liberta MAIS licopeno do que cru. Come os dois!',
+    caution: 'Não comas batatas verdes ou rebentadas nem partes verdes das solanáceas (folhas de tomate/beringela/batata) — contêm solanina, tóxica. Guarda a batata ao escuro.',
   },
   {
     code: 'leguminosas',
