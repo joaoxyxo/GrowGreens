@@ -30,7 +30,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Performance
 - [x] (P4) `loading="lazy"` nas restantes imagens (DiagnosisView preview, timeline microgreens) — ficheiros: features/diagnosis, microgreens — validação: build; atributo presente. ✓ Feito: loading="lazy" na preview da DiagnosisView (microgreens não tem <img> de timeline). Build OK.
-- [ ] (P4) `v-memo` na lista de resultados do catálogo — ficheiros: src/features/catalog/CatalogView.vue — validação: build; lista não re-renderiza sem mudança.
+- [x] (P4) `v-memo` na lista de resultados do catálogo — ficheiros: src/features/catalog/CatalogView.vue — validação: build; lista não re-renderiza sem mudança. ✓ Feito: v-memo=[slug, sowable] nos PlantCard — saltam re-render quando nada muda. Build OK.
 - [x] (P4) Memoizar `recommendPlants` num computed no Home (evitar recalcular por render) — ficheiros: src/features/home/HomeView.vue — validação: revisão. ✓ Verificado: já está num computed (recomputa só quando plantings/settings mudam). Nada a alterar.
 - [ ] (P5) `width`/`height` (ou aspect-ratio) nas imagens para evitar layout shift — ficheiros: features/* — validação: build; sem CLS visível.
 - [ ] (P5) Workbox: excluir sourcemaps/manifest do precache desnecessário — ficheiros: vite.config.ts — validação: build; precache não inclui .map.
@@ -45,7 +45,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Criar CONTRIBUTING.md (como correr, testar, convenções de commit) — ficheiros: raiz — validação: ficheiro existe e é coerente. ✓ Feito: CONTRIBUTING.md com arranque, checklist de PR, convenções e links.
 - [x] (P4) Adicionar LICENSE (decidir licença; por defeito propor MIT) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: LICENSE MIT (2026 GrowGreens) — o dono pode trocar se preferir outra.
 - [x] (P4) Tipar `Toast['kind']` e exportar o tipo do ui store — ficheiros: src/stores/ui.ts — validação: typecheck. ✓ Feito: tipo `ToastKind` exportado e usado em Toast/toast(). TC OK.
-- [ ] (P4) Templates de issue/PR em .github/ — ficheiros: .github/ — validação: ficheiros válidos.
+- [x] (P4) Templates de issue/PR em .github/ — ficheiros: .github/ — validação: ficheiros válidos. ✓ Feito: ISSUE_TEMPLATE (bug, feature) + pull_request_template.md com checklist de qualidade.
 - [ ] (P5) Rever flags `strict` do tsconfig (noUnusedLocals, noImplicitReturns) — ficheiros: tsconfig*.json — validação: typecheck continua verde.
 - [x] (P5) Garantir `.gitignore` cobre coverage/ e dist/ (confirmar) — ficheiros: .gitignore — validação: git status limpo após build/coverage. ✓ Verificado: .gitignore inclui dist e coverage; git status limpo após build/coverage.
 - [ ] (P5) Documentar no README a estrutura de dados (link models/catalog) — ficheiros: README.md — validação: secção presente.
