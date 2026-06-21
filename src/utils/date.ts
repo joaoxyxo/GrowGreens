@@ -59,6 +59,7 @@ export function isDueToday(dueISO: string): boolean {
   return isoDay(dueISO) === todayKey()
 }
 
+/** Nomes dos meses em pt-PT, indexados 0-11 (use `MONTH_NAMES[mes - 1]`). */
 export const MONTH_NAMES = [
   'Janeiro',
   'Fevereiro',

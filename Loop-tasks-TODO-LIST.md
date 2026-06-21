@@ -42,15 +42,15 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Organização
 - [x] (P2) `.gitignore`: ignorar `.claude/` e `test-results/` — ficheiros: .gitignore — validação: `git status` limpo desses caminhos. ✓ Feito: + test-results, playwright-report, .claude.
-- [ ] (P3) Atualizar CLAUDE.md com contagens de conteúdo (45 glossário, 12 FAQ, 7 unidades/19 lições) — ficheiros: CLAUDE.md — validação: coerente.
-- [ ] (P3) CHANGELOG: entrada para as alterações dos ciclos 6/7 — ficheiros: CHANGELOG.md — validação: presente.
-- [ ] (P4) docs/ARQUITETURA: adicionar secção "Testes" (Vitest + Playwright, padrões) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
-- [ ] (P4) Confirmar que `src/stores` não importam de `src/features` (camadas) — ficheiros: src/stores — validação: grep limpo.
-- [ ] (P4) Confirmar que `src/repositories` não importam de `src/features` — ficheiros: src/repositories — validação: grep limpo.
-- [ ] (P4) Verificar ausência de imports circulares óbvios entre data files — ficheiros: src/data — validação: revisão.
-- [ ] (P5) Adicionar JSDoc curto a funções públicas de utils sem documentação — ficheiros: src/utils — validação: typecheck.
-- [ ] (P4) README: secção de funcionalidades alinhada com o estado atual — ficheiros: README.md — validação: coerente.
-- [ ] (P5) Verificar consistência de ordem `<script setup>` antes de `<template>` nos .vue — ficheiros: src — validação: revisão.
+- [x] (P3) Atualizar CLAUDE.md com contagens de conteúdo — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 45 glossário, 12 FAQ, 7 unidades/19 lições, 146 unit + 7 E2E.
+- [x] (P3) CHANGELOG: entrada para as alterações dos ciclos 6/7 — ficheiros: CHANGELOG.md — validação: presente. ✓ Feito: entradas Ciclo 6 e Ciclo 7.
+- [x] (P4) docs/ARQUITETURA: adicionar secção "Testes" — ficheiros: docs/ARQUITETURA.md — validação: coerente. ✓ Feito: Vitest (unit/repos/componentes/integridade) + Playwright (E2E, base path, padrões).
+- [x] (P4) Confirmar que `src/stores` não importam de `src/features` — ficheiros: src/stores — validação: grep limpo. ✓ Verificado.
+- [x] (P4) Confirmar que `src/repositories` não importam de `src/features` — ficheiros: src/repositories — validação: grep limpo. ✓ Verificado.
+- [x] (P4) Verificar ausência de imports circulares entre data files — ficheiros: src/data — validação: revisão. ✓ Verificado: nenhum data file importa de outro @/data.
+- [x] (P5) Adicionar JSDoc a funções públicas de utils sem documentação — ficheiros: src/utils — validação: typecheck. ✓ Feito: MONTH_NAMES e buildAchievementCard em JSDoc; restantes já documentados.
+- [x] (P4) README: secção de funcionalidades alinhada com o estado atual — ficheiros: README.md — validação: coerente. ✓ Feito: catálogo 51 culturas; chunk plants ~23 KB.
+- [x] (P5) Consistência de ordem `<script setup>` antes de `<template>` nos .vue — ficheiros: src — validação: revisão. ✓ Verificado: todos os .vue são script-first (0 template-first).
 
 ## Arquivo (ciclos concluídos)
 

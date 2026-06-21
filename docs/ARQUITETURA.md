@@ -50,3 +50,12 @@ Lógica de regras pura, sem dependências de Vue/Dexie, coberta por testes:
 ## Lógica pura testável
 
 Sempre que possível, a lógica de regras vive em funções puras em `src/utils/` (ou `src/data/`) e é coberta por testes unitários, deixando os componentes `.vue` finos. Ver `tests/`.
+
+## Testes
+
+Duas camadas, ambas a correr no CI (`.github/workflows/ci.yml`):
+
+- **Unitários — Vitest** (`tests/*.test.ts`): lógica pura (`growth`, `challenge`, `recommend`, `calendar`, `backup`…), repositórios Dexie (com `fake-indexeddb/auto` em `tests/setup.ts`), stores Pinia e componentes (`@vue/test-utils`). A integridade do catálogo é validada em `tests/data-integrity.test.ts` (todas as referências entre dados estáticos têm de apontar para slugs existentes). Cobertura via `@vitest/coverage-v8` (`npm run test:coverage`).
+- **E2E — Playwright** (`tests/e2e/*.spec.ts`): fluxos reais sobre o build de produção. O `webServer` faz `BASE_PATH=/ npm run build && preview` para o `base` não partir as rotas. Padrão: helper `completeOnboarding(page)`, navegação SPA (sem reload), e `exact: true`/seletores `href*=` para desambiguar.
+
+Antes de commitar: `npm run typecheck`, `npm run test` e `npm run build` verdes.

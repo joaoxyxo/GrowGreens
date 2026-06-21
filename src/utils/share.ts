@@ -1,4 +1,4 @@
-// Gera um cartão de imagem (canvas) para partilhar uma conquista.
+/** Gera um cartão de imagem (canvas) para partilhar uma conquista. */
 export async function buildAchievementCard(opts: {
   title: string
   subtitle: string
