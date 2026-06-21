@@ -35,7 +35,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'O solo é vivo — e alimenta as tuas plantas.',
     emoji: '🟤',
     color: 'earth',
-    lessonIds: ['l4-1', 'l4-2'],
+    lessonIds: ['l4-1', 'l4-2', 'l4-3'],
   },
   {
     id: 'u5',
@@ -361,6 +361,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'Potássio (K) ajuda na frutificação. Azoto a mais nesta fase dá folha em vez de fruto.',
       },
       { kind: 'summary', bullets: ['N = folhas, P = raízes/flores, K = frutos.', 'Ajusta o adubo à fase da planta.'] },
+    ],
+  },
+  {
+    id: 'l4-3',
+    unitId: 'u4',
+    title: 'Rotação de culturas',
+    subtitle: 'Não repetir a família no mesmo sítio.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🔄',
+        title: 'Porquê rodar',
+        body: 'Plantar sempre a mesma família no mesmo canteiro esgota os mesmos nutrientes e acumula pragas e doenças desse grupo. Rodar as famílias quebra esse ciclo e mantém o solo equilibrado.',
+      },
+      {
+        kind: 'concept',
+        emoji: '👪',
+        title: 'Conhece as famílias',
+        body: 'Brássicas (couves, rabanete, nabo), solanáceas (tomate, pimento, batata, beringela), leguminosas (feijão, ervilha, fava — enriquecem o solo com azoto) e aliáceas (alho, cebola, alho-francês). Faz seguir um grupo guloso por uma leguminosa.',
+      },
+      {
+        kind: 'choice',
+        question: 'Onde tiveste tomate (solanácea) este ano, o que plantas a seguir?',
+        options: ['Outra solanácea (batata)', 'Uma leguminosa (feijão/fava)', 'Tomate outra vez'],
+        correctIndex: 1,
+        explanation: 'A leguminosa repõe azoto e pertence a outra família — quebra o ciclo de pragas/doenças do tomate.',
+      },
+      { kind: 'summary', bullets: ['Não repitas a mesma família no mesmo sítio.', 'Leguminosas enriquecem o solo (azoto).', 'Rodar = menos pragas e solo mais equilibrado.'] },
     ],
   },
   {
