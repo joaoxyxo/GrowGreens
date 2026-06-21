@@ -136,6 +136,16 @@ describe('repositórios (local-first)', () => {
     expect(saved!.cells['1-1']).toBeTruthy()
   })
 
+  it('planeador: clearCell remove a célula correta', async () => {
+    const bed = await bedsRepo.create({ name: 'C', kind: 'canteiro', rows: 3, cols: 3 })
+    await bedsRepo.setCell(bed.id, '0-0', { plantSlug: 'alface' })
+    await bedsRepo.setCell(bed.id, '1-1', { plantSlug: 'tomate' })
+    await bedsRepo.clearCell(bed.id, '0-0')
+    const saved = await bedsRepo.get(bed.id)
+    expect(saved!.cells['0-0']).toBeUndefined()
+    expect(saved!.cells['1-1'].plantSlug).toBe('tomate')
+  })
+
   it('planeador: limita o tamanho da grelha (1-12)', async () => {
     const bed = await bedsRepo.create({ name: 'X', kind: 'vaso', rows: 99, cols: 0 })
     expect(bed.rows).toBeLessThanOrEqual(12)
