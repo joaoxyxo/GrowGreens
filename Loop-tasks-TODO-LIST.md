@@ -1,58 +1,61 @@
 # Loop Tasks — TODO List
-Ciclo: 6 · Atualizado: 2026-06-21 23:50
+Ciclo: 7 · Atualizado: 2026-06-22 12:00
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
-Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 48 plantas, 128 testes (+5 e2e).
+Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 51 plantas, 10 microgreens, 19 receitas, 140 unit + 7 e2e.
 
 ## Conteúdo
-- [x] (P3) Adicionar 2-3 culturas (rúcula-selvagem, funcho-doce n/a; usar tomilho-limão, manjerona, cerefólio) — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (tomilho-limão, manjerona, cerefólio) + calendário → 51 plantas. data-integrity verde.
-- [x] (P4) Curso: nova unidade "Colheita e sementes" (guardar sementes) — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: unidade u7 "Guardar sementes" (l7-1: variedades tradicionais, secar/guardar). data-integrity verde.
-- [x] (P4) Receitas: +1 receita de leguminosa (ervilhas/favas guisadas) ligada — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: feijão-frade guisado (feijao-frade não tinha receita; ervilhas/favas já tinham).
-- [x] (P4) Glossário: +termos ("monda", "alfobre/viveiro", "compasso") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (monda, alfobre/viveiro, compasso).
-- [x] (P4) FAQ: +2 (adubo orgânico vs químico; vale a pena guardar sementes) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +2 dúvidas (adubo orgânico/químico; guardar sementes).
-- [x] (P5) Saúde: enriquecer grupo das brássicas (sulforafano, vit. C) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: +couve-de-bruxelas/chinesa/mizuna no grupo + dica sobre mirosinase/sulforafano e vit. K.
-- [x] (P5) Troubleshoot: +sintoma "flores mas sem fruto (falta polinização)" se ainda não coberto — ficheiros: src/data/troubleshoot.ts — validação: build; sem duplicar. ✓ Verificado: já coberto pelo sintoma "flores-caem" (Ciclo 1). Não duplicar.
-- [x] (P5) Pragas: detalhar prevenção biológica do míldio/oídio (consociação) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: prevenção do míldio e oídio com consociação/rotação/variedades resistentes.
-- [x] (P5) Microgreens: +1 variedade (couve-roxa já há; adicionar trigo/wheatgrass ou linhaça) — ficheiros: src/data/microgreens.ts — validação: testes. ✓ Feito: erva de trigo (wheatgrass) → 10 variedades. 139 testes.
-- [x] (P5) Recomendações: incluir microgreens quando espaço=interior e nada semeável — ficheiros: src/utils/recommend.ts, home — validação: revisão. ✓ Feito: shouldSuggestMicrogreens() + cartão no Home a ligar para /desafio. TC/lint/build OK.
+- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: funcho, aipo) respeitando o tipo `Plant` e referências — ficheiros: src/data/plants.ts — validação: tests/data-integrity.test.ts.
+- [ ] (P3) Adicionar 2 receitas novas ligadas a plantas existentes — ficheiros: src/data/recipes.ts — validação: data-integrity (recipes apontam para slugs válidos).
+- [ ] (P4) Adicionar 5 termos ao glossário (atualmente 45) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
+- [ ] (P4) Adicionar 3 perguntas à FAQ (atualmente 12) — ficheiros: src/data/faq.ts — validação: build.
+- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
+- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
+- [ ] (P4) Enriquecer 3 pragas/doenças com a época do ano em que surgem — ficheiros: src/data/pestsDiseases.ts — validação: build.
+- [ ] (P4) Adicionar 1 microgreen novo (ex.: alfafa) — ficheiros: src/data/microgreens.ts — validação: build.
+- [ ] (P5) Rever 1 conquista/achievement com descrição mais clara em pt-PT — ficheiros: src/data/achievements.ts — validação: build.
+- [ ] (P5) Adicionar dica mensal em falta (MONTHLY_TIPS) se algum mês estiver pobre — ficheiros: src/data/calendar.ts — validação: build.
 
 ## Regras de Negócio
-- [x] (P3) Teste de integridade: todas as plantas têm ≥1 entrada de calendário — ficheiros: tests/data-integrity.test.ts — validação: teste verde (ou corrige dados). ✓ Feito: teste garante calendário para as 48 plantas (todas já têm).
-- [x] (P4) Teste de integridade: recipesForPlant cobre todas as plantas-alvo das receitas — ficheiros: tests/ — validação: teste. ✓ Feito: teste 'cada receita refere ≥1 planta' (refs já validadas por outro teste).
-- [x] (P4) Teste: MICROGREENS slugs únicos e daysToHarvest coerentes — ficheiros: tests/data-integrity.test.ts — validação: teste. ✓ Feito.
-- [x] (P4) Teste: GLOSSARY/FAQ sem termos/perguntas duplicadas — ficheiros: tests/ — validação: teste. ✓ Feito.
-- [x] (P4) progress: `addXp` nunca fica negativo; nível sobe corretamente — ficheiros: tests/progress.test.ts — validação: teste. ✓ Feito: addXp acumula e o nível sobe.
-- [x] (P5) Teste: bedsRepo.clearCell remove a célula correta — ficheiros: tests/repositories.test.ts — validação: teste. ✓ Feito: remove só a célula alvo, mantém as outras.
-- [x] (P5) Teste: `currentSeason` mapeia meses corretamente — ficheiros: tests/date.test.ts — validação: teste. ✓ Feito: 4 estações com fake timers.
-- [x] (P5) Teste: achievementToast desconhecido devolve fallback — ficheiros: tests/ — validação: teste. ✓ Feito.
-- [x] (P5) Teste: calendarForPlant zona desconhecida cai em delta 0 — ficheiros: tests/calendar.test.ts — validação: teste. ✓ Feito: igual a litoral_norte.
-- [x] (P5) Teste: useReminders reflete novos lembretes (reativo) — ficheiros: tests/composables.test.ts — validação: teste. ✓ Feito: insere em db.reminders e confirma propagação via liveQuery (141 unit agora).
+- [ ] (P2) Teste para `shouldSuggestMicrogreens` (interior + nada semeável → true; exterior → false) — ficheiros: tests/recommend.test.ts — validação: vitest.
+- [ ] (P2) Teste de pontuação `recommendPlants` em espaço interior (penaliza exterior) — ficheiros: tests/recommend.test.ts — validação: vitest.
+- [ ] (P3) Teste: `estimateStage` faz clamp de `daysOld` negativo e futuro — ficheiros: tests/growth.test.ts — validação: vitest.
+- [ ] (P3) Teste: `successionDays` devolve valores coerentes — ficheiros: tests/growth.test.ts — validação: vitest.
+- [ ] (P2) Teste: marcar planta como colhida/perdida fecha lembretes abertos — ficheiros: tests/repositories.test.ts — validação: vitest.
+- [ ] (P3) Teste: `areCompanions`/`areAntagonists` são simétricos — ficheiros: tests/companions.test.ts — validação: vitest.
+- [ ] (P3) Teste: `computeUnlockedDay` respeita limites (0..7) — ficheiros: tests/challenge.test.ts — validação: vitest.
+- [ ] (P3) Teste: `exportData` inclui os canteiros (beds) — ficheiros: tests/backup.test.ts — validação: vitest.
+- [ ] (P3) Teste: `plantingsRepo.create` faz clamp de `wateringEveryDays` ≥ 1 — ficheiros: tests/repositories.test.ts — validação: vitest.
+- [ ] (P4) Teste: `calendarForPlant` consistente com `plantSowableThisMonth` — ficheiros: tests/calendar.test.ts — validação: vitest.
 
 ## Performance
-- [x] (P4) E2E: backup (exportar dados) na ProfileView — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec valida download de growgreens-backup.json. 7 specs e2e verdes.
-- [x] (P4) E2E: planeador — criar canteiro e plantar célula — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: cria espaço → planta alface numa célula (aria-label muda).
-- [!] (P5) `fetchpriority`/eager na 1.ª imagem acima da dobra — NÃO APLICÁVEL: a UI é baseada em emoji; as únicas <img> são fotos do utilizador (journal/diagnóstico), abaixo da dobra e já com loading=lazy + decoding=async.
-- [x] (P5) Confirmar que vendor não inclui código de testes — ficheiros: build — validação: revisão. ✓ Verificado: grep no dist/assets/*.js sem test-utils/vitest/describe.
-- [!] (P5) Avaliar dividir o catálogo (`plants`) em chunk por categoria — NÃO JUSTIFICA: plants já é chunk lazy próprio (~102KB/~25KB gz) e carrega só no catálogo. Dividir por categoria fragmentaria sem ganho percetível a 51 plantas.
-- [x] (P5) `aria-live` no ToastHost para anúncios — ficheiros: components/ToastHost.vue — validação: revisão. ✓ Verificado: ToastHost já tem aria-live="polite" (confirmado por teste).
-- [x] (P5) Confirmar precache do sw não inclui ficheiros enormes — ficheiros: build — validação: revisão. ✓ Verificado: maior ativo é vendor 294KB; nenhum ficheiro >600KB.
-- [x] (P5) Revisão: imagens de ícones com tamanho adequado no manifest — ficheiros: vite.config — validação: revisão. ✓ Verificado: 192, 512 e maskable-512 presentes.
-- [x] (P5) Evitar reflow no scroll horizontal de chips — ficheiros: features — validação: revisão. ✓ Feito: contentores já com flex-shrink-0; reforçado whitespace-nowrap nos chips de catálogo e Home para impedir wrap.
-- [x] (P5) Confirmar tree-shaking de @vue/test-utils fora do bundle — ficheiros: build — validação: revisão. ✓ Verificado: nenhuma referência em src/ nem no dist.
+- [ ] (P3) Confirmar que todas as rotas/views são lazy (import dinâmico) — ficheiros: src/router/index.ts — validação: revisão + chunks separados no build.
+- [ ] (P4) Confirmar ausência de `console.log` em código de produção — ficheiros: src — validação: grep limpo.
+- [ ] (P4) Verificar tamanho do chunk `plants` (raw + gzip) e registar — ficheiros: build — validação: revisão do output.
+- [ ] (P4) Confirmar que o precache do PWA não inclui sourcemaps/mapas — ficheiros: build/dist — validação: revisão.
+- [ ] (P4) Confirmar que imagens do utilizador têm width/height (evita CLS) — ficheiros: features (garden/diagnosis) — validação: revisão.
+- [ ] (P4) Confirmar uso de fontes do sistema (sem webfonts externas a carregar) — ficheiros: css/index — validação: revisão.
+- [ ] (P5) Avaliar debounce na pesquisa do catálogo (se aplicável) — ficheiros: src/features/catalog — validação: revisão.
+- [ ] (P4) Verificar `manualChunks` ainda separa vendor de forma eficaz — ficheiros: vite.config.ts — validação: revisão do build.
+- [ ] (P4) Confirmar prefetch do Home não bloqueia o arranque — ficheiros: src/features/home/HomeView.vue — validação: revisão.
+- [ ] (P5) Verificar listas grandes (catálogo) usam `:key` estável e v-memo onde útil — ficheiros: src/features/catalog — validação: revisão.
 
 ## Organização
-- [x] (P4) Teste de componente: TabBar (links e item ativo) — ficheiros: tests/ — validação: mount passa. ✓ Feito: 5 tabs, com router em memória.
-- [x] (P4) Teste de componente: ToastHost (mostra toasts do store) — ficheiros: tests/ — validação: mount passa. ✓ Feito: toast do store aparece; aria-live presente.
-- [x] (P4) A11y: heading hierarchy (1 h1 por página / PageHeader como h1) — ficheiros: components — validação: revisão. ✓ Verificado: PageHeader já usa <h1> (15 vistas); Home e Onboarding têm exatamente 1 h1; secções usam h2. Coerente.
-- [x] (P5) docs/ARQUITETURA: atualizar com utils/text, backup, composables — ficheiros: docs — validação: coerente. ✓ Feito: secção Utilitários (growth/challenge/recommend/text/backup/date/ics/streak) + useReminders na Reatividade.
-- [x] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente. ✓ Feito: badge MIT + link para CHANGELOG.md.
-- [x] (P5) Tipar retorno de `estimateStage` num interface nomeado — ficheiros: src/utils/growth.ts — validação: typecheck. ✓ Feito: interface StageEstimate exportado. TC OK.
-- [x] (P5) Normalizar imports (ordem) onde for trivial — ficheiros: src — validação: lint. ✓ Verificado: imports já seguem ordem por camadas (vue→stores→composables→data→utils→components); sem eslint-plugin-import configurado, lint passa 0 erros.
-- [x] (P5) Confirmar que data files não importam de features (camadas) — ficheiros: src/data — validação: revisão. ✓ Verificado: grep sem imports de @/features em src/data.
-- [x] (P5) Adicionar `funding`/`bugs`/`repository` ao package.json — ficheiros: package.json — validação: build. ✓ Feito: license, homepage, repository e bugs adicionados.
-- [x] (P5) Atualizar CLAUDE.md (nº plantas/receitas/testes) se mudou — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 51 plantas, 10 microgreens, 19 receitas, 139 unit + 7 E2E.
+- [ ] (P2) `.gitignore`: ignorar `.claude/` e `test-results/` — ficheiros: .gitignore — validação: `git status` limpo desses caminhos.
+- [ ] (P3) Atualizar CLAUDE.md com contagens de conteúdo (45 glossário, 12 FAQ, 7 unidades/19 lições) — ficheiros: CLAUDE.md — validação: coerente.
+- [ ] (P3) CHANGELOG: entrada para as alterações dos ciclos 6/7 — ficheiros: CHANGELOG.md — validação: presente.
+- [ ] (P4) docs/ARQUITETURA: adicionar secção "Testes" (Vitest + Playwright, padrões) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
+- [ ] (P4) Confirmar que `src/stores` não importam de `src/features` (camadas) — ficheiros: src/stores — validação: grep limpo.
+- [ ] (P4) Confirmar que `src/repositories` não importam de `src/features` — ficheiros: src/repositories — validação: grep limpo.
+- [ ] (P4) Verificar ausência de imports circulares óbvios entre data files — ficheiros: src/data — validação: revisão.
+- [ ] (P5) Adicionar JSDoc curto a funções públicas de utils sem documentação — ficheiros: src/utils — validação: typecheck.
+- [ ] (P4) README: secção de funcionalidades alinhada com o estado atual — ficheiros: README.md — validação: coerente.
+- [ ] (P5) Verificar consistência de ordem `<script setup>` antes de `<template>` nos .vue — ficheiros: src — validação: revisão.
 
 ## Arquivo (ciclos concluídos)
+
+### Ciclo 6 — 2026-06-22 — 38 concluídas, 2 N/A
+Catálogo 48→51 (tomilho-limão/manjerona/cerefólio); microgreen trigo (wheatgrass); curso u7 (guardar sementes); pragas cochonilha/ácaro/tripes/nemátodes + prevenção míldio/oídio; receitas guisado/salteada/assada/sopa; troubleshoot ponta-podre/pontas-castanhas; `StageEstimate` interface; package.json metadata; README badge MIT; Home sugere microgreens (`shouldSuggestMicrogreens`); teste reativo useReminders; docs Utilitários; chips whitespace-nowrap; CLAUDE.md contagens; +6 verificações de build. N/A: fetchpriority (UI emoji), split plants chunk. Testes 128→140.
 
 ### Ciclo 5 — 2026-06-21 — 40 concluídas, 0 bloqueadas
 Catálogo 45→48 (mizuna/beldroega/segurelha); glossário/FAQ/curso (rotação, capilaridade); receitas courgette/beterraba; saúde caution (leguminosas/batata); pragas nemátodes; troubleshoot clorose/damping-off; **E2E calendário+curso** (5 specs); skip-link a11y; decoding=async; prefetch catálogo/curso; consolidar normalize; JSDoc tipos; CHANGELOG; CONTRIBUTING pre-commit; noscript; +7 verificações. Testes 128.
