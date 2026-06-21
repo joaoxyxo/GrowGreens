@@ -24,11 +24,12 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
     code: 'brassicas',
     name: 'Brássicas (crucíferas)',
     emoji: '🥦',
-    plants: ['brocolos', 'rabanete', 'rucula', 'couve-galega', 'couve-flor', 'couve-lombarda', 'nabo'],
+    plants: ['brocolos', 'rabanete', 'rucula', 'couve-galega', 'couve-flor', 'couve-lombarda', 'nabo', 'couve-de-bruxelas', 'couve-chinesa', 'mizuna'],
     whyGood: [
       'Contêm glucosinolatos, precursores do sulforafano, estudado pelo seu potencial anticancerígeno.',
       'O consumo regular associa-se a menor mortalidade por todas as causas.',
-      'Ricas em vitamina C e fibra.',
+      'Ricas em vitamina C, vitamina K e fibra.',
+      'Cortar/mastigar ativa a enzima (mirosinase) que liberta o sulforafano — comer alguma crua ajuda.',
     ],
     nutrients: [
       { nutrient: 'Sulforafano', effect: 'Composto bioativo com potencial protetor.' },

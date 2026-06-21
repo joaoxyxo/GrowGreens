@@ -8,9 +8,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P3) Adicionar 2-3 culturas (rúcula-selvagem, funcho-doce n/a; usar tomilho-limão, manjerona, cerefólio) — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta.
 - [ ] (P4) Curso: nova unidade "Colheita e sementes" (guardar sementes) — ficheiros: src/data/course.ts — validação: data-integrity.
 - [ ] (P4) Receitas: +1 receita de leguminosa (ervilhas/favas guisadas) ligada — ficheiros: src/data/recipes.ts — validação: data-integrity.
-- [ ] (P4) Glossário: +termos ("monda", "alfobre/viveiro", "compasso") — ficheiros: src/data/glossary.ts — validação: build.
-- [ ] (P4) FAQ: +2 (adubo orgânico vs químico; vale a pena guardar sementes) — ficheiros: src/data/faq.ts — validação: build.
-- [ ] (P5) Saúde: enriquecer grupo das brássicas (sulforafano, vit. C) — ficheiros: src/data/health.ts — validação: build.
+- [x] (P4) Glossário: +termos ("monda", "alfobre/viveiro", "compasso") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (monda, alfobre/viveiro, compasso).
+- [x] (P4) FAQ: +2 (adubo orgânico vs químico; vale a pena guardar sementes) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +2 dúvidas (adubo orgânico/químico; guardar sementes).
+- [x] (P5) Saúde: enriquecer grupo das brássicas (sulforafano, vit. C) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: +couve-de-bruxelas/chinesa/mizuna no grupo + dica sobre mirosinase/sulforafano e vit. K.
 - [ ] (P5) Troubleshoot: +sintoma "flores mas sem fruto (falta polinização)" se ainda não coberto — ficheiros: src/data/troubleshoot.ts — validação: build; sem duplicar.
 - [ ] (P5) Pragas: detalhar prevenção biológica do míldio/oídio (consociação) — ficheiros: src/data/pestsDiseases.ts — validação: build.
 - [ ] (P5) Microgreens: +1 variedade (couve-roxa já há; adicionar trigo/wheatgrass ou linhaça) — ficheiros: src/data/microgreens.ts — validação: testes.
