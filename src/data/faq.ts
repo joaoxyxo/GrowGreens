@@ -51,4 +51,14 @@ export const FAQ: FaqItem[] = [
     q: 'Tenho pragas dentro de casa — é normal?',
     a: 'Sim, sobretudo pulgões, mosca-branca e cochonilha em plantas de interior. Areja o espaço, limpa as folhas e usa sabão potássico ou óleo de nim. Evita regar a mais.',
   },
+  {
+    emoji: '🌿',
+    q: 'Adubo orgânico ou químico?',
+    a: 'Para uma horta de casa, o orgânico (composto, estrume curado, húmus de minhoca) é a melhor base: alimenta o solo e liberta nutrientes devagar. O químico age rápido mas, em excesso, queima raízes e acidifica. Começa pelo composto.',
+  },
+  {
+    emoji: '🫙',
+    q: 'Vale a pena guardar sementes?',
+    a: 'Sim, de variedades tradicionais (não híbridas F1, que não saem "iguais"). Deixa secar bem as sementes de tomate, feijão, alface ou ervilha e guarda-as num frasco, ao escuro e seco. Poupas e ganhas plantas adaptadas ao teu espaço.',
+  },
 ]
