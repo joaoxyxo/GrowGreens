@@ -1,5 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
+/** Expõe `isOnline` reativo, reagindo aos eventos `online`/`offline` do browser. */
 export function useOnlineStatus() {
   const isOnline = ref(typeof navigator !== 'undefined' ? navigator.onLine : true)
   const update = () => {

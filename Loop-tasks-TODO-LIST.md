@@ -41,16 +41,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P4) Confirmar que não há imports estáticos de views no router (regressão) — ficheiros: src/router — validação: revisão.
 
 ## Organização
-- [ ] (P3) Avaliar e documentar o estado do Vue I18n (sem `$t`/`useI18n` no código) — ficheiros: main.ts/package.json/CLAUDE.md — validação: typecheck + build + nota.
-- [ ] (P3) Atualizar CLAUDE.md com contagens (53 plantas, 21 receitas, 11 microgreens, 50 glossário, 15 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
-- [ ] (P3) CHANGELOG: entrada para o Ciclo 8 — ficheiros: CHANGELOG.md — validação: presente.
-- [ ] (P4) README: contagem do catálogo (53 culturas) — ficheiros: README.md — validação: coerente.
-- [ ] (P4) docs/ARQUITETURA: secção "Composables" (useLiveQuery, useReminders, useWeather, useOnlineStatus) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
-- [ ] (P4) Confirmar que `src/composables` não importam de `src/features` — ficheiros: src/composables — validação: grep limpo.
-- [ ] (P5) Adicionar JSDoc curto aos composables sem documentação — ficheiros: src/composables — validação: typecheck.
-- [ ] (P4) Verificar que `npm run lint` não reporta imports/variáveis não usados — ficheiros: src — validação: lint 0.
-- [ ] (P5) Confirmar consistência de convenção de nomes (.vue PascalCase, utils camelCase) — ficheiros: src — validação: revisão.
-- [ ] (P4) Verificar que todos os data files têm cobertura mínima por data-integrity — ficheiros: tests/data-integrity.test.ts — validação: revisão.
+- [x] (P3) Avaliar e documentar o estado do Vue I18n — ficheiros: src/i18n/index.ts — validação: typecheck + build. ✓ Já documentado (decisão Ciclo 3): ligado em main.ts, scaffolding pt-PT, mantido para idiomas futuros. App single-language.
+- [x] (P3) Atualizar CLAUDE.md com contagens — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 53 plantas, 11 microgreens, 21 receitas, 50 glossário, 15 FAQ, 7u/20 lições, 161 unit + 7 E2E.
+- [x] (P3) CHANGELOG: entrada para o Ciclo 8 — ficheiros: CHANGELOG.md — validação: presente. ✓ Feito.
+- [x] (P4) README: contagem do catálogo (53 culturas) — ficheiros: README.md — validação: coerente. ✓ Feito.
+- [x] (P4) docs/ARQUITETURA: secção "Composables" — ficheiros: docs/ARQUITETURA.md — validação: coerente. ✓ Feito: os 4 composables documentados.
+- [x] (P4) Confirmar que `src/composables` não importam de `src/features` — ficheiros: src/composables — validação: grep limpo. ✓ Verificado.
+- [x] (P5) Adicionar JSDoc aos composables sem documentação — ficheiros: src/composables — validação: typecheck. ✓ Feito: useOnlineStatus documentado (restantes já tinham).
+- [x] (P4) Verificar que `npm run lint` não reporta imports/variáveis não usados — ficheiros: src — validação: lint 0. ✓ Verificado: lint 0 erros.
+- [x] (P5) Confirmar consistência de convenção de nomes — ficheiros: src — validação: revisão. ✓ Verificado: todos os .vue PascalCase; utils camelCase.
+- [x] (P4) Verificar cobertura de data files por data-integrity — ficheiros: tests/data-integrity.test.ts — validação: revisão. ✓ Verificado: 10 data files cobertos; achievements não tem referências cruzadas (só code/name/desc/emoji).
 
 ## Arquivo (ciclos concluídos)
 

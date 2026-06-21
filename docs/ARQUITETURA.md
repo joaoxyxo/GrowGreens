@@ -36,6 +36,15 @@ Dexie / IndexedDB (src/lib/db/)
 
 `src/composables/useLiveQuery.ts` liga consultas Dexie a refs reativas. `src/composables/useReminders.ts` mantém uma única subscrição `liveQuery` partilhada por toda a app (Home, Horta, Planeador) para evitar consultas duplicadas. Funções de domínio puras (em `src/utils/`) são testáveis isoladamente.
 
+## Composables (`src/composables/`)
+
+Pequenas peças de estado reativo reutilizável, sem dependências de `features/`:
+
+- `useLiveQuery` — adapta uma `liveQuery` de Dexie a uma ref Vue, com limpeza automática da subscrição ao desmontar.
+- `useReminders` — subscrição única partilhada de `db.reminders` (evita N live queries iguais entre ecrãs).
+- `useWeather` — busca a previsão do IPMA (com `weatherTypeInfo` para mapear códigos a label/emoji); degrada graciosamente offline.
+- `useOnlineStatus` — expõe `isOnline` reagindo aos eventos `online`/`offline` do browser.
+
 ## Utilitários (`src/utils/`)
 
 Lógica de regras pura, sem dependências de Vue/Dexie, coberta por testes:
