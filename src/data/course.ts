@@ -55,6 +55,15 @@ export const COURSE_UNITS: CourseUnit[] = [
     color: 'earth',
     lessonIds: ['l6-1', 'l6-2'],
   },
+  {
+    id: 'u7',
+    order: 7,
+    title: 'Guardar sementes',
+    description: 'Fecha o ciclo: colhe e guarda sementes para o próximo ano.',
+    emoji: '🫙',
+    color: 'sun',
+    lessonIds: ['l7-1'],
+  },
 ]
 
 export const LESSONS: Lesson[] = [
@@ -566,6 +575,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'A água sobe pelo substrato; as folhas ficam secas, reduzindo o risco de fungos.',
       },
       { kind: 'summary', bullets: ['Capilaridade = regar por baixo, folhas secas.', 'Esvazia o prato para não encharcar.', 'Drenagem e substrato leve evitam apodrecimento.'] },
+    ],
+  },
+  {
+    id: 'l7-1',
+    unitId: 'u7',
+    title: 'Guardar as tuas sementes',
+    subtitle: 'Fechar o ciclo da semente à semente.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🫙',
+        title: 'Escolhe variedades tradicionais',
+        body: 'Guarda sementes de variedades tradicionais (não híbridas F1) — só essas saem "iguais à mãe". Deixa amadurecer bem na planta os frutos/vagens que vais usar para semente.',
+      },
+      {
+        kind: 'concept',
+        emoji: '☀️',
+        title: 'Secar e guardar',
+        body: 'Limpa e seca muito bem as sementes (dias, à sombra e ao ar). Guarda-as num frasco ou envelope, com etiqueta (nome + ano), num sítio seco, fresco e escuro.',
+      },
+      {
+        kind: 'truefalse',
+        question: 'As sementes de um híbrido F1 dão plantas iguais à planta-mãe.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 1,
+        explanation: 'Falso — os F1 não saem fiéis. Para guardar, escolhe variedades tradicionais/de polinização aberta.',
+      },
+      { kind: 'summary', bullets: ['Guarda variedades tradicionais, não F1.', 'Seca muito bem antes de guardar.', 'Frasco etiquetado, seco, fresco e escuro.'] },
     ],
   },
 ]
