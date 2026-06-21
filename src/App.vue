@@ -16,6 +16,13 @@ function refresh() {
 
 <template>
   <div class="min-h-screen">
+    <!-- Skip-link: aparece ao navegar por teclado (Tab) -->
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:rounded-lg focus:bg-green-600 focus:px-4 focus:py-2 focus:text-white"
+    >
+      Saltar para o conteúdo
+    </a>
     <ToastHost />
 
     <div
@@ -26,7 +33,7 @@ function refresh() {
       <button class="rounded-lg bg-white/20 px-3 py-1 font-semibold" @click="refresh">Recarregar</button>
     </div>
 
-    <main :class="showTabBar ? 'pb-24' : ''">
+    <main id="conteudo" :class="showTabBar ? 'pb-24' : ''">
       <div class="mx-auto max-w-2xl">
         <RouterView v-slot="{ Component }">
           <Transition name="fade" mode="out-in">
