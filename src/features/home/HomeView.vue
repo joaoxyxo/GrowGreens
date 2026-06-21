@@ -11,7 +11,7 @@ import { remindersRepo, plantingsRepo } from '@/repositories'
 import { getPlant } from '@/data/plants'
 import { LESSONS } from '@/data/course'
 import { plantSowableThisMonth } from '@/data/calendar'
-import { recommendPlants } from '@/utils/recommend'
+import { recommendPlants, shouldSuggestMicrogreens } from '@/utils/recommend'
 import { defaultWateringDays } from '@/utils/growth'
 import { currentMonth, MONTH_NAMES, isOverdue, isDueToday } from '@/utils/date'
 import StatChip from '@/components/ui/StatChip.vue'
@@ -56,6 +56,11 @@ const sowable = computed(() => {
 // Recomendações personalizadas (mostradas enquanto a horta está pouco povoada)
 const recommendations = computed(() =>
   plantings.value.length < 3 ? recommendPlants(settings.state, 3) : [],
+)
+
+// Em interior sem nada semeável este mês, sugerir microgreens (colheita garantida em ~1 semana).
+const suggestMicrogreens = computed(
+  () => recommendations.value.length === 0 && shouldSuggestMicrogreens(settings.state),
 )
 
 // Pré-carrega chunks de destinos frequentes a partir do Home, em segundo plano.
@@ -244,6 +249,24 @@ watch(
           </div>
         </AppCard>
       </div>
+    </section>
+
+    <!-- Sugestão de microgreens (interior, nada semeável agora) -->
+    <section v-if="suggestMicrogreens" class="mt-6">
+      <RouterLink to="/desafio" class="block">
+        <AppCard>
+          <div class="flex items-center gap-3">
+            <span class="text-3xl" aria-hidden="true">🌱</span>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold">Experimenta microgreens</p>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">
+                Em interior e sem nada para semear agora? Os microgreens crescem todo o ano dentro de
+                casa e dão colheita em ~1 semana.
+              </p>
+            </div>
+          </div>
+        </AppCard>
+      </RouterLink>
     </section>
 
     <!-- Este mês -->

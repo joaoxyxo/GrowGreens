@@ -33,3 +33,15 @@ export function recommendPlants(settings: SettingsState, limit = 3): Plant[] {
     .slice(0, limit)
     .map((s) => s.p)
 }
+
+/**
+ * Sugerir microgreens quando o espaço é interior/parapeito e não há nada
+ * semeável este mês: crescem em qualquer altura do ano dentro de casa e dão
+ * uma colheita garantida em ~1 semana, evitando que o utilizador fique sem opções.
+ */
+export function shouldSuggestMicrogreens(settings: SettingsState): boolean {
+  const indoorOnly = settings.space === 'interior' || settings.space === 'parapeito'
+  if (!indoorOnly) return false
+  const sowable = plantSowableThisMonth(settings.zoneCode, currentMonth())
+  return sowable.size === 0
+}
