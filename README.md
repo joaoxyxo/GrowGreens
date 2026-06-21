@@ -24,6 +24,16 @@ App web (PWA) que ensina horticultura a principiantes, **da semente à colheita*
 
 Vue 3 + TypeScript + Vite · Tailwind CSS v4 · Pinia · Vue Router · Vue I18n · **Dexie (IndexedDB)** para dados local-first · `vite-plugin-pwa` (offline + instalável) · Vitest.
 
+## Instalar como app (PWA)
+
+A app funciona offline e instala-se no dispositivo:
+
+- **Android (Chrome):** menu ⋮ → "Instalar aplicação" / "Adicionar ao ecrã principal".
+- **iOS (Safari):** botão Partilhar → "Adicionar ao ecrã principal".
+- **Desktop (Chrome/Edge):** ícone de instalação na barra de endereço.
+
+Depois de instalada, abre como uma app normal e funciona sem internet (os dados ficam no dispositivo). Experimenta em **https://joaoxyxo.github.io/GrowGreens/**.
+
 ## Arrancar
 
 ```bash

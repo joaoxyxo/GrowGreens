@@ -41,9 +41,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Revisão: `key` estável em todas as listas v-for — ficheiros: features — validação: revisão.
 
 ## Organização
-- [ ] (P4) A11y: skip-link "saltar para o conteúdo" + landmark main — ficheiros: App.vue — validação: revisão.
+- [x] (P4) A11y: skip-link "saltar para o conteúdo" + landmark main — ficheiros: App.vue — validação: revisão. ✓ Feito: skip-link (sr-only, visível ao focar) → #conteudo; <main id="conteudo">. Build OK.
 - [x] (P4) Teste de componente: PageHeader — ficheiros: tests/ — validação: mount passa. ✓ Feito: título/subtítulo (router em memória). 120 testes.
-- [ ] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente.
+- [x] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente. ✓ Feito: secção 'Instalar como app (PWA)' (Android/iOS/Desktop + link).
 - [ ] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build.
 - [ ] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação.
 - [ ] (P5) JSDoc curto nas uniões públicas — ficheiros: src/types — validação: typecheck.
