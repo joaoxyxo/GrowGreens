@@ -79,7 +79,7 @@ const results = computed(() => {
         <button
           v-for="c in categories"
           :key="c.v"
-          class="flex-shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium transition"
+          class="flex-shrink-0 whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium transition"
           :class="catFilter === c.v ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'"
           @click="catFilter = c.v"
         >

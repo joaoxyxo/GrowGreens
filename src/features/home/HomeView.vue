@@ -282,7 +282,7 @@ watch(
           v-for="p in sowable"
           :key="p!.slug"
           :to="`/planta/${p!.slug}`"
-          class="flex-shrink-0 inline-flex items-center gap-1.5 rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1.5 text-sm font-medium text-green-700 dark:text-green-300"
+          class="flex-shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1.5 text-sm font-medium text-green-700 dark:text-green-300"
         >
           <span aria-hidden="true">{{ p!.emoji }}</span> {{ p!.name }}
         </RouterLink>
