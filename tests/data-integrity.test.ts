@@ -7,6 +7,8 @@ import { PESTS_BY_SLUG, DISEASES_BY_SLUG } from '@/data/pestsDiseases'
 import { MICROGREENS } from '@/data/microgreens'
 import { LESSONS, COURSE_UNITS, LESSONS_BY_ID } from '@/data/course'
 import { SYMPTOMS } from '@/data/troubleshoot'
+import { GLOSSARY } from '@/data/glossary'
+import { FAQ } from '@/data/faq'
 
 describe('integridade do núcleo agronómico', () => {
   it('tem um conjunto razoável de plantas', () => {
@@ -75,6 +77,13 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('todas as plantas têm pelo menos uma entrada de calendário', () => {
+    const comCalendario = new Set(CALENDAR.map((e) => e.plant))
+    for (const p of PLANTS) {
+      expect(comCalendario.has(p.slug), `${p.slug} sem entrada de calendário`).toBe(true)
+    }
+  })
+
   it('o calendário só refere plantas existentes e meses válidos', () => {
     for (const e of CALENDAR) {
       expect(PLANTS_BY_SLUG[e.plant], e.plant).toBeTruthy()
@@ -89,6 +98,26 @@ describe('integridade do núcleo agronómico', () => {
     for (const r of RECIPES) {
       for (const slug of r.plants) expect(PLANTS_BY_SLUG[slug], `${r.slug} -> ${slug}`).toBeTruthy()
     }
+  })
+
+  it('microgreens: slugs únicos e daysToHarvest coerente', () => {
+    const slugs = new Set<string>()
+    for (const m of MICROGREENS) {
+      expect(slugs.has(m.slug), `slug duplicado: ${m.slug}`).toBe(false)
+      slugs.add(m.slug)
+      expect(m.daysToHarvest[1]).toBeGreaterThanOrEqual(m.daysToHarvest[0])
+    }
+  })
+
+  it('cada receita refere pelo menos uma planta', () => {
+    for (const r of RECIPES) expect(r.plants.length, r.slug).toBeGreaterThan(0)
+  })
+
+  it('glossário e FAQ não têm entradas duplicadas', () => {
+    const termos = GLOSSARY.map((t) => t.term.toLowerCase())
+    expect(new Set(termos).size).toBe(termos.length)
+    const qs = FAQ.map((f) => f.q.toLowerCase())
+    expect(new Set(qs).size).toBe(qs.length)
   })
 
   it('o desafio dos microgreens tem variedades de principiante', () => {
