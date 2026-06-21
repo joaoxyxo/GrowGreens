@@ -55,7 +55,7 @@ function onPhoto(e: Event) {
           <li>🍃 Uma planta de cada vez, bem focada.</li>
         </ul>
         <div v-if="previewUrl" class="mt-3">
-          <img :src="previewUrl" loading="lazy" class="h-48 w-full rounded-xl object-cover" alt="Foto da planta" />
+          <img :src="previewUrl" loading="lazy" decoding="async" class="h-48 w-full rounded-xl object-cover" alt="Foto da planta" />
         </div>
         <BaseButton class="mt-3" block @click="pick">📷 {{ previewUrl ? 'Tirar outra foto' : 'Tirar foto' }}</BaseButton>
       </AppCard>

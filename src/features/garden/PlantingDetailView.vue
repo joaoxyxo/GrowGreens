@@ -213,7 +213,7 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
         <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Evolução</p>
         <div class="flex gap-2 overflow-x-auto no-scrollbar">
           <div v-for="e in photoEntries" :key="e.id" class="flex-shrink-0 text-center">
-            <img :src="photoUrls[e.id]" loading="lazy" width="80" height="80" class="h-20 w-20 rounded-xl object-cover" :alt="`Foto de ${fmtDate(e.createdAt)}`" />
+            <img :src="photoUrls[e.id]" loading="lazy" decoding="async" width="80" height="80" class="h-20 w-20 rounded-xl object-cover" :alt="`Foto de ${fmtDate(e.createdAt)}`" />
             <p class="mt-0.5 text-[10px] text-neutral-400">{{ fmtDate(e.createdAt, 'd MMM') }}</p>
           </div>
         </div>
@@ -258,6 +258,7 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
             v-if="photoUrls[e.id]"
             :src="photoUrls[e.id]"
             loading="lazy"
+            decoding="async"
             class="mt-2 max-h-60 w-full rounded-xl object-cover"
             alt="Foto do diário"
           />
