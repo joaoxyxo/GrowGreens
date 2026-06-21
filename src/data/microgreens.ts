@@ -100,6 +100,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     beginner: false,
     note: 'Os mais lentos, mas com sabor inconfundível. Para quem já dominou os fáceis.',
   },
+  {
+    slug: 'trigo',
+    name: 'Erva de trigo (wheatgrass)',
+    emoji: '🌾',
+    soakHours: 10,
+    blackoutDays: [2, 3],
+    daysToHarvest: [8, 12],
+    flavour: 'Doce, herbáceo (para sumos).',
+    beginner: true,
+    note: 'Demolha o grão antes. Cresce depressa e vigoroso; corta-se para sumos verdes. Não se mastiga a fibra.',
+  },
 ]
 
 export const MICROGREENS_BY_SLUG: Record<string, MicrogreenInfo> = Object.fromEntries(
