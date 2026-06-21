@@ -6,8 +6,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 
 ## Conteúdo
 - [x] (P3) Adicionar 2-3 culturas (rúcula-selvagem, funcho-doce n/a; usar tomilho-limão, manjerona, cerefólio) — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (tomilho-limão, manjerona, cerefólio) + calendário → 51 plantas. data-integrity verde.
-- [ ] (P4) Curso: nova unidade "Colheita e sementes" (guardar sementes) — ficheiros: src/data/course.ts — validação: data-integrity.
-- [ ] (P4) Receitas: +1 receita de leguminosa (ervilhas/favas guisadas) ligada — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P4) Curso: nova unidade "Colheita e sementes" (guardar sementes) — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: unidade u7 "Guardar sementes" (l7-1: variedades tradicionais, secar/guardar). data-integrity verde.
+- [x] (P4) Receitas: +1 receita de leguminosa (ervilhas/favas guisadas) ligada — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: feijão-frade guisado (feijao-frade não tinha receita; ervilhas/favas já tinham).
 - [x] (P4) Glossário: +termos ("monda", "alfobre/viveiro", "compasso") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (monda, alfobre/viveiro, compasso).
 - [x] (P4) FAQ: +2 (adubo orgânico vs químico; vale a pena guardar sementes) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +2 dúvidas (adubo orgânico/químico; guardar sementes).
 - [x] (P5) Saúde: enriquecer grupo das brássicas (sulforafano, vit. C) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: +couve-de-bruxelas/chinesa/mizuna no grupo + dica sobre mirosinase/sulforafano e vit. K.

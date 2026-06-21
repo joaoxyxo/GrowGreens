@@ -380,6 +380,27 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['beterraba'],
   },
+  {
+    slug: 'feijao-frade-guisado',
+    title: 'Feijão-frade guisado',
+    emoji: '🫘',
+    description: 'Reconfortante e cheio de proteína — o melhor destino para o feijão-frade da horta.',
+    prepMinutes: 35,
+    difficulty: 'facil',
+    season: ['verao', 'outono'],
+    ingredients: [
+      '300 g de feijão-frade (cozido ou debulhado)',
+      '1 cebola e 1 dente de alho',
+      'Tomate maduro (ou polpa)',
+      'Coentros, azeite, sal',
+    ],
+    steps: [
+      'Refoga a cebola e o alho em azeite; junta o tomate.',
+      'Adiciona o feijão-frade e um pouco de água; apura ~15 min.',
+      'Finaliza com coentros picados. Serve com arroz ou pão.',
+    ],
+    plants: ['feijao-frade', 'cebola', 'alho', 'tomate', 'coentros'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(
