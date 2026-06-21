@@ -29,8 +29,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Clamp de `wateringEveryDays` também no update — ficheiros: src/repositories/index.ts — validação: teste. ✓ Feito: clamp ≥1 no update + teste. 128 testes.
 
 ## Performance
-- [ ] (P4) E2E: percorrer uma lição do curso — ficheiros: tests/e2e/ — validação: spec passa.
-- [ ] (P4) E2E: navegar o calendário (mês anterior/seguinte) — ficheiros: tests/e2e/ — validação: spec passa.
+- [x] (P4) E2E: percorrer uma lição do curso — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'curso: abrir e concluir uma lição' (responde aos passos até Concluir→ecrã final). 5 specs e2e verdes.
+- [x] (P4) E2E: navegar o calendário (mês anterior/seguinte) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'calendário: navegar entre meses' (label muda e volta).
 - [ ] (P5) `decoding="async"` nas imagens de foto — ficheiros: features/* — validação: build.
 - [ ] (P5) Pré-carregar rota do curso a partir do Home — ficheiros: features/home — validação: build.
 - [ ] (P5) Confirmar `prefers-reduced-motion` desativa transições de rota — ficheiros: main.css/App — validação: revisão.
