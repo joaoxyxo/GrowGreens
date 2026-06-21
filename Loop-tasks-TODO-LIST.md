@@ -43,7 +43,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Organização
 - [x] (P4) Teste de componente: TabBar (links e item ativo) — ficheiros: tests/ — validação: mount passa. ✓ Feito: 5 tabs, com router em memória.
 - [x] (P4) Teste de componente: ToastHost (mostra toasts do store) — ficheiros: tests/ — validação: mount passa. ✓ Feito: toast do store aparece; aria-live presente.
-- [ ] (P4) A11y: heading hierarchy (1 h1 por página / PageHeader como h1) — ficheiros: components — validação: revisão.
+- [x] (P4) A11y: heading hierarchy (1 h1 por página / PageHeader como h1) — ficheiros: components — validação: revisão. ✓ Verificado: PageHeader já usa <h1> (15 vistas); Home e Onboarding têm exatamente 1 h1; secções usam h2. Coerente.
 - [ ] (P5) docs/ARQUITETURA: atualizar com utils/text, backup, composables — ficheiros: docs — validação: coerente.
 - [ ] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente.
 - [ ] (P5) Tipar retorno de `estimateStage` num interface nomeado — ficheiros: src/utils/growth.ts — validação: typecheck.
