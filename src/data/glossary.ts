@@ -47,4 +47,7 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Estaca', emoji: '🌱', definition: 'Um pedaço de caule cortado de uma planta-mãe que, posto em água ou substrato, cria raízes e origina uma nova planta (ex.: alecrim, hortelã).' },
   { term: 'Estratificação', emoji: '❄️', definition: 'Expor as sementes ao frio (ex.: no frigorífico) durante umas semanas para "quebrar a dormência" e germinarem — preciso em algumas espécies.' },
   { term: 'Rega de fundo', emoji: '🪣', definition: 'Pôr o vaso num prato com água: o substrato bebe por baixo (capilaridade). Mantém a folha seca e a humidade estável.' },
+  { term: 'Monda', emoji: '🧹', definition: 'Arrancar as ervas daninhas que competem com as culturas por água, luz e nutrientes.' },
+  { term: 'Alfobre (viveiro)', emoji: '🌱', definition: 'Canteiro ou tabuleiro onde se semeia denso para depois transplantar as plântulas para o local definitivo.' },
+  { term: 'Compasso', emoji: '📏', definition: 'A distância recomendada entre plantas (e entre linhas). Respeitá-lo dá espaço, luz e ar a cada planta.' },
 ]
