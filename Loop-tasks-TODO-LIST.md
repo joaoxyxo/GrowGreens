@@ -26,7 +26,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Teste: `currentSeason` mapeia meses corretamente — ficheiros: tests/date.test.ts — validação: teste. ✓ Feito: 4 estações com fake timers.
 - [x] (P5) Teste: achievementToast desconhecido devolve fallback — ficheiros: tests/ — validação: teste. ✓ Feito.
 - [x] (P5) Teste: calendarForPlant zona desconhecida cai em delta 0 — ficheiros: tests/calendar.test.ts — validação: teste. ✓ Feito: igual a litoral_norte.
-- [ ] (P5) Teste: useReminders reflete novos lembretes (reativo) — ficheiros: tests/ — validação: teste.
+- [x] (P5) Teste: useReminders reflete novos lembretes (reativo) — ficheiros: tests/composables.test.ts — validação: teste. ✓ Feito: insere em db.reminders e confirma propagação via liveQuery (141 unit agora).
 
 ## Performance
 - [x] (P4) E2E: backup (exportar dados) na ProfileView — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec valida download de growgreens-backup.json. 7 specs e2e verdes.
