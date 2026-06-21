@@ -44,12 +44,12 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) A11y: skip-link "saltar para o conteúdo" + landmark main — ficheiros: App.vue — validação: revisão. ✓ Feito: skip-link (sr-only, visível ao focar) → #conteudo; <main id="conteudo">. Build OK.
 - [x] (P4) Teste de componente: PageHeader — ficheiros: tests/ — validação: mount passa. ✓ Feito: título/subtítulo (router em memória). 120 testes.
 - [x] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente. ✓ Feito: secção 'Instalar como app (PWA)' (Android/iOS/Desktop + link).
-- [ ] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build.
+- [x] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build. ✓ Feito: mensagem de JS desativado; presente no dist.
 - [ ] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação.
 - [ ] (P5) JSDoc curto nas uniões públicas — ficheiros: src/types — validação: typecheck.
 - [ ] (P5) Documentar pre-commit sugerido no CONTRIBUTING — ficheiros: CONTRIBUTING.md — validação: doc.
-- [ ] (P5) Adicionar `CHANGELOG.md` (resumo dos ciclos) — ficheiros: raiz — validação: ficheiro existe.
-- [ ] (P5) Atualizar CLAUDE.md (45 plantas, 116+ testes, e2e) — ficheiros: CLAUDE.md — validação: coerente.
+- [x] (P5) Adicionar `CHANGELOG.md` (resumo dos ciclos) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: CHANGELOG.md com resumo dos 5 ciclos + 0.1.0.
+- [x] (P5) Atualizar CLAUDE.md (45 plantas, 116+ testes, e2e) — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: escala atualizada (48 plantas, 128 testes + 5 E2E).
 - [ ] (P5) Confirmar `.editorconfig` aplicado (indent consistente) — ficheiros: revisão — validação: revisão.
 
 ## Arquivo (ciclos concluídos)
