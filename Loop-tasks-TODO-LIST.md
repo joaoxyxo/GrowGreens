@@ -11,9 +11,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Glossário: +termos ("monda", "alfobre/viveiro", "compasso") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (monda, alfobre/viveiro, compasso).
 - [x] (P4) FAQ: +2 (adubo orgânico vs químico; vale a pena guardar sementes) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +2 dúvidas (adubo orgânico/químico; guardar sementes).
 - [x] (P5) Saúde: enriquecer grupo das brássicas (sulforafano, vit. C) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: +couve-de-bruxelas/chinesa/mizuna no grupo + dica sobre mirosinase/sulforafano e vit. K.
-- [ ] (P5) Troubleshoot: +sintoma "flores mas sem fruto (falta polinização)" se ainda não coberto — ficheiros: src/data/troubleshoot.ts — validação: build; sem duplicar.
-- [ ] (P5) Pragas: detalhar prevenção biológica do míldio/oídio (consociação) — ficheiros: src/data/pestsDiseases.ts — validação: build.
-- [ ] (P5) Microgreens: +1 variedade (couve-roxa já há; adicionar trigo/wheatgrass ou linhaça) — ficheiros: src/data/microgreens.ts — validação: testes.
+- [x] (P5) Troubleshoot: +sintoma "flores mas sem fruto (falta polinização)" se ainda não coberto — ficheiros: src/data/troubleshoot.ts — validação: build; sem duplicar. ✓ Verificado: já coberto pelo sintoma "flores-caem" (Ciclo 1). Não duplicar.
+- [x] (P5) Pragas: detalhar prevenção biológica do míldio/oídio (consociação) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: prevenção do míldio e oídio com consociação/rotação/variedades resistentes.
+- [x] (P5) Microgreens: +1 variedade (couve-roxa já há; adicionar trigo/wheatgrass ou linhaça) — ficheiros: src/data/microgreens.ts — validação: testes. ✓ Feito: erva de trigo (wheatgrass) → 10 variedades. 139 testes.
 - [ ] (P5) Recomendações: incluir microgreens quando espaço=interior e nada semeável — ficheiros: src/utils/recommend.ts ou home — validação: revisão.
 
 ## Regras de Negócio

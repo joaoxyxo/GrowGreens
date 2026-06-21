@@ -102,7 +102,7 @@ export const DISEASES: Disease[] = [
     description: 'Doença fúngica favorecida pela humidade e folhas molhadas — o maior inimigo da horta no litoral atlântico.',
     symptoms: 'Manchas amareladas na página superior e penugem acinzentada por baixo; folhas que secam.',
     prevention:
-      'Espaçamento generoso, boa ventilação, rega de manhã e SEMPRE na base (nunca nas folhas). Calda bordalesa em prevenção nas culturas sensíveis.',
+      'Espaçamento generoso, boa ventilação, rega de manhã e SEMPRE na base (nunca nas folhas). Calda bordalesa em prevenção nas culturas sensíveis. Consociação e rotação evitam concentrar a mesma família e cortam o ciclo do fungo.',
     treatment: 'Remove folhas afetadas; melhora o arejamento; trata com produtos à base de cobre (uso moderado).',
   },
   {
@@ -113,7 +113,7 @@ export const DISEASES: Disease[] = [
     description: 'Fungo que cobre as folhas com um pó branco; comum no fim do verão húmido em courgette, couves e morango.',
     symptoms: 'Pó branco farinhento nas folhas, que depois amarelecem e secam.',
     prevention:
-      'No litoral húmido: arejamento e espaçamento generoso, rega de manhã e na base (nunca à noite nem sobre as folhas) e evita o stress hídrico que o favorece.',
+      'No litoral húmido: arejamento e espaçamento generoso, rega de manhã e na base (nunca à noite nem sobre as folhas) e evita o stress hídrico que o favorece. Consociação: intercala plantas para arejar e não amontoar a mesma família; variedades resistentes ajudam.',
     treatment: 'Remove folhas atacadas; pulveriza com leite diluído (1:9) ou enxofre; bicarbonato de sódio diluído.',
   },
 ]
