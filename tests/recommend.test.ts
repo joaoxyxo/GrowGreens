@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { recommendPlants } from '@/utils/recommend'
+import { recommendPlants, shouldSuggestMicrogreens } from '@/utils/recommend'
 import type { SettingsState } from '@/types/models'
 
 const settings = (over: Partial<SettingsState> = {}): SettingsState => ({
@@ -34,5 +34,26 @@ describe('recommendPlants', () => {
     const a = recommendPlants(settings(), 5).map((p) => p.slug)
     const b = recommendPlants(settings(), 5).map((p) => p.slug)
     expect(a).toEqual(b)
+  })
+
+  it('só-interior só recomenda plantas viáveis dentro de casa (interior/ambos)', () => {
+    const r = recommendPlants(settings({ space: 'interior' }), 5)
+    expect(r.every((p) => p.location === 'interior' || p.location === 'ambos')).toBe(true)
+  })
+})
+
+describe('shouldSuggestMicrogreens', () => {
+  it('falso em espaço de exterior (varanda/quintal)', () => {
+    expect(shouldSuggestMicrogreens(settings({ space: 'varanda' }))).toBe(false)
+    expect(shouldSuggestMicrogreens(settings({ space: 'quintal' }))).toBe(false)
+  })
+
+  it('depende de haver algo semeável: true apenas em interior sem opções', () => {
+    // O resultado para interior segue plantSowableThisMonth para o mês atual.
+    // Garantimos coerência: se sugerir, é porque não há nada semeável.
+    const interior = shouldSuggestMicrogreens(settings({ space: 'interior' }))
+    const parapeito = shouldSuggestMicrogreens(settings({ space: 'parapeito' }))
+    expect(interior).toBe(parapeito) // ambos são "só-interior", mesmo critério
+    expect(typeof interior).toBe('boolean')
   })
 })

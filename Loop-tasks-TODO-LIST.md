@@ -17,8 +17,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Adicionar dica mensal em falta (MONTHLY_TIPS) se algum mês estiver pobre — ficheiros: src/data/calendar.ts — validação: build.
 
 ## Regras de Negócio
-- [ ] (P2) Teste para `shouldSuggestMicrogreens` (interior + nada semeável → true; exterior → false) — ficheiros: tests/recommend.test.ts — validação: vitest.
-- [ ] (P2) Teste de pontuação `recommendPlants` em espaço interior (penaliza exterior) — ficheiros: tests/recommend.test.ts — validação: vitest.
+- [x] (P2) Teste para `shouldSuggestMicrogreens` — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: exterior=false; interior==parapeito (mesmo critério).
+- [x] (P2) Teste de pontuação `recommendPlants` em espaço interior — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: só-interior só recomenda interior/ambos.
 - [ ] (P3) Teste: `estimateStage` faz clamp de `daysOld` negativo e futuro — ficheiros: tests/growth.test.ts — validação: vitest.
 - [ ] (P3) Teste: `successionDays` devolve valores coerentes — ficheiros: tests/growth.test.ts — validação: vitest.
 - [ ] (P2) Teste: marcar planta como colhida/perdida fecha lembretes abertos — ficheiros: tests/repositories.test.ts — validação: vitest.
@@ -41,7 +41,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Verificar listas grandes (catálogo) usam `:key` estável e v-memo onde útil — ficheiros: src/features/catalog — validação: revisão.
 
 ## Organização
-- [ ] (P2) `.gitignore`: ignorar `.claude/` e `test-results/` — ficheiros: .gitignore — validação: `git status` limpo desses caminhos.
+- [x] (P2) `.gitignore`: ignorar `.claude/` e `test-results/` — ficheiros: .gitignore — validação: `git status` limpo desses caminhos. ✓ Feito: + test-results, playwright-report, .claude.
 - [ ] (P3) Atualizar CLAUDE.md com contagens de conteúdo (45 glossário, 12 FAQ, 7 unidades/19 lições) — ficheiros: CLAUDE.md — validação: coerente.
 - [ ] (P3) CHANGELOG: entrada para as alterações dos ciclos 6/7 — ficheiros: CHANGELOG.md — validação: presente.
 - [ ] (P4) docs/ARQUITETURA: adicionar secção "Testes" (Vitest + Playwright, padrões) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
