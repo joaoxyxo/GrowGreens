@@ -8,6 +8,12 @@ describe('calendarForPlant', () => {
     expect(entries.every((e) => e.plant === 'alface')).toBe(true)
   })
 
+  it('zona desconhecida cai em delta 0 (= litoral_norte)', () => {
+    const norte = calendarForPlant('tomate', 'litoral_norte')
+    const desconhecida = calendarForPlant('tomate', 'zona_xpto')
+    expect(desconhecida.map((e) => e.months)).toEqual(norte.map((e) => e.months))
+  })
+
   it('desloca as sementeiras por zona, mas não as colheitas', () => {
     const norte = calendarForPlant('tomate', 'litoral_norte')
     const interior = calendarForPlant('tomate', 'interior_norte')

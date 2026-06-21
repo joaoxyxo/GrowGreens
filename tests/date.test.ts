@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { addDaysISO, daysSince, currentSeason, MONTH_NAMES } from '@/utils/date'
 
 describe('utils/date', () => {
@@ -17,6 +17,21 @@ describe('utils/date', () => {
 
   it('devolve uma estação válida', () => {
     expect(['primavera', 'verao', 'outono', 'inverno']).toContain(currentSeason())
+  })
+
+  it('currentSeason mapeia os meses corretamente', () => {
+    const cases: [string, string][] = [
+      ['2026-01-15', 'inverno'],
+      ['2026-04-15', 'primavera'],
+      ['2026-07-15', 'verao'],
+      ['2026-10-15', 'outono'],
+    ]
+    for (const [date, season] of cases) {
+      vi.useFakeTimers()
+      vi.setSystemTime(new Date(date + 'T12:00:00'))
+      expect(currentSeason()).toBe(season)
+      vi.useRealTimers()
+    }
   })
 
   it('tem 12 meses', () => {

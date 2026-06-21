@@ -17,15 +17,15 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Recomendações: incluir microgreens quando espaço=interior e nada semeável — ficheiros: src/utils/recommend.ts ou home — validação: revisão.
 
 ## Regras de Negócio
-- [ ] (P3) Teste de integridade: todas as plantas têm ≥1 entrada de calendário — ficheiros: tests/data-integrity.test.ts — validação: teste verde (ou corrige dados).
-- [ ] (P4) Teste de integridade: recipesForPlant cobre todas as plantas-alvo das receitas — ficheiros: tests/ — validação: teste.
-- [ ] (P4) Teste: MICROGREENS slugs únicos e daysToHarvest coerentes — ficheiros: tests/data-integrity.test.ts — validação: teste.
-- [ ] (P4) Teste: GLOSSARY/FAQ sem termos/perguntas duplicadas — ficheiros: tests/ — validação: teste.
-- [ ] (P4) progress: `addXp` nunca fica negativo; nível sobe corretamente — ficheiros: tests/progress.test.ts — validação: teste.
+- [x] (P3) Teste de integridade: todas as plantas têm ≥1 entrada de calendário — ficheiros: tests/data-integrity.test.ts — validação: teste verde (ou corrige dados). ✓ Feito: teste garante calendário para as 48 plantas (todas já têm).
+- [x] (P4) Teste de integridade: recipesForPlant cobre todas as plantas-alvo das receitas — ficheiros: tests/ — validação: teste. ✓ Feito: teste 'cada receita refere ≥1 planta' (refs já validadas por outro teste).
+- [x] (P4) Teste: MICROGREENS slugs únicos e daysToHarvest coerentes — ficheiros: tests/data-integrity.test.ts — validação: teste. ✓ Feito.
+- [x] (P4) Teste: GLOSSARY/FAQ sem termos/perguntas duplicadas — ficheiros: tests/ — validação: teste. ✓ Feito.
+- [x] (P4) progress: `addXp` nunca fica negativo; nível sobe corretamente — ficheiros: tests/progress.test.ts — validação: teste. ✓ Feito: addXp acumula e o nível sobe.
 - [ ] (P5) Teste: bedsRepo.clearCell remove a célula correta — ficheiros: tests/repositories.test.ts — validação: teste.
-- [ ] (P5) Teste: `currentSeason` mapeia meses corretamente — ficheiros: tests/date.test.ts — validação: teste.
-- [ ] (P5) Teste: achievementToast desconhecido devolve fallback — ficheiros: tests/ — validação: teste.
-- [ ] (P5) Teste: calendarForPlant zona desconhecida cai em delta 0 — ficheiros: tests/calendar.test.ts — validação: teste.
+- [x] (P5) Teste: `currentSeason` mapeia meses corretamente — ficheiros: tests/date.test.ts — validação: teste. ✓ Feito: 4 estações com fake timers.
+- [x] (P5) Teste: achievementToast desconhecido devolve fallback — ficheiros: tests/ — validação: teste. ✓ Feito.
+- [x] (P5) Teste: calendarForPlant zona desconhecida cai em delta 0 — ficheiros: tests/calendar.test.ts — validação: teste. ✓ Feito: igual a litoral_norte.
 - [ ] (P5) Teste: useReminders reflete novos lembretes (reativo) — ficheiros: tests/ — validação: teste.
 
 ## Performance

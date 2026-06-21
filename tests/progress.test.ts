@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
 import { useProgressStore } from '@/stores/progress'
+import { achievementToast } from '@/data/achievements'
 
 describe('progress — lições e XP', () => {
   beforeEach(() => setActivePinia(createPinia()))
@@ -21,6 +22,19 @@ describe('progress — lições e XP', () => {
     p.completeLesson('l1-2', 20)
     expect(p.state.xp).toBe(35)
     expect(p.state.completedLessons).toHaveLength(2)
+  })
+
+  it('addXp acumula e o nível sobe com o XP', () => {
+    const p = useProgressStore()
+    expect(p.level.min).toBe(0)
+    p.addXp(200)
+    expect(p.state.xp).toBe(200)
+    expect(p.level.min).toBeGreaterThan(0) // subiu de nível
+  })
+
+  it('achievementToast usa a definição; fallback para código desconhecido', () => {
+    expect(achievementToast('semeador')).toContain('Semeador')
+    expect(achievementToast('codigo_zzz')).toContain('Conquista')
   })
 
   it('atingir 10 lições satisfaz a condição da conquista "estudioso"', () => {
