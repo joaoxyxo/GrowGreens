@@ -19,14 +19,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Regras de Negócio
 - [x] (P2) Teste para `shouldSuggestMicrogreens` — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: exterior=false; interior==parapeito (mesmo critério).
 - [x] (P2) Teste de pontuação `recommendPlants` em espaço interior — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: só-interior só recomenda interior/ambos.
-- [ ] (P3) Teste: `estimateStage` faz clamp de `daysOld` negativo e futuro — ficheiros: tests/growth.test.ts — validação: vitest.
-- [ ] (P3) Teste: `successionDays` devolve valores coerentes — ficheiros: tests/growth.test.ts — validação: vitest.
-- [ ] (P2) Teste: marcar planta como colhida/perdida fecha lembretes abertos — ficheiros: tests/repositories.test.ts — validação: vitest.
-- [ ] (P3) Teste: `areCompanions`/`areAntagonists` são simétricos — ficheiros: tests/companions.test.ts — validação: vitest.
-- [ ] (P3) Teste: `computeUnlockedDay` respeita limites (0..7) — ficheiros: tests/challenge.test.ts — validação: vitest.
-- [ ] (P3) Teste: `exportData` inclui os canteiros (beds) — ficheiros: tests/backup.test.ts — validação: vitest.
-- [ ] (P3) Teste: `plantingsRepo.create` faz clamp de `wateringEveryDays` ≥ 1 — ficheiros: tests/repositories.test.ts — validação: vitest.
-- [ ] (P4) Teste: `calendarForPlant` consistente com `plantSowableThisMonth` — ficheiros: tests/calendar.test.ts — validação: vitest.
+- [x] (P3) Teste: `estimateStage` faz clamp de `daysOld` negativo e futuro — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Já coberto (growth.test.ts linhas 34 e 28-32).
+- [x] (P3) Teste: `successionDays` devolve valores coerentes — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Já coberto (growth.test.ts linhas 52-61).
+- [x] (P2) Teste: marcar planta como colhida/perdida fecha lembretes abertos — ficheiros: tests/repositories.test.ts — validação: vitest. ✓ Feito: colhida já coberto; adicionado caso 'perdida conclui os lembretes pendentes'.
+- [x] (P3) Teste: `areCompanions`/`areAntagonists` são simétricos — ficheiros: tests/companions.test.ts — validação: vitest. ✓ Já coberto (companions.test.ts linhas 8-30).
+- [x] (P3) Teste: `computeUnlockedDay` respeita limites (0..7) — ficheiros: tests/challenge.test.ts — validação: vitest. ✓ Já coberto ('nunca passa do dia 7' + dia 0).
+- [x] (P3) Teste: `exportData` inclui os canteiros (beds) — ficheiros: tests/backup.test.ts — validação: vitest. ✓ Feito: cria bed+célula e confirma data.beds.
+- [x] (P3) Teste: `plantingsRepo.create` faz clamp de `wateringEveryDays` ≥ 1 — ficheiros: tests/repositories.test.ts — validação: vitest. ✓ Já coberto ('saneia nickname vazio e intervalo de rega inválido ao criar').
+- [x] (P4) Teste: `calendarForPlant` consistente com `plantSowableThisMonth` — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito: cada planta semeável tem sementeira nesse mês.
 
 ## Performance
 - [ ] (P3) Confirmar que todas as rotas/views são lazy (import dinâmico) — ficheiros: src/router/index.ts — validação: revisão + chunks separados no build.

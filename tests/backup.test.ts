@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { db } from '@/lib/db/dexie'
-import { plantingsRepo, journalRepo } from '@/repositories'
+import { plantingsRepo, journalRepo, bedsRepo } from '@/repositories'
 import { exportData, clearAllData } from '@/utils/backup'
 
 describe('backup — exportar e apagar dados', () => {
@@ -30,6 +30,14 @@ describe('backup — exportar e apagar dados', () => {
     expect(data.reminders.length).toBeGreaterThanOrEqual(1)
     // a foto (Blob) é omitida do backup
     expect((data.journal[0] as Record<string, unknown>).photo).toBeUndefined()
+  })
+
+  it('exportData inclui os canteiros do planeador (beds)', async () => {
+    const bed = await bedsRepo.create({ name: 'Canteiro 1', kind: 'canteiro', rows: 2, cols: 2 })
+    await bedsRepo.setCell(bed.id, '0-0', { plantSlug: 'alface' })
+    const data = await exportData()
+    expect(data.beds).toHaveLength(1)
+    expect((data.beds[0] as Record<string, unknown>).name).toBe('Canteiro 1')
   })
 
   it('clearAllData apaga todas as tabelas', async () => {

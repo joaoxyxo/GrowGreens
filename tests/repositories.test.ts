@@ -233,6 +233,21 @@ describe('repositórios (local-first)', () => {
     expect(pendentes.length).toBe(0)
   })
 
+  it('marcar planta como perdida conclui os lembretes pendentes', async () => {
+    const p = await plantingsRepo.create({
+      plantSlug: 'tomate',
+      nickname: 'Tomateiro',
+      location: 'varanda',
+      wateringEveryDays: 2,
+    })
+    // tomate gera rega + adubação, ambos pendentes
+    let pendentes = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pendentes.length).toBeGreaterThanOrEqual(2)
+    await plantingsRepo.update(p.id, { status: 'perdida' })
+    pendentes = (await db.reminders.where('plantingId').equals(p.id).toArray()).filter((r) => !r.done)
+    expect(pendentes.length).toBe(0)
+  })
+
   it('marcar planta como colhida regista um marco no diário', async () => {
     const p = await plantingsRepo.create({
       plantSlug: 'rabanete',

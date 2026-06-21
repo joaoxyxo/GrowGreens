@@ -46,4 +46,17 @@ describe('plantSowableThisMonth', () => {
     const maio = plantSowableThisMonth('litoral_norte', 5)
     expect(maio.has('alho')).toBe(false)
   })
+
+  it('é consistente com calendarForPlant: cada planta semeável tem sementeira nesse mês', () => {
+    const zone = 'litoral_norte'
+    const month = 4
+    for (const slug of plantSowableThisMonth(zone, month)) {
+      const semeiaNoMes = calendarForPlant(slug, zone).some(
+        (e) =>
+          (e.action === 'sementeira_direta' || e.action === 'sementeira_interior') &&
+          e.months.includes(month),
+      )
+      expect(semeiaNoMes, `${slug} devia ter sementeira em ${month}`).toBe(true)
+    }
+  })
 })
