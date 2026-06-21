@@ -29,16 +29,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: `calendarForPlant` consistente com `plantSowableThisMonth` — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito: cada planta semeável tem sementeira nesse mês.
 
 ## Performance
-- [ ] (P3) Confirmar que todas as rotas/views são lazy (import dinâmico) — ficheiros: src/router/index.ts — validação: revisão + chunks separados no build.
-- [ ] (P4) Confirmar ausência de `console.log` em código de produção — ficheiros: src — validação: grep limpo.
-- [ ] (P4) Verificar tamanho do chunk `plants` (raw + gzip) e registar — ficheiros: build — validação: revisão do output.
-- [ ] (P4) Confirmar que o precache do PWA não inclui sourcemaps/mapas — ficheiros: build/dist — validação: revisão.
-- [ ] (P4) Confirmar que imagens do utilizador têm width/height (evita CLS) — ficheiros: features (garden/diagnosis) — validação: revisão.
-- [ ] (P4) Confirmar uso de fontes do sistema (sem webfonts externas a carregar) — ficheiros: css/index — validação: revisão.
-- [ ] (P5) Avaliar debounce na pesquisa do catálogo (se aplicável) — ficheiros: src/features/catalog — validação: revisão.
-- [ ] (P4) Verificar `manualChunks` ainda separa vendor de forma eficaz — ficheiros: vite.config.ts — validação: revisão do build.
-- [ ] (P4) Confirmar prefetch do Home não bloqueia o arranque — ficheiros: src/features/home/HomeView.vue — validação: revisão.
-- [ ] (P5) Verificar listas grandes (catálogo) usam `:key` estável e v-memo onde útil — ficheiros: src/features/catalog — validação: revisão.
+- [x] (P3) Confirmar que todas as rotas/views são lazy — ficheiros: src/router/index.ts — validação: revisão. ✓ 19 imports dinâmicos, 0 componentes estáticos; chunks separados no build.
+- [x] (P4) Confirmar ausência de `console.log` em código de produção — ficheiros: src — validação: grep limpo. ✓ Nenhum console.log em src/ (só console.error em useReminders).
+- [x] (P4) Verificar tamanho do chunk `plants` (raw + gzip) — ficheiros: build — validação: revisão. ✓ plants 102.33 kB / gzip 22.96 kB (lazy, só no catálogo). Aceitável.
+- [x] (P4) Confirmar que o precache do PWA não inclui sourcemaps — ficheiros: build/dist — validação: revisão. ✓ sourcemap não ativado (default false); sem .map no dist.
+- [x] (P4) Confirmar que imagens do utilizador não causam CLS — ficheiros: garden/diagnosis — validação: revisão. ✓ Miniaturas com width/height; pré-visualizações com altura CSS fixa (h-32/h-48/max-h-60 + object-cover) → sem layout shift.
+- [x] (P4) Confirmar uso de fontes do sistema — ficheiros: css/index — validação: revisão. ✓ Sem @font-face nem CDNs de fontes; stack do sistema (Tailwind).
+- [x] (P5) Debounce na pesquisa do catálogo — ficheiros: src/features/catalog — validação: revisão. ✓ Já implementado (debouncedQuery com setTimeout, CatalogView.vue linhas 16-21).
+- [x] (P4) Verificar `manualChunks` separa vendor — ficheiros: vite.config.ts — validação: revisão. ✓ vendor 294 kB / gzip 102 kB isolado das views.
+- [x] (P4) Confirmar prefetch do Home não bloqueia o arranque — ficheiros: HomeView.vue — validação: revisão. ✓ imports em onMounted com .catch(); em segundo plano, não bloqueante.
+- [x] (P5) Listas grandes (catálogo) com `:key` estável e v-memo — ficheiros: src/features/catalog — validação: revisão. ✓ :key=p.slug + v-memo=[slug, sowable] no grid de resultados.
 
 ## Organização
 - [x] (P2) `.gitignore`: ignorar `.claude/` e `test-results/` — ficheiros: .gitignore — validação: `git status` limpo desses caminhos. ✓ Feito: + test-results, playwright-report, .claude.
