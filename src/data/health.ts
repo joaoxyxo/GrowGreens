@@ -72,6 +72,7 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Folato e ferro', effect: 'Energia e formação de sangue.' },
     ],
     tip: 'Combina com uma fonte de vitamina C (ex.: pimento) para absorver melhor o ferro vegetal.',
+    caution: 'Coze bem os grãos antes de comer — crus ou mal cozidos têm lectinas que causam mal-estar. Pessoas com favismo (deficiência de G6PD) devem evitar favas.',
   },
   {
     code: 'aromaticas',
