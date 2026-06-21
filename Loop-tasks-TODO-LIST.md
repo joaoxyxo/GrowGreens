@@ -32,13 +32,13 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) E2E: backup (exportar dados) na ProfileView — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec valida download de growgreens-backup.json. 7 specs e2e verdes.
 - [x] (P4) E2E: planeador — criar canteiro e plantar célula — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: cria espaço → planta alface numa célula (aria-label muda).
 - [ ] (P5) `fetchpriority`/eager na 1.ª imagem acima da dobra (se houver) — ficheiros: features — validação: revisão.
-- [ ] (P5) Confirmar que vendor não inclui código de testes — ficheiros: build — validação: revisão.
-- [ ] (P5) Avaliar dividir o catálogo (`plants`) em chunk por categoria (se valer) — ficheiros: build — validação: revisão.
+- [x] (P5) Confirmar que vendor não inclui código de testes — ficheiros: build — validação: revisão. ✓ Verificado: grep no dist/assets/*.js sem test-utils/vitest/describe.
+- [!] (P5) Avaliar dividir o catálogo (`plants`) em chunk por categoria — NÃO JUSTIFICA: plants já é chunk lazy próprio (~102KB/~25KB gz) e carrega só no catálogo. Dividir por categoria fragmentaria sem ganho percetível a 51 plantas.
 - [x] (P5) `aria-live` no ToastHost para anúncios — ficheiros: components/ToastHost.vue — validação: revisão. ✓ Verificado: ToastHost já tem aria-live="polite" (confirmado por teste).
-- [ ] (P5) Confirmar precache do sw não inclui ficheiros enormes — ficheiros: build — validação: revisão.
-- [ ] (P5) Revisão: imagens de ícones com tamanho adequado no manifest — ficheiros: vite.config — validação: revisão.
+- [x] (P5) Confirmar precache do sw não inclui ficheiros enormes — ficheiros: build — validação: revisão. ✓ Verificado: maior ativo é vendor 294KB; nenhum ficheiro >600KB.
+- [x] (P5) Revisão: imagens de ícones com tamanho adequado no manifest — ficheiros: vite.config — validação: revisão. ✓ Verificado: 192, 512 e maskable-512 presentes.
 - [ ] (P5) Evitar reflow no scroll horizontal de chips (revisão) — ficheiros: features — validação: revisão.
-- [ ] (P5) Confirmar tree-shaking de @vue/test-utils fora do bundle — ficheiros: build — validação: revisão.
+- [x] (P5) Confirmar tree-shaking de @vue/test-utils fora do bundle — ficheiros: build — validação: revisão. ✓ Verificado: nenhuma referência em src/ nem no dist.
 
 ## Organização
 - [x] (P4) Teste de componente: TabBar (links e item ativo) — ficheiros: tests/ — validação: mount passa. ✓ Feito: 5 tabs, com router em memória.
@@ -48,7 +48,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente. ✓ Feito: badge MIT + link para CHANGELOG.md.
 - [x] (P5) Tipar retorno de `estimateStage` num interface nomeado — ficheiros: src/utils/growth.ts — validação: typecheck. ✓ Feito: interface StageEstimate exportado. TC OK.
 - [ ] (P5) Normalizar imports (ordem) onde for trivial — ficheiros: src — validação: lint.
-- [ ] (P5) Confirmar que data files não importam de features (camadas) — ficheiros: src/data — validação: revisão.
+- [x] (P5) Confirmar que data files não importam de features (camadas) — ficheiros: src/data — validação: revisão. ✓ Verificado: grep sem imports de @/features em src/data.
 - [x] (P5) Adicionar `funding`/`bugs`/`repository` ao package.json — ficheiros: package.json — validação: build. ✓ Feito: license, homepage, repository e bugs adicionados.
 - [ ] (P5) Atualizar CLAUDE.md (nº plantas/receitas/testes) se mudou — ficheiros: CLAUDE.md — validação: coerente.
 
