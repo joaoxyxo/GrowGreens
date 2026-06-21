@@ -111,6 +111,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     beginner: true,
     note: 'Demolha o grão antes. Cresce depressa e vigoroso; corta-se para sumos verdes. Não se mastiga a fibra.',
   },
+  {
+    slug: 'alfafa',
+    name: 'Alfafa (luzerna)',
+    emoji: '🍀',
+    soakHours: 6,
+    blackoutDays: [2, 3],
+    daysToHarvest: [7, 10],
+    flavour: 'Suave, fresco, ligeiramente a noz.',
+    beginner: true,
+    note: 'Clássica dos rebentos. Demolha curta e mantém húmida; dá um tapete macio e versátil para sandes e saladas.',
+  },
 ]
 
 export const MICROGREENS_BY_SLUG: Record<string, MicrogreenInfo> = Object.fromEntries(

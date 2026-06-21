@@ -146,4 +146,16 @@ export const SYMPTOMS: Symptom[] = [
       'Se a água for muito calcária, intercala com água da chuva.',
     ],
   },
+  {
+    id: 'teias-finas',
+    emoji: '🕸️',
+    label: 'Teias finas e pontilhado claro nas folhas',
+    likely: 'Ácaro-aranha, que prolifera em ar quente e seco (comum em interior no verão).',
+    whatToDo: [
+      'Aumenta a humidade: borrifa o verso das folhas com água.',
+      'Lava as folhas com jatos de água para reduzir a população.',
+      'Em ataques fortes, usa óleo de nim e remove as folhas mais afetadas.',
+    ],
+    related: ['acaro-aranha'],
+  },
 ]

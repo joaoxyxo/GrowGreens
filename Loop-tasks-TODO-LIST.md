@@ -7,14 +7,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Conteúdo
 - [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: funcho, aipo) respeitando o tipo `Plant` e referências — ficheiros: src/data/plants.ts — validação: tests/data-integrity.test.ts.
 - [ ] (P3) Adicionar 2 receitas novas ligadas a plantas existentes — ficheiros: src/data/recipes.ts — validação: data-integrity (recipes apontam para slugs válidos).
-- [ ] (P4) Adicionar 5 termos ao glossário (atualmente 45) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
-- [ ] (P4) Adicionar 3 perguntas à FAQ (atualmente 12) — ficheiros: src/data/faq.ts — validação: build.
+- [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: cotilédone, repicagem, mulching, espigar, endurecimento (→50).
+- [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: horas de sol, flores sem fruto, semear no inverno (→15).
 - [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
-- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
-- [ ] (P4) Enriquecer 3 pragas/doenças com a época do ano em que surgem — ficheiros: src/data/pestsDiseases.ts — validação: build.
-- [ ] (P4) Adicionar 1 microgreen novo (ex.: alfafa) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P5) Rever 1 conquista/achievement com descrição mais clara em pt-PT — ficheiros: src/data/achievements.ts — validação: build.
-- [ ] (P5) Adicionar dica mensal em falta (MONTHLY_TIPS) se algum mês estiver pobre — ficheiros: src/data/calendar.ts — validação: build.
+- [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'teias-finas' → related ['acaro-aranha'].
+- [x] (P4) Enriquecer 3 pragas/doenças com a época do ano — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: afídeo (primavera), áltica (primavera/verão), mosca-branca (fim de verão/interior).
+- [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: alfafa/luzerna (→11).
+- [x] (P5) Rever 1 conquista com descrição mais clara — ficheiros: src/data/achievements.ts — validação: build. ✓ Feito: 'constante' → '7 dias seguidos de atividade (sequência sem falhar)'.
+- [x] (P5) Adicionar dica mensal em falta (MONTHLY_TIPS) — ficheiros: src/data/calendar.ts — validação: build. ✓ Verificado: os 12 meses já têm dica preenchida e específica; nada em falta.
 
 ## Regras de Negócio
 - [x] (P2) Teste para `shouldSuggestMicrogreens` — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: exterior=false; interior==parapeito (mesmo critério).

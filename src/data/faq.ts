@@ -61,4 +61,19 @@ export const FAQ: FaqItem[] = [
     q: 'Vale a pena guardar sementes?',
     a: 'Sim, de variedades tradicionais (não híbridas F1, que não saem "iguais"). Deixa secar bem as sementes de tomate, feijão, alface ou ervilha e guarda-as num frasco, ao escuro e seco. Poupas e ganhas plantas adaptadas ao teu espaço.',
   },
+  {
+    emoji: '☀️',
+    q: 'Quantas horas de sol precisa a minha horta?',
+    a: 'A maioria das hortícolas de fruto (tomate, pimento, courgette) quer 6+ horas de sol direto. Folhas e ervas aromáticas safam-se com 4-5h. Em varandas viradas a norte, aposta em alface, rúcula, espinafre e microgreens, que toleram menos sol.',
+  },
+  {
+    emoji: '🐝',
+    q: 'Tenho flores mas não dão fruto. Porquê?',
+    a: 'Em tomate, courgette ou pepino é quase sempre falta de polinização (poucos insetos numa varanda) ou calor extremo. Abana as plantas de manhã para soltar o pólen, ou poliniza à mão com um pincel. Atrai abelhas com flores por perto (calêndula, manjericão a florir).',
+  },
+  {
+    emoji: '🌡️',
+    q: 'Posso semear no inverno?',
+    a: 'Sim, mas escolhe culturas de frio: favas, ervilhas, couves, alho, cebola, espinafre e alface de inverno. No litoral atlântico o frio raramente é extremo. Em interior, os microgreens dão o ano todo.',
+  },
 ]

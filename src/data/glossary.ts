@@ -50,4 +50,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Monda', emoji: '🧹', definition: 'Arrancar as ervas daninhas que competem com as culturas por água, luz e nutrientes.' },
   { term: 'Alfobre (viveiro)', emoji: '🌱', definition: 'Canteiro ou tabuleiro onde se semeia denso para depois transplantar as plântulas para o local definitivo.' },
   { term: 'Compasso', emoji: '📏', definition: 'A distância recomendada entre plantas (e entre linhas). Respeitá-lo dá espaço, luz e ar a cada planta.' },
+  { term: 'Cotilédone', emoji: '🌱', definition: 'As primeiras "folhas" que saem da semente (folhas seminais). Não são folhas verdadeiras — essas vêm a seguir e têm a forma típica da planta.' },
+  { term: 'Repicagem', emoji: '✋', definition: 'Transplantar as plântulas do alfobre denso para um espaço maior (vaso ou linha), dando-lhes lugar para engrossar antes do local definitivo.' },
+  { term: 'Mulching (cobertura)', emoji: '🍂', definition: 'Cobrir o solo (palha, folhas, casca) à volta das plantas para reter humidade, abafar ervas e proteger as raízes do calor e do frio.' },
+  { term: 'Espigar (subir a semente)', emoji: '🌾', definition: 'Quando uma hortícola de folha (alface, rúcula, coentros) sobe a flor com o calor e fica amarga. Sinal de que passou do ponto de colheita.' },
+  { term: 'Endurecimento (rustificação)', emoji: '🌬️', definition: 'Habituar gradualmente as plântulas criadas em interior ao exterior (sol, vento, frio) durante alguns dias, antes do transplante, para não sofrerem choque.' },
 ]

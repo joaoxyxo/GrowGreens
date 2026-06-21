@@ -39,7 +39,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   {
     code: 'constante',
     name: 'Constante',
-    description: 'Mantiveste uma sequência de 7 dias.',
+    description: 'Mantiveste 7 dias seguidos de atividade na app (sequência sem falhar).',
     emoji: '🔥',
   },
   {
