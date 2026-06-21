@@ -1,6 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createRouter, createMemoryHistory } from 'vue-router'
+import { setActivePinia, createPinia } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+import TabBar from '@/components/TabBar.vue'
+import ToastHost from '@/components/ToastHost.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import PlantCard from '@/components/PlantCard.vue'
 import ProgressBar from '@/components/ui/ProgressBar.vue'
@@ -104,6 +108,33 @@ describe('PageHeader', () => {
     })
     expect(w.text()).toContain('Catálogo')
     expect(w.text()).toContain('Descobre')
+  })
+})
+
+describe('TabBar', () => {
+  const router = createRouter({ history: createMemoryHistory(), routes: [{ path: '/', component: { template: '<div/>' } }] })
+
+  it('renderiza os tabs de navegação', async () => {
+    router.push('/')
+    await router.isReady()
+    const w = mount(TabBar, { global: { plugins: [router] } })
+    expect(w.text()).toContain('Início')
+    expect(w.text()).toContain('Horta')
+    expect(w.text()).toContain('Curso')
+    expect(w.findAll('a').length).toBeGreaterThanOrEqual(5)
+  })
+})
+
+describe('ToastHost', () => {
+  beforeEach(() => setActivePinia(createPinia()))
+
+  it('mostra os toasts do store', async () => {
+    const ui = useUiStore()
+    const w = mount(ToastHost)
+    ui.toast('Olá mundo', 'info')
+    await w.vm.$nextTick()
+    expect(w.text()).toContain('Olá mundo')
+    expect(w.find('[aria-live]').exists()).toBe(true)
   })
 })
 

@@ -22,7 +22,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: MICROGREENS slugs únicos e daysToHarvest coerentes — ficheiros: tests/data-integrity.test.ts — validação: teste. ✓ Feito.
 - [x] (P4) Teste: GLOSSARY/FAQ sem termos/perguntas duplicadas — ficheiros: tests/ — validação: teste. ✓ Feito.
 - [x] (P4) progress: `addXp` nunca fica negativo; nível sobe corretamente — ficheiros: tests/progress.test.ts — validação: teste. ✓ Feito: addXp acumula e o nível sobe.
-- [ ] (P5) Teste: bedsRepo.clearCell remove a célula correta — ficheiros: tests/repositories.test.ts — validação: teste.
+- [x] (P5) Teste: bedsRepo.clearCell remove a célula correta — ficheiros: tests/repositories.test.ts — validação: teste. ✓ Feito: remove só a célula alvo, mantém as outras.
 - [x] (P5) Teste: `currentSeason` mapeia meses corretamente — ficheiros: tests/date.test.ts — validação: teste. ✓ Feito: 4 estações com fake timers.
 - [x] (P5) Teste: achievementToast desconhecido devolve fallback — ficheiros: tests/ — validação: teste. ✓ Feito.
 - [x] (P5) Teste: calendarForPlant zona desconhecida cai em delta 0 — ficheiros: tests/calendar.test.ts — validação: teste. ✓ Feito: igual a litoral_norte.
@@ -34,15 +34,15 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) `fetchpriority`/eager na 1.ª imagem acima da dobra (se houver) — ficheiros: features — validação: revisão.
 - [ ] (P5) Confirmar que vendor não inclui código de testes — ficheiros: build — validação: revisão.
 - [ ] (P5) Avaliar dividir o catálogo (`plants`) em chunk por categoria (se valer) — ficheiros: build — validação: revisão.
-- [ ] (P5) `aria-live` no ToastHost para anúncios — ficheiros: components/ToastHost.vue — validação: revisão.
+- [x] (P5) `aria-live` no ToastHost para anúncios — ficheiros: components/ToastHost.vue — validação: revisão. ✓ Verificado: ToastHost já tem aria-live="polite" (confirmado por teste).
 - [ ] (P5) Confirmar precache do sw não inclui ficheiros enormes — ficheiros: build — validação: revisão.
 - [ ] (P5) Revisão: imagens de ícones com tamanho adequado no manifest — ficheiros: vite.config — validação: revisão.
 - [ ] (P5) Evitar reflow no scroll horizontal de chips (revisão) — ficheiros: features — validação: revisão.
 - [ ] (P5) Confirmar tree-shaking de @vue/test-utils fora do bundle — ficheiros: build — validação: revisão.
 
 ## Organização
-- [ ] (P4) Teste de componente: TabBar (links e item ativo) — ficheiros: tests/ — validação: mount passa.
-- [ ] (P4) Teste de componente: ToastHost (mostra toasts do store) — ficheiros: tests/ — validação: mount passa.
+- [x] (P4) Teste de componente: TabBar (links e item ativo) — ficheiros: tests/ — validação: mount passa. ✓ Feito: 5 tabs, com router em memória.
+- [x] (P4) Teste de componente: ToastHost (mostra toasts do store) — ficheiros: tests/ — validação: mount passa. ✓ Feito: toast do store aparece; aria-live presente.
 - [ ] (P4) A11y: heading hierarchy (1 h1 por página / PageHeader como h1) — ficheiros: components — validação: revisão.
 - [ ] (P5) docs/ARQUITETURA: atualizar com utils/text, backup, composables — ficheiros: docs — validação: coerente.
 - [ ] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente.
