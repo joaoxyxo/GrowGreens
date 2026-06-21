@@ -1,15 +1,15 @@
 # Loop Tasks — TODO List
-Ciclo: 7 · Atualizado: 2026-06-22 12:00
+Ciclo: 7 · Atualizado: 2026-06-22 14:30 · 40/40 concluídas
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 51 plantas, 10 microgreens, 19 receitas, 140 unit + 7 e2e.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: funcho, aipo) respeitando o tipo `Plant` e referências — ficheiros: src/data/plants.ts — validação: tests/data-integrity.test.ts.
-- [ ] (P3) Adicionar 2 receitas novas ligadas a plantas existentes — ficheiros: src/data/recipes.ts — validação: data-integrity (recipes apontam para slugs válidos).
+- [x] (P3) Adicionar 2 plantas novas ao catálogo — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity. ✓ Feito: chicória (almeirão) e alcachofra (funcho/aipo já existiam); +entradas de calendário. 51→53.
+- [x] (P3) Adicionar 2 receitas novas ligadas a plantas existentes — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: chicória salteada com alho; alcachofras estufadas. 19→21.
 - [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: cotilédone, repicagem, mulching, espigar, endurecimento (→50).
 - [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: horas de sol, flores sem fruto, semear no inverno (→15).
-- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
+- [x] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build. ✓ Feito: l7-2 'Quanto duram as sementes' na unidade u7. 19→20 lições.
 - [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'teias-finas' → related ['acaro-aranha'].
 - [x] (P4) Enriquecer 3 pragas/doenças com a época do ano — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: afídeo (primavera), áltica (primavera/verão), mosca-branca (fim de verão/interior).
 - [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: alfafa/luzerna (→11).

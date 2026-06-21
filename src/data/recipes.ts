@@ -401,6 +401,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['feijao-frade', 'cebola', 'alho', 'tomate', 'coentros'],
   },
+  {
+    slug: 'chicoria-salteada-alho',
+    title: 'Chicória salteada com alho',
+    emoji: '🥬',
+    description: 'O amargo da chicória suaviza-se no salteado — um acompanhamento rápido e rústico.',
+    prepMinutes: 15,
+    difficulty: 'facil',
+    season: ['outono', 'inverno'],
+    ingredients: [
+      'Um molho de chicória (almeirão) acabada de colher',
+      '2 dentes de alho laminados',
+      'Azeite, sal, piri-piri (opcional)',
+      'Sumo de limão a gosto',
+    ],
+    steps: [
+      'Lava bem a chicória e escalda 2-3 min em água a ferver para tirar o amargo.',
+      'Escorre e salteia em azeite com o alho laminado até dourar.',
+      'Tempera com sal e finaliza com umas gotas de limão.',
+    ],
+    plants: ['chicoria', 'alho'],
+  },
+  {
+    slug: 'alcachofras-estufadas',
+    title: 'Alcachofras estufadas',
+    emoji: '🌿',
+    description: 'Tenras e perfumadas — a melhor forma de saborear os capítulos da tua alcachofreira.',
+    prepMinutes: 40,
+    difficulty: 'medio',
+    season: ['primavera'],
+    ingredients: [
+      '4 alcachofras (capítulos tenros e fechados)',
+      '1 cebola e 2 dentes de alho',
+      'Salsa, azeite, sal',
+      'Sumo de 1 limão (para não escurecer)',
+    ],
+    steps: [
+      'Limpa as alcachofras (tira folhas duras e o pelo central) e mergulha em água com limão.',
+      'Refoga a cebola e o alho em azeite; junta as alcachofras em quartos.',
+      'Estufa com um pouco de água, tapado, ~25-30 min até tenras. Finaliza com salsa.',
+    ],
+    plants: ['alcachofra', 'cebola', 'alho', 'salsa'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

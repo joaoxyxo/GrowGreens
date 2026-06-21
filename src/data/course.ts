@@ -62,7 +62,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'Fecha o ciclo: colhe e guarda sementes para o próximo ano.',
     emoji: '🫙',
     color: 'sun',
-    lessonIds: ['l7-1'],
+    lessonIds: ['l7-1', 'l7-2'],
   },
 ]
 
@@ -604,6 +604,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'Falso — os F1 não saem fiéis. Para guardar, escolhe variedades tradicionais/de polinização aberta.',
       },
       { kind: 'summary', bullets: ['Guarda variedades tradicionais, não F1.', 'Seca muito bem antes de guardar.', 'Frasco etiquetado, seco, fresco e escuro.'] },
+    ],
+  },
+  {
+    id: 'l7-2',
+    unitId: 'u7',
+    title: 'Quanto duram as sementes',
+    subtitle: 'Teste de germinação e validade.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '📅',
+        title: 'Cada semente tem o seu prazo',
+        body: 'Algumas sementes duram muitos anos (tomate, feijão, abóbora — 4 a 6 anos); outras perdem força depressa (cebola, alho-francês, cerefólio — 1 a 2 anos). Por isso vale a pena datar os envelopes.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🧻',
+        title: 'Teste do papel húmido',
+        body: 'Na dúvida, testa: põe 10 sementes num papel de cozinha húmido dentro de um saco, em sítio quente. Conta quantas germinam em ~1 semana — dá-te a taxa de germinação antes de semear o canteiro todo.',
+      },
+      {
+        kind: 'truefalse',
+        question: 'As sementes de cebola conservam-se bem durante 5-6 anos.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 1,
+        explanation: 'Falso — as de cebola e alho-francês perdem germinação em 1-2 anos. Usa-as cedo.',
+      },
+      { kind: 'summary', bullets: ['Data sempre os envelopes.', 'Umas duram anos, outras só 1-2.', 'Testa a germinação no papel húmido em caso de dúvida.'] },
     ],
   },
 ]
