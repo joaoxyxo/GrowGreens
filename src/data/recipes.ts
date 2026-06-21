@@ -338,6 +338,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['rabanete'],
   },
+  {
+    slug: 'courgette-salteada',
+    title: 'Courgette salteada com alho',
+    emoji: '🥒',
+    description: 'Rápida e leve — o melhor destino para a courgette abundante do verão.',
+    prepMinutes: 15,
+    difficulty: 'facil',
+    season: ['verao'],
+    ingredients: [
+      '2 courgettes às rodelas',
+      '1 dente de alho laminado',
+      'Azeite, sal, pimenta',
+      '(Opcional) hortelã ou orégãos',
+    ],
+    steps: [
+      'Aquece azeite e doura o alho.',
+      'Junta a courgette e salteia em lume forte até dourar mas firme.',
+      'Tempera e finaliza com ervas a gosto.',
+    ],
+    plants: ['courgette', 'alho', 'oregaos'],
+  },
+  {
+    slug: 'beterraba-assada',
+    title: 'Beterraba assada',
+    emoji: '🟣',
+    description: 'Doce e terrosa — assar concentra o sabor da beterraba acabada de arrancar.',
+    prepMinutes: 50,
+    difficulty: 'facil',
+    season: ['outono', 'inverno', 'primavera'],
+    ingredients: [
+      '4 beterrabas médias',
+      'Azeite, sal grosso',
+      'Sumo de laranja ou vinagre',
+      '(Opcional) queijo fresco e nozes',
+    ],
+    steps: [
+      'Embrulha as beterrabas (com pele) em papel vegetal com azeite e sal.',
+      'Assa a 200°C 40-50 min até tenras; deixa arrefecer e descasca.',
+      'Corta, rega com sumo de laranja/vinagre e serve.',
+    ],
+    plants: ['beterraba'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

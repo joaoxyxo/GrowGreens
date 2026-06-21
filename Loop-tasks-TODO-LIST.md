@@ -8,8 +8,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P3) Adicionar 2-3 culturas (mizuna, beldroega/portulaca, segurelha) com schema + calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity; PLANTS.length aumenta. ✓ Feito: +3 (mizuna, beldroega, segurelha) + calendário → 48 plantas. data-integrity verde.
 - [x] (P4) Glossário: +termos ("estaca", "estratificação", "rega de fundo") — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: +3 termos (estaca, estratificação, rega de fundo).
 - [x] (P4) FAQ: +3 dúvidas (interior vs exterior, quando colher, pragas em casa) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +3 dúvidas (interior/exterior, ponto de colheita, pragas em casa).
-- [ ] (P4) Curso: lição sobre rotação de culturas e famílias — ficheiros: src/data/course.ts — validação: data-integrity.
-- [ ] (P4) Receitas: ligar receita a plantas sem nenhuma (beterraba, courgette) — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P4) Curso: lição sobre rotação de culturas e famílias — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: lição l4-3 'Rotação de culturas' (famílias, leguminosas que repõem azoto). data-integrity verde.
+- [x] (P4) Receitas: ligar receita a plantas sem nenhuma (beterraba, courgette) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: courgette-salteada (courgette não tinha nenhuma) + beterraba-assada (dedicada). 128 testes.
 - [ ] (P5) Saúde: enriquecer grupo das leguminosas (proteína, ferro) — ficheiros: src/data/health.ts — validação: build.
 - [ ] (P5) Pragas: +ficha (caracol vs lesma, ou nemátodes) — ficheiros: src/data/pestsDiseases.ts — validação: build.
 - [ ] (P5) Troubleshoot: +sintoma "clorose (amarelo entre nervuras)" — ficheiros: src/data/troubleshoot.ts — validação: build.
