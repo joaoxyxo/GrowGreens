@@ -10,9 +10,9 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) FAQ: +3 dúvidas (interior vs exterior, quando colher, pragas em casa) — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: +3 dúvidas (interior/exterior, ponto de colheita, pragas em casa).
 - [x] (P4) Curso: lição sobre rotação de culturas e famílias — ficheiros: src/data/course.ts — validação: data-integrity. ✓ Feito: lição l4-3 'Rotação de culturas' (famílias, leguminosas que repõem azoto). data-integrity verde.
 - [x] (P4) Receitas: ligar receita a plantas sem nenhuma (beterraba, courgette) — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: courgette-salteada (courgette não tinha nenhuma) + beterraba-assada (dedicada). 128 testes.
-- [ ] (P5) Saúde: enriquecer grupo das leguminosas (proteína, ferro) — ficheiros: src/data/health.ts — validação: build.
-- [ ] (P5) Pragas: +ficha (caracol vs lesma, ou nemátodes) — ficheiros: src/data/pestsDiseases.ts — validação: build.
-- [ ] (P5) Troubleshoot: +sintoma "clorose (amarelo entre nervuras)" — ficheiros: src/data/troubleshoot.ts — validação: build.
+- [x] (P5) Saúde: enriquecer grupo das leguminosas (proteína, ferro) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: já rico em proteína/ferro/fibra; +caution (lectinas/favismo).
+- [x] (P5) Pragas: +ficha (caracol vs lesma, ou nemátodes) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: ficha de nemátodes-das-galhas (sintomas, prevenção com tagetes/rotação, sem cura caseira).
+- [x] (P5) Troubleshoot: +sintoma "clorose (amarelo entre nervuras)" — ficheiros: src/data/troubleshoot.ts — validação: build. ✓ Feito: sintoma clorose (ferro/magnésio, drenagem, água calcária).
 - [ ] (P5) Microgreens: dica de luz pós-blackout (texto) — ficheiros: src/data/microgreens.ts — validação: build.
 - [ ] (P5) Calendário: dica de preparação de solo por estação — ficheiros: src/data/calendar.ts — validação: build.
 

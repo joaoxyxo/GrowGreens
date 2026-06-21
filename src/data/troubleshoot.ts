@@ -135,4 +135,15 @@ export const SYMPTOMS: Symptom[] = [
     ],
     related: ['mildio'],
   },
+  {
+    id: 'clorose',
+    emoji: '🍐',
+    label: 'Folhas amarelas mas com nervuras ainda verdes (clorose)',
+    likely: 'Falta de ferro/magnésio (clorose), frequente em substrato muito alcalino ou encharcado.',
+    whatToDo: [
+      'Confirma a drenagem — raízes encharcadas não absorvem ferro.',
+      'Usa um adubo com micronutrientes (ferro/magnésio) ou composto maduro.',
+      'Se a água for muito calcária, intercala com água da chuva.',
+    ],
+  },
 ]
