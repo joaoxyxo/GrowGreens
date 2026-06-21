@@ -33,12 +33,12 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) E2E: navegar o calendário (mês anterior/seguinte) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'calendário: navegar entre meses' (label muda e volta).
 - [x] (P5) `decoding="async"` nas imagens de foto — ficheiros: features/* — validação: build. ✓ Feito: decoding="async" nas 3 imagens de foto (diário ×2, diagnóstico).
 - [x] (P5) Pré-carregar rota do curso a partir do Home — ficheiros: features/home — validação: build. ✓ Feito: HomeView pré-carrega também o chunk do CourseView no onMounted.
-- [ ] (P5) Confirmar `prefers-reduced-motion` desativa transições de rota — ficheiros: main.css/App — validação: revisão.
-- [ ] (P5) Confirmar que o CSS de produção é razoável (< 50KB) — ficheiros: build — validação: build.
-- [ ] (P5) Verificar que useLiveQuery cancela subscrição no unmount — ficheiros: composables — validação: revisão.
-- [ ] (P5) Confirmar DiagnosisView em chunk próprio — ficheiros: build — validação: build.
-- [ ] (P5) Evitar recomputar `sowableSet` por scroll (já computed) — ficheiros: catalog — validação: revisão.
-- [ ] (P5) Revisão: `key` estável em todas as listas v-for — ficheiros: features — validação: revisão.
+- [x] (P5) Confirmar `prefers-reduced-motion` desativa transições de rota — ficheiros: main.css/App — validação: revisão. ✓ Verificado: regra global em main.css zera animation/transition-duration (cobre a transição de rota).
+- [x] (P5) Confirmar que o CSS de produção é razoável (< 50KB) — ficheiros: build — validação: build. ✓ Verificado: CSS ~39KB (7KB gzip) < 50KB.
+- [x] (P5) Verificar que useLiveQuery cancela subscrição no unmount — ficheiros: composables — validação: revisão. ✓ Verificado: onScopeDispose(() => subscription.unsubscribe()).
+- [x] (P5) Confirmar DiagnosisView em chunk próprio — ficheiros: build — validação: build. ✓ Verificado: DiagnosisView-*.js é chunk separado (rota lazy).
+- [x] (P5) Evitar recomputar `sowableSet` por scroll (já computed) — ficheiros: catalog — validação: revisão. ✓ Verificado: sowableSet é computed (recomputa só com zoneCode/mês), não por scroll.
+- [x] (P5) Revisão: `key` estável em todas as listas v-for — ficheiros: features — validação: revisão. ✓ Verificado: todos os ficheiros com v-for têm :key (slug/id/índice).
 
 ## Organização
 - [x] (P4) A11y: skip-link "saltar para o conteúdo" + landmark main — ficheiros: App.vue — validação: revisão. ✓ Feito: skip-link (sr-only, visível ao focar) → #conteudo; <main id="conteudo">. Build OK.
@@ -50,7 +50,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Documentar pre-commit sugerido no CONTRIBUTING — ficheiros: CONTRIBUTING.md — validação: doc.
 - [x] (P5) Adicionar `CHANGELOG.md` (resumo dos ciclos) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: CHANGELOG.md com resumo dos 5 ciclos + 0.1.0.
 - [x] (P5) Atualizar CLAUDE.md (45 plantas, 116+ testes, e2e) — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: escala atualizada (48 plantas, 128 testes + 5 E2E).
-- [ ] (P5) Confirmar `.editorconfig` aplicado (indent consistente) — ficheiros: revisão — validação: revisão.
+- [x] (P5) Confirmar `.editorconfig` aplicado (indent consistente) — ficheiros: revisão — validação: revisão. ✓ Verificado: .editorconfig (space, 2) coerente com o código; lint a 0.
 
 ## Arquivo (ciclos concluídos)
 
