@@ -45,11 +45,18 @@ const STAGE_LABELS: Record<string, string> = {
   colheita: 'Colheita',
 }
 
+/** Estimativa da fase de crescimento atual de uma planta. */
+export interface StageEstimate {
+  label: string
+  index: number
+  total: number
+}
+
 /**
  * Estima a fase de crescimento atual a partir dos dias decorridos e das durações
  * definidas na espécie. Útil para mostrar progresso real de cada planta.
  */
-export function estimateStage(plant: Plant, daysOld: number): { label: string; index: number; total: number } {
+export function estimateStage(plant: Plant, daysOld: number): StageEstimate {
   const stages = plant.stages
   const days = Math.max(0, daysOld) // datas no futuro não recuam a fase
   let acc = 0
