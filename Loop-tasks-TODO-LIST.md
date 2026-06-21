@@ -29,16 +29,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: `estimateStage` total = nº de fases — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
-- [ ] (P4) Confirmar que o canvas de partilha (share.ts) é carregado sob procura (lazy) — ficheiros: features/utils — validação: revisão.
-- [ ] (P4) Verificar imagens do diário com `loading=lazy`/`decoding=async` — ficheiros: features/garden — validação: revisão.
-- [ ] (P4) Confirmar imports nomeados de date-fns (tree-shaking) — ficheiros: src/utils/date.ts — validação: revisão.
-- [ ] (P4) Verificar tamanho do CSS final (gzip) e registar — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que glossary/faq/course não entram no chunk de entrada — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar runtime caching do Workbox para a API do IPMA — ficheiros: vite.config.ts — validação: revisão.
-- [ ] (P4) Verificar que o vendor chunk não cresceu face ao ciclo anterior — ficheiros: build — validação: revisão (~294 KB).
-- [ ] (P5) Verificar memoização do catálogo filtrado (computed estável) — ficheiros: features/catalog — validação: revisão.
-- [ ] (P5) Avaliar `content-visibility`/paginação em listas longas (glossário) — ficheiros: features/glossary — validação: revisão.
-- [ ] (P4) Confirmar que não há imports estáticos de views no router (regressão) — ficheiros: src/router — validação: revisão.
+- [x] (P4) Confirmar que o canvas de partilha (share.ts) é lazy — ficheiros: features/utils — validação: revisão. ✓ Verificado: `await import('@/utils/share')` no ChallengeView; nenhum import estático.
+- [x] (P4) Verificar imagens do diário com lazy/decoding — ficheiros: features/garden, diagnosis — validação: revisão. ✓ Verificado: imagens de diário/diagnóstico com loading=lazy + decoding=async (pré-visualização imediata isenta).
+- [x] (P4) Confirmar imports nomeados de date-fns — ficheiros: src/utils/date.ts — validação: revisão. ✓ Verificado: só imports nomeados (format, addDays, …); permite tree-shaking.
+- [x] (P4) Verificar tamanho do CSS final — ficheiros: build — validação: revisão. ✓ index.css 39.99 kB / gzip 7.53 kB. Bom para Tailwind v4.
+- [x] (P4) Confirmar que glossary/faq/course não entram na entrada — ficheiros: build — validação: revisão. ✓ Verificado: GlossaryView e course em chunks próprios; entrada index ~30 kB sem esses dados.
+- [x] (P4) Confirmar runtime caching do Workbox para o IPMA — ficheiros: vite.config.ts — validação: revisão. ✓ Verificado: runtimeCaching com urlPattern api.ipma.pt.
+- [x] (P4) Verificar que o vendor chunk não cresceu — ficheiros: build — validação: revisão. ✓ vendor 294.44 kB / gzip 102.10 kB (igual ao Ciclo 7).
+- [x] (P5) Verificar memoização do catálogo filtrado — ficheiros: features/catalog — validação: revisão. ✓ Verificado: `results` é computed (depende de debouncedQuery/filtros); sowableSet também computed.
+- [!] (P5) `content-visibility`/paginação em listas longas (glossário) — NÃO JUSTIFICA: glossário tem 50 termos numa lista simples; render trivial. content-visibility traria complexidade sem ganho percetível.
+- [x] (P4) Confirmar que não há imports estáticos de views no router — ficheiros: src/router — validação: revisão. ✓ Verificado: 19 imports dinâmicos, 0 estáticos.
 
 ## Organização
 - [x] (P3) Avaliar e documentar o estado do Vue I18n — ficheiros: src/i18n/index.ts — validação: typecheck + build. ✓ Já documentado (decisão Ciclo 3): ligado em main.ts, scaffolding pt-PT, mantido para idiomas futuros. App single-language.
