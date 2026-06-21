@@ -1,0 +1,15 @@
+# Changelog
+
+Resumo da evolução do GrowGreens. O detalhe fino está no histórico git e em `Loop-tasks-TODO-LIST.md` (backlog por ciclos).
+
+## Não lançado (em curso)
+
+- **Ciclo 5** — catálogo 45→48 (mizuna, beldroega, segurelha); glossário/FAQ/curso (rotação de culturas); receitas courgette/beterraba; saúde (caution leguminosas); pragas (nemátodes); troubleshoot (clorose, damping-off); E2E de calendário e curso (5 specs no total); skip-link de acessibilidade; `decoding=async`; prefetch de catálogo/curso; README de instalação PWA.
+- **Ciclo 4** — catálogo 42→45 (couve-de-bruxelas, canónigos, cebolinho-chinês); E2E de catálogo e horta (corrigiu o base path que os tinha partido); `.ics` com DTSTAMP + escape RFC; SECURITY.md; dependabot; meta tags; `:focus-visible` global; testes de componente; cobertura no CI.
+- **Ciclo 3** — catálogo 39→42; backup completo + reset (corrigiu export que perdia a horta); infra de testes de componente; tsconfig estrito (apanhou 2 bugs); cache de calendário; v-memo; CONTRIBUTING + LICENSE.
+- **Ciclo 2** — catálogo 36→39; curso "Colher e conservar"; `useReminders` partilhado; lazy do canvas de partilha; thresholds de cobertura; docs/ARQUITETURA; chunk vendor; corrigiu arrays partilhados no progress store.
+- **Ciclo 1** — catálogo 20→36; desbloqueio do desafio (avanço por conclusão); ESLint a ignorar lixo (14834→0 erros); CLAUDE.md; cobertura de testes; sucessão de sementeira.
+
+## 0.1.0 — pré-lançamento
+
+PWA local-first (Vue 3 + TS + Vite, Pinia, Dexie, Tailwind v4). Catálogo de plantas, desafio de microgreens (7 dias), horta, planeador, calendário (IPMA), curso, saúde, diagnóstico por sintomas. Online em https://joaoxyxo.github.io/GrowGreens/.
