@@ -228,6 +228,17 @@ export function plantSowableThisMonth(zone: string, month: number): Set<string> 
   return set
 }
 
+// Dica de preparação de solo por estação (1=Jan … 12=Dez → estação).
+export function soilTipForMonth(month: number): string {
+  if (month >= 3 && month <= 5)
+    return 'Primavera: solta o solo e incorpora composto antes de semear. Cobre (mulch) para reter humidade.'
+  if (month >= 6 && month <= 8)
+    return 'Verão: rega de manhã e mantém uma camada de cobertura para o solo não secar nem aquecer demais.'
+  if (month >= 9 && month <= 11)
+    return 'Outono: enriquece com composto após as colheitas; considera um adubo verde nos canteiros vazios.'
+  return 'Inverno: deixa descansar ou semeia adubo verde (favas/tremoço); evita pisar e compactar o solo molhado.'
+}
+
 // Alerta sazonal do mês (faixa "Este mês em Ovar/Aveiro")
 export const MONTHLY_TIPS: Record<number, string> = {
   1: 'Inverno suave no litoral: protege das geadas no interior e planeia a primavera.',

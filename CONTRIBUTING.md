@@ -40,3 +40,14 @@ Node 20 (ver `.nvmrc`). **Nunca deixes a build partida.**
 ## Estilo
 
 Formatação delegada ao Prettier (`.prettierrc.json`) e ao ESLint. Corre `npm run lint:fix` e `npm run format` antes de commitar se necessário.
+
+## Pre-commit (sugerido)
+
+Para correr as verificações automaticamente antes de cada commit, podes configurar um hook. Exemplo simples com `.git/hooks/pre-commit` (executável):
+
+```bash
+#!/bin/sh
+npm run lint && npm run typecheck && npm run test
+```
+
+Em alternativa, instala `husky` + `lint-staged` para correr apenas sobre os ficheiros alterados. O CI corre sempre lint/typecheck/test/build, por isso o hook é só conveniência local.

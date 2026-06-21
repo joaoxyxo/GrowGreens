@@ -160,7 +160,11 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     title: 'Dia 4 — A ficar verde',
     show: 'Caules a endireitar, cotilédones a abrir e a verdejar.',
     tell: 'Vês como ganharam cor? É a luz a transformá-las. Agora é deixar crescer.',
-    tasks: ['Roda o tabuleiro para não se inclinarem todas para a janela.', 'Rega pela base de manhã.'],
+    tasks: [
+      'Roda o tabuleiro para não se inclinarem todas para a janela.',
+      'Dá-lhes muita luz indireta (janela bem clara, ~12h/dia) — quanto mais luz, mais verdes e compactas.',
+      'Rega pela base de manhã.',
+    ],
     warning: 'Caules muito compridos e tombados = pouca luz. Aproxima da janela ou de uma luz.',
     askPhoto: true,
   },

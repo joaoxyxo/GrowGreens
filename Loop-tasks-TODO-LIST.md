@@ -1,5 +1,5 @@
 # Loop Tasks — TODO List
-Ciclo: 5 · Atualizado: 2026-06-19 09:41
+Ciclo: 5 · Atualizado: 2026-06-21 (CONCLUÍDO: 40 ✓ · 0 bloqueadas · 0 pendentes)
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 45 plantas, 116 testes (+3 e2e).
@@ -13,8 +13,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Saúde: enriquecer grupo das leguminosas (proteína, ferro) — ficheiros: src/data/health.ts — validação: build. ✓ Feito: já rico em proteína/ferro/fibra; +caution (lectinas/favismo).
 - [x] (P5) Pragas: +ficha (caracol vs lesma, ou nemátodes) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: ficha de nemátodes-das-galhas (sintomas, prevenção com tagetes/rotação, sem cura caseira).
 - [x] (P5) Troubleshoot: +sintoma "clorose (amarelo entre nervuras)" — ficheiros: src/data/troubleshoot.ts — validação: build. ✓ Feito: sintoma clorose (ferro/magnésio, drenagem, água calcária).
-- [ ] (P5) Microgreens: dica de luz pós-blackout (texto) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P5) Calendário: dica de preparação de solo por estação — ficheiros: src/data/calendar.ts — validação: build.
+- [x] (P5) Microgreens: dica de luz pós-blackout (texto) — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: dia 4 com dica de muita luz indireta (~12h) para esverdear/compactar.
+- [x] (P5) Calendário: dica de preparação de solo por estação — ficheiros: src/data/calendar.ts — validação: build. ✓ Feito: soilTipForMonth() + cartão 'Solo' na CalendarView.
 
 ## Regras de Negócio
 - [x] (P4) Teste de componente: EmptyState — ficheiros: tests/ — validação: mount passa. ✓ Feito: emoji/título/descrição.
@@ -46,8 +46,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente. ✓ Feito: secção 'Instalar como app (PWA)' (Android/iOS/Desktop + link).
 - [x] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build. ✓ Feito: mensagem de JS desativado; presente no dist.
 - [x] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação. ✓ Feito: src/utils/text.ts; removidas 3 cópias (CatalogView, GlossaryView, BedView). TC/lint/build OK.
-- [ ] (P5) JSDoc curto nas uniões públicas — ficheiros: src/types — validação: typecheck.
-- [ ] (P5) Documentar pre-commit sugerido no CONTRIBUTING — ficheiros: CONTRIBUTING.md — validação: doc.
+- [x] (P5) JSDoc curto nas uniões públicas — ficheiros: src/types — validação: typecheck. ✓ Feito: JSDoc em PlantCategory/Difficulty/GrowLocation/SowingMethod/SunExposure.
+- [x] (P5) Documentar pre-commit sugerido no CONTRIBUTING — ficheiros: CONTRIBUTING.md — validação: doc. ✓ Feito: secção 'Pre-commit (sugerido)' (hook simples + husky/lint-staged).
 - [x] (P5) Adicionar `CHANGELOG.md` (resumo dos ciclos) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: CHANGELOG.md com resumo dos 5 ciclos + 0.1.0.
 - [x] (P5) Atualizar CLAUDE.md (45 plantas, 116+ testes, e2e) — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: escala atualizada (48 plantas, 128 testes + 5 E2E).
 - [x] (P5) Confirmar `.editorconfig` aplicado (indent consistente) — ficheiros: revisão — validação: revisão. ✓ Verificado: .editorconfig (space, 2) coerente com o código; lint a 0.

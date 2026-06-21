@@ -1,5 +1,6 @@
 // ---- Tipos do catálogo (dados estáticos, só de leitura) ----
 
+/** Categoria botânica/culinária da planta (usada para filtros e agrupamentos). */
 export type PlantCategory =
   | 'folha'
   | 'brassica'
@@ -9,9 +10,13 @@ export type PlantCategory =
   | 'aromatica'
   | 'microgreen'
 
+/** Nível de dificuldade para principiantes. */
 export type Difficulty = 'facil' | 'medio' | 'dificil'
+/** Onde a cultura se dá: só interior, só exterior, ou ambos. */
 export type GrowLocation = 'interior' | 'exterior' | 'ambos'
+/** Método de propagação recomendado. */
 export type SowingMethod = 'sementeira_direta' | 'transplante' | 'ambos' | 'bolbo'
+/** Exposição solar necessária. */
 export type SunExposure = 'sol_pleno' | 'meia_sombra' | 'sombra'
 export type WaterNeed = 'baixa' | 'moderada' | 'alta'
 export type PollinationType = 'autofertil' | 'vento' | 'insetos' | 'manual' | 'nao_aplicavel'

@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 import PageHeader from '@/components/PageHeader.vue'
 import AppCard from '@/components/ui/AppCard.vue'
 import { useSettingsStore } from '@/stores/settings'
-import { calendarFor, CALENDAR_ACTION_LABELS, CLIMATE_ZONES_BY_CODE, MONTHLY_TIPS } from '@/data/calendar'
+import { calendarFor, CALENDAR_ACTION_LABELS, CLIMATE_ZONES_BY_CODE, MONTHLY_TIPS, soilTipForMonth } from '@/data/calendar'
 import { getPlant } from '@/data/plants'
 import { MONTH_NAMES, currentMonth } from '@/utils/date'
 import { useWeather, weatherTypeInfo, wateringAdvice, ZONE_TO_IPMA } from '@/composables/useWeather'
@@ -87,6 +87,11 @@ watch(() => settings.state.zoneCode, (z) => fetchFor(z))
       <!-- Dica do mês -->
       <AppCard class="mb-4 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-900/40">
         <p class="text-sm"><strong>🌿 Este mês:</strong> {{ MONTHLY_TIPS[month] }}</p>
+      </AppCard>
+
+      <!-- Dica de solo da estação -->
+      <AppCard class="mb-4 bg-earth-100/40 border-earth-300/40 dark:bg-earth-500/10">
+        <p class="text-sm"><strong>🟤 Solo:</strong> {{ soilTipForMonth(month) }}</p>
       </AppCard>
 
       <!-- Nota de geada por zona -->
