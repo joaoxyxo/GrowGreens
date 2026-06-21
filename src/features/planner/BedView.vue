@@ -14,6 +14,7 @@ import { safe } from '@/utils/safe'
 import { defaultWateringDays, areCompanions, areAntagonists } from '@/utils/growth'
 import { isOverdue, isDueToday } from '@/utils/date'
 import { useReminders } from '@/composables/useReminders'
+import { normalize } from '@/utils/text'
 import type { GardenBed } from '@/types/models'
 
 const route = useRoute()
@@ -52,9 +53,6 @@ const selectedCell = computed(() =>
   bed.value && selectedKey.value ? bed.value.cells[selectedKey.value] : undefined,
 )
 
-function normalize(s: string) {
-  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
-}
 const pickerResults = computed(() => {
   const q = normalize(query.value.trim())
   return PLANTS.filter((p) => !q || normalize(p.name).includes(q)).slice(0, 40)

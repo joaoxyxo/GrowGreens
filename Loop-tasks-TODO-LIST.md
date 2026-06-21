@@ -45,7 +45,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste de componente: PageHeader — ficheiros: tests/ — validação: mount passa. ✓ Feito: título/subtítulo (router em memória). 120 testes.
 - [x] (P4) README: secção de instalação da PWA / capturas — ficheiros: README.md — validação: secção presente. ✓ Feito: secção 'Instalar como app (PWA)' (Android/iOS/Desktop + link).
 - [x] (P5) `<noscript>` informativo no index.html — ficheiros: index.html — validação: build. ✓ Feito: mensagem de JS desativado; presente no dist.
-- [ ] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação.
+- [x] (P5) Consolidar `normalize` (acentos) num util partilhado — ficheiros: src/utils — validação: typecheck; sem duplicação. ✓ Feito: src/utils/text.ts; removidas 3 cópias (CatalogView, GlossaryView, BedView). TC/lint/build OK.
 - [ ] (P5) JSDoc curto nas uniões públicas — ficheiros: src/types — validação: typecheck.
 - [ ] (P5) Documentar pre-commit sugerido no CONTRIBUTING — ficheiros: CONTRIBUTING.md — validação: doc.
 - [x] (P5) Adicionar `CHANGELOG.md` (resumo dos ciclos) — ficheiros: raiz — validação: ficheiro existe. ✓ Feito: CHANGELOG.md com resumo dos 5 ciclos + 0.1.0.

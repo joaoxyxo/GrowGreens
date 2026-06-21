@@ -7,6 +7,7 @@ import { PLANTS } from '@/data/plants'
 import { plantSowableThisMonth } from '@/data/calendar'
 import { useSettingsStore } from '@/stores/settings'
 import { currentMonth } from '@/utils/date'
+import { normalize } from '@/utils/text'
 import type { PlantCategory, Difficulty } from '@/types/catalog'
 
 const settings = useSettingsStore()
@@ -37,12 +38,6 @@ const categories: { v: PlantCategory | 'todas'; label: string }[] = [
   { v: 'aromatica', label: 'Aromáticas' },
 ]
 
-function normalize(s: string) {
-  return s
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-}
 
 // Índice de pesquisa pré-normalizado (uma só vez) — evita re-normalizar os textos
 // de todas as plantas a cada tecla premida.

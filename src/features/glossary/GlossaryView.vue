@@ -4,11 +4,9 @@ import PageHeader from '@/components/PageHeader.vue'
 import AppCard from '@/components/ui/AppCard.vue'
 import { GLOSSARY } from '@/data/glossary'
 import { FAQ } from '@/data/faq'
+import { normalize } from '@/utils/text'
 
 const query = ref('')
-function normalize(s: string) {
-  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
-}
 const results = computed(() => {
   const q = normalize(query.value.trim())
   return GLOSSARY.filter((t) => !q || normalize(t.term + ' ' + t.definition).includes(q))
