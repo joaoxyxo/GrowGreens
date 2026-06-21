@@ -31,8 +31,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Performance
 - [x] (P4) E2E: percorrer uma lição do curso — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'curso: abrir e concluir uma lição' (responde aos passos até Concluir→ecrã final). 5 specs e2e verdes.
 - [x] (P4) E2E: navegar o calendário (mês anterior/seguinte) — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec 'calendário: navegar entre meses' (label muda e volta).
-- [ ] (P5) `decoding="async"` nas imagens de foto — ficheiros: features/* — validação: build.
-- [ ] (P5) Pré-carregar rota do curso a partir do Home — ficheiros: features/home — validação: build.
+- [x] (P5) `decoding="async"` nas imagens de foto — ficheiros: features/* — validação: build. ✓ Feito: decoding="async" nas 3 imagens de foto (diário ×2, diagnóstico).
+- [x] (P5) Pré-carregar rota do curso a partir do Home — ficheiros: features/home — validação: build. ✓ Feito: HomeView pré-carrega também o chunk do CourseView no onMounted.
 - [ ] (P5) Confirmar `prefers-reduced-motion` desativa transições de rota — ficheiros: main.css/App — validação: revisão.
 - [ ] (P5) Confirmar que o CSS de produção é razoável (< 50KB) — ficheiros: build — validação: build.
 - [ ] (P5) Verificar que useLiveQuery cancela subscrição no unmount — ficheiros: composables — validação: revisão.

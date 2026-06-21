@@ -58,9 +58,10 @@ const recommendations = computed(() =>
   plantings.value.length < 3 ? recommendPlants(settings.state, 3) : [],
 )
 
-// Pré-carrega o chunk do catálogo (destino frequente a partir do Home) em segundo plano.
+// Pré-carrega chunks de destinos frequentes a partir do Home, em segundo plano.
 onMounted(() => {
   import('@/features/catalog/CatalogView.vue').catch(() => {})
+  import('@/features/course/CourseView.vue').catch(() => {})
 })
 
 async function addRecommended(slug: string) {
