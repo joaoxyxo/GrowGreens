@@ -1,6 +1,9 @@
 # 🌱 GrowGreens
 
 [![CI](https://github.com/joaoxyxo/GrowGreens/actions/workflows/ci.yml/badge.svg)](https://github.com/joaoxyxo/GrowGreens/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+Histórico de alterações em [CHANGELOG.md](./CHANGELOG.md).
 
 App web (PWA) que ensina horticultura a principiantes, **da semente à colheita**, calibrada para o clima de Portugal (litoral atlântico — Ovar/Aveiro). Funciona **100% offline** e instala-se como aplicação no telemóvel ou computador.
 

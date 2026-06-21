@@ -45,11 +45,11 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste de componente: ToastHost (mostra toasts do store) — ficheiros: tests/ — validação: mount passa. ✓ Feito: toast do store aparece; aria-live presente.
 - [x] (P4) A11y: heading hierarchy (1 h1 por página / PageHeader como h1) — ficheiros: components — validação: revisão. ✓ Verificado: PageHeader já usa <h1> (15 vistas); Home e Onboarding têm exatamente 1 h1; secções usam h2. Coerente.
 - [ ] (P5) docs/ARQUITETURA: atualizar com utils/text, backup, composables — ficheiros: docs — validação: coerente.
-- [ ] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente.
-- [ ] (P5) Tipar retorno de `estimateStage` num interface nomeado — ficheiros: src/utils/growth.ts — validação: typecheck.
+- [x] (P5) README: badge de licença + link CHANGELOG — ficheiros: README.md — validação: presente. ✓ Feito: badge MIT + link para CHANGELOG.md.
+- [x] (P5) Tipar retorno de `estimateStage` num interface nomeado — ficheiros: src/utils/growth.ts — validação: typecheck. ✓ Feito: interface StageEstimate exportado. TC OK.
 - [ ] (P5) Normalizar imports (ordem) onde for trivial — ficheiros: src — validação: lint.
 - [ ] (P5) Confirmar que data files não importam de features (camadas) — ficheiros: src/data — validação: revisão.
-- [ ] (P5) Adicionar `funding`/`bugs`/`repository` ao package.json — ficheiros: package.json — validação: build.
+- [x] (P5) Adicionar `funding`/`bugs`/`repository` ao package.json — ficheiros: package.json — validação: build. ✓ Feito: license, homepage, repository e bugs adicionados.
 - [ ] (P5) Atualizar CLAUDE.md (nº plantas/receitas/testes) se mudou — ficheiros: CLAUDE.md — validação: coerente.
 
 ## Arquivo (ciclos concluídos)
