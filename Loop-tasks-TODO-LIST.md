@@ -29,8 +29,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Teste: useReminders reflete novos lembretes (reativo) — ficheiros: tests/ — validação: teste.
 
 ## Performance
-- [ ] (P4) E2E: backup (exportar dados) na ProfileView — ficheiros: tests/e2e/ — validação: spec passa.
-- [ ] (P4) E2E: planeador — criar canteiro e plantar célula — ficheiros: tests/e2e/ — validação: spec passa.
+- [x] (P4) E2E: backup (exportar dados) na ProfileView — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: spec valida download de growgreens-backup.json. 7 specs e2e verdes.
+- [x] (P4) E2E: planeador — criar canteiro e plantar célula — ficheiros: tests/e2e/ — validação: spec passa. ✓ Feito: cria espaço → planta alface numa célula (aria-label muda).
 - [ ] (P5) `fetchpriority`/eager na 1.ª imagem acima da dobra (se houver) — ficheiros: features — validação: revisão.
 - [ ] (P5) Confirmar que vendor não inclui código de testes — ficheiros: build — validação: revisão.
 - [ ] (P5) Avaliar dividir o catálogo (`plants`) em chunk por categoria (se valer) — ficheiros: build — validação: revisão.
