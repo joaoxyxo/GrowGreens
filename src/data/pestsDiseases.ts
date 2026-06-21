@@ -82,6 +82,15 @@ export const PESTS: Pest[] = [
     prevention: 'Armadilhas adesivas azuis; rega adequada; remove ervas hospedeiras à volta.',
     treatment: 'Óleo de nim ou sabão potássico; introduz predadores naturais; remove partes muito afetadas.',
   },
+  {
+    slug: 'nematodes',
+    name: 'Nemátodes-das-galhas',
+    emoji: '🪱',
+    description: 'Vermes microscópicos do solo que atacam as raízes, sobretudo em solos quentes e arenosos (tomate, cenoura).',
+    symptoms: 'Plantas mirradas e a murchar com calor apesar de regadas; raízes com nódulos/galhas ao arrancar.',
+    prevention: 'Rotação de culturas; adiciona matéria orgânica; planta tagetes (cravo-túnico) que os repele; usa variedades resistentes.',
+    treatment: 'Não há cura química caseira: arranca e destrói as plantas afetadas (não compostar) e roda a cultura nesse canteiro durante uns anos.',
+  },
 ]
 
 export const DISEASES: Disease[] = [
