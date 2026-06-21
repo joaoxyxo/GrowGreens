@@ -17,16 +17,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Rever 2 plantas com `commonMistake`/`expectations` mais úteis — ficheiros: src/data/plants.ts — validação: build.
 
 ## Regras de Negócio
-- [ ] (P2) Teste para `normalize` (utils/text): minúsculas, sem acentos, tolerante a diacríticos — ficheiros: tests/text.test.ts (novo) — validação: vitest.
-- [ ] (P3) Teste para `defaultWateringDays` por necessidade hídrica (baixa/moderada/alta) — ficheiros: tests/growth.test.ts — validação: vitest.
-- [ ] (P3) Teste para `recipesForPlant` (devolve só receitas que listam a planta) — ficheiros: tests/recipes.test.ts (novo) — validação: vitest.
-- [ ] (P3) Teste para `challengeDayState` (bloqueado/atual/concluído) — ficheiros: tests/challenge.test.ts — validação: vitest.
-- [ ] (P3) Teste para `applyActivity` do streak (mantém, incrementa, quebra) — ficheiros: tests/streak.test.ts — validação: vitest.
-- [ ] (P3) Teste para `soilTipForMonth` (dica por estação) — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P3) Teste para `calendarFor` (cache devolve a mesma referência) — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P4) Teste para `buildICS` (gera um VEVENT por lembrete, com DTSTAMP) — ficheiros: tests/ics.test.ts — validação: vitest.
-- [ ] (P4) Teste: `recommendPlants` não falha com lista vazia/limite 0 — ficheiros: tests/recommend.test.ts — validação: vitest.
-- [ ] (P4) Teste: `estimateStage` devolve `total` igual ao nº de fases — ficheiros: tests/growth.test.ts — validação: vitest.
+- [x] (P2) Teste para `normalize` (utils/text) — ficheiros: tests/text.test.ts — validação: vitest. ✓ Feito: minúsculas, acentos, idempotência, pesquisa com/sem acento.
+- [x] (P3) Teste para `defaultWateringDays` — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito: baixa=5, moderada=3, alta=2 + monotonia.
+- [x] (P3) Teste para `recipesForPlant` — ficheiros: tests/recipes.test.ts — validação: vitest. ✓ Feito: filtra por planta, vazio para inexistente, liga chicória/alcachofra.
+- [x] (P3) Teste para `challengeDayState` — ficheiros: tests/challenge.test.ts — validação: vitest. ✓ Já coberto (done/available/today/locked).
+- [x] (P3) Teste para `applyActivity` do streak — ficheiros: tests/streak.test.ts — validação: vitest. ✓ Já coberto (7 casos: arranque, mesmo dia, consecutivos, freeze, reinício, reposição).
+- [x] (P3) Teste para `soilTipForMonth` — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito: primavera/verão/outono/inverno.
+- [x] (P3) Teste para `calendarFor` (cache) — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito: mesma ref por zona/mês; refs distintas por mês.
+- [x] (P4) Teste para `buildICS` — ficheiros: tests/ics.test.ts — validação: vitest. ✓ Já coberto (VEVENT, DTSTAMP UTC, RRULE, escape, BEGIN==END com 2 lembretes).
+- [x] (P4) Teste: `recommendPlants` com limite 0 — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: limite 0 → [].
+- [x] (P4) Teste: `estimateStage` total = nº de fases — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
 - [ ] (P4) Confirmar que o canvas de partilha (share.ts) é carregado sob procura (lazy) — ficheiros: features/utils — validação: revisão.

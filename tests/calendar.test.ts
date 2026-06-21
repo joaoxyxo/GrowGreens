@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calendarForPlant, plantSowableThisMonth } from '@/data/calendar'
+import { calendarForPlant, plantSowableThisMonth, calendarFor, soilTipForMonth } from '@/data/calendar'
 
 describe('calendarForPlant', () => {
   it('devolve apenas entradas da planta pedida', () => {
@@ -58,5 +58,26 @@ describe('plantSowableThisMonth', () => {
       )
       expect(semeiaNoMes, `${slug} devia ter sementeira em ${month}`).toBe(true)
     }
+  })
+})
+
+describe('calendarFor (cache)', () => {
+  it('devolve a mesma referência para a mesma zona/mês (cache)', () => {
+    const a = calendarFor('litoral_norte', 4)
+    const b = calendarFor('litoral_norte', 4)
+    expect(a).toBe(b)
+  })
+
+  it('devolve referências distintas para meses diferentes', () => {
+    expect(calendarFor('litoral_norte', 4)).not.toBe(calendarFor('litoral_norte', 5))
+  })
+})
+
+describe('soilTipForMonth', () => {
+  it('devolve a dica da estação correspondente', () => {
+    expect(soilTipForMonth(4)).toMatch(/Primavera/)
+    expect(soilTipForMonth(7)).toMatch(/Verão/)
+    expect(soilTipForMonth(10)).toMatch(/Outono/)
+    expect(soilTipForMonth(1)).toMatch(/Inverno/)
   })
 })

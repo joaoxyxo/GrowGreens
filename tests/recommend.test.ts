@@ -40,6 +40,10 @@ describe('recommendPlants', () => {
     const r = recommendPlants(settings({ space: 'interior' }), 5)
     expect(r.every((p) => p.location === 'interior' || p.location === 'ambos')).toBe(true)
   })
+
+  it('não falha com limite 0 (devolve lista vazia)', () => {
+    expect(recommendPlants(settings(), 0)).toEqual([])
+  })
 })
 
 describe('shouldSuggestMicrogreens', () => {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { estimateStage, successionDays } from '@/utils/growth'
+import { estimateStage, successionDays, defaultWateringDays } from '@/utils/growth'
 import type { Plant } from '@/types/catalog'
 
 const fakePlant = (): Plant =>
@@ -46,6 +46,24 @@ describe('estimateStage', () => {
     expect(r.index).toBeGreaterThanOrEqual(0)
     expect(r.index).toBeLessThan(r.total)
     expect(r.label).toBeTruthy()
+  })
+
+  it('total corresponde ao número de fases da planta', () => {
+    expect(estimateStage(p, 3).total).toBe(p.stages.length)
+    expect(estimateStage(p, 999).total).toBe(p.stages.length)
+  })
+})
+
+describe('defaultWateringDays', () => {
+  it('mapeia a necessidade hídrica para dias entre regas', () => {
+    expect(defaultWateringDays('baixa')).toBe(5)
+    expect(defaultWateringDays('moderada')).toBe(3)
+    expect(defaultWateringDays('alta')).toBe(2)
+  })
+
+  it('quanto maior a necessidade, menor o intervalo', () => {
+    expect(defaultWateringDays('alta')).toBeLessThan(defaultWateringDays('moderada'))
+    expect(defaultWateringDays('moderada')).toBeLessThan(defaultWateringDays('baixa'))
   })
 })
 
