@@ -34,7 +34,18 @@ Dexie / IndexedDB (src/lib/db/)
 
 ## Reatividade
 
-`src/composables/useLiveQuery.ts` liga consultas Dexie a refs reativas. Funções de domínio puras (em `src/utils/`) são testáveis isoladamente: `growth`, `challenge`, `streak`, `ics`, `recommend`, `date`.
+`src/composables/useLiveQuery.ts` liga consultas Dexie a refs reativas. `src/composables/useReminders.ts` mantém uma única subscrição `liveQuery` partilhada por toda a app (Home, Horta, Planeador) para evitar consultas duplicadas. Funções de domínio puras (em `src/utils/`) são testáveis isoladamente.
+
+## Utilitários (`src/utils/`)
+
+Lógica de regras pura, sem dependências de Vue/Dexie, coberta por testes:
+
+- `growth` — dias de rega por omissão, consociações/antagonismos, sucessão, `estimateStage` (interface `StageEstimate`).
+- `challenge` — dia desbloqueado e estado de cada dia do desafio de microgreens.
+- `recommend` — `recommendPlants` (pontuação por espaço/região/estação) e `shouldSuggestMicrogreens`.
+- `text` — normalização de texto (remove acentos/maiúsculas) para pesquisa, reutilizada em catálogo e glossário.
+- `backup` — `exportData`/`downloadBackup`/`clearAllData` (exportação completa: settings + progresso + dados Dexie).
+- `date`, `ics`, `streak` — datas/lembretes, ficheiros de calendário (`.ics`) e cálculo de streak.
 
 ## Lógica pura testável
 
