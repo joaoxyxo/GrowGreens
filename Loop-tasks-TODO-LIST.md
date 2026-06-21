@@ -14,7 +14,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P5) Troubleshoot: +sintoma "flores mas sem fruto (falta polinização)" se ainda não coberto — ficheiros: src/data/troubleshoot.ts — validação: build; sem duplicar. ✓ Verificado: já coberto pelo sintoma "flores-caem" (Ciclo 1). Não duplicar.
 - [x] (P5) Pragas: detalhar prevenção biológica do míldio/oídio (consociação) — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: prevenção do míldio e oídio com consociação/rotação/variedades resistentes.
 - [x] (P5) Microgreens: +1 variedade (couve-roxa já há; adicionar trigo/wheatgrass ou linhaça) — ficheiros: src/data/microgreens.ts — validação: testes. ✓ Feito: erva de trigo (wheatgrass) → 10 variedades. 139 testes.
-- [ ] (P5) Recomendações: incluir microgreens quando espaço=interior e nada semeável — ficheiros: src/utils/recommend.ts ou home — validação: revisão.
+- [x] (P5) Recomendações: incluir microgreens quando espaço=interior e nada semeável — ficheiros: src/utils/recommend.ts, home — validação: revisão. ✓ Feito: shouldSuggestMicrogreens() + cartão no Home a ligar para /desafio. TC/lint/build OK.
 
 ## Regras de Negócio
 - [x] (P3) Teste de integridade: todas as plantas têm ≥1 entrada de calendário — ficheiros: tests/data-integrity.test.ts — validação: teste verde (ou corrige dados). ✓ Feito: teste garante calendário para as 48 plantas (todas já têm).
@@ -50,7 +50,7 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Normalizar imports (ordem) onde for trivial — ficheiros: src — validação: lint.
 - [x] (P5) Confirmar que data files não importam de features (camadas) — ficheiros: src/data — validação: revisão. ✓ Verificado: grep sem imports de @/features em src/data.
 - [x] (P5) Adicionar `funding`/`bugs`/`repository` ao package.json — ficheiros: package.json — validação: build. ✓ Feito: license, homepage, repository e bugs adicionados.
-- [ ] (P5) Atualizar CLAUDE.md (nº plantas/receitas/testes) se mudou — ficheiros: CLAUDE.md — validação: coerente.
+- [x] (P5) Atualizar CLAUDE.md (nº plantas/receitas/testes) se mudou — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 51 plantas, 10 microgreens, 19 receitas, 139 unit + 7 E2E.
 
 ## Arquivo (ciclos concluídos)
 
