@@ -29,16 +29,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: catálogo com variedade de categorias — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
-- [ ] (P4) Confirmar que o `document.title` não causa re-render desnecessário — ficheiros: src/router — validação: revisão.
-- [ ] (P4) Verificar que o chunk de entrada se mantém após o título por rota — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que `PlantDetailView` (322 linhas) não tem cálculos pesados no render — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Verificar que `BedView` (grelha) não recria a matriz a cada interação — ficheiros: features/planner — validação: revisão.
-- [ ] (P5) Avaliar dividir `PlantingDetailView` em subcomponentes (se valer) — ficheiros: features/garden — validação: revisão.
-- [ ] (P4) Confirmar que o vendor chunk continua estável (~294 KB) — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar que `plants` chunk (~61 plantas) ainda é lazy e razoável — ficheiros: build — validação: revisão.
-- [ ] (P5) Confirmar que não há `import` de dados grandes em componentes pequenos — ficheiros: src/components — validação: revisão.
-- [ ] (P4) Verificar que o build continua sem avisos de tamanho — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que os assets PWA precache não incluem nada novo enorme — ficheiros: build — validação: revisão.
+- [x] (P4) Confirmar que `document.title` não causa re-render — ficheiros: src/router — validação: revisão. ✓ É um efeito DOM no afterEach do router, fora da reatividade do Vue; não re-renderiza componentes.
+- [x] (P4) Verificar chunk de entrada após o título por rota — ficheiros: build — validação: revisão. ✓ index ~32 kB / 9.8 kB gz (estável; só meta estática + afterEach).
+- [x] (P4) Confirmar render de `PlantDetailView` — ficheiros: features/catalog — validação: revisão. ✓ Usa getPlant(slug) + computed; sem iteração do catálogo no render.
+- [x] (P4) Verificar grelha de `BedView` — ficheiros: features/planner — validação: revisão. ✓ Lê células de `bed.cells[key]` (mapa); v-for sobre rows/cols; selectedCell/pickerResults são computed.
+- [!] (P5) Dividir `PlantingDetailView` em subcomponentes — NÃO JUSTIFICA: 318 linhas coesas (diário+foto+lembretes de uma planta); dividir agora aumentaria a complexidade de props/estado sem ganho claro.
+- [x] (P4) Confirmar vendor estável — ficheiros: build — validação: revisão. ✓ 294.44 kB / 102.10 kB gz (inalterado).
+- [x] (P4) Verificar chunk `plants` — ficheiros: build — validação: revisão. ✓ 125.89 kB / 28.32 kB gz, lazy (só no catálogo/detalhe). Razoável para 61 plantas.
+- [x] (P5) Confirmar imports em componentes — ficheiros: src/components — validação: revisão. ✓ Nenhum componente importa de @/data/(plants|recipes|course|glossary).
+- [x] (P4) Verificar ausência de avisos de tamanho — ficheiros: build — validação: revisão. ✓ Sem warnings (limite 600 kB; maior chunk vendor 294 kB).
+- [x] (P4) Confirmar precache PWA — ficheiros: build — validação: revisão. ✓ Maior precache é vendor 294 kB; nada novo enorme (plants/course continuam lazy e moderados).
 
 ## Organização
 - [ ] (P3) Atualizar CLAUDE.md com contagens finais do Ciclo 12 — ficheiros: CLAUDE.md — validação: coerente.
