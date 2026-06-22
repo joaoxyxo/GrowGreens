@@ -16,6 +16,15 @@ export interface DayForecast {
   weatherType: number
 }
 
+/** Forma (parcial) de cada dia na resposta da API do IPMA. */
+interface IpmaDay {
+  forecastDate: string
+  tMin: string
+  tMax: string
+  precipitaProb: string
+  idWeatherType: number | string
+}
+
 const WEATHER_TYPES: Record<number, { label: string; emoji: string }> = {
   1: { label: 'Céu limpo', emoji: '☀️' },
   2: { label: 'Céu pouco nublado', emoji: '🌤️' },
@@ -51,8 +60,8 @@ export function useWeather() {
         `https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/${map.globalIdLocal}.json`,
       )
       if (!res.ok) throw new Error('IPMA indisponível')
-      const data = await res.json()
-      forecast.value = (data.data ?? []).slice(0, 5).map((d: any) => ({
+      const data: { data?: IpmaDay[] } = await res.json()
+      forecast.value = (data.data ?? []).slice(0, 5).map((d) => ({
         date: d.forecastDate,
         tMin: parseFloat(d.tMin),
         tMax: parseFloat(d.tMax),
