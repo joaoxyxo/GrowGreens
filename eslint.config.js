@@ -1,12 +1,27 @@
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
+import globals from 'globals'
 
 export default tseslint.config(
   { ignores: ['dist', 'node_modules', 'dev-dist', 'coverage', '.nm_trash_5'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
+  // Globais do browser para o código da app e dos testes (window, document, Notification, etc.).
+  {
+    files: ['src/**/*.{ts,vue}', 'tests/**/*.ts'],
+    languageOptions: {
+      globals: { ...globals.browser },
+    },
+  },
+  // Globais de Node para ficheiros de configuração na raiz.
+  {
+    files: ['*.{js,ts}'],
+    languageOptions: {
+      globals: { ...globals.node },
+    },
+  },
   {
     files: ['**/*.vue'],
     languageOptions: {
