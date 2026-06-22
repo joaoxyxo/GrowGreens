@@ -155,6 +155,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     beginner: true,
     note: 'Demolha breve e germina depressa. Sabor característico de caril; colhe novo para menos amargo. Ótimo em pratos indianos e saladas.',
   },
+  {
+    slug: 'salsa-mg',
+    name: 'Salsa (microgreen)',
+    emoji: '🌿',
+    soakHours: 0,
+    blackoutDays: [4, 6],
+    daysToHarvest: [14, 21],
+    flavour: 'Fresca e herbácea, concentrada.',
+    beginner: false,
+    note: 'Das mais lentas a germinar (até 3 semanas) — paciência. Sabor intenso de salsa num formato mini; ótima para finalizar pratos.',
+  },
 ]
 
 export const MICROGREENS_BY_SLUG: Record<string, MicrogreenInfo> = Object.fromEntries(

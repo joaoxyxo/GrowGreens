@@ -26,7 +26,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'Ler o teu espaço e dar à planta a luz que precisa.',
     emoji: '☀️',
     color: 'sun',
-    lessonIds: ['l3-1', 'l3-2', 'l3-3'],
+    lessonIds: ['l3-1', 'l3-2', 'l3-3', 'l3-4'],
   },
   {
     id: 'u4',
@@ -318,6 +318,39 @@ export const LESSONS: Lesson[] = [
         correctOrder: [1, 2, 3, 0],
       },
       { kind: 'summary', bullets: ['Primeiro o sol e o espaço.', 'Culturas da época + sucessão.', 'Boas vizinhanças juntas; funcho à parte.'] },
+    ],
+  },
+  {
+    id: 'l3-4',
+    unitId: 'u3',
+    title: 'A orientação da tua varanda',
+    subtitle: 'Saber o sol que tens muda o que plantas.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🧭',
+        title: 'Para onde está virada?',
+        body: 'Virada a sul = muito sol (ideal para tomate, pimento, courgette). A nascente (este) = sol da manhã, mais suave. A poente (oeste) = sol forte da tarde. A norte = pouca luz direta — aposta em folhas e aromáticas.',
+      },
+      {
+        kind: 'concept',
+        emoji: '⏱️',
+        title: 'Conta as horas de sol',
+        body: 'Observa um dia e conta quantas horas de sol direto bate no local. 6+ h = frutos; 4-5 h = folhas e ervas; menos = microgreens dentro de casa. Não lutes contra a luz que tens — escolhe culturas à medida.',
+      },
+      {
+        kind: 'choice',
+        question: 'Numa varanda virada a norte (pouca luz direta), o que dá melhor?',
+        options: [
+          'Tomate e pimento',
+          'Alface, rúcula e aromáticas',
+          'Melão e abóbora',
+        ],
+        correctIndex: 1,
+        explanation: 'Folhas e aromáticas safam-se com pouca luz; os frutos de sol pleno produziriam pouco.',
+      },
+      { kind: 'summary', bullets: ['Sul = mais sol (frutos); norte = folhas.', 'Conta as horas de sol direto.', 'Escolhe culturas à medida da luz que tens.'] },
     ],
   },
   {

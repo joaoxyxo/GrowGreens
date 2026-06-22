@@ -1,20 +1,20 @@
 # Loop Tasks — TODO List
-Ciclo: 11 · Atualizado: 2026-06-22 21:00
+Ciclo: 11 · Atualizado: 2026-06-22 22:30 · 40/40 concluídas
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 59 plantas, 14 microgreens, 27 receitas, 65 glossário, 24 FAQ, 16 sintomas, 174 unit + 7 e2e.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: quiabo, alho-porro/chalota) com calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
-- [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: morango, agrião) — ficheiros: src/data/recipes.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 5 termos ao glossário (65→70) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
-- [ ] (P4) Adicionar 3 perguntas à FAQ (24→27) — ficheiros: src/data/faq.ts — validação: build.
-- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
-- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido (ex.: mosca-branca) — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 1 microgreen novo (ex.: salsa) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P5) Rever 2 plantas com `feedingNotes`/`wateringNotes` mais úteis — ficheiros: src/data/plants.ts — validação: build.
-- [ ] (P5) Enriquecer 2 dicas mensais (MONTHLY_TIPS) que estejam vagas — ficheiros: src/data/calendar.ts — validação: build.
-- [ ] (P5) Adicionar 1 receita de microgreens (uso em prato) — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P3) Adicionar 2 plantas novas com calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity. ✓ Feito: quiabo e chalota (toxicNote allium). 59→61.
+- [x] (P4) Adicionar 2 receitas para plantas sem receita — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: morangos com hortelã; sopa de agrião. 27→29 (+microgreens=30).
+- [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: bolbo, cura, estufa/túnel, solarização, mancha (→70).
+- [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: regar após chuva, plantar alho germinado, lesmas (→27).
+- [x] (P4) Adicionar 1 lição nova ao curso — ficheiros: src/data/course.ts — validação: build. ✓ Feito: l3-4 'A orientação da tua varanda' (u3). 23→24 lições.
+- [x] (P4) Adicionar 1 sintoma novo a troubleshoot — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'nuvem-brancos' → ['mosca-branca']. 16→17.
+- [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: salsa (microgreen). 14→15.
+- [x] (P5) Rever 2 plantas (feedingNotes) — ficheiros: src/data/plants.ts — validação: build. ✓ Feito: rúcula (azoto/pulgões) e agrião (água parada/hidroponia).
+- [x] (P5) Enriquecer 2 dicas mensais — ficheiros: src/data/calendar.ts — validação: build. ✓ Feito: janeiro (alho/chalota/planeamento) e fevereiro (sementeiras interior + favas/ervilhas).
+- [x] (P5) Adicionar 1 receita de microgreens — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: tosta de abacate, ovo e microgreens (→30).
 
 ## Regras de Negócio
 - [x] (P2) E2E: diagnóstico por sintomas abre e mostra "o que fazer" — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright. ✓ Feito: abre sintoma 'Folhas amarelas' e confirma 'Provavelmente:'. Navega via Perfil (SPA).

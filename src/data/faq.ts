@@ -121,4 +121,19 @@ export const FAQ: FaqItem[] = [
     q: 'O que são plantas perenes e vale a pena tê-las?',
     a: 'São plantas que vivem vários anos e voltam a produzir todas as épocas — como morango, alecrim, ruibarbo, espargo e alcachofra. Dão algum trabalho a instalar, mas depois rendem anos a fio com pouca manutenção. Ótimas para um canto fixo da horta.',
   },
+  {
+    emoji: '🌧️',
+    q: 'Choveu muito — preciso de regar à mesma?',
+    a: 'Normalmente não. Espeta o dedo ~3 cm no solo: se está húmido, não regues. Em vasos sob coberto a chuva pode não chegar, por isso verifica esses à parte. Regar sobre solo encharcado só favorece o apodrecimento das raízes.',
+  },
+  {
+    emoji: '🧅',
+    q: 'Posso plantar o alho/cebola que germinou na cozinha?',
+    a: 'Sim! Dentes de alho rebentados e cebolas com rebento plantam-se na terra e dão folhas verdes (como cebolinho) e, com tempo, novos bolbos. É a forma mais fácil de começar — usa de preferência os biológicos, que não levam antigerminante.',
+  },
+  {
+    emoji: '🐌',
+    q: 'As lesmas estão a comer tudo. O que faço?',
+    a: 'Apanha-as ao entardecer com lanterna, rega de manhã (não à noite) e cria barreiras de casca de ovo ou cinza à volta das plântulas. Armadilhas de cerveja funcionam. Evita iscos químicos perto de comida — há iscos de fosfato de ferro bio mais seguros.',
+  },
 ]

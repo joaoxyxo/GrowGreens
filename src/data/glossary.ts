@@ -70,4 +70,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Perene (vivaz)', emoji: '♻️', definition: 'Planta que vive vários anos e volta a produzir época após época (ruibarbo, espargo, alcachofra, morango), sem ser preciso semear de novo.' },
   { term: 'Anual', emoji: '📅', definition: 'Planta que completa o ciclo (semente → flor → semente) num só ano e depois morre. A maioria das hortícolas é anual (alface, tomate, feijão).' },
   { term: 'Sequeiro', emoji: '🌾', definition: 'Cultivo sem rega, dependente só da chuva. Culturas de sequeiro (grão-de-bico, lentilha) toleram bem a seca e pedem solo bem drenado.' },
+  { term: 'Bolbo', emoji: '🧅', definition: 'Órgão de reserva subterrâneo (cebola, alho, chalota, tulipa). Planta-se inteiro e dá origem a uma nova planta ou a um molho de bolbos.' },
+  { term: 'Cura (de bolbos)', emoji: '☀️', definition: 'Secar cebolas, alhos e chalotas ao sol/arejados após a colheita, para a casca fechar e poderem conservar-se meses sem apodrecer.' },
+  { term: 'Estufa / túnel', emoji: '🏠', definition: 'Estrutura coberta que protege as plantas e acumula calor, permitindo antecipar sementeiras e cultivar espécies de calor no litoral mais fresco.' },
+  { term: 'Solarização', emoji: '🔆', definition: 'Cobrir o solo húmido com plástico transparente no verão para o sol o aquecer e reduzir pragas, doenças e sementes de ervas daninhas.' },
+  { term: 'Mancha (sementeira a lanço)', emoji: '🌱', definition: 'Espalhar a semente de forma densa numa zona, em vez de em linhas — útil para folhas de corte, nabiças e adubos verdes.' },
 ]

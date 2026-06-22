@@ -194,4 +194,16 @@ export const SYMPTOMS: Symptom[] = [
     ],
     related: ['altica'],
   },
+  {
+    id: 'nuvem-brancos',
+    emoji: '⚪',
+    label: 'Nuvem de insetos brancos minúsculos ao tocar na planta',
+    likely: 'Mosca-branca, comum em tomate e pimento (e em estufa/interior) — suga a seiva e deixa as folhas pegajosas e amareladas.',
+    whatToDo: [
+      'Pendura armadilhas adesivas amarelas perto das plantas.',
+      'Pulveriza o verso das folhas com sabão potássico ou óleo de nim, ao fim do dia.',
+      'Melhora a ventilação e remove folhas muito infestadas; o manjericão por perto ajuda a afastá-las.',
+    ],
+    related: ['mosca-branca'],
+  },
 ]

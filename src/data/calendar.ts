@@ -179,6 +179,10 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'lentilha', zone: 'litoral_norte', action: 'colheita', months: [6, 7] },
   { plant: 'ruibarbo', zone: 'litoral_norte', action: 'transplante', months: [2, 3, 10, 11] },
   { plant: 'ruibarbo', zone: 'litoral_norte', action: 'colheita', months: [4, 5, 6] },
+  { plant: 'quiabo', zone: 'litoral_norte', action: 'sementeira_interior', months: [4, 5] },
+  { plant: 'quiabo', zone: 'litoral_norte', action: 'colheita', months: [7, 8, 9] },
+  { plant: 'chalota', zone: 'litoral_norte', action: 'sementeira_direta', months: [10, 11, 12, 1] },
+  { plant: 'chalota', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7] },
 ]
 
 export const CALENDAR_ACTION_LABELS: Record<string, { label: string; emoji: string }> = {
@@ -267,8 +271,8 @@ export function soilTipForMonth(month: number): string {
 
 // Alerta sazonal do mês (faixa "Este mês em Ovar/Aveiro")
 export const MONTHLY_TIPS: Record<number, string> = {
-  1: 'Inverno suave no litoral: protege das geadas no interior e planeia a primavera.',
-  2: 'Começa o tomate e o pimento em interior, ao abrigo. Prepara o solo.',
+  1: 'Inverno suave no litoral: planta alho e chalota, colhe couves e nabos, e protege das geadas no interior. Boa altura para planear a horta da primavera e adubar canteiros vazios.',
+  2: 'Começa o tomate, o pimento e a beringela em interior, ao abrigo. Prepara o solo com composto e semeia já favas e ervilhas ao ar livre.',
   3: 'Arranca a primavera! Semeia folhas e raízes. Atenção à humidade e ao míldio.',
   4: 'Mês muito produtivo: semeia folhas, raízes e leguminosas, e transplanta alface. No interior ainda pode haver geada tardia até meados do mês — protege o tomate e o manjericão à noite.',
   5: 'Já podes pôr cá fora o tomate, o manjericão e o feijão — passou o frio.',
