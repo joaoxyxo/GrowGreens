@@ -41,16 +41,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Verificar que `course` chunk é isolado — ficheiros: build — validação: revisão. ✓ course 21.26 kB separado; HealthView/health em chunks próprios.
 
 ## Organização
-- [ ] (P3) Atualizar CLAUDE.md com contagens (57 plantas, 25 receitas, 13 microgreens, 60 glossário, 21 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
-- [ ] (P3) CHANGELOG: entrada para o Ciclo 10 — ficheiros: CHANGELOG.md — validação: presente.
-- [ ] (P4) README: contagem do catálogo (57 culturas) — ficheiros: README.md — validação: coerente.
-- [ ] (P4) docs/ARQUITETURA: secção "Dados estáticos" lista todos os ficheiros de src/data — ficheiros: docs/ARQUITETURA.md — validação: coerente.
-- [ ] (P4) Confirmar que `src/types` não importa de runtime (só tipos) — ficheiros: src/types — validação: grep limpo.
-- [ ] (P5) Adicionar JSDoc curto às funções públicas de `growth.ts` sem doc — ficheiros: src/utils — validação: typecheck.
-- [ ] (P4) Verificar que não há ficheiros órfãos óbvios (não importados) em src — ficheiros: src — validação: revisão.
-- [ ] (P5) Confirmar consistência de `slug` (kebab-case) em todos os data files — ficheiros: src/data — validação: revisão.
-- [ ] (P4) Verificar que `tests/e2e` cobre os fluxos críticos (onboarding→colheita) — ficheiros: tests/e2e — validação: revisão.
-- [ ] (P5) Confirmar que os imports usam o alias `@/` consistentemente (não `../`) — ficheiros: src — validação: revisão.
+- [x] (P3) Atualizar CLAUDE.md com contagens — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 57 plantas, 13 microgreens, 25 receitas, 60 glossário, 21 FAQ, 7u/22 lições, 174 unit + 7 E2E.
+- [x] (P3) CHANGELOG: entrada para o Ciclo 10 — ficheiros: CHANGELOG.md — validação: presente. ✓ Feito.
+- [x] (P4) README: contagem do catálogo (57 culturas) — ficheiros: README.md — validação: coerente. ✓ Feito.
+- [x] (P4) docs/ARQUITETURA: "Dados estáticos" lista os 11 ficheiros — ficheiros: docs/ARQUITETURA.md — validação: coerente. ✓ Feito: faltava faq.ts; agora lista os 11 com descrição.
+- [x] (P4) Confirmar que `src/types` não importa de runtime — ficheiros: src/types — validação: grep limpo. ✓ Verificado: só `import type`.
+- [x] (P5) JSDoc nas funções públicas de `growth.ts` — ficheiros: src/utils — validação: typecheck. ✓ Já documentadas (defaultWateringDays, areCompanions, areAntagonists, successionDays, estimateStage/StageEstimate).
+- [x] (P4) Verificar ficheiros órfãos em src — ficheiros: src — validação: revisão. ✓ Verificado: nenhum .vue órfão (heurística de referências).
+- [x] (P5) Confirmar `slug` kebab-case em todos os data files — ficheiros: src/data — validação: revisão. ✓ Verificado: todos os slugs em kebab-case.
+- [x] (P4) Verificar cobertura E2E dos fluxos críticos — ficheiros: tests/e2e — validação: revisão. ✓ Verificado: 4 specs com completeOnboarding (desafio, catálogo→horta, calendário/curso, perfil/planeador).
+- [x] (P5) Confirmar uso consistente do alias `@/` — ficheiros: src — validação: revisão. ✓ Verificado: 0 imports relativos `../` em src.
 
 ## Arquivo (ciclos concluídos)
 

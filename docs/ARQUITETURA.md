@@ -24,7 +24,7 @@ Dexie / IndexedDB (src/lib/db/)
 
 ## Dados estáticos (catálogo)
 
-`src/data/` (só leitura, versionado): `plants.ts`, `microgreens.ts`, `calendar.ts`, `course.ts`, `health.ts`, `recipes.ts`, `glossary.ts`, `pestsDiseases.ts`, `troubleshoot.ts`, `achievements.ts`. Tipos em `src/types/catalog.ts`. As referências entre dados (companheiras, pragas, receitas…) são validadas por `tests/data-integrity.test.ts`.
+`src/data/` (só leitura, versionado), todos os 11 ficheiros: `plants.ts` (catálogo agronómico), `microgreens.ts` (desafio 7 dias), `calendar.ts` (sementeira por zona/mês + dicas), `course.ts` (unidades/lições), `health.ts` (grupos nutricionais), `recipes.ts` (receitas ↔ plantas), `glossary.ts` (termos), `faq.ts` (perguntas frequentes), `pestsDiseases.ts` (pragas/doenças), `troubleshoot.ts` (sintomas → soluções) e `achievements.ts` (conquistas). Tipos em `src/types/catalog.ts`. As referências entre dados (companheiras, pragas, receitas, sintomas…) são validadas por `tests/data-integrity.test.ts`.
 
 ## Fluxo de dados (exemplo: adicionar planta)
 
