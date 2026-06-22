@@ -443,6 +443,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['alcachofra', 'cebola', 'alho', 'salsa'],
   },
+  {
+    slug: 'brocolos-alho-azeite',
+    title: 'Brócolos salteados com alho e azeite',
+    emoji: '🥦',
+    description: 'Rápido, verde e crocante — a melhor forma de manter os nutrientes dos brócolos.',
+    prepMinutes: 15,
+    difficulty: 'facil',
+    season: ['outono', 'inverno'],
+    ingredients: [
+      '1 cabeça de brócolos em raminhos',
+      '2 dentes de alho laminados',
+      'Azeite, sal, flocos de malagueta (opcional)',
+      'Sumo de limão a gosto',
+    ],
+    steps: [
+      'Coze os brócolos al dente (3-4 min em água a ferver com sal) e escorre.',
+      'Salteia em azeite com o alho até perfumar, sem queimar.',
+      'Junta os brócolos, tempera e finaliza com umas gotas de limão.',
+    ],
+    plants: ['brocolos', 'alho', 'malagueta'],
+  },
+  {
+    slug: 'pimentos-assados',
+    title: 'Pimentos assados em azeite',
+    emoji: '🫑',
+    description: 'Doces e fumados, uma conserva simples que dura dias no frigorífico.',
+    prepMinutes: 40,
+    difficulty: 'facil',
+    season: ['verao', 'outono'],
+    ingredients: [
+      '4 pimentos (vermelhos e/ou amarelos)',
+      '2 dentes de alho laminados',
+      'Azeite, sal',
+      'Salsa ou coentros picados',
+    ],
+    steps: [
+      'Assa os pimentos inteiros no forno a 200 °C até a pele tostar (~25-30 min), virando a meio.',
+      'Tapa-os numa taça uns minutos, depois pela-os e corta em tiras.',
+      'Tempera com alho, azeite, sal e ervas. Serve morno ou frio.',
+    ],
+    plants: ['pimento', 'alho', 'salsa'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

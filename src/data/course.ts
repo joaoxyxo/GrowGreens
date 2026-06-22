@@ -53,7 +53,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'O ponto certo de colheita e como guardar o que colheste.',
     emoji: '🧺',
     color: 'earth',
-    lessonIds: ['l6-1', 'l6-2'],
+    lessonIds: ['l6-1', 'l6-2', 'l6-3'],
   },
   {
     id: 'u7',
@@ -542,6 +542,39 @@ export const LESSONS: Lesson[] = [
         explanation: 'A humidade a mais acelera o apodrecimento — seca bem antes de guardar.',
       },
       { kind: 'summary', bullets: ['Folhas: lavar, secar e guardar frescas.', 'Raízes: fresco e escuro.', 'Aromáticas: secar ou congelar.'] },
+    ],
+  },
+  {
+    id: 'l6-3',
+    unitId: 'u6',
+    title: 'Colher na hora certa',
+    subtitle: 'O ponto ideal de cada cultura.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🥬',
+        title: 'Folhas: colhe cedo e muitas vezes',
+        body: 'Alface, rúcula e couves de folha sabem melhor jovens. Colhe as folhas de fora e deixa o centro continuar — rendem semanas. Se a planta "sobe" a flor (espiga), fica amarga: colhe antes.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🍅',
+        title: 'Frutos: cor e firmeza',
+        body: 'Tomate, pimento e curgete dizem-te quando estão prontos pela cor e firmeza. A curgete é melhor pequena (15-20 cm); deixá-la crescer demais tira sabor e trava a planta de produzir mais.',
+      },
+      {
+        kind: 'choice',
+        question: 'Quando é melhor colher uma curgete?',
+        options: [
+          'O maior possível, para render mais',
+          'Pequena e tenra (15-20 cm)',
+          'Só depois de amarelecer',
+        ],
+        correctIndex: 1,
+        explanation: 'Pequena é mais saborosa e a planta continua a produzir. Curgetes enormes ficam fibrosas e travam a colheita.',
+      },
+      { kind: 'summary', bullets: ['Folhas: jovens e em corte sucessivo.', 'Colhe antes de espigar (amargo).', 'Frutos: pela cor/firmeza; curgete pequena.'] },
     ],
   },
   {

@@ -1,15 +1,15 @@
 # Loop Tasks — TODO List
-Ciclo: 8 · Atualizado: 2026-06-22 15:00
+Ciclo: 8 · Atualizado: 2026-06-22 16:30 · 39/40 concluídas + 1 N/A
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 53 plantas, 11 microgreens, 21 receitas, 50 glossário, 15 FAQ, 146 unit + 7 e2e.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: nabiça/grelos, physalis) com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
-- [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: brócolos, morango, pimento) — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P3) Adicionar 2 plantas novas ao catálogo com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity. ✓ Feito: nabiça (grelos de nabo) e physalis (com toxicNote). 53→55.
+- [x] (P4) Adicionar 2 receitas para plantas ainda sem receita — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: brócolos salteados; pimentos assados. 21→23.
 - [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: desladroar, húmus de minhoca, calda bordalesa, solanáceas, brássicas (→55).
 - [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: tamanho de vaso, manhã/noite, sementes não nascem (→18).
-- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
+- [x] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build. ✓ Feito: l6-3 'Colher na hora certa' (u6). 20→21 lições.
 - [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: agrião (→12).
 - [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'folhas-pegajosas' (melada) → ['afideo','cochonilha'].
 - [x] (P4) Enriquecer 1 praga com tratamento biológico — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: lagarta-da-couve com Bt detalhado + parasitoides/aves.
