@@ -91,10 +91,18 @@ const pendingPhotoUrl = ref<string | null>(null)
 function pickPhoto() {
   fileInput.value?.click()
 }
+// Liberta o objectURL da pré-visualização pendente (evita fuga de memória).
+function clearPendingPhoto() {
+  if (pendingPhotoUrl.value) URL.revokeObjectURL(pendingPhotoUrl.value)
+  pendingPhoto.value = null
+  pendingPhotoUrl.value = null
+}
+
 async function onPhoto(e: Event) {
   const f = (e.target as HTMLInputElement).files?.[0]
   if (f) {
     const blob = await compressImage(f)
+    if (pendingPhotoUrl.value) URL.revokeObjectURL(pendingPhotoUrl.value)
     pendingPhoto.value = blob
     pendingPhotoUrl.value = URL.createObjectURL(blob)
   }
@@ -127,8 +135,7 @@ async function addEntry() {
   const total = (await db.journal.count()) ?? 0
   if (total >= 10 && progress.unlock('diarista')) ui.toast(achievementToast('diarista'))
   note.value = ''
-  pendingPhoto.value = null
-  pendingPhotoUrl.value = null
+  clearPendingPhoto()
   ui.toast('Entrada guardada · +5 XP')
 }
 
