@@ -622,8 +622,8 @@ export const PLANTS: Plant[] = [
     feedingNotes: 'Equilibrado no crescimento; potássio na frutificação.',
     harvestNotes: 'Colhe verde para mais produção, ou deixa amadurecer para mais doce e vitamina C.',
     portugalNotes: 'No litoral fresco, uma estufa caseira ou parede virada a sul ajuda muito. Sol é tudo.',
-    expectations: 'Cultura lenta (3-3,5 meses). Paciência; o calor manda.',
-    commonMistake: 'Pôr cá fora cedo demais — o frio paralisa-o. Espera por calor estável.',
+    expectations: 'Cultura lenta (3-3,5 meses até aos primeiros frutos). Paciência: o calor é que manda o ritmo. Uma planta saudável produz vários pimentos e continua a dar até ao fim do verão.',
+    commonMistake: 'Pôr cá fora cedo demais — o frio paralisa-o e pode não recuperar. Espera por calor estável (noites acima de ~12 °C).',
     stages: [
       { stage: 'germinacao', durationDays: [8, 16], text: 'Lenta; precisa de calor (24-28 °C).' },
       { stage: 'plantula', durationDays: [40, 55], text: 'Cresce devagar em interior.' },
@@ -729,8 +729,8 @@ export const PLANTS: Plant[] = [
     feedingNotes: 'Adubo rico em potássio durante a floração e frutificação.',
     harvestNotes: 'Colhe bem vermelho e maduro; não amadurece depois de colhido.',
     portugalNotes: 'Planta no outono ou início da primavera. Em varanda, protege dos pássaros e poliniza à mão se faltarem insetos.',
-    expectations: 'Primeiros morangos na primavera seguinte se plantares no outono. Planta perene.',
-    commonMistake: 'Enterrar a coroa — apodrece. A coroa fica ao nível do solo.',
+    expectations: 'Primeiros morangos na primavera seguinte se plantares no outono. É perene: produz vários anos e multiplica-se sozinha pelos estolhos (rebentos rasteiros) que enraízam.',
+    commonMistake: 'Enterrar a coroa (o ponto onde as folhas saem) — apodrece. A coroa fica ao nível do solo, nem acima nem abaixo.',
     stages: [
       { stage: 'plantula', durationDays: [20, 40], text: 'Enraíza; coroa ao nível do solo.' },
       { stage: 'vegetativo', durationDays: [40, 80], text: 'Faz folhas e estolhos (corta-os).' },

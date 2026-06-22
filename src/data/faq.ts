@@ -76,4 +76,19 @@ export const FAQ: FaqItem[] = [
     q: 'Posso semear no inverno?',
     a: 'Sim, mas escolhe culturas de frio: favas, ervilhas, couves, alho, cebola, espinafre e alface de inverno. No litoral atlântico o frio raramente é extremo. Em interior, os microgreens dão o ano todo.',
   },
+  {
+    emoji: '🪴',
+    q: 'Que tamanho de vaso preciso?',
+    a: 'Depende da planta: folhas e ervas safam-se com 3-5 L; tomate, pimento e courgette querem 15-30 L para a raiz se desenvolver. Vaso pequeno = rega constante e planta a sofrer. Na ficha de cada planta indicamos o volume mínimo.',
+  },
+  {
+    emoji: '💧',
+    q: 'Rego de manhã ou à noite?',
+    a: 'De manhã, sempre que possível: a planta bebe antes do calor e a folha seca durante o dia, o que evita fungos como o míldio. Rega à noite só em última opção — a humidade que fica nas folhas convida a doenças.',
+  },
+  {
+    emoji: '🌱',
+    q: 'As minhas sementes não nascem. Porquê?',
+    a: 'As causas mais comuns: enterraste-as fundo demais (a regra é ~2-3× a largura da semente), o solo secou na germinação, ou a temperatura está baixa. Mantém húmido (não encharcado) e ao calor, e dá tempo — algumas demoram 2-3 semanas.',
+  },
 ]

@@ -7,14 +7,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Conteúdo
 - [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: nabiça/grelos, physalis) com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
 - [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: brócolos, morango, pimento) — ficheiros: src/data/recipes.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 5 termos ao glossário (50→55) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
-- [ ] (P4) Adicionar 3 perguntas à FAQ (15→18) — ficheiros: src/data/faq.ts — validação: build.
+- [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: desladroar, húmus de minhoca, calda bordalesa, solanáceas, brássicas (→55).
+- [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: tamanho de vaso, manhã/noite, sementes não nascem (→18).
 - [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
-- [ ] (P4) Adicionar 1 microgreen novo (ex.: agrião) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido (ex.: melada/cochonilha) — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
-- [ ] (P4) Enriquecer 1 praga com tratamento biológico mais detalhado — ficheiros: src/data/pestsDiseases.ts — validação: build.
-- [ ] (P5) Rever 2 conquistas com descrição mais clara em pt-PT — ficheiros: src/data/achievements.ts — validação: build.
-- [ ] (P5) Rever 2 plantas com `commonMistake`/`expectations` mais úteis — ficheiros: src/data/plants.ts — validação: build.
+- [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: agrião (→12).
+- [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'folhas-pegajosas' (melada) → ['afideo','cochonilha'].
+- [x] (P4) Enriquecer 1 praga com tratamento biológico — ficheiros: src/data/pestsDiseases.ts — validação: build. ✓ Feito: lagarta-da-couve com Bt detalhado + parasitoides/aves.
+- [x] (P5) Rever 2 conquistas com descrição mais clara — ficheiros: src/data/achievements.ts — validação: build. ✓ Feito: 'mao_verde' e 'colecionador' reescritas.
+- [x] (P5) Rever 2 plantas com `commonMistake`/`expectations` — ficheiros: src/data/plants.ts — validação: build. ✓ Feito: pimento e morango com texto mais útil.
 
 ## Regras de Negócio
 - [x] (P2) Teste para `normalize` (utils/text) — ficheiros: tests/text.test.ts — validação: vitest. ✓ Feito: minúsculas, acentos, idempotência, pesquisa com/sem acento.

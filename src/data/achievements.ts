@@ -21,7 +21,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   {
     code: 'mao_verde',
     name: 'Mão Verde',
-    description: 'Tens 5 plantas a crescer ao mesmo tempo.',
+    description: 'Tens 5 plantas vivas na tua horta ao mesmo tempo.',
     emoji: '🌿',
   },
   {
@@ -57,7 +57,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   {
     code: 'colecionador',
     name: 'Colecionador',
-    description: 'Cultivaste 10 espécies diferentes do catálogo.',
+    description: 'Já cultivaste 10 espécies diferentes do catálogo ao longo do tempo.',
     emoji: '🌻',
   },
 ]

@@ -158,4 +158,16 @@ export const SYMPTOMS: Symptom[] = [
     ],
     related: ['acaro-aranha'],
   },
+  {
+    id: 'folhas-pegajosas',
+    emoji: '🍯',
+    label: 'Folhas pegajosas e brilhantes (melada), às vezes com bolor preto',
+    likely: 'Melada de pulgões ou cochonilha — açúcar que escorre e atrai fumagina (bolor preto) e formigas.',
+    whatToDo: [
+      'Procura colónias nos rebentos e no verso das folhas (pulgões) ou carapaças/algodão nos caules (cochonilha).',
+      'Limpa a melada com pano húmido; em cochonilha, passa cotonete com álcool.',
+      'Pulveriza com sabão potássico ou óleo de nim; controla as formigas que protegem as pragas.',
+    ],
+    related: ['afideo', 'cochonilha'],
+  },
 ]

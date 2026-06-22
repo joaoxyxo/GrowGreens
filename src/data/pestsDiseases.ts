@@ -26,7 +26,7 @@ export const PESTS: Pest[] = [
     description: 'Larvas verdes (da borboleta branca) que devastam as brássicas na primavera e verão.',
     symptoms: 'Folhas de couve com grandes buracos; excrementos verdes; lagartas no verso.',
     prevention: 'Rede anti-insetos sobre as couves. Inspeção regular do verso das folhas.',
-    treatment: 'Apanha à mão. Bacillus thuringiensis (Bt) é um tratamento biológico eficaz.',
+    treatment: 'Apanha à mão as lagartas e esmaga os ovos amarelos (em grupos, no verso das folhas). Bacillus thuringiensis (Bt) é um tratamento biológico muito eficaz: é uma bactéria que só afeta lagartas, inofensiva para pessoas, abelhas e animais — pulveriza ao fim da tarde e repete após chuva. Vespas parasitoides e aves também ajudam a controlar a população.',
   },
   {
     slug: 'altica',

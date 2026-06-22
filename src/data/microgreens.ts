@@ -122,6 +122,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     beginner: true,
     note: 'Clássica dos rebentos. Demolha curta e mantém húmida; dá um tapete macio e versátil para sandes e saladas.',
   },
+  {
+    slug: 'agriao',
+    name: 'Agrião',
+    emoji: '🌿',
+    soakHours: 0,
+    blackoutDays: [3, 4],
+    daysToHarvest: [8, 12],
+    flavour: 'Picante e apimentado, intenso.',
+    beginner: false,
+    note: 'Semente pequena e mucilaginosa (não demolhar). Borrifa em vez de regar por cima nos primeiros dias. Sabor forte, ótimo em doses pequenas.',
+  },
 ]
 
 export const MICROGREENS_BY_SLUG: Record<string, MicrogreenInfo> = Object.fromEntries(

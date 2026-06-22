@@ -55,4 +55,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Mulching (cobertura)', emoji: '🍂', definition: 'Cobrir o solo (palha, folhas, casca) à volta das plantas para reter humidade, abafar ervas e proteger as raízes do calor e do frio.' },
   { term: 'Espigar (subir a semente)', emoji: '🌾', definition: 'Quando uma hortícola de folha (alface, rúcula, coentros) sobe a flor com o calor e fica amarga. Sinal de que passou do ponto de colheita.' },
   { term: 'Endurecimento (rustificação)', emoji: '🌬️', definition: 'Habituar gradualmente as plântulas criadas em interior ao exterior (sol, vento, frio) durante alguns dias, antes do transplante, para não sofrerem choque.' },
+  { term: 'Desladroar (tirar ladrões)', emoji: '✂️', definition: 'Remover os rebentos laterais ("ladrões") que nascem entre o caule e os ramos do tomateiro, para concentrar a energia nos frutos.' },
+  { term: 'Húmus de minhoca (vermicomposto)', emoji: '🪱', definition: 'Adubo escuro e rico produzido por minhocas a partir de restos orgânicos. Liberta nutrientes devagar e melhora a estrutura do solo.' },
+  { term: 'Calda bordalesa', emoji: '🟦', definition: 'Mistura tradicional de sulfato de cobre e cal usada em prevenção contra fungos (míldio). Usar com moderação — o cobre acumula-se no solo.' },
+  { term: 'Solanáceas', emoji: '🍅', definition: 'Família do tomate, pimento, beringela e batata. Partilham pragas/doenças, por isso convém rodá-las no mesmo canteiro.' },
+  { term: 'Brássicas (crucíferas)', emoji: '🥬', definition: 'Família das couves, brócolos, rúcula, rabanete e nabo. Atraem a lagarta-da-couve e a áltica; beneficiam de rede de proteção.' },
 ]
