@@ -527,6 +527,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['beringela', 'alho', 'oregaos', 'manjericao'],
   },
+  {
+    slug: 'nabos-salteados',
+    title: 'Nabos salteados com a sua rama',
+    emoji: '🤍',
+    description: 'Aproveita tudo: a raiz adocicada e as folhas (grelos). Simples e sem desperdício.',
+    prepMinutes: 20,
+    difficulty: 'facil',
+    season: ['outono', 'inverno'],
+    ingredients: [
+      '4 nabos pequenos com a rama',
+      '1 dente de alho',
+      'Azeite, sal, pimenta',
+      'Sumo de limão (opcional)',
+    ],
+    steps: [
+      'Descasca e corta os nabos em meias-luas; separa e lava a rama.',
+      'Salteia os nabos em azeite ~8 min até macios e dourados; junta o alho.',
+      'Adiciona a rama picada, deixa murchar, tempera e finaliza com limão.',
+    ],
+    plants: ['nabo', 'alho'],
+  },
+  {
+    slug: 'salada-melao-hortela',
+    title: 'Salada fresca de melão com hortelã',
+    emoji: '🍈',
+    description: 'Doce e refrescante — o melhor do melão do verão, em poucos minutos.',
+    prepMinutes: 10,
+    difficulty: 'facil',
+    season: ['verao'],
+    ingredients: [
+      'Meio melão maduro em cubos',
+      'Folhas de hortelã fresca',
+      'Sumo de meio limão ou lima',
+      'Pitada de sal (e queijo fresco, opcional)',
+    ],
+    steps: [
+      'Corta o melão em cubos e dispõe numa taça.',
+      'Rega com o sumo de limão e uma pitada de sal (realça o doce).',
+      'Espalha hortelã picada (e queijo fresco, se quiseres). Serve bem fresca.',
+    ],
+    plants: ['melao', 'hortela'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

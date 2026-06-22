@@ -175,6 +175,10 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'grao-de-bico', zone: 'litoral_norte', action: 'colheita', months: [7, 8] },
   { plant: 'espargo', zone: 'litoral_norte', action: 'transplante', months: [2, 3] },
   { plant: 'espargo', zone: 'litoral_norte', action: 'colheita', months: [3, 4, 5] },
+  { plant: 'lentilha', zone: 'litoral_norte', action: 'sementeira_direta', months: [2, 3, 4] },
+  { plant: 'lentilha', zone: 'litoral_norte', action: 'colheita', months: [6, 7] },
+  { plant: 'ruibarbo', zone: 'litoral_norte', action: 'transplante', months: [2, 3, 10, 11] },
+  { plant: 'ruibarbo', zone: 'litoral_norte', action: 'colheita', months: [4, 5, 6] },
 ]
 
 export const CALENDAR_ACTION_LABELS: Record<string, { label: string; emoji: string }> = {
@@ -266,7 +270,7 @@ export const MONTHLY_TIPS: Record<number, string> = {
   1: 'Inverno suave no litoral: protege das geadas no interior e planeia a primavera.',
   2: 'Começa o tomate e o pimento em interior, ao abrigo. Prepara o solo.',
   3: 'Arranca a primavera! Semeia folhas e raízes. Atenção à humidade e ao míldio.',
-  4: 'Mês muito produtivo. No interior, ainda há risco de geada até meados do mês.',
+  4: 'Mês muito produtivo: semeia folhas, raízes e leguminosas, e transplanta alface. No interior ainda pode haver geada tardia até meados do mês — protege o tomate e o manjericão à noite.',
   5: 'Já podes pôr cá fora o tomate, o manjericão e o feijão — passou o frio.',
   6: 'Rega de manhã e na base. Vigia o oídio nas courgettes com o tempo húmido.',
   7: 'Pico do verão: colhe tomate e courgette. Semeia já as couves de outono.',

@@ -1,20 +1,20 @@
 # Loop Tasks — TODO List
-Ciclo: 10 · Atualizado: 2026-06-22 19:00
+Ciclo: 10 · Atualizado: 2026-06-22 20:30 · 40/40 concluídas
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 57 plantas, 13 microgreens, 25 receitas, 60 glossário, 21 FAQ, 15 sintomas, 169 unit + 7 e2e.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: lentilha, ruibarbo) com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
-- [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: nabo, melão, morango) — ficheiros: src/data/recipes.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 5 termos ao glossário (60→65) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
-- [ ] (P4) Adicionar 3 perguntas à FAQ (21→24) — ficheiros: src/data/faq.ts — validação: build.
-- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
-- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 1 microgreen novo (ex.: feno-grego) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P4) Enriquecer 1 grupo de saúde (health.ts) sem caution com info adicional — ficheiros: src/data/health.ts — validação: build.
-- [ ] (P5) Rever 2 plantas com `portugalNotes` mais específicas do litoral — ficheiros: src/data/plants.ts — validação: build.
-- [ ] (P5) Enriquecer 1 dica mensal (MONTHLY_TIPS) que esteja vaga — ficheiros: src/data/calendar.ts — validação: build.
+- [x] (P3) Adicionar 2 plantas novas com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity. ✓ Feito: lentilha (leguminosa) e ruibarbo (perene, folhas tóxicas/toxicNote). 57→59.
+- [x] (P4) Adicionar 2 receitas para plantas ainda sem receita — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: nabos salteados (nabo); salada de melão com hortelã. 25→27.
+- [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: pecíolo, ácido oxálico, perene, anual, sequeiro (→65).
+- [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: bichos/inseticida, adubar, plantas perenes (→24).
+- [x] (P4) Adicionar 1 lição nova ao curso — ficheiros: src/data/course.ts — validação: build. ✓ Feito: l4-4 'Fazer o teu composto' (u4). 22→23 lições.
+- [x] (P4) Adicionar 1 sintoma novo a troubleshoot — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'folhas-crivadas' → ['altica'].
+- [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: feno-grego/fenacho (→14).
+- [x] (P4) Enriquecer 1 grupo de saúde com info adicional — ficheiros: src/data/health.ts — validação: build. ✓ Feito: folhas_verdes com vitamina C (nutriente + benefício de frescura). (Todos os grupos já tinham caution.)
+- [x] (P5) Rever 2 plantas com `portugalNotes` do litoral — ficheiros: src/data/plants.ts — validação: build. ✓ Feito: rabanete (intercalar/verão) e espinafre (outono-inverno Ovar/Aveiro, drenagem).
+- [x] (P5) Enriquecer 1 dica mensal vaga — ficheiros: src/data/calendar.ts — validação: build. ✓ Feito: abril (o que semear/transplantar + geada tardia no interior).
 
 ## Regras de Negócio
 - [x] (P2) Teste: cada planta tem `in30Seconds`/`growingTips`/`shortDescription` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.

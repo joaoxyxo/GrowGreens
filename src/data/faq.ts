@@ -106,4 +106,19 @@ export const FAQ: FaqItem[] = [
     q: 'Posso fazer composto numa varanda?',
     a: 'Sim — com um vermicompostor (caixa com minhocas) fazes húmus a partir de restos de cozinha, sem cheiro e em pouco espaço. Evita carne, lacticínios e cítricos em excesso. Em poucos meses tens adubo caseiro de qualidade.',
   },
+  {
+    emoji: '🐛',
+    q: 'Tenho bichos nas plantas. Mato logo com inseticida?',
+    a: 'Não comeces por aí. A maioria controla-se com jato de água, sabão potássico ou óleo de nim, e muitos insetos (joaninhas, abelhas) são aliados. Inseticidas de largo espetro matam também os bons e desequilibram a horta. Identifica primeiro o que tens.',
+  },
+  {
+    emoji: '🍂',
+    q: 'Tenho de adubar? Com quê?',
+    a: 'Plantas de folha e fruto agradecem. A base ideal é composto ou húmus de minhoca, que alimenta o solo devagar. Em vasos, como o substrato esgota, dá um reforço a cada 3-4 semanas (composto, ou adubo orgânico líquido) durante o crescimento.',
+  },
+  {
+    emoji: '🌿',
+    q: 'O que são plantas perenes e vale a pena tê-las?',
+    a: 'São plantas que vivem vários anos e voltam a produzir todas as épocas — como morango, alecrim, ruibarbo, espargo e alcachofra. Dão algum trabalho a instalar, mas depois rendem anos a fio com pouca manutenção. Ótimas para um canto fixo da horta.',
+  },
 ]

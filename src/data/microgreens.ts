@@ -144,6 +144,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     beginner: false,
     note: 'Semente mucilaginosa (NÃO demolhar — fica gelatinosa). Borrifa em vez de regar por cima. Rica em ómega-3; o gel à volta da semente é normal.',
   },
+  {
+    slug: 'feno-grego',
+    name: 'Feno-grego (fenacho)',
+    emoji: '🟡',
+    soakHours: 6,
+    blackoutDays: [2, 3],
+    daysToHarvest: [6, 10],
+    flavour: 'Levemente amargo, a caril.',
+    beginner: true,
+    note: 'Demolha breve e germina depressa. Sabor característico de caril; colhe novo para menos amargo. Ótimo em pratos indianos e saladas.',
+  },
 ]
 
 export const MICROGREENS_BY_SLUG: Record<string, MicrogreenInfo> = Object.fromEntries(

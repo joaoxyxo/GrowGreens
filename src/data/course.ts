@@ -35,7 +35,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'O solo é vivo — e alimenta as tuas plantas.',
     emoji: '🟤',
     color: 'earth',
-    lessonIds: ['l4-1', 'l4-2', 'l4-3'],
+    lessonIds: ['l4-1', 'l4-2', 'l4-3', 'l4-4'],
   },
   {
     id: 'u5',
@@ -399,6 +399,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'A leguminosa repõe azoto e pertence a outra família — quebra o ciclo de pragas/doenças do tomate.',
       },
       { kind: 'summary', bullets: ['Não repitas a mesma família no mesmo sítio.', 'Leguminosas enriquecem o solo (azoto).', 'Rodar = menos pragas e solo mais equilibrado.'] },
+    ],
+  },
+  {
+    id: 'l4-4',
+    unitId: 'u4',
+    title: 'Fazer o teu composto',
+    subtitle: 'Transformar restos em alimento para o solo.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🥬',
+        title: 'Verdes e castanhos',
+        body: 'O composto precisa de "verdes" (restos de vegetais, borras de café, relva — dão azoto) e "castanhos" (folhas secas, cartão, palha — dão carbono). Alterna camadas, com mais castanhos que verdes.',
+      },
+      {
+        kind: 'concept',
+        emoji: '💧',
+        title: 'Ar e humidade',
+        body: 'Mexe de vez em quando para arejar e mantém húmido como uma esponja espremida. Em poucos meses fica uma terra escura e cheirosa — o melhor adubo, de graça.',
+      },
+      {
+        kind: 'truefalse',
+        question: 'Carne e lacticínios são bons para o composto caseiro.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 1,
+        explanation: 'Falso — atraem pragas e cheiram mal. Usa restos vegetais, borras, casca de ovo, folhas e cartão.',
+      },
+      { kind: 'summary', bullets: ['Alterna verdes (azoto) e castanhos (carbono).', 'Areja e mantém húmido como esponja.', 'Evita carne, peixe e lacticínios.'] },
     ],
   },
   {

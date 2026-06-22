@@ -182,4 +182,16 @@ export const SYMPTOMS: Symptom[] = [
     ],
     related: ['nematodes'],
   },
+  {
+    id: 'folhas-crivadas',
+    emoji: '⚫',
+    label: 'Folhas jovens crivadas de pequenos buracos redondos (como tiros de chumbo)',
+    likely: 'Áltica (pulga-da-terra), minúsculos besouros saltadores que atacam brássicas jovens (rúcula, rabanete) no tempo quente e seco.',
+    whatToDo: [
+      'Cobre as plântulas com rede fina logo após a sementeira.',
+      'Mantém o solo húmido — a áltica gosta de seco e quente.',
+      'Usa armadilhas adesivas amarelas e adia a sementeira para alturas mais frescas.',
+    ],
+    related: ['altica'],
+  },
 ]

@@ -65,4 +65,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Terra de diatomáceas', emoji: '🦴', definition: 'Pó natural de algas fossilizadas que age como barreira física contra lesmas e insetos rastejantes. Aplica-se seco à volta das plantas.' },
   { term: 'Polinizador', emoji: '🐝', definition: 'Inseto (abelha, abelhão, sirfídeo) que transporta pólen entre flores e permite a formação de fruto. Atrai-os com flores na horta.' },
   { term: 'Estiagem', emoji: '🏜️', definition: 'Período prolongado de seca. Na horta pede mulch, rega mais profunda e menos frequente, e sombra para as culturas sensíveis.' },
+  { term: 'Pecíolo', emoji: '🌿', definition: 'O "pé" que liga a folha ao caule. Em algumas plantas (ruibarbo, aipo) é a parte que se come; noutras é tóxico ou fibroso.' },
+  { term: 'Ácido oxálico', emoji: '⚠️', definition: 'Composto presente em folhas como as do ruibarbo, espinafre e beterraba. Em grande quantidade é tóxico — por isso certas folhas não se comem.' },
+  { term: 'Perene (vivaz)', emoji: '♻️', definition: 'Planta que vive vários anos e volta a produzir época após época (ruibarbo, espargo, alcachofra, morango), sem ser preciso semear de novo.' },
+  { term: 'Anual', emoji: '📅', definition: 'Planta que completa o ciclo (semente → flor → semente) num só ano e depois morre. A maioria das hortícolas é anual (alface, tomate, feijão).' },
+  { term: 'Sequeiro', emoji: '🌾', definition: 'Cultivo sem rega, dependente só da chuva. Culturas de sequeiro (grão-de-bico, lentilha) toleram bem a seca e pedem solo bem drenado.' },
 ]
