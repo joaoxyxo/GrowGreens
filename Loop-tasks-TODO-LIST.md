@@ -29,16 +29,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: `MICROGREENS` têm `flavour`/`note` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
-- [ ] (P4) Confirmar que o `recipes` chunk fica separado e lazy — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar que `PlantDetailView` não importa todo o catálogo só para 1 planta — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Confirmar que `GardenView` usa `useReminders` partilhado (não duplica liveQuery) — ficheiros: features/garden — validação: revisão.
-- [ ] (P4) Verificar que o número total de assets gerados se mantém estável — ficheiros: build — validação: revisão.
-- [ ] (P5) Avaliar `will-change`/transições só onde necessário (sem custo global) — ficheiros: features — validação: revisão.
-- [ ] (P4) Confirmar que imagens de diário usam dimensões fixas (sem CLS) — ficheiros: features/garden — validação: revisão.
-- [ ] (P4) Verificar que o vendor chunk não cresceu com novas plantas — ficheiros: build — validação: revisão (~294 KB).
-- [ ] (P5) Confirmar que `normalize` não é chamado em loop quente sem cache — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Confirmar que o data chunk `plants` cresce linearmente (sem dependências extra) — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar que `course` chunk não inclui dados de outras áreas — ficheiros: build — validação: revisão.
+- [x] (P4) Confirmar que `recipes` é lazy — ficheiros: build — validação: revisão. ✓ recipes.ts só é importado por PlantDetailView → entra no chunk lazy dessa view (fora da entrada).
+- [x] (P4) Verificar que `PlantDetailView` não importa o catálogo inteiro — ficheiros: features/catalog — validação: revisão. ✓ Usa `getPlant(slug)` (lookup), não itera/importa PLANTS na UI.
+- [x] (P4) Confirmar que `GardenView` usa `useReminders` partilhado — ficheiros: features/garden — validação: revisão. ✓ Verificado: importa useReminders (subscrição única).
+- [x] (P4) Verificar que o nº de assets se mantém estável — ficheiros: build — validação: revisão. ✓ 40 assets JS (~1 por view + data + vendor); sem explosão.
+- [x] (P5) Avaliar `will-change`/transições — ficheiros: features — validação: revisão. ✓ Verificado: não há `will-change` global; transições são pontuais (transition em chips/botões). Sem custo de composição global.
+- [x] (P4) Confirmar que imagens de diário usam dimensões fixas — ficheiros: features/garden — validação: revisão. ✓ Verificado: miniaturas com width/height; pré-visualizações com altura CSS fixa (h-32/max-h-60).
+- [x] (P4) Verificar que o vendor chunk não cresceu — ficheiros: build — validação: revisão. ✓ vendor 294.44 kB / 102.10 kB gz (inalterado; plantas vão para o chunk `plants`).
+- [x] (P5) Confirmar que `normalize` não corre em loop quente sem cache — ficheiros: features/catalog — validação: revisão. ✓ searchBlob pré-computado uma vez; por pesquisa só normaliza a query (1×).
+- [x] (P4) Confirmar que `plants` cresce linearmente — ficheiros: build — validação: revisão. ✓ 116 kB / 26.25 kB gz para 57 plantas (~só dados; sem deps extra).
+- [x] (P4) Verificar que `course` chunk é isolado — ficheiros: build — validação: revisão. ✓ course 21.26 kB separado; HealthView/health em chunks próprios.
 
 ## Organização
 - [ ] (P3) Atualizar CLAUDE.md com contagens (57 plantas, 25 receitas, 13 microgreens, 60 glossário, 21 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
