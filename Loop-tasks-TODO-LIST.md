@@ -17,8 +17,8 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Adicionar 1 receita de microgreens (uso em prato) — ficheiros: src/data/recipes.ts — validação: data-integrity.
 
 ## Regras de Negócio
-- [ ] (P2) E2E: diagnóstico por sintomas abre e mostra "o que fazer" — ficheiros: tests/e2e/diagnosis-glossary.spec.ts (novo) — validação: playwright.
-- [ ] (P2) E2E: glossário filtra termos pela pesquisa — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright.
+- [x] (P2) E2E: diagnóstico por sintomas abre e mostra "o que fazer" — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright. ✓ Feito: abre sintoma 'Folhas amarelas' e confirma 'Provavelmente:'. Navega via Perfil (SPA).
+- [x] (P2) E2E: glossário filtra termos pela pesquisa — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright. ✓ Feito: pesquisa 'substrato' mostra Substrato e esconde Vernalização. 7→9 E2E.
 - [ ] (P3) Teste: `data-integrity` garante que toda a receita tem `steps`/`ingredients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
 - [ ] (P3) Teste: `data-integrity` garante grupos de saúde com `whyGood`/`nutrients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
 - [ ] (P3) Teste: cada planta do catálogo pertence a um `nutrientGroup` que a lista (consistência inversa) — ficheiros: tests/data-integrity.test.ts — validação: vitest.
