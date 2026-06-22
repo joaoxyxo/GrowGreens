@@ -78,10 +78,34 @@ function finish() {
   })
   router.push('/desafio')
 }
+
+// Saltar a introdução: marca o onboarding como concluído (com o que já foi
+// preenchido + defaults) e vai direto para a homepage. As preferências podem
+// ser ajustadas depois no Perfil.
+function skip() {
+  settings.completeOnboarding({
+    profileName: name.value.trim(),
+    goal: goal.value,
+    space: space.value,
+    experience: experience.value,
+    zoneCode: zone.value,
+  })
+  router.push('/')
+}
 </script>
 
 <template>
   <div class="flex min-h-screen flex-col px-5 py-6 safe-top safe-bottom">
+    <!-- Saltar a introdução e ir direto para a app -->
+    <div class="mb-2 flex justify-end">
+      <button
+        class="rounded-full px-3 py-1.5 text-sm font-medium text-neutral-500 hover:text-green-600 dark:text-neutral-400"
+        @click="skip"
+      >
+        Saltar →
+      </button>
+    </div>
+
     <ProgressBar v-if="step > 0" :value="step" :max="totalSteps - 1" class="mb-6" />
 
     <div class="flex-1">
