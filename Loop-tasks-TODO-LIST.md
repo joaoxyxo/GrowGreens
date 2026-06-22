@@ -41,16 +41,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Confirmar ausência de avisos de chunk — ficheiros: build — validação: revisão. ✓ Build sem warnings (chunkSizeWarningLimit 600; maior chunk vendor 294 kB).
 
 ## Organização
-- [ ] (P3) Atualizar CLAUDE.md com contagens (59 plantas, 27 receitas, 14 microgreens, 65 glossário, 24 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
-- [ ] (P3) CHANGELOG: entrada para o Ciclo 11 — ficheiros: CHANGELOG.md — validação: presente.
-- [ ] (P4) README: contagem do catálogo (59 culturas) e nº de testes — ficheiros: README.md — validação: coerente.
-- [ ] (P4) docs/ARQUITETURA: nota sobre cobertura E2E (ecrãs cobertos) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
+- [x] (P3) Atualizar CLAUDE.md com contagens — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 59 plantas, 14 microgreens, 27 receitas, 65 glossário, 24 FAQ, 7u/23 lições, 182 unit + 9 E2E.
+- [x] (P3) CHANGELOG: entrada para o Ciclo 11 — ficheiros: CHANGELOG.md — validação: presente. ✓ Feito.
+- [x] (P4) README: catálogo (59 culturas) + nº de testes — ficheiros: README.md — validação: coerente. ✓ Feito: 59 culturas; 182 unit + 9 E2E com ecrãs cobertos.
+- [x] (P4) docs/ARQUITETURA: nota de cobertura E2E — ficheiros: docs/ARQUITETURA.md — validação: coerente. ✓ Feito: lista de 9 ecrãs cobertos + porquê navegar por SPA (guard).
 - [x] (P4) Camadas: features vs lib/db — ficheiros: src/features — validação: revisão. ✓ Verificado: features usam `db` SÓ em liveQueries de LEITURA (where/get/toArray/count); TODAS as mutações passam por repositórios. Padrão local-first deliberado.
-- [ ] (P5) Adicionar JSDoc curto às funções públicas de `streak.ts`/`challenge.ts` sem doc — ficheiros: src/utils — validação: typecheck.
-- [ ] (P4) Verificar que não há `TODO`/`FIXME` por resolver no código — ficheiros: src — validação: grep.
-- [ ] (P5) Confirmar que todos os componentes `ui/` têm props tipadas (sem implicit any) — ficheiros: src/components/ui — validação: typecheck.
-- [ ] (P4) Verificar que os ficheiros de dados não excedem um tamanho razoável (split se preciso) — ficheiros: src/data — validação: revisão.
-- [ ] (P5) Confirmar consistência de fim-de-linha/sem espaços finais (lint/format) — ficheiros: src — validação: format check.
+- [x] (P5) JSDoc em `streak.ts`/`challenge.ts` — ficheiros: src/utils — validação: typecheck. ✓ Já documentadas (applyActivity, computeUnlockedDay, challengeDayState).
+- [x] (P4) Verificar ausência de `TODO`/`FIXME` — ficheiros: src — validação: grep. ✓ Verificado: nenhum TODO/FIXME real (só a palavra 'TODOS' em texto de UI).
+- [x] (P5) Confirmar props tipadas em `ui/` — ficheiros: src/components/ui — validação: typecheck. ✓ Verificado: os 7 componentes usam defineProps<...> tipado.
+- [x] (P4) Verificar tamanho dos data files — ficheiros: src/data — validação: revisão. ✓ plants.ts ~3157 linhas (dados puros lineares, já lazy chunk próprio); split traria complexidade no índice/integridade sem ganho. Restantes ≤731 linhas.
+- [x] (P5) Confirmar fim-de-linha/espaços finais — ficheiros: src — validação: format check. ✓ 0 espaços finais; todos os ficheiros com newline final. (Nota: prettier --check difere em estilo de aspas/quebras em 36 ficheiros, mas o gate efetivo é eslint=0; reformatar em massa fica fora de scope.)
 
 ## Arquivo (ciclos concluídos)
 

@@ -12,7 +12,7 @@ App web (PWA) que ensina horticultura a principiantes, **da semente à colheita*
 ## O que faz
 
 - **Desafio dos microgreens** — onboarding de 7 dias com guião dia a dia (adaptado à variedade), diário com fotos e **cartão de colheita partilhável**. A primeira colheita real.
-- **Catálogo de plantas** — fichas curadas (57 culturas) com valores agronómicos reais para o clima atlântico: quando semear, germinação, profundidade, espaçamento, pH, sol, rega, pragas/doenças, consociação, segurança/toxicidade e benefícios para a saúde. Pesquisa com tolerância a acentos e filtros.
+- **Catálogo de plantas** — fichas curadas (59 culturas) com valores agronómicos reais para o clima atlântico: quando semear, germinação, profundidade, espaçamento, pH, sol, rega, pragas/doenças, consociação, segurança/toxicidade e benefícios para a saúde. Pesquisa com tolerância a acentos e filtros.
 - **A minha horta** — acompanha cada planta por fases (estimadas), com diário, **linha do tempo de fotos**, lembretes de rega, edição e histórico de colheitas.
 - **Plano da horta (espelho digital)** — desenha canteiros, vasos, tabuleiros ou estufa numa grelha, marca o que plantaste em cada lugar, recebe avisos de **boa/má vizinhança** e gera uma **lista de compras**.
 - **Curso** — lições curtas estilo Duolingo (conceitos + quizzes), com XP, sequências (streak com proteção), revisão espaçada e conquistas.
@@ -57,7 +57,7 @@ npm run lint          # ESLint
 
 ## Testes
 
-Lógica de domínio (utils, stores, repositórios) coberta por testes unitários (Vitest) e testes E2E (Playwright). A integridade dos dados do catálogo é validada em `tests/data-integrity.test.ts`. Corre `npm run test:coverage` para o relatório de cobertura (mínimos configurados em `vitest.config.ts`).
+Lógica de domínio (utils, stores, repositórios) coberta por **182 testes unitários** (Vitest) e **9 testes E2E** (Playwright, fluxos de onboarding, catálogo, horta, calendário, curso, perfil, planeador, diagnóstico e glossário). A integridade dos dados do catálogo é validada em `tests/data-integrity.test.ts`. Corre `npm run test:coverage` para o relatório de cobertura (mínimos configurados em `vitest.config.ts`).
 
 ## Tamanho do bundle
 
