@@ -242,6 +242,7 @@ watch(
             </div>
             <button
               class="flex-shrink-0 rounded-full bg-green-500 px-3 py-1.5 text-sm font-semibold text-white"
+              :aria-label="`Adicionar ${p.name} à minha horta`"
               @click="addRecommended(p.slug)"
             >
               ＋
