@@ -17,16 +17,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Enriquecer 1 dica mensal (MONTHLY_TIPS) que esteja vaga — ficheiros: src/data/calendar.ts — validação: build.
 
 ## Regras de Negócio
-- [ ] (P2) Teste: `data-integrity` garante que cada planta tem `in30Seconds`/`growingTips` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P3) Teste: `wateringAdvice` (useWeather) devolve conselho por chuva/calor — ficheiros: tests/weather.test.ts — validação: vitest.
-- [ ] (P3) Teste: `weatherTypeInfo` mapeia tipos conhecidos e cai no fallback — ficheiros: tests/composables.test.ts — validação: vitest.
-- [ ] (P3) Teste: progress store `addXp`/`unlock` não duplica conquistas — ficheiros: tests/progress.test.ts — validação: vitest.
-- [ ] (P3) Teste: `calendarForPlant` desloca sementeira mas não colheita (litoral_sul) — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P3) Teste: `bedsRepo.update` clampa as dimensões da grelha — ficheiros: tests/repositories.test.ts — validação: vitest.
-- [ ] (P4) Teste: `recipesForPlant` consistente com data-integrity (plantas existem) — ficheiros: tests/recipes.test.ts — validação: vitest.
-- [ ] (P4) Teste: todas as lições têm pelo menos um passo `summary` — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P4) Teste: `troubleshoot` SYMPTOMS têm `whatToDo` não vazio — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P4) Teste: `MICROGREENS` têm `flavour` e `note` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
+- [x] (P2) Teste: cada planta tem `in30Seconds`/`growingTips`/`shortDescription` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P3) Teste: `wateringAdvice` por chuva/calor — ficheiros: tests/weather.test.ts — validação: vitest. ✓ Já coberto (chuva, calor, ameno, vazio).
+- [x] (P3) Teste: `weatherTypeInfo` conhecido + fallback — ficheiros: tests/composables.test.ts — validação: vitest. ✓ Já coberto.
+- [x] (P3) Teste: progress `addXp`/`unlock` não duplica — ficheiros: tests/progress.test.ts — validação: vitest. ✓ Já coberto ('unlock só desbloqueia uma vez', 'idempotente').
+- [x] (P3) Teste: `calendarForPlant` desloca sementeira não colheita — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Já coberto (litoral_sul antecipa; colheita não desloca).
+- [x] (P3) Teste: `bedsRepo.update` clampa dimensões — ficheiros: tests/repositories.test.ts — validação: vitest. ✓ CORRIGIDO: update não clampava; agora clampa rows/cols a 1-12 como create. +teste.
+- [x] (P4) Teste: `recipesForPlant` consistente (plantas existem) — ficheiros: tests/recipes.test.ts — validação: vitest. ✓ Já coberto (recipes.test + data-integrity validam r.plants).
+- [x] (P4) Teste: todas as lições têm passo `summary` — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: SYMPTOMS têm `whatToDo`/`likely` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: `MICROGREENS` têm `flavour`/`note` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
 - [ ] (P4) Confirmar que o `recipes` chunk fica separado e lazy — ficheiros: build — validação: revisão.

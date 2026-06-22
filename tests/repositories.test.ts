@@ -152,6 +152,14 @@ describe('repositórios (local-first)', () => {
     expect(bed.cols).toBeGreaterThanOrEqual(1)
   })
 
+  it('planeador: update clampa as dimensões da grelha (1-12)', async () => {
+    const bed = await bedsRepo.create({ name: 'Y', kind: 'canteiro', rows: 4, cols: 4 })
+    await bedsRepo.update(bed.id, { rows: 99, cols: 0 })
+    const saved = await bedsRepo.get(bed.id)
+    expect(saved!.rows).toBeLessThanOrEqual(12)
+    expect(saved!.cols).toBeGreaterThanOrEqual(1)
+  })
+
   it('cria lembrete de adubação para plantas de fruto, mas não para folhas', async () => {
     const tomate = await plantingsRepo.create({
       plantSlug: 'tomate',

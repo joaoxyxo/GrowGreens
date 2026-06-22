@@ -136,6 +136,35 @@ describe('integridade do núcleo agronómico', () => {
     expect(radish?.daysToHarvest[0]).toBeLessThanOrEqual(7)
   })
 
+  it('cada planta tem textos essenciais não vazios (in30Seconds, growingTips)', () => {
+    for (const p of PLANTS) {
+      expect(p.in30Seconds.length, `${p.slug} sem in30Seconds`).toBeGreaterThan(0)
+      expect(p.in30Seconds.every((t) => t.trim().length > 0), `${p.slug} in30Seconds vazio`).toBe(true)
+      expect(p.growingTips.trim().length, `${p.slug} sem growingTips`).toBeGreaterThan(0)
+      expect(p.shortDescription.trim().length, `${p.slug} sem shortDescription`).toBeGreaterThan(0)
+    }
+  })
+
+  it('cada lição tem pelo menos um passo de resumo (summary)', () => {
+    for (const l of LESSONS) {
+      expect(l.steps.some((s) => s.kind === 'summary'), `${l.id} sem summary`).toBe(true)
+    }
+  })
+
+  it('cada sintoma tem o que fazer (whatToDo) não vazio', () => {
+    for (const sym of SYMPTOMS) {
+      expect(sym.whatToDo.length, `${sym.id} sem whatToDo`).toBeGreaterThan(0)
+      expect(sym.likely.trim().length, `${sym.id} sem likely`).toBeGreaterThan(0)
+    }
+  })
+
+  it('cada microgreen tem flavour e note não vazios', () => {
+    for (const m of MICROGREENS) {
+      expect(m.flavour.trim().length, `${m.slug} sem flavour`).toBeGreaterThan(0)
+      expect(m.note.trim().length, `${m.slug} sem note`).toBeGreaterThan(0)
+    }
+  })
+
   it('o curso é coerente (lições das unidades existem)', () => {
     for (const u of COURSE_UNITS) {
       for (const lid of u.lessonIds) expect(LESSONS_BY_ID[lid], lid).toBeTruthy()
