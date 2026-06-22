@@ -1,7 +1,8 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
 import { useSettingsStore, sanitizeZone } from '@/stores/settings'
 import { CLIMATE_ZONES } from '@/data/calendar'
+import { getMeta } from '@/lib/db/meta'
 
 describe('settings — load e tema', () => {
   beforeEach(() => setActivePinia(createPinia()))
@@ -26,6 +27,17 @@ describe('settings — load e tema', () => {
     settings.state.theme = 'light'
     settings.applyTheme()
     expect(document.documentElement.classList.contains('dark')).toBe(false)
+  })
+
+  it('persiste o estado (objeto simples, sem proxy reativo) em meta após load', async () => {
+    const settings = useSettingsStore()
+    await settings.load()
+    settings.state.profileName = 'Maria'
+    // O watch persiste via setMeta; não deve lançar DataCloneError (proxy → objeto simples).
+    await vi.waitFor(async () => {
+      const saved = await getMeta<{ profileName?: string }>('settings', {})
+      expect(saved.profileName).toBe('Maria')
+    })
   })
 })
 
