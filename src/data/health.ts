@@ -1,5 +1,6 @@
 import type { NutrientGroup } from '@/types/catalog'
 
+/** Grupos nutricionais das culturas (folhas verdes, brássicas, etc.) com benefícios e cautelas. */
 export const NUTRIENT_GROUPS: NutrientGroup[] = [
   {
     code: 'folhas_verdes',
@@ -95,9 +96,11 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
   },
 ]
 
+/** Índice dos grupos nutricionais por código (acesso O(1) a partir de `Plant.nutrientGroup`). */
 export const NUTRIENT_GROUPS_BY_CODE: Record<string, NutrientGroup> = Object.fromEntries(
   NUTRIENT_GROUPS.map((g) => [g.code, g]),
 )
 
+/** Aviso legal mostrado nos ecrãs de saúde/nutrição. */
 export const HEALTH_DISCLAIMER =
   'Esta informação é educativa e baseada em evidência geral. Não substitui aconselhamento médico ou nutricional individual.'

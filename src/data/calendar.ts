@@ -220,6 +220,7 @@ function computeCalendarFor(zone: string, month: number) {
   }))
 }
 
+/** Calendário de uma planta numa zona, com sementeiras/transplantes deslocados pelo clima da zona (colheita não desloca). */
 export function calendarForPlant(plant: string, zone: string) {
   const delta = ZONE_SHIFT[zone] ?? 0
   return CALENDAR.filter((e) => e.plant === plant).map((base) => ({
@@ -232,6 +233,7 @@ export function calendarForPlant(plant: string, zone: string) {
 // Cache por zona+mês: o calendário é estático, logo o resultado é determinístico.
 const sowableCache = new Map<string, Set<string>>()
 
+/** Conjunto de slugs de plantas com sementeira (direta ou interior) numa zona/mês. Cacheado. */
 export function plantSowableThisMonth(zone: string, month: number): Set<string> {
   const key = `${zone}-${month}`
   const cached = sowableCache.get(key)

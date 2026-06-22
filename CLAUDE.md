@@ -2,7 +2,7 @@
 
 PWA local-first que ensina horticultura a principiantes, da semente à colheita, calibrada para o clima de Portugal (litoral atlântico). Funciona offline e instala-se como app. Interface em **pt-PT**.
 
-> Escala atual (referência): **53 plantas** no catálogo · **11 microgreens** · **21 receitas** · **50 termos** de glossário · **15 FAQ** · curso com **7 unidades / 20 lições** · **161 testes** unitários (Vitest, 22 ficheiros) + **7 E2E** (Playwright) verdes · lint 0.
+> Escala atual (referência): **55 plantas** no catálogo · **12 microgreens** · **23 receitas** · **55 termos** de glossário · **18 FAQ** · curso com **7 unidades / 21 lições** · **169 testes** unitários (Vitest, 22 ficheiros) + **7 E2E** (Playwright) verdes · lint 0.
 
 ## Stack
 

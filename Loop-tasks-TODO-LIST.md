@@ -41,16 +41,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Confirmar purge do CSS Tailwind — ficheiros: build — validação: revisão. ✓ Verificado: CSS final 39.99 kB / 7.53 kB gz (Tailwind v4 só inclui classes usadas).
 
 ## Organização
-- [ ] (P3) Adicionar `aria-label` a botões-ícone sem rótulo (auditar features) — ficheiros: src/features — validação: revisão/lint.
-- [ ] (P3) Atualizar CLAUDE.md com contagens (55 plantas, 23 receitas, 12 microgreens, 55 glossário, 18 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
-- [ ] (P3) CHANGELOG: entrada para o Ciclo 9 — ficheiros: CHANGELOG.md — validação: presente.
-- [ ] (P4) README: contagem do catálogo (55 culturas) — ficheiros: README.md — validação: coerente.
-- [ ] (P4) docs/ARQUITETURA: secção "Componentes UI" (design system em components/ui) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
-- [ ] (P4) Confirmar que `src/components` não importam de `src/features` — ficheiros: src/components — validação: grep limpo.
-- [ ] (P5) Adicionar JSDoc curto às funções públicas de `health.ts`/`calendar.ts` sem doc — ficheiros: src/data — validação: typecheck.
-- [ ] (P4) Verificar que não há `any` explícito novo em src (qualidade de tipos) — ficheiros: src — validação: grep/lint.
-- [ ] (P5) Confirmar consistência de emojis nos dados (cada item tem emoji) — ficheiros: src/data — validação: revisão.
-- [ ] (P4) Verificar que todos os ecrãs (features) têm rota no router — ficheiros: src/router — validação: revisão.
+- [x] (P3) Adicionar `aria-label` a botões-ícone sem rótulo — ficheiros: src/features — validação: revisão. ✓ Feito: botão ＋ de recomendações no Home (os de curso/calendário já tinham). Auditoria: restantes ✕/‹/› já rotulados.
+- [x] (P3) Atualizar CLAUDE.md com contagens — ficheiros: CLAUDE.md — validação: coerente. ✓ Feito: 55 plantas, 12 microgreens, 23 receitas, 55 glossário, 18 FAQ, 7u/21 lições, 169 unit + 7 E2E.
+- [x] (P3) CHANGELOG: entrada para o Ciclo 9 — ficheiros: CHANGELOG.md — validação: presente. ✓ Feito.
+- [x] (P4) README: contagem do catálogo (55 culturas) — ficheiros: README.md — validação: coerente. ✓ Feito.
+- [x] (P4) docs/ARQUITETURA: secção "Componentes UI" — ficheiros: docs/ARQUITETURA.md — validação: coerente. ✓ Feito: BaseButton, AppCard, Badge/StatChip, DifficultyDots, ProgressBar, EmptyState.
+- [x] (P4) Confirmar que `src/components` não importam de `src/features` — ficheiros: src/components — validação: grep limpo. ✓ Verificado.
+- [x] (P5) Adicionar JSDoc a funções públicas de `health.ts`/`calendar.ts` — ficheiros: src/data — validação: typecheck. ✓ Feito: NUTRIENT_GROUPS(_BY_CODE), HEALTH_DISCLAIMER, calendarForPlant, plantSowableThisMonth.
+- [x] (P4) Verificar que não há `any` explícito em src — ficheiros: src — validação: grep. ✓ CORRIGIDO: o único `any` (mapeamento IPMA em useWeather) foi tipado com interface `IpmaDay`. 0 `any` em src.
+- [x] (P5) Confirmar consistência de emojis nos dados — ficheiros: src/data — validação: revisão. ✓ Verificado: contagem de emoji = nº de itens em plantas/microgreens/receitas/glossário/FAQ/conquistas/pragas/sintomas.
+- [x] (P4) Verificar que todos os ecrãs têm rota no router — ficheiros: src/router — validação: revisão. ✓ Verificado: os 13 features têm rota (catalogo, jardim, curso, saude, calendario, perfil, diagnostico, glossario, legal, onboarding, desafio, home).
 
 ## Arquivo (ciclos concluídos)
 

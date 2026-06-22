@@ -36,6 +36,19 @@ Dexie / IndexedDB (src/lib/db/)
 
 `src/composables/useLiveQuery.ts` liga consultas Dexie a refs reativas. `src/composables/useReminders.ts` mantém uma única subscrição `liveQuery` partilhada por toda a app (Home, Horta, Planeador) para evitar consultas duplicadas. Funções de domínio puras (em `src/utils/`) são testáveis isoladamente.
 
+## Componentes UI (`src/components/ui/`)
+
+Pequeno design system partilhado, sem lógica de domínio (recebem props, emitem eventos):
+
+- `BaseButton` — botão com variantes (primário/secundário/ghost) e estado.
+- `AppCard` — cartão com sombra/borda consistentes, usado em listas e detalhes.
+- `Badge` / `StatChip` — etiquetas e métricas compactas (com `title` para a11y).
+- `DifficultyDots` — pontos de dificuldade (fácil/médio/difícil).
+- `ProgressBar` — barra de progresso (curso, fases, desafio).
+- `EmptyState` — estado vazio com emoji, título e ação.
+
+Todos têm testes em `tests/components.test.ts` e não importam de `features/`.
+
 ## Composables (`src/composables/`)
 
 Pequenas peças de estado reativo reutilizável, sem dependências de `features/`:
