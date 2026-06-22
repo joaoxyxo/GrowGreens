@@ -62,7 +62,7 @@ export const COURSE_UNITS: CourseUnit[] = [
     description: 'Fecha o ciclo: colhe e guarda sementes para o próximo ano.',
     emoji: '🫙',
     color: 'sun',
-    lessonIds: ['l7-1', 'l7-2'],
+    lessonIds: ['l7-1', 'l7-2', 'l7-3'],
   },
 ]
 
@@ -666,6 +666,35 @@ export const LESSONS: Lesson[] = [
         explanation: 'Falso — as de cebola e alho-francês perdem germinação em 1-2 anos. Usa-as cedo.',
       },
       { kind: 'summary', bullets: ['Data sempre os envelopes.', 'Umas duram anos, outras só 1-2.', 'Testa a germinação no papel húmido em caso de dúvida.'] },
+    ],
+  },
+  {
+    id: 'l7-3',
+    unitId: 'u7',
+    title: 'Trocar e partilhar sementes',
+    subtitle: 'Mais variedade, custo zero.',
+    xp: 15,
+    steps: [
+      {
+        kind: 'concept',
+        emoji: '🤝',
+        title: 'Trocas e bancos de sementes',
+        body: 'Guardar sementes abre a porta a trocá-las com vizinhos, em feiras ou bancos de sementes. Ganhas variedade e variedades locais já adaptadas à tua zona — muitas vezes mais resistentes que as comerciais.',
+      },
+      {
+        kind: 'concept',
+        emoji: '🏷️',
+        title: 'Como partilhar bem',
+        body: 'Partilha sementes secas, limpas e etiquetadas (nome, ano e, se souberes, a variedade). Diz se são de polinização aberta. Sementes bem identificadas valem muito mais para quem as recebe.',
+      },
+      {
+        kind: 'truefalse',
+        question: 'Variedades locais costumam estar melhor adaptadas ao clima da região.',
+        options: ['Verdadeiro', 'Falso'],
+        correctIndex: 0,
+        explanation: 'Verdadeiro — foram selecionadas ao longo do tempo nesse clima e solo, por isso tendem a ser mais resistentes.',
+      },
+      { kind: 'summary', bullets: ['Trocar sementes dá variedade de graça.', 'Variedades locais adaptam-se melhor.', 'Partilha sementes secas, limpas e etiquetadas.'] },
     ],
   },
 ]

@@ -485,6 +485,48 @@ export const RECIPES: Recipe[] = [
     ],
     plants: ['pimento', 'alho', 'salsa'],
   },
+  {
+    slug: 'esparregado-nabicas',
+    title: 'Esparregado de nabiças',
+    emoji: '🥬',
+    description: 'Cremoso e tradicional — o melhor destino para os grelos e folhas de nabo da horta.',
+    prepMinutes: 20,
+    difficulty: 'facil',
+    season: ['outono', 'inverno'],
+    ingredients: [
+      'Um molho grande de nabiças (folhas de nabo)',
+      '2 dentes de alho',
+      'Azeite, farinha (1 c. sopa), sal',
+      'Pingo de vinagre ou limão',
+    ],
+    steps: [
+      'Coze as nabiças em água com sal, escorre (guarda um pouco da água) e pica grosseiramente.',
+      'Refoga o alho em azeite, junta a farinha e mexe; adiciona as nabiças e um pouco da água.',
+      'Apura até cremoso, tempera e finaliza com um pingo de vinagre.',
+    ],
+    plants: ['nabica', 'alho'],
+  },
+  {
+    slug: 'beringela-no-forno',
+    title: 'Beringela no forno com alho e ervas',
+    emoji: '🍆',
+    description: 'Macia por dentro e dourada por fora — simples e cheia de sabor.',
+    prepMinutes: 35,
+    difficulty: 'facil',
+    season: ['verao', 'outono'],
+    ingredients: [
+      '2 beringelas às rodelas',
+      '2 dentes de alho picados',
+      'Azeite, sal, orégãos',
+      'Salsa ou manjericão a gosto',
+    ],
+    steps: [
+      'Dispõe as rodelas num tabuleiro, pincela com azeite e tempera com sal e orégãos.',
+      'Leva ao forno a 200 °C ~25-30 min, virando a meio, até dourarem.',
+      'Polvilha com alho e ervas frescas ao sair. Serve morna.',
+    ],
+    plants: ['beringela', 'alho', 'oregaos', 'manjericao'],
+  },
 ]
 
 export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(

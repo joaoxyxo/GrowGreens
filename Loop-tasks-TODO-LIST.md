@@ -1,15 +1,15 @@
 # Loop Tasks — TODO List
-Ciclo: 9 · Atualizado: 2026-06-22 17:00
+Ciclo: 9 · Atualizado: 2026-06-22 18:30 · 39/40 concluídas + 1 N/A
 
 Estados: `[ ]` pendente · `[x]` concluída (+nota/commit) · `[!]` bloqueada (+motivo).
 Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4. Testes: Vitest (+@vue/test-utils, coverage v8) + Playwright. Lint: ESLint. Format: Prettier. npm. 55 plantas, 12 microgreens, 23 receitas, 55 glossário, 18 FAQ, 14 sintomas, 161 unit + 7 e2e.
 
 ## Conteúdo
-- [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: grão-de-bico, espargo) com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
-- [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: nabo, beringela, melão) — ficheiros: src/data/recipes.ts — validação: data-integrity.
+- [x] (P3) Adicionar 2 plantas novas ao catálogo com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: data-integrity. ✓ Feito: grão-de-bico (leguminosa) e espargo (perene, com toxicNote das bagas). 55→57.
+- [x] (P4) Adicionar 2 receitas para plantas ainda sem receita — ficheiros: src/data/recipes.ts — validação: data-integrity. ✓ Feito: esparregado de nabiças; beringela no forno. 23→25.
 - [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: enxertia, pousio, terra de diatomáceas, polinizador, estiagem (→60).
 - [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: substrato, varanda meia-sombra, composto na varanda (→21).
-- [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
+- [x] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build. ✓ Feito: l7-3 'Trocar e partilhar sementes' (u7). 21→22 lições.
 - [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'raizes-com-galhas' → ['nematodes'].
 - [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: linhaça (→13).
 - [x] (P4) Enriquecer 1 grupo de saúde — ficheiros: src/data/health.ts — validação: build. ✓ Feito: aromáticas com nutriente (ferro/cálcio) e caution (gravidez).

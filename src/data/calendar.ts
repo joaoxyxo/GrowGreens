@@ -171,6 +171,10 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'physalis', zone: 'litoral_norte', action: 'sementeira_interior', months: [2, 3] },
   { plant: 'physalis', zone: 'litoral_norte', action: 'transplante', months: [5, 6] },
   { plant: 'physalis', zone: 'litoral_norte', action: 'colheita', months: [8, 9, 10] },
+  { plant: 'grao-de-bico', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4] },
+  { plant: 'grao-de-bico', zone: 'litoral_norte', action: 'colheita', months: [7, 8] },
+  { plant: 'espargo', zone: 'litoral_norte', action: 'transplante', months: [2, 3] },
+  { plant: 'espargo', zone: 'litoral_norte', action: 'colheita', months: [3, 4, 5] },
 ]
 
 export const CALENDAR_ACTION_LABELS: Record<string, { label: string; emoji: string }> = {
