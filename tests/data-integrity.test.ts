@@ -165,6 +165,54 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('cada receita tem ingredientes e passos não vazios', () => {
+    for (const r of RECIPES) {
+      expect(r.ingredients.length, `${r.slug} sem ingredientes`).toBeGreaterThan(0)
+      expect(r.steps.length, `${r.slug} sem passos`).toBeGreaterThan(0)
+      expect(r.ingredients.every((i) => i.trim().length > 0), `${r.slug} ingrediente vazio`).toBe(true)
+      expect(r.steps.every((s) => s.trim().length > 0), `${r.slug} passo vazio`).toBe(true)
+    }
+  })
+
+  it('cada grupo de saúde tem whyGood e nutrients não vazios', () => {
+    for (const g of Object.values(NUTRIENT_GROUPS_BY_CODE)) {
+      expect(g.whyGood.length, `${g.code} sem whyGood`).toBeGreaterThan(0)
+      expect(g.nutrients.length, `${g.code} sem nutrients`).toBeGreaterThan(0)
+    }
+  })
+
+  it('as plantas listadas em cada grupo de saúde existem no catálogo', () => {
+    for (const g of Object.values(NUTRIENT_GROUPS_BY_CODE)) {
+      for (const slug of g.plants) {
+        expect(PLANTS_BY_SLUG[slug], `grupo ${g.code} -> ${slug}`).toBeTruthy()
+      }
+    }
+  })
+
+  it('FAQ e glossário têm emoji em todas as entradas', () => {
+    for (const f of FAQ) expect(f.emoji.trim().length, `FAQ "${f.q}" sem emoji`).toBeGreaterThan(0)
+    for (const t of GLOSSARY) expect(t.emoji.trim().length, `glossário "${t.term}" sem emoji`).toBeGreaterThan(0)
+  })
+
+  it('nenhuma planta lista a si própria como companheira ou antagonista', () => {
+    for (const p of PLANTS) {
+      expect(p.companions.includes(p.slug), `${p.slug} é companheira de si própria`).toBe(false)
+      expect(p.antagonists.includes(p.slug), `${p.slug} é antagonista de si própria`).toBe(false)
+    }
+  })
+
+  it('passos de quiz têm correctIndex dentro do nº de opções', () => {
+    for (const l of LESSONS) {
+      for (const s of l.steps) {
+        if (s.kind === 'choice' || s.kind === 'truefalse') {
+          const n = s.options?.length ?? 0
+          expect(s.correctIndex, `${l.id}: correctIndex`).toBeGreaterThanOrEqual(0)
+          expect(s.correctIndex!, `${l.id}: correctIndex < opções`).toBeLessThan(n)
+        }
+      }
+    }
+  })
+
   it('o curso é coerente (lições das unidades existem)', () => {
     for (const u of COURSE_UNITS) {
       for (const lid of u.lessonIds) expect(LESSONS_BY_ID[lid], lid).toBeTruthy()

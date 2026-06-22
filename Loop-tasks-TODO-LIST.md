@@ -19,14 +19,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Regras de Negócio
 - [x] (P2) E2E: diagnóstico por sintomas abre e mostra "o que fazer" — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright. ✓ Feito: abre sintoma 'Folhas amarelas' e confirma 'Provavelmente:'. Navega via Perfil (SPA).
 - [x] (P2) E2E: glossário filtra termos pela pesquisa — ficheiros: tests/e2e/diagnosis-glossary.spec.ts — validação: playwright. ✓ Feito: pesquisa 'substrato' mostra Substrato e esconde Vernalização. 7→9 E2E.
-- [ ] (P3) Teste: `data-integrity` garante que toda a receita tem `steps`/`ingredients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P3) Teste: `data-integrity` garante grupos de saúde com `whyGood`/`nutrients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P3) Teste: cada planta do catálogo pertence a um `nutrientGroup` que a lista (consistência inversa) — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P3) Teste: `estimateStage` nunca devolve `index` fora de [0, total-1] — ficheiros: tests/growth.test.ts — validação: vitest.
-- [ ] (P3) Teste: `challengeDayState` no dia 7 com tudo feito → done — ficheiros: tests/challenge.test.ts — validação: vitest.
-- [ ] (P4) Teste: `FAQ` e `GLOSSARY` têm emoji em todas as entradas — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P4) Teste: lições com passos `choice`/`truefalse` têm `correctIndex` dentro do nº de opções — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P4) Teste: nenhuma planta lista a si própria como companheira/antagonista — ficheiros: tests/data-integrity.test.ts — validação: vitest.
+- [x] (P3) Teste: receitas com `steps`/`ingredients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P3) Teste: grupos de saúde com `whyGood`/`nutrients` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P3) Teste: consistência grupos de saúde ↔ catálogo — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito (forward): as plantas listadas em cada grupo existem no catálogo. (A inversa não se aplica: group.plants é subconjunto curado, não exaustivo — cada planta já valida nutrientGroup existente noutro teste.)
+- [x] (P3) Teste: `estimateStage` index em [0, total-1] — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito: vários daysOld (negativos/futuro).
+- [x] (P3) Teste: `challengeDayState` dia 7 concluído → done — ficheiros: tests/challenge.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: `FAQ`/`GLOSSARY` com emoji em todas as entradas — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: quiz `correctIndex` dentro do nº de opções — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: planta não é companheira/antagonista de si própria — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
 - [ ] (P4) Confirmar que o ecrã de diagnóstico não importa `compressImage` no arranque (lazy) — ficheiros: features/diagnosis — validação: revisão.

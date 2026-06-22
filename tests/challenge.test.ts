@@ -42,4 +42,8 @@ describe('challengeDayState', () => {
   it('dias acima do desbloqueado ficam locked', () => {
     expect(challengeDayState(5, 3, [])).toBe('locked')
   })
+
+  it('dia 7 concluído (desafio terminado) fica done', () => {
+    expect(challengeDayState(7, 7, [0, 1, 2, 3, 4, 5, 6, 7])).toBe('done')
+  })
 })

@@ -52,6 +52,14 @@ describe('estimateStage', () => {
     expect(estimateStage(p, 3).total).toBe(p.stages.length)
     expect(estimateStage(p, 999).total).toBe(p.stages.length)
   })
+
+  it('index nunca sai de [0, total-1] para qualquer daysOld', () => {
+    for (const d of [-100, -1, 0, 1, 15, 35, 70, 500, 99999]) {
+      const r = estimateStage(p, d)
+      expect(r.index, `daysOld=${d}`).toBeGreaterThanOrEqual(0)
+      expect(r.index, `daysOld=${d}`).toBeLessThan(r.total)
+    }
+  })
 })
 
 describe('defaultWateringDays', () => {
