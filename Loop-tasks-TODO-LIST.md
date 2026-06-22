@@ -20,13 +20,13 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P2) Título do documento por rota — ficheiros: src/router/index.ts — validação: typecheck + build. ✓ Feito: meta.title em todas as rotas + afterEach define `<título> · GrowGreens`.
 - [x] (P3) Teste: cada rota nomeada tem `meta.title` — ficheiros: tests/router.test.ts — validação: vitest. ✓ Feito + allowAnon e hideTabBar. (Testes de navegação evitados por serem flaky com singleton+pinia; guard coberto por E2E.)
 - [x] (P3) Guard de onboarding — ficheiros: tests/router.test.ts/e2e — validação: vitest+playwright. ✓ Coberto: E2E (completeOnboarding atravessa o guard) + unit confirma allowAnon na rota de onboarding. Navegação no guard não testada em unit por flakiness do router singleton.
-- [ ] (P3) Teste: `data-integrity` garante que cada planta tem `portugalNotes`/`harvestNotes` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P3) Teste: `data-integrity` garante `toxicNote` quando há partes não comestíveis tóxicas (petSafe=false) — ficheiros: tests/data-integrity.test.ts — validação: vitest (já existe? reforçar).
-- [ ] (P3) Teste: `recipesForPlant` devolve receitas ordenáveis e sem duplicados — ficheiros: tests/recipes.test.ts — validação: vitest.
-- [ ] (P3) Teste: `MONTHLY_TIPS` tem entrada para os 12 meses — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P4) Teste: `soilTipForMonth` cobre todos os meses (1-12) sem cair em vazio — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P4) Teste: `achievementToast` devolve string não vazia para todos os códigos — ficheiros: tests/progress.test.ts — validação: vitest.
-- [ ] (P4) Teste: catálogo tem variedade de categorias (folha, fruto, raiz, leguminosa, aromática) — ficheiros: tests/data-integrity.test.ts — validação: vitest.
+- [x] (P3) Teste: planta com `portugalNotes`/`harvestNotes` não vazios — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
+- [x] (P3) Teste: `toxicNote` quando petSafe=false — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Já coberto ('plantas não seguras para animais têm nota de toxicidade').
+- [x] (P3) Teste: `recipesForPlant` sem duplicados — ficheiros: tests/recipes.test.ts — validação: vitest. ✓ Feito (tomate/alho/cebola).
+- [x] (P3) Teste: `MONTHLY_TIPS` cobre os 12 meses — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: `soilTipForMonth` cobre 1-12 — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito.
+- [x] (P4) Teste: `achievementToast` não vazio p/ todos os códigos — ficheiros: tests/progress.test.ts — validação: vitest. ✓ Feito (itera ACHIEVEMENTS, contém o nome).
+- [x] (P4) Teste: catálogo com variedade de categorias — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
 - [ ] (P4) Confirmar que o `document.title` não causa re-render desnecessário — ficheiros: src/router — validação: revisão.

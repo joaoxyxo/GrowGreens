@@ -145,6 +145,20 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('cada planta tem portugalNotes e harvestNotes não vazios', () => {
+    for (const p of PLANTS) {
+      expect(p.portugalNotes.trim().length, `${p.slug} sem portugalNotes`).toBeGreaterThan(0)
+      expect(p.harvestNotes.trim().length, `${p.slug} sem harvestNotes`).toBeGreaterThan(0)
+    }
+  })
+
+  it('o catálogo tem variedade de categorias', () => {
+    const cats = new Set(PLANTS.map((p) => p.category))
+    for (const c of ['folha', 'fruto', 'raiz', 'leguminosa', 'aromatica']) {
+      expect(cats.has(c as never), `falta categoria ${c}`).toBe(true)
+    }
+  })
+
   it('cada lição tem pelo menos um passo de resumo (summary)', () => {
     for (const l of LESSONS) {
       expect(l.steps.some((s) => s.kind === 'summary'), `${l.id} sem summary`).toBe(true)

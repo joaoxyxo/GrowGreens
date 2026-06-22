@@ -21,4 +21,11 @@ describe('recipesForPlant', () => {
     expect(recipesForPlant('chicoria').some((r) => r.slug === 'chicoria-salteada-alho')).toBe(true)
     expect(recipesForPlant('alcachofra').some((r) => r.slug === 'alcachofras-estufadas')).toBe(true)
   })
+
+  it('não devolve receitas duplicadas para uma planta', () => {
+    for (const slug of ['tomate', 'alho', 'cebola']) {
+      const slugs = recipesForPlant(slug).map((r) => r.slug)
+      expect(new Set(slugs).size, slug).toBe(slugs.length)
+    }
+  })
 })

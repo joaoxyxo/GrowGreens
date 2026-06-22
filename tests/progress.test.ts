@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
 import { useProgressStore } from '@/stores/progress'
-import { achievementToast } from '@/data/achievements'
+import { achievementToast, ACHIEVEMENTS } from '@/data/achievements'
 
 describe('progress — lições e XP', () => {
   beforeEach(() => setActivePinia(createPinia()))
@@ -35,6 +35,14 @@ describe('progress — lições e XP', () => {
   it('achievementToast usa a definição; fallback para código desconhecido', () => {
     expect(achievementToast('semeador')).toContain('Semeador')
     expect(achievementToast('codigo_zzz')).toContain('Conquista')
+  })
+
+  it('achievementToast devolve string não vazia para todos os códigos definidos', () => {
+    for (const a of ACHIEVEMENTS) {
+      const toast = achievementToast(a.code)
+      expect(toast.trim().length, a.code).toBeGreaterThan(0)
+      expect(toast, a.code).toContain(a.name)
+    }
   })
 
   it('atingir 10 lições satisfaz a condição da conquista "estudioso"', () => {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calendarForPlant, plantSowableThisMonth, calendarFor, soilTipForMonth } from '@/data/calendar'
+import { calendarForPlant, plantSowableThisMonth, calendarFor, soilTipForMonth, MONTHLY_TIPS } from '@/data/calendar'
 
 describe('calendarForPlant', () => {
   it('devolve apenas entradas da planta pedida', () => {
@@ -84,5 +84,19 @@ describe('soilTipForMonth', () => {
     expect(soilTipForMonth(7)).toMatch(/Verão/)
     expect(soilTipForMonth(10)).toMatch(/Outono/)
     expect(soilTipForMonth(1)).toMatch(/Inverno/)
+  })
+
+  it('devolve uma dica não vazia para todos os meses (1-12)', () => {
+    for (let m = 1; m <= 12; m++) {
+      expect(soilTipForMonth(m).trim().length, `mês ${m}`).toBeGreaterThan(0)
+    }
+  })
+})
+
+describe('MONTHLY_TIPS', () => {
+  it('tem uma dica não vazia para os 12 meses', () => {
+    for (let m = 1; m <= 12; m++) {
+      expect(MONTHLY_TIPS[m]?.trim().length, `mês ${m}`).toBeGreaterThan(0)
+    }
   })
 })
