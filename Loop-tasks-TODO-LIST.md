@@ -29,16 +29,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: `successionDays` só culturas de corte rápido — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito: folhas/rabanete >0; tomate/alcachofra/morango null.
 
 ## Performance
-- [ ] (P4) Confirmar que `health`/`troubleshoot` ficam em chunks fora da entrada — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar que a imagem de pré-visualização do diário liberta o objectURL — ficheiros: features/garden — validação: revisão.
-- [ ] (P4) Confirmar que o catálogo não recalcula `searchBlob` a cada tecla — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Verificar que o número de chunks JS se mantém razoável (sem explosão) — ficheiros: build — validação: revisão.
-- [ ] (P5) Avaliar `loading=lazy` em ícones/emojis pesados (n/a se só texto) — ficheiros: features — validação: revisão.
-- [ ] (P4) Confirmar que o service worker não pré-carrega o `plants` chunk desnecessariamente — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar que `useWeather` não dispara fetch sem zona definida — ficheiros: composables — validação: revisão.
-- [ ] (P5) Confirmar que listas do catálogo não re-renderizam sem mudança (v-memo) — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Verificar gzip total dos assets de entrada (< ~120 KB) — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que o CSS não inclui utilitários Tailwind não usados (purge) — ficheiros: build — validação: revisão.
+- [x] (P4) Confirmar que `health`/`troubleshoot` ficam em chunks fora da entrada — ficheiros: build — validação: revisão. ✓ Verificado: HealthView/health em chunks próprios; entrada index ~30 kB.
+- [x] (P4) Verificar que a pré-visualização do diário liberta o objectURL — ficheiros: features/garden — validação: revisão. ✓ CORRIGIDO: havia fuga (substituir/anular sem revoke); agora `clearPendingPhoto()` + revoke ao trocar foto.
+- [x] (P4) Confirmar que o catálogo não recalcula `searchBlob` a cada tecla — ficheiros: features/catalog — validação: revisão. ✓ Verificado: searchBlob é construído uma vez (const no setup); results é computed sobre debouncedQuery.
+- [x] (P4) Verificar que o número de chunks JS se mantém razoável — ficheiros: build — validação: revisão. ✓ Verificado: ~1 chunk por view + vendor + data chunks; sem explosão.
+- [!] (P5) `loading=lazy` em ícones/emojis — NÃO APLICÁVEL: os ícones são emojis de texto (sem requests); não há imagens raster decorativas.
+- [x] (P4) Confirmar precache do `plants` chunk — ficheiros: build — validação: revisão. ✓ Verificado: faz parte do precache (offline-first), mas é lazy no runtime; tamanho aceitável (~23 kB gz). Esperado para PWA offline.
+- [x] (P4) Verificar que `useWeather` não dispara fetch sem zona — ficheiros: composables — validação: revisão. ✓ Verificado: fetchFor(zoneCode) só é chamado em onMounted/watch com settings.state.zoneCode; sem auto-fetch.
+- [x] (P5) Confirmar v-memo nas listas do catálogo — ficheiros: features/catalog — validação: revisão. ✓ Verificado: v-memo=[slug, sowable] no grid de resultados.
+- [x] (P4) Verificar gzip total dos assets de entrada — ficheiros: build — validação: revisão. ✓ entrada: index 9.47 kB + css 7.53 kB + vendor 102 kB ≈ 119 kB gz (a maioria vendor cacheável).
+- [x] (P4) Confirmar purge do CSS Tailwind — ficheiros: build — validação: revisão. ✓ Verificado: CSS final 39.99 kB / 7.53 kB gz (Tailwind v4 só inclui classes usadas).
 
 ## Organização
 - [ ] (P3) Adicionar `aria-label` a botões-ícone sem rótulo (auditar features) — ficheiros: src/features — validação: revisão/lint.
