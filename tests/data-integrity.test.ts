@@ -109,6 +109,16 @@ describe('integridade do núcleo agronómico', () => {
     }
   })
 
+  it('microgreens: blackoutDays válidos e dentro do tempo de colheita', () => {
+    for (const m of MICROGREENS) {
+      expect(m.blackoutDays[0], `${m.slug} blackout min`).toBeGreaterThanOrEqual(0)
+      expect(m.blackoutDays[1], `${m.slug} blackout cresc.`).toBeGreaterThanOrEqual(m.blackoutDays[0])
+      // O blackout (escuro) acontece antes da colheita.
+      expect(m.blackoutDays[1], `${m.slug} blackout < colheita`).toBeLessThan(m.daysToHarvest[1])
+      expect(m.soakHours, `${m.slug} soakHours`).toBeGreaterThanOrEqual(0)
+    }
+  })
+
   it('cada receita refere pelo menos uma planta', () => {
     for (const r of RECIPES) expect(r.plants.length, r.slug).toBeGreaterThan(0)
   })

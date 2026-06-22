@@ -47,6 +47,11 @@ describe('plantSowableThisMonth', () => {
     expect(maio.has('alho')).toBe(false)
   })
 
+  it('devolve um conjunto não vazio nos meses ativos (primavera/outono)', () => {
+    expect(plantSowableThisMonth('litoral_norte', 4).size).toBeGreaterThan(0)
+    expect(plantSowableThisMonth('litoral_norte', 9).size).toBeGreaterThan(0)
+  })
+
   it('é consistente com calendarForPlant: cada planta semeável tem sementeira nesse mês', () => {
     const zone = 'litoral_norte'
     const month = 4

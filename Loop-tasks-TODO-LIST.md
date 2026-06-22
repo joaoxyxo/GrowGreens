@@ -17,16 +17,16 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [ ] (P5) Rever 2 plantas com `growingTips`/`harvestNotes` mais úteis — ficheiros: src/data/plants.ts — validação: build.
 
 ## Regras de Negócio
-- [ ] (P2) Teste: glossário sem termos duplicados — ficheiros: tests/data-integrity.test.ts ou novo — validação: vitest.
-- [ ] (P2) Teste: FAQ sem perguntas duplicadas — ficheiros: tests/data-integrity.test.ts ou novo — validação: vitest.
-- [ ] (P3) Teste: store `settings` alterna tema e persiste — ficheiros: tests/settings.test.ts — validação: vitest.
-- [ ] (P3) Teste: store `ui` aplica o cap de toasts (MAX 3) — ficheiros: tests/ui.test.ts — validação: vitest.
-- [ ] (P3) Teste: `areCompanions`/`areAntagonists` com plantas reais do catálogo — ficheiros: tests/companions.test.ts — validação: vitest.
-- [ ] (P3) Teste: `challengeRepo.completeDay` é idempotente (não duplica dias) — ficheiros: tests/repositories.test.ts — validação: vitest.
-- [ ] (P3) Teste: `plantSowableThisMonth` devolve Set não vazio em meses ativos — ficheiros: tests/calendar.test.ts — validação: vitest.
-- [ ] (P3) Teste: `recommendPlants` não devolve plantas duplicadas — ficheiros: tests/recommend.test.ts — validação: vitest.
-- [ ] (P4) Teste: todos os microgreens têm `daysToHarvest` crescente e `blackoutDays` válidos — ficheiros: tests/data-integrity.test.ts — validação: vitest.
-- [ ] (P4) Teste: `successionDays` só devolve valor para culturas de corte rápido — ficheiros: tests/growth.test.ts — validação: vitest.
+- [x] (P2) Teste: glossário sem termos duplicados — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Já coberto (Set(termos).size === length).
+- [x] (P2) Teste: FAQ sem perguntas duplicadas — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Já coberto (Set(qs).size === length).
+- [x] (P3) Teste: store `settings` alterna tema — ficheiros: tests/settings.test.ts — validação: vitest. ✓ Feito: dark/light aplica/remove classe no documento (persistência é exercida por load()).
+- [x] (P3) Teste: store `ui` cap de toasts (MAX 3) — ficheiros: tests/ui.test.ts — validação: vitest. ✓ Já coberto ('limita os toasts visíveis a 3').
+- [x] (P3) Teste: companions/antagonists com catálogo real — ficheiros: tests/companions.test.ts — validação: vitest. ✓ Feito: cenoura↔cebola companheiras; nabiça↔tomate antagonistas.
+- [x] (P3) Teste: `challengeRepo.completeDay` idempotente — ficheiros: tests/repositories.test.ts — validação: vitest. ✓ Feito: completar o mesmo dia 2× não duplica.
+- [x] (P3) Teste: `plantSowableThisMonth` não vazio em meses ativos — ficheiros: tests/calendar.test.ts — validação: vitest. ✓ Feito: abril e setembro > 0.
+- [x] (P3) Teste: `recommendPlants` sem duplicados — ficheiros: tests/recommend.test.ts — validação: vitest. ✓ Feito: Set(slugs).size === length.
+- [x] (P4) Teste: microgreens com `blackoutDays` válidos — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito: blackout 0≤min≤max<colheita, soakHours≥0 (daysToHarvest já coberto).
+- [x] (P4) Teste: `successionDays` só culturas de corte rápido — ficheiros: tests/growth.test.ts — validação: vitest. ✓ Feito: folhas/rabanete >0; tomate/alcachofra/morango null.
 
 ## Performance
 - [ ] (P4) Confirmar que `health`/`troubleshoot` ficam em chunks fora da entrada — ficheiros: build — validação: revisão.

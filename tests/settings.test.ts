@@ -16,6 +16,17 @@ describe('settings — load e tema', () => {
     // applyTheme usa document/matchMedia (polyfill em setup) — não deve lançar
     expect(() => settings.applyTheme()).not.toThrow()
   })
+
+  it('alterna o tema entre dark e light aplicando a classe no documento', () => {
+    const settings = useSettingsStore()
+    settings.state.theme = 'dark'
+    settings.applyTheme()
+    expect(document.documentElement.classList.contains('dark')).toBe(true)
+
+    settings.state.theme = 'light'
+    settings.applyTheme()
+    expect(document.documentElement.classList.contains('dark')).toBe(false)
+  })
 })
 
 describe('settings — validação de zona', () => {

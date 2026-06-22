@@ -260,6 +260,14 @@ describe('repositórios (local-first)', () => {
     expect(journal.some((e) => e.type === 'colheita')).toBe(true)
   })
 
+  it('challengeRepo.completeDay é idempotente (não duplica dias)', async () => {
+    const run = await challengeRepo.start('rabanete')
+    await challengeRepo.completeDay(run.id, 2)
+    await challengeRepo.completeDay(run.id, 2) // repetido
+    const updated = await challengeRepo.get(run.id)
+    expect(updated?.completedDays.filter((d) => d === 2)).toHaveLength(1)
+  })
+
   it('challengeRepo.reset apaga o run', async () => {
     const run = await challengeRepo.start('rabanete')
     await challengeRepo.completeDay(run.id, 0)

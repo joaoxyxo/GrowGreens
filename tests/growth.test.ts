@@ -77,4 +77,15 @@ describe('successionDays', () => {
     expect(successionDays('tomate')).toBeNull()
     expect(successionDays('inexistente')).toBeNull()
   })
+
+  it('só devolve valor para culturas de corte/raiz rápidas (folhas, rabanete)', () => {
+    // culturas rápidas: número positivo
+    for (const slug of ['alface', 'rucula', 'rabanete', 'espinafre']) {
+      expect(successionDays(slug), slug).toBeGreaterThan(0)
+    }
+    // culturas longas/perenes: sem sucessão
+    for (const slug of ['tomate', 'alcachofra', 'morango']) {
+      expect(successionDays(slug), slug).toBeNull()
+    }
+  })
 })

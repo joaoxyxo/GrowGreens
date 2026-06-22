@@ -44,6 +44,11 @@ describe('recommendPlants', () => {
   it('não falha com limite 0 (devolve lista vazia)', () => {
     expect(recommendPlants(settings(), 0)).toEqual([])
   })
+
+  it('não devolve plantas duplicadas', () => {
+    const r = recommendPlants(settings(), 8).map((p) => p.slug)
+    expect(new Set(r).size).toBe(r.length)
+  })
 })
 
 describe('shouldSuggestMicrogreens', () => {
