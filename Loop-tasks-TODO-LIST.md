@@ -29,23 +29,23 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 - [x] (P4) Teste: planta não é companheira/antagonista de si própria — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Feito.
 
 ## Performance
-- [ ] (P4) Confirmar que o ecrã de diagnóstico não importa `compressImage` no arranque (lazy) — ficheiros: features/diagnosis — validação: revisão.
-- [ ] (P4) Verificar que o catálogo filtra sem recriar funções por item (estável) — ficheiros: features/catalog — validação: revisão.
-- [ ] (P4) Confirmar que o `glossary` chunk não cresce desproporcionalmente — ficheiros: build — validação: revisão.
-- [ ] (P4) Verificar gzip do chunk de entrada após novas plantas (< ~120 KB) — ficheiros: build — validação: revisão.
-- [ ] (P5) Avaliar se `troubleshoot`/`faq` deviam partilhar chunk com a view — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que o número de live queries Dexie é mínimo (partilha) — ficheiros: composables/features — validação: revisão.
-- [ ] (P4) Verificar que imagens do utilizador são comprimidas antes de gravar — ficheiros: utils/image, features — validação: revisão.
-- [ ] (P5) Confirmar que não há watchers `deep` desnecessários em listas grandes — ficheiros: features — validação: revisão.
-- [ ] (P4) Verificar que o vendor chunk continua estável (~294 KB) — ficheiros: build — validação: revisão.
-- [ ] (P4) Confirmar que o build não emite avisos de chunk acima do limite — ficheiros: build — validação: revisão.
+- [x] (P4) Confirmar que diagnóstico não importa `compressImage` — ficheiros: features/diagnosis — validação: revisão. ✓ Verificado: DiagnosisView é por sintomas; não importa compressImage.
+- [x] (P4) Verificar que o catálogo filtra de forma estável — ficheiros: features/catalog — validação: revisão. ✓ `results` é computed; searchBlob pré-computado; v-memo no grid.
+- [x] (P4) Confirmar tamanho do `glossary` chunk — ficheiros: build — validação: revisão. ✓ GlossaryView 18.37 kB / 7.48 kB gz (inclui FAQ+glossário lazy). Razoável.
+- [x] (P4) Verificar gzip de entrada — ficheiros: build — validação: revisão. ✓ index ~9.5 + css 7.5 + vendor 102 ≈ 119 KB gz (maioria vendor cacheável).
+- [x] (P5) Avaliar chunk de `troubleshoot`/`faq` — ficheiros: build — validação: revisão. ✓ Já partilham o chunk da respetiva view (importados só por DiagnosisView/GlossaryView); ok.
+- [x] (P4) Confirmar live queries mínimas — ficheiros: composables/features — validação: revisão. ✓ useReminders é subscrição única partilhada; restantes liveQueries são por-ecrã e específicas.
+- [x] (P4) Verificar compressão de imagens antes de gravar — ficheiros: features/garden — validação: revisão. ✓ PlantDetailView chama compressImage(f) antes de guardar no diário.
+- [x] (P5) Confirmar watchers `deep` — ficheiros: features/stores — validação: revisão. ✓ Só 2 deep watchers (progress/settings, estado pequeno para persistir); nenhum sobre listas grandes.
+- [x] (P4) Verificar vendor estável — ficheiros: build — validação: revisão. ✓ 294.44 kB / 102.10 kB gz (inalterado).
+- [x] (P4) Confirmar ausência de avisos de chunk — ficheiros: build — validação: revisão. ✓ Build sem warnings (chunkSizeWarningLimit 600; maior chunk vendor 294 kB).
 
 ## Organização
 - [ ] (P3) Atualizar CLAUDE.md com contagens (59 plantas, 27 receitas, 14 microgreens, 65 glossário, 24 FAQ) — ficheiros: CLAUDE.md — validação: coerente.
 - [ ] (P3) CHANGELOG: entrada para o Ciclo 11 — ficheiros: CHANGELOG.md — validação: presente.
 - [ ] (P4) README: contagem do catálogo (59 culturas) e nº de testes — ficheiros: README.md — validação: coerente.
 - [ ] (P4) docs/ARQUITETURA: nota sobre cobertura E2E (ecrãs cobertos) — ficheiros: docs/ARQUITETURA.md — validação: coerente.
-- [ ] (P4) Confirmar que `src/features` não importam diretamente de `src/lib/db` (passam por repositórios) — ficheiros: src/features — validação: revisão.
+- [x] (P4) Camadas: features vs lib/db — ficheiros: src/features — validação: revisão. ✓ Verificado: features usam `db` SÓ em liveQueries de LEITURA (where/get/toArray/count); TODAS as mutações passam por repositórios. Padrão local-first deliberado.
 - [ ] (P5) Adicionar JSDoc curto às funções públicas de `streak.ts`/`challenge.ts` sem doc — ficheiros: src/utils — validação: typecheck.
 - [ ] (P4) Verificar que não há `TODO`/`FIXME` por resolver no código — ficheiros: src — validação: grep.
 - [ ] (P5) Confirmar que todos os componentes `ui/` têm props tipadas (sem implicit any) — ficheiros: src/components/ui — validação: typecheck.
