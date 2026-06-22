@@ -7,14 +7,14 @@ Stack: Vue 3 + TS + Vite (PWA), Pinia, Vue Router, Vue I18n, Dexie, Tailwind v4.
 ## Conteúdo
 - [ ] (P3) Adicionar 2 plantas novas ao catálogo (ex.: grão-de-bico, espargo) com entradas de calendário — ficheiros: src/data/plants.ts, calendar.ts — validação: tests/data-integrity.test.ts.
 - [ ] (P4) Adicionar 2 receitas para plantas ainda sem receita (ex.: nabo, beringela, melão) — ficheiros: src/data/recipes.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 5 termos ao glossário (55→60) — ficheiros: src/data/glossary.ts — validação: build + sem duplicados.
-- [ ] (P4) Adicionar 3 perguntas à FAQ (18→21) — ficheiros: src/data/faq.ts — validação: build.
+- [x] (P4) Adicionar 5 termos ao glossário — ficheiros: src/data/glossary.ts — validação: build. ✓ Feito: enxertia, pousio, terra de diatomáceas, polinizador, estiagem (→60).
+- [x] (P4) Adicionar 3 perguntas à FAQ — ficheiros: src/data/faq.ts — validação: build. ✓ Feito: substrato, varanda meia-sombra, composto na varanda (→21).
 - [ ] (P4) Adicionar 1 lição nova a uma unidade existente do curso — ficheiros: src/data/course.ts — validação: build + lição referenciável.
-- [ ] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity.
-- [ ] (P4) Adicionar 1 microgreen novo (ex.: linhaça) — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P4) Enriquecer 1 grupo de saúde (health.ts) com benefícios/cautela adicionais — ficheiros: src/data/health.ts — validação: build.
-- [ ] (P5) Enriquecer 2 microgreens com `note` mais útil — ficheiros: src/data/microgreens.ts — validação: build.
-- [ ] (P5) Rever 2 plantas com `growingTips`/`harvestNotes` mais úteis — ficheiros: src/data/plants.ts — validação: build.
+- [x] (P4) Adicionar 1 sintoma novo a troubleshoot com `related` válido — ficheiros: src/data/troubleshoot.ts — validação: data-integrity. ✓ Feito: 'raizes-com-galhas' → ['nematodes'].
+- [x] (P4) Adicionar 1 microgreen novo — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: linhaça (→13).
+- [x] (P4) Enriquecer 1 grupo de saúde — ficheiros: src/data/health.ts — validação: build. ✓ Feito: aromáticas com nutriente (ferro/cálcio) e caution (gravidez).
+- [x] (P5) Enriquecer 2 microgreens com `note` mais útil — ficheiros: src/data/microgreens.ts — validação: build. ✓ Feito: mostarda (ponto de colheita/uso) e couve-roxa (luz/cor/uso).
+- [x] (P5) Rever 2 plantas com `harvestNotes` mais úteis — ficheiros: src/data/plants.ts — validação: build. ✓ Feito: funcho (rebrota/ponto) e melão (não adoça após colher).
 
 ## Regras de Negócio
 - [x] (P2) Teste: glossário sem termos duplicados — ficheiros: tests/data-integrity.test.ts — validação: vitest. ✓ Já coberto (Set(termos).size === length).

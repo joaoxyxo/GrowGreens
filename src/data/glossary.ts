@@ -60,4 +60,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: 'Calda bordalesa', emoji: '🟦', definition: 'Mistura tradicional de sulfato de cobre e cal usada em prevenção contra fungos (míldio). Usar com moderação — o cobre acumula-se no solo.' },
   { term: 'Solanáceas', emoji: '🍅', definition: 'Família do tomate, pimento, beringela e batata. Partilham pragas/doenças, por isso convém rodá-las no mesmo canteiro.' },
   { term: 'Brássicas (crucíferas)', emoji: '🥬', definition: 'Família das couves, brócolos, rúcula, rabanete e nabo. Atraem a lagarta-da-couve e a áltica; beneficiam de rede de proteção.' },
+  { term: 'Enxertia', emoji: '🔗', definition: 'Unir um pedaço de uma planta (garfo) a outra (cavalo) para que cresçam como uma só — usada em árvores de fruto e tomate para mais vigor ou resistência.' },
+  { term: 'Pousio', emoji: '🟫', definition: 'Deixar um canteiro a descansar uma época, sem cultivo (ou com adubo verde), para o solo recuperar nutrientes e estrutura.' },
+  { term: 'Terra de diatomáceas', emoji: '🦴', definition: 'Pó natural de algas fossilizadas que age como barreira física contra lesmas e insetos rastejantes. Aplica-se seco à volta das plantas.' },
+  { term: 'Polinizador', emoji: '🐝', definition: 'Inseto (abelha, abelhão, sirfídeo) que transporta pólen entre flores e permite a formação de fruto. Atrai-os com flores na horta.' },
+  { term: 'Estiagem', emoji: '🏜️', definition: 'Período prolongado de seca. Na horta pede mulch, rega mais profunda e menos frequente, e sombra para as culturas sensíveis.' },
 ]

@@ -21,7 +21,7 @@ export const MICROGREENS: MicrogreenInfo[] = [
     daysToHarvest: [5, 8],
     flavour: 'Picante intenso.',
     beginner: true,
-    note: 'Germinação muito rápida e sabor forte. Excelente para principiantes.',
+    note: 'Germinação muito rápida e sabor forte. Excelente para principiantes. Colhe ao 1.º par de folhas para o pico de picante; usa em pequenas doses sobre sopas e ovos.',
   },
   {
     slug: 'brocolos',
@@ -87,7 +87,7 @@ export const MICROGREENS: MicrogreenInfo[] = [
     daysToHarvest: [7, 10],
     flavour: 'Suave, fresco.',
     beginner: true,
-    note: 'Cor roxa vibrante e sabor delicado. Fiável e bonita no prato.',
+    note: 'Cor roxa vibrante e sabor delicado. Fiável e bonita no prato. A cor intensifica-se com boa luz após o blackout; ótima para dar contraste a saladas e tostas.',
   },
   {
     slug: 'coentros',
@@ -132,6 +132,17 @@ export const MICROGREENS: MicrogreenInfo[] = [
     flavour: 'Picante e apimentado, intenso.',
     beginner: false,
     note: 'Semente pequena e mucilaginosa (não demolhar). Borrifa em vez de regar por cima nos primeiros dias. Sabor forte, ótimo em doses pequenas.',
+  },
+  {
+    slug: 'linhaca',
+    name: 'Linhaça',
+    emoji: '🟤',
+    soakHours: 0,
+    blackoutDays: [3, 4],
+    daysToHarvest: [8, 12],
+    flavour: 'Suave, ligeiramente a noz.',
+    beginner: false,
+    note: 'Semente mucilaginosa (NÃO demolhar — fica gelatinosa). Borrifa em vez de regar por cima. Rica em ómega-3; o gel à volta da semente é normal.',
   },
 ]
 

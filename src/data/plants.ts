@@ -2027,7 +2027,7 @@ export const PLANTS: Plant[] = [
       'Semeia diretamente (não gosta de transplante). Para bolbo tenro, amontoa um pouco de terra à volta e rega com regularidade.',
     wateringNotes: 'Rega regular para bolbos tenros; a seca torna-o fibroso e faz espigar.',
     feedingNotes: 'Solo com algum composto chega. Não precisa de muito azoto.',
-    harvestNotes: 'Colhe o bolbo quando tiver o tamanho de um punho, cortando à superfície do solo.',
+    harvestNotes: 'Colhe o bolbo quando tiver o tamanho de um punho, cortando à superfície do solo. Se deixares a base no terreno, rebenta folhagem fina que podes usar como erva aromática. Não esperes demais — passado o ponto, o bolbo fica fibroso e sobe a flor.',
     portugalNotes:
       'Cresce bem no clima ameno do litoral. Dá-lhe um canto só seu — é mau companheiro para a maioria das hortícolas.',
     expectations: 'Bolbos em ~3 meses; folhas e sementes como bónus.',
@@ -2081,7 +2081,7 @@ export const PLANTS: Plant[] = [
       'Semeia com o tempo já quente. Deixa poucos frutos por planta para ficarem doces e grandes. Coloca os frutos sobre uma tábua/palha para não apodrecerem no chão.',
     wateringNotes: 'Rega regular no crescimento; reduz quando os frutos estão a amadurecer (mais doçura).',
     feedingNotes: 'Guloso: composto à plantação e adubo rico em potássio durante a frutificação.',
-    harvestNotes: 'Está pronto quando cheira a melão e o pé se solta com facilidade (rachadela à volta do pedúnculo).',
+    harvestNotes: 'Está pronto quando cheira a melão e o pé se solta com facilidade (rachadela à volta do pedúnculo). A casca muda de cor e a parte de baixo amarelece. Depois de colhido não fica mais doce — por isso colhe-o no ponto certo.',
     portugalNotes:
       'No litoral fresco custa mais que no interior/sul. Escolhe um canto bem quente e soalheiro ou cultiva em estufa.',
     expectations: 'Alguns melões por planta no fim do verão, se o calor ajudar.',

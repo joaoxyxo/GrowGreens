@@ -170,4 +170,16 @@ export const SYMPTOMS: Symptom[] = [
     ],
     related: ['afideo', 'cochonilha'],
   },
+  {
+    id: 'raizes-com-galhas',
+    emoji: '🪱',
+    label: 'Planta mirrada e a murchar com calor; raízes com nódulos ao arrancar',
+    likely: 'Nemátodes-das-galhas no solo — vermes microscópicos que deformam as raízes e travam a absorção de água.',
+    whatToDo: [
+      'Arranca e destrói as plantas afetadas (não compostar).',
+      'Faz rotação de culturas nesse canteiro durante alguns anos e adiciona matéria orgânica.',
+      'Planta tagetes (cravo-túnico), que ajuda a repelir os nemátodes, e usa variedades resistentes.',
+    ],
+    related: ['nematodes'],
+  },
 ]

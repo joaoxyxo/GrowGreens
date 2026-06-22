@@ -91,8 +91,10 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Antioxidantes (polifenóis)', effect: 'Combatem o stress oxidativo.' },
       { nutrient: 'Vitamina K', effect: 'Saúde óssea e do sangue.' },
       { nutrient: 'Óleos essenciais', effect: 'Aroma e propriedades antimicrobianas.' },
+      { nutrient: 'Ferro e cálcio (salsa, tomilho)', effect: 'Em pequenas doses, complementam a alimentação.' },
     ],
     tip: 'Adiciona as folhas frescas no fim da cozedura para preservar o aroma e os nutrientes.',
+    caution: 'A salsa em grande quantidade e a sálvia/funcho em óleos concentrados não são aconselhados na gravidez. Como tempero no prato, sem problema.',
   },
 ]
 

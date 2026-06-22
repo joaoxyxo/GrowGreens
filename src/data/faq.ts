@@ -91,4 +91,19 @@ export const FAQ: FaqItem[] = [
     q: 'As minhas sementes não nascem. Porquê?',
     a: 'As causas mais comuns: enterraste-as fundo demais (a regra é ~2-3× a largura da semente), o solo secou na germinação, ou a temperatura está baixa. Mantém húmido (não encharcado) e ao calor, e dá tempo — algumas demoram 2-3 semanas.',
   },
+  {
+    emoji: '🪴',
+    q: 'Que substrato uso para semear?',
+    a: 'Para sementeira, um substrato fino, leve e bem drenante (turfa/fibra de coco + perlite) dá melhores resultados que terra de jardim pesada. Para vasos definitivos, mistura com composto. Evita terra do quintal compactada — sufoca as raízes.',
+  },
+  {
+    emoji: '🌗',
+    q: 'A minha varanda só tem sol parte do dia. Dá para horta?',
+    a: 'Dá! Com 3-4 horas de sol cultivas folhas (alface, rúcula, espinafre), aromáticas (salsa, hortelã, cebolinho) e rabanetes. Frutos como tomate e pimento querem mais sol; em meia-sombra produzem pouco. E há sempre os microgreens, que dão dentro de casa.',
+  },
+  {
+    emoji: '♻️',
+    q: 'Posso fazer composto numa varanda?',
+    a: 'Sim — com um vermicompostor (caixa com minhocas) fazes húmus a partir de restos de cozinha, sem cheiro e em pouco espaço. Evita carne, lacticínios e cítricos em excesso. Em poucos meses tens adubo caseiro de qualidade.',
+  },
 ]
