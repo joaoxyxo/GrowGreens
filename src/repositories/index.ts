@@ -245,7 +245,11 @@ export const bedsRepo = {
     return bed
   },
   async update(id: string, patch: Partial<GardenBed>) {
-    await db.beds.update(id, { ...patch, updatedAt: todayISO() })
+    // Clampa as dimensões (1-12) também na edição, como em create.
+    const safe: Partial<GardenBed> = { ...patch }
+    if (safe.rows !== undefined) safe.rows = Math.max(1, Math.min(12, Math.round(safe.rows)))
+    if (safe.cols !== undefined) safe.cols = Math.max(1, Math.min(12, Math.round(safe.cols)))
+    await db.beds.update(id, { ...safe, updatedAt: todayISO() })
   },
   async setCell(id: string, key: string, cell: BedCell) {
     const bed = await db.beds.get(id)
