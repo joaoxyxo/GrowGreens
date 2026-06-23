@@ -1,19 +1,5 @@
-import { test, expect, type Page } from '@playwright/test'
-
-async function completeOnboarding(page: Page) {
-  await page.goto('/')
-  await expect(page.getByText('Bem-vindo à GrowGreens')).toBeVisible()
-  await page.getByRole('button', { name: 'Começar' }).click()
-  await page.getByText('Comer mais saudável').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Varanda', { exact: true }).click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Nunca cultivei nada').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Litoral Norte (Ovar/Aveiro)').click()
-  await page.getByRole('button', { name: /Iniciar o desafio/ }).click()
-  await expect(page.getByText('Desafio Microgreens')).toBeVisible()
-}
+import { test, expect } from '@playwright/test'
+import { completeOnboarding } from './helpers'
 
 test('perfil: exportar dados gera um backup JSON', async ({ page }) => {
   await completeOnboarding(page)

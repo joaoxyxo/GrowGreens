@@ -1,20 +1,5 @@
-import { test, expect, type Page } from '@playwright/test'
-
-// Completa o onboarding (obrigatório pelo guard do router antes de qualquer rota).
-async function completeOnboarding(page: Page) {
-  await page.goto('/')
-  await expect(page.getByText('Bem-vindo à GrowGreens')).toBeVisible()
-  await page.getByRole('button', { name: 'Começar' }).click()
-  await page.getByText('Comer mais saudável').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Varanda', { exact: true }).click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Nunca cultivei nada').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Litoral Norte (Ovar/Aveiro)').click()
-  await page.getByRole('button', { name: /Iniciar o desafio/ }).click()
-  await expect(page.getByText('Desafio Microgreens')).toBeVisible()
-}
+import { test, expect } from '@playwright/test'
+import { completeOnboarding } from './helpers'
 
 // Navega para o catálogo dentro da SPA (sem reload, para o estado persistir em memória).
 async function gotoCatalog(page: Page) {

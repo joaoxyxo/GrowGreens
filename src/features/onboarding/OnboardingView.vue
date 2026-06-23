@@ -68,28 +68,26 @@ function next() {
 function back() {
   if (step.value > 0) step.value--
 }
-function finish() {
-  settings.completeOnboarding({
+// Respostas recolhidas até agora (com o que estiver preenchido + defaults).
+function answers() {
+  return {
     profileName: name.value.trim(),
     goal: goal.value,
     space: space.value,
     experience: experience.value,
     zoneCode: zone.value,
-  })
+  }
+}
+
+function finish() {
+  settings.completeOnboarding(answers())
   router.push('/desafio')
 }
 
-// Saltar a introdução: marca o onboarding como concluído (com o que já foi
-// preenchido + defaults) e vai direto para a homepage. As preferências podem
-// ser ajustadas depois no Perfil.
+// Saltar a introdução: conclui o onboarding e vai direto à homepage. As
+// preferências podem ser ajustadas depois no Perfil.
 function skip() {
-  settings.completeOnboarding({
-    profileName: name.value.trim(),
-    goal: goal.value,
-    space: space.value,
-    experience: experience.value,
-    zoneCode: zone.value,
-  })
+  settings.completeOnboarding(answers())
   router.push('/')
 }
 </script>

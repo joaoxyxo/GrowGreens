@@ -1,26 +1,5 @@
-import { test, expect, type Page } from '@playwright/test'
-
-async function completeOnboarding(page: Page) {
-  await page.goto('/')
-  await expect(page.getByText('Bem-vindo à GrowGreens')).toBeVisible()
-  await page.getByRole('button', { name: 'Começar' }).click()
-  await page.getByText('Comer mais saudável').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Varanda', { exact: true }).click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Nunca cultivei nada').click()
-  await page.getByRole('button', { name: 'Continuar' }).click()
-  await page.getByText('Litoral Norte (Ovar/Aveiro)').click()
-  await page.getByRole('button', { name: /Iniciar o desafio/ }).click()
-  await expect(page.getByText('Desafio Microgreens')).toBeVisible()
-}
-
-// Navega pelo Perfil (SPA, sem reload) — evita o guard de onboarding num page.goto.
-async function openFromProfile(page: Page, linkName: RegExp) {
-  await page.getByRole('link', { name: /Perfil/ }).click()
-  await expect(page).toHaveURL(/\/perfil/)
-  await page.getByRole('link', { name: linkName }).click()
-}
+import { test, expect } from '@playwright/test'
+import { completeOnboarding, openFromProfile } from './helpers'
 
 test('diagnóstico: escolher um sintoma mostra o que fazer', async ({ page }) => {
   await completeOnboarding(page)
