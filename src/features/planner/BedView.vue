@@ -13,6 +13,7 @@ import { useProgressStore } from '@/stores/progress'
 import { safe } from '@/utils/safe'
 import { defaultWateringDays, areCompanions, areAntagonists } from '@/utils/growth'
 import { analyzeBed, suggestCompanions } from '@/utils/companionBed'
+import { familyConcentration } from '@/utils/rotation'
 import { isOverdue, isDueToday } from '@/utils/date'
 import { useReminders } from '@/composables/useReminders'
 import { normalize } from '@/utils/text'
@@ -67,6 +68,15 @@ const bedPlants = computed(() => {
 })
 const bedAnalysis = computed(() => analyzeBed(bedPlants.value))
 const bedSuggestions = computed(() => suggestCompanions(bedPlants.value, PLANTS, 4))
+
+// Rotação: famílias botânicas concentradas (contadas por lugar ocupado, não por espécie).
+const bedFamilyConcentration = computed(() => {
+  if (!bed.value) return []
+  const families = Object.values(bed.value.cells)
+    .map((c) => getPlant(c.plantSlug)?.family)
+    .filter((f): f is string => !!f)
+  return familyConcentration(families)
+})
 
 function neighborFeedback(key: string, slug: string): { good: string[]; bad: string[] } {
   if (!bed.value) return { good: [], bad: [] }
@@ -221,6 +231,19 @@ async function removeBed() {
       <!-- Otimizador de consociação -->
       <section v-if="bedPlants.length >= 1" class="mt-6 rounded-2xl border border-neutral-200 dark:border-dark-surface2 p-4">
         <h2 class="mb-2 font-display text-base font-bold">🤝 Vizinhança do canteiro</h2>
+
+        <!-- Aviso de rotação: famílias concentradas -->
+        <div v-if="bedFamilyConcentration.length" class="mb-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 p-3">
+          <p class="text-xs font-semibold text-amber-700 dark:text-amber-400 mb-1">🔄 Rotação de culturas</p>
+          <p class="text-sm text-neutral-700 dark:text-neutral-200">
+            Tens
+            <template v-for="(f, i) in bedFamilyConcentration" :key="f.family"
+              ><strong>{{ f.count }} {{ f.family }}</strong
+              ><span v-if="i < bedFamilyConcentration.length - 1">, </span></template
+            >. Concentrar a mesma família botânica aumenta o risco de pragas e doenças do solo — varia as famílias e
+            não as repitas neste espaço na próxima época.
+          </p>
+        </div>
 
         <div v-if="bedAnalysis.conflicts.length" class="mb-2">
           <p class="text-xs font-semibold text-error mb-1">✕ Más vizinhanças a evitar</p>

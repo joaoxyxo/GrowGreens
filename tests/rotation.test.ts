@@ -3,6 +3,7 @@ import {
   rotationGroupForPlant,
   nextRotationGroup,
   rotationAdvice,
+  familyConcentration,
   ROTATION_CYCLE,
   ROTATION_GROUPS,
 } from '@/utils/rotation'
@@ -64,5 +65,19 @@ describe('rotationAdvice', () => {
     const a = rotationAdvice(PLANTS_BY_SLUG['alecrim'], [])
     expect(a.nextGroup).toBeNull()
     expect(a.message).toMatch(/fora da rota/i)
+  })
+})
+
+describe('familyConcentration', () => {
+  it('deteta famílias com 2+ ocorrências, por ordem decrescente', () => {
+    const r = familyConcentration(['Solanaceae', 'Solanaceae', 'Brassicaceae', 'Brassicaceae', 'Brassicaceae', 'Fabaceae'])
+    expect(r[0]).toEqual({ family: 'Brassicaceae', count: 3 })
+    expect(r[1]).toEqual({ family: 'Solanaceae', count: 2 })
+    expect(r.find((x) => x.family === 'Fabaceae')).toBeUndefined() // só 1
+  })
+
+  it('lista vazia quando não há repetição', () => {
+    expect(familyConcentration(['Solanaceae', 'Fabaceae'])).toEqual([])
+    expect(familyConcentration([])).toEqual([])
   })
 })

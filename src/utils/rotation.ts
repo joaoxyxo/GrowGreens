@@ -103,3 +103,22 @@ export function rotationAdvice(plant: Plant, recentFamilies: string[] = []): Rot
   }
   return { group, repeatsFamily, nextGroup, message }
 }
+
+export interface FamilyCount {
+  family: string
+  count: number
+}
+
+/**
+ * Famílias botânicas concentradas numa lista de plantas (≥ 2 ocorrências),
+ * por ordem decrescente. Concentrar a mesma família no mesmo espaço aumenta o
+ * risco de pragas/doenças e dificulta a rotação — sinal de aviso no planeador.
+ */
+export function familyConcentration(families: string[]): FamilyCount[] {
+  const counts = new Map<string, number>()
+  for (const f of families) counts.set(f, (counts.get(f) ?? 0) + 1)
+  return [...counts.entries()]
+    .filter(([, count]) => count >= 2)
+    .map(([family, count]) => ({ family, count }))
+    .sort((a, b) => b.count - a.count || a.family.localeCompare(b.family))
+}
