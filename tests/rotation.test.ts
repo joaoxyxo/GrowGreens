@@ -70,7 +70,14 @@ describe('rotationAdvice', () => {
 
 describe('familyConcentration', () => {
   it('deteta famílias com 2+ ocorrências, por ordem decrescente', () => {
-    const r = familyConcentration(['Solanaceae', 'Solanaceae', 'Brassicaceae', 'Brassicaceae', 'Brassicaceae', 'Fabaceae'])
+    const r = familyConcentration([
+      'Solanaceae',
+      'Solanaceae',
+      'Brassicaceae',
+      'Brassicaceae',
+      'Brassicaceae',
+      'Fabaceae',
+    ])
     expect(r[0]).toEqual({ family: 'Brassicaceae', count: 3 })
     expect(r[1]).toEqual({ family: 'Solanaceae', count: 2 })
     expect(r.find((x) => x.family === 'Fabaceae')).toBeUndefined() // só 1

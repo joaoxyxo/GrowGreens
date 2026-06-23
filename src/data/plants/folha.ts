@@ -28,7 +28,8 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas.',
     petSafe: true,
-    shortDescription: 'A rainha das saladas e das primeiras hortas. Gosta de fresco — perfeita para o nosso litoral.',
+    shortDescription:
+      'A rainha das saladas e das primeiras hortas. Gosta de fresco — perfeita para o nosso litoral.',
     in30Seconds: [
       'Cresce depressa e em pouco espaço, até em vaso pequeno.',
       'Prefere clima fresco; no verão escolhe variedades resistentes ao calor.',
@@ -36,17 +37,31 @@ export const FOLHA_PLANTS: Plant[] = [
     ],
     growingTips:
       'Semeia pouco e várias vezes (sucessão de 2 em 2 semanas) para teres alface o ano todo. As de folha solta são as mais fáceis para principiantes. Variedades fiáveis em Portugal: "Maravilha das Quatro Estações", "Batavia" e "Romana".',
-    wateringNotes: 'Rega regular e ligeira para manter o solo sempre húmido. Falta de água torna as folhas amargas.',
-    feedingNotes: 'Pouco exigente. Um composto na sementeira chega; em vaso, adubo líquido fraco a cada 2-3 semanas.',
+    wateringNotes:
+      'Rega regular e ligeira para manter o solo sempre húmido. Falta de água torna as folhas amargas.',
+    feedingNotes:
+      'Pouco exigente. Um composto na sementeira chega; em vaso, adubo líquido fraco a cada 2-3 semanas.',
     harvestNotes: 'Corta folhas exteriores aos ~10 cm (corta-e-volta) ou colhe a planta inteira de manhã.',
     portugalNotes:
       'No litoral húmido, dá espaço entre plantas e rega de manhã para evitar míldio. No verão, meia-sombra ajuda a não espigar.',
     expectations: 'Em 6-8 semanas tens folhas para saladas. Uma planta de corte dá várias colheitas.',
     commonMistake: 'Semear tudo de uma vez — depois é alface a mais e de repente nenhuma. Semeia aos poucos.',
     stages: [
-      { stage: 'germinacao', durationDays: [5, 10], text: 'Mantém húmido e à luz. Germina melhor com tempo fresco.' },
-      { stage: 'plantula', durationDays: [10, 20], text: 'Quando tiver 3-4 folhas, desbasta ou transplanta com 25 cm de espaço.' },
-      { stage: 'vegetativo', durationDays: [20, 40], text: 'Rega regular. É só folha — não há flor a esperar.' },
+      {
+        stage: 'germinacao',
+        durationDays: [5, 10],
+        text: 'Mantém húmido e à luz. Germina melhor com tempo fresco.',
+      },
+      {
+        stage: 'plantula',
+        durationDays: [10, 20],
+        text: 'Quando tiver 3-4 folhas, desbasta ou transplanta com 25 cm de espaço.',
+      },
+      {
+        stage: 'vegetativo',
+        durationDays: [20, 40],
+        text: 'Rega regular. É só folha — não há flor a esperar.',
+      },
       { stage: 'colheita', text: 'Colhe folhas de fora ou a planta inteira antes de espigar.' },
     ],
     companions: ['cenoura', 'rabanete', 'morango'],
@@ -90,7 +105,8 @@ export const FOLHA_PLANTS: Plant[] = [
     ],
     growingTips: 'Semeia diretamente e desbasta. Colhe cedo e muitas vezes para não amargar nem espigar.',
     wateringNotes: 'Solo húmido e fresco. Calor + seca = sabor muito picante e espigamento rápido.',
-    feedingNotes: 'Praticamente não precisa. Solo com algum composto chega — excesso de azoto torna as folhas moles e atrai pulgões. Em corte sucessivo, um reforço leve de composto reanima a planta.',
+    feedingNotes:
+      'Praticamente não precisa. Solo com algum composto chega — excesso de azoto torna as folhas moles e atrai pulgões. Em corte sucessivo, um reforço leve de composto reanima a planta.',
     harvestNotes: 'Corta folhas exteriores; volta a crescer 2-3 vezes.',
     portugalNotes: 'Excelente no outono e primavera no litoral. No verão, meia-sombra e rega frequente.',
     expectations: 'Colheitas sucessivas a partir das 4 semanas. Muito generosa.',
@@ -133,7 +149,8 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas.',
     petSafe: true,
-    shortDescription: 'Cultura de tempo fresco, riquíssima em ferro e folato. Ideal para outono-inverno no litoral.',
+    shortDescription:
+      'Cultura de tempo fresco, riquíssima em ferro e folato. Ideal para outono-inverno no litoral.',
     in30Seconds: [
       'Adora frio — semeia no outono e na primavera.',
       'No calor espiga rapidamente; evita o verão.',
@@ -143,7 +160,8 @@ export const FOLHA_PLANTS: Plant[] = [
     wateringNotes: 'Gosta de água; nunca deixar secar (acelera o espigamento).',
     feedingNotes: 'Aprecia solo rico em azoto (folhagem). Composto na sementeira ajuda.',
     harvestNotes: 'Colhe folhas exteriores assim que tiverem tamanho; corta-e-volta.',
-    portugalNotes: 'Perfeito para o outono/inverno suave do litoral norte (Ovar/Aveiro) — o calor do verão fá-lo espigar depressa. Garante boa drenagem: com a chuva atlântica, o solo encharcado apodrece-lhe a raiz.',
+    portugalNotes:
+      'Perfeito para o outono/inverno suave do litoral norte (Ovar/Aveiro) — o calor do verão fá-lo espigar depressa. Garante boa drenagem: com a chuva atlântica, o solo encharcado apodrece-lhe a raiz.',
     expectations: 'Folhas a partir das 6 semanas; produção contínua no tempo fresco.',
     commonMistake: 'Semear no verão — espiga sem dar folha. Reserva para outono/primavera.',
     stages: [
@@ -184,7 +202,8 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas e pecíolos (talos).',
     petSafe: true,
-    shortDescription: 'Prima do espinafre, mas muito mais resistente. Produz folha o ano quase todo no nosso clima.',
+    shortDescription:
+      'Prima do espinafre, mas muito mais resistente. Produz folha o ano quase todo no nosso clima.',
     in30Seconds: [
       'Robusta: aguenta calor e frio melhor que o espinafre.',
       'Colhe folhas de fora e continua a produzir durante meses.',
@@ -194,11 +213,13 @@ export const FOLHA_PLANTS: Plant[] = [
       'Cada "semente" é um glomérulo com várias sementes — vais ter de desbastar. Semeia na primavera ou no fim do verão.',
     wateringNotes: 'Rega regular para folhas tenras. Suporta alguma seca, mas a folha fica mais dura.',
     feedingNotes: 'Gosta de solo rico em azoto. Composto à plantação e adubo líquido a meio do ciclo.',
-    harvestNotes: 'Corta as folhas exteriores acima do gomo central; a planta rebenta de novo (corta-e-volta).',
+    harvestNotes:
+      'Corta as folhas exteriores acima do gomo central; a planta rebenta de novo (corta-e-volta).',
     portugalNotes:
       'Excelente cultura de inverno no litoral — produz quando pouco mais há. Dá-lhe espaço para arejar e evitar míldio.',
     expectations: 'Em ~8 semanas começas a colher e podes continuar durante todo o inverno e primavera.',
-    commonMistake: 'Não desbastar — fica tudo amontoado e fraco. Deixa só a plântula mais forte de cada grupo.',
+    commonMistake:
+      'Não desbastar — fica tudo amontoado e fraco. Deixa só a plântula mais forte de cada grupo.',
     stages: [
       { stage: 'germinacao', durationDays: [7, 14], text: 'Mantém húmido. Germinação irregular é normal.' },
       { stage: 'plantula', durationDays: [14, 21], text: 'Desbasta para ~30 cm entre plantas.' },
@@ -247,7 +268,8 @@ export const FOLHA_PLANTS: Plant[] = [
     growingTips:
       'Cultiva num vaso assente num prato com água, ou num canto sempre fresco e sombreado. Pinça as pontas para ramificar.',
     wateringNotes: 'Nunca deixar secar. É a planta que mais gosta de "pés molhados".',
-    feedingNotes: 'Pouco exigente em adubo se a água for abundante. Um pouco de composto chega; em água parada (cultura hidropónica caseira), troca a água com regularidade para não estagnar.',
+    feedingNotes:
+      'Pouco exigente em adubo se a água for abundante. Um pouco de composto chega; em água parada (cultura hidropónica caseira), troca a água com regularidade para não estagnar.',
     harvestNotes: 'Corta os ramos com tesoura acima de um nó; rebenta outra vez em poucos dias.',
     portugalNotes:
       'No litoral atlântico, prospera ao ar livre quase o ano todo. No verão, sombra e muita água para não florir cedo.',
@@ -291,7 +313,8 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas (rosetas tenras).',
     petSafe: true,
-    shortDescription: 'A folha de salada do frio: cresce no outono e inverno quando quase nada cresce. Sabor suave a noz.',
+    shortDescription:
+      'A folha de salada do frio: cresce no outono e inverno quando quase nada cresce. Sabor suave a noz.',
     in30Seconds: [
       'Resiste ao frio — colhe-se no inverno.',
       'Sabor suave, ótima em saladas de inverno.',
@@ -301,7 +324,8 @@ export const FOLHA_PLANTS: Plant[] = [
     wateringNotes: 'Rega regular e ligeira; o frio e a humidade do litoral favorecem-na.',
     feedingNotes: 'Praticamente não precisa; solo com algum composto chega.',
     harvestNotes: 'Corta as rosetas inteiras à superfície quando têm várias folhas.',
-    portugalNotes: 'Excelente folha de inverno no litoral, quando a alface abranda. Semeia de setembro a novembro.',
+    portugalNotes:
+      'Excelente folha de inverno no litoral, quando a alface abranda. Semeia de setembro a novembro.',
     expectations: 'Colheita de inverno em ~2 meses; muito resistente ao frio.',
     commonMistake: 'Semear no calor do verão — não germina. Espera o tempo arrefecer.',
     stages: [
@@ -342,13 +366,15 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas (jovens em salada, maduras salteadas).',
     petSafe: true,
-    shortDescription: 'Folha japonesa rápida e resistente, com um toque picante suave. Corta-e-volta o ano quase todo.',
+    shortDescription:
+      'Folha japonesa rápida e resistente, com um toque picante suave. Corta-e-volta o ano quase todo.',
     in30Seconds: [
       'Da semente à folha em 4-6 semanas.',
       'Aguenta o frio melhor que a maioria das saladas.',
       'Corta-e-volta: dá várias colheitas.',
     ],
-    growingTips: 'Semeia em sucessão; colhe jovem para salada ou deixa crescer para saltear. Tolera meia-sombra.',
+    growingTips:
+      'Semeia em sucessão; colhe jovem para salada ou deixa crescer para saltear. Tolera meia-sombra.',
     wateringNotes: 'Solo húmido e fresco; o calor seco fá-la espigar.',
     feedingNotes: 'Pouco exigente; composto à sementeira chega.',
     harvestNotes: 'Corta folhas exteriores acima do gomo; rebrota várias vezes.',
@@ -393,7 +419,8 @@ export const FOLHA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas e talos tenros (suculentos).',
     petSafe: true,
-    shortDescription: 'Suculenta comestível, resistente à seca e ao calor. Rica em ómega-3 e quase impossível de matar.',
+    shortDescription:
+      'Suculenta comestível, resistente à seca e ao calor. Rica em ómega-3 e quase impossível de matar.',
     in30Seconds: [
       'Adora calor e sol — prospera no verão.',
       'Pouca água: é suculenta e guarda reservas.',
@@ -439,7 +466,12 @@ export const FOLHA_PLANTS: Plant[] = [
     spacingCm: 25,
     potVolumeL: 5,
     frostTolerant: true,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'evitar', outono: 'possivel', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'evitar',
+      outono: 'possivel',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: false,
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas (cruas em salada ou cozidas/salteadas).',
@@ -450,11 +482,14 @@ export const FOLHA_PLANTS: Plant[] = [
       'O amargo suaviza com o frio e ao saltear.',
       'Corta as folhas de fora e deixa rebentar mais.',
     ],
-    growingTips: 'Semeia direto e desbasta. Colheita de corte: tira as folhas exteriores e a planta continua a produzir.',
+    growingTips:
+      'Semeia direto e desbasta. Colheita de corte: tira as folhas exteriores e a planta continua a produzir.',
     wateringNotes: 'Rega moderada e regular; o stress hídrico acentua o amargo.',
     feedingNotes: 'Pouco exigente; composto à sementeira chega.',
-    harvestNotes: 'Colhe folha a folha desde nova, ou a roseta inteira mais tarde. Mais doce no outono/inverno.',
-    portugalNotes: 'Excelente para o outono/inverno no litoral atlântico, quando há menos folhas disponíveis.',
+    harvestNotes:
+      'Colhe folha a folha desde nova, ou a roseta inteira mais tarde. Mais doce no outono/inverno.',
+    portugalNotes:
+      'Excelente para o outono/inverno no litoral atlântico, quando há menos folhas disponíveis.',
     expectations: '2-3 meses até roseta cheia, mas come folhas tenras muito antes.',
     commonMistake: 'Colher tudo de uma vez — em corte sucessivo rende muito mais.',
     stages: [
@@ -495,19 +530,24 @@ export const FOLHA_PLANTS: Plant[] = [
     needsSupplementalLight: false,
     pollination: 'nao_aplicavel',
     edibleParts: 'Apenas os pecíolos (talos vermelhos). As folhas são tóxicas.',
-    toxicNote: 'As folhas contêm ácido oxálico em quantidade tóxica — NUNCA as comas. Usa só os talos (pecíolos), sempre cozinhados com açúcar.',
+    toxicNote:
+      'As folhas contêm ácido oxálico em quantidade tóxica — NUNCA as comas. Usa só os talos (pecíolos), sempre cozinhados com açúcar.',
     petSafe: false,
-    shortDescription: 'Planta perene de talos vermelhos ácidos, clássica em compotas e doces. Vive muitos anos no mesmo lugar.',
+    shortDescription:
+      'Planta perene de talos vermelhos ácidos, clássica em compotas e doces. Vive muitos anos no mesmo lugar.',
     in30Seconds: [
       'Perene: planta uma vez, colhe anos a fio.',
       'Só os talos se comem — as folhas são tóxicas.',
       'Não colhas no 1.º ano; deixa a coroa firmar.',
     ],
-    growingTips: 'Planta a coroa num canteiro fundo e rico, ao sol ou meia-sombra. No 1.º ano não colhas. Corta as hastes florais para a planta investir nos talos.',
+    growingTips:
+      'Planta a coroa num canteiro fundo e rico, ao sol ou meia-sombra. No 1.º ano não colhas. Corta as hastes florais para a planta investir nos talos.',
     wateringNotes: 'Rega regular no calor; gosta de solo fresco mas bem drenado.',
     feedingNotes: 'Guloso: composto/estrume curado todos os anos, no outono.',
-    harvestNotes: 'A partir do 2.º ano, puxa (não cortes) os talos mais grossos, torcendo na base. Deixa sempre alguns para a planta recuperar. Descarta as folhas.',
-    portugalNotes: 'Prefere os invernos frescos; no litoral norte dá-se melhor que no sul quente. Dá-lhe um lugar permanente e sombra nas horas de maior calor.',
+    harvestNotes:
+      'A partir do 2.º ano, puxa (não cortes) os talos mais grossos, torcendo na base. Deixa sempre alguns para a planta recuperar. Descarta as folhas.',
+    portugalNotes:
+      'Prefere os invernos frescos; no litoral norte dá-se melhor que no sul quente. Dá-lhe um lugar permanente e sombra nas horas de maior calor.',
     expectations: 'Pouca colheita no 1.º ano; depois talos todas as primaveras durante 10+ anos.',
     commonMistake: 'Comer as folhas (tóxicas) ou colher demais no 1.º ano. Usa só os talos e tem paciência.',
     stages: [

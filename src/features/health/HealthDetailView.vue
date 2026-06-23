@@ -27,8 +27,14 @@ const group = computed(() => NUTRIENT_GROUPS_BY_CODE[route.params.code as string
       </AppCard>
 
       <AppCard class="mb-4">
-        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-green-600">Nutrientes principais</h2>
-        <div v-for="(n, i) in group.nutrients" :key="i" class="border-b border-neutral-100 dark:border-dark-surface2 py-2 last:border-0">
+        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-green-600">
+          Nutrientes principais
+        </h2>
+        <div
+          v-for="(n, i) in group.nutrients"
+          :key="i"
+          class="border-b border-neutral-100 dark:border-dark-surface2 py-2 last:border-0"
+        >
           <p class="text-sm font-medium">{{ n.nutrient }}</p>
           <p class="text-xs text-neutral-500 dark:text-neutral-400">{{ n.effect }}</p>
         </div>

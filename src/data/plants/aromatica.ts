@@ -28,13 +28,15 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas.',
     petSafe: true,
-    shortDescription: 'A aromática mais querida do verão. Companheira perfeita do tomate, no prato e na horta.',
+    shortDescription:
+      'A aromática mais querida do verão. Companheira perfeita do tomate, no prato e na horta.',
     in30Seconds: [
       'Adora sol e calor; sensível ao frio.',
       'Belisca o topo para ramificar e não deixes florir.',
       'Em interior no inverno precisa de luz forte (parapeito muito soalheiro ou luz de apoio).',
     ],
-    growingTips: 'Colhe sempre por cima, acima de um par de folhas, para a planta engrossar. Remove as flores assim que aparecem.',
+    growingTips:
+      'Colhe sempre por cima, acima de um par de folhas, para a planta engrossar. Remove as flores assim que aparecem.',
     wateringNotes: 'Rega quando a superfície seca; gosta de húmido mas não encharcado.',
     feedingNotes: 'Adubo líquido fraco a cada 2-3 semanas em vaso mantém as folhas tenras.',
     harvestNotes: 'Belisca o topo regularmente; quanto mais colhes, mais ramifica.',
@@ -80,7 +82,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas e caules.',
     petSafe: true,
-    shortDescription: 'Indispensável na cozinha portuguesa. Lenta a germinar, mas depois dá quase o ano todo.',
+    shortDescription:
+      'Indispensável na cozinha portuguesa. Lenta a germinar, mas depois dá quase o ano todo.',
     in30Seconds: [
       'Germinação muito lenta — tem paciência (até 3 semanas).',
       'Tolera meia-sombra e frio.',
@@ -130,13 +133,15 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas.',
     petSafe: true,
-    shortDescription: 'Imparável — cresce em quase qualquer condição. Cultiva SEMPRE em vaso próprio (é invasiva).',
+    shortDescription:
+      'Imparável — cresce em quase qualquer condição. Cultiva SEMPRE em vaso próprio (é invasiva).',
     in30Seconds: [
       'Quase impossível de matar; ótima para começar.',
       'Cultiva em vaso isolado — invade tudo se for ao chão.',
       'Tolera meia-sombra e adora água.',
     ],
-    growingTips: 'Multiplica-se por estaca (um raminho na água cria raízes). Belisca os topos para ramificar.',
+    growingTips:
+      'Multiplica-se por estaca (um raminho na água cria raízes). Belisca os topos para ramificar.',
     wateringNotes: 'Gosta de muita água; das poucas que tolera solo sempre húmido.',
     feedingNotes: 'Praticamente não precisa.',
     harvestNotes: 'Colhe os topos sempre que precisares; quanto mais colhes, mais ramifica.',
@@ -190,7 +195,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     wateringNotes: 'Pouca água; deixa secar entre regas. Excesso apodrece a raiz (a causa nº1 de morte).',
     feedingNotes: 'Quase não precisa de adubo.',
     harvestNotes: 'Corta raminhos sempre que precisares; podar mantém a planta compacta.',
-    portugalNotes: 'Adaptadíssimo ao clima. Em vaso, garante furos e drenagem — a humidade atlântica é o único risco.',
+    portugalNotes:
+      'Adaptadíssimo ao clima. Em vaso, garante furos e drenagem — a humidade atlântica é o único risco.',
     expectations: 'Lento a estabelecer, depois é quase eterno e de zero manutenção.',
     commonMistake: 'Regar demais — a raiz apodrece. Menos é mais com o alecrim.',
     stages: [
@@ -231,7 +237,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas, sementes e raiz.',
     petSafe: true,
-    shortDescription: 'Indispensável na cozinha portuguesa. Cresce depressa, mas espiga com o calor — semeia em sucessão.',
+    shortDescription:
+      'Indispensável na cozinha portuguesa. Cresce depressa, mas espiga com o calor — semeia em sucessão.',
     in30Seconds: [
       'Da semente à folha em 4-6 semanas.',
       'Com calor "espiga" (vai a flor) depressa — colhe cedo.',
@@ -285,7 +292,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     edibleParts: 'As folhas tubulares e as flores.',
     toxicNote: 'Como toda a família da cebola, é tóxico para cães e gatos.',
     petSafe: false,
-    shortDescription: 'Vivaz e quase imortal. Uma vez plantado, dá folha fina com sabor a cebola durante anos.',
+    shortDescription:
+      'Vivaz e quase imortal. Uma vez plantado, dá folha fina com sabor a cebola durante anos.',
     in30Seconds: [
       'Planta uma vez, colhe durante anos.',
       'Corta à tesoura como erva — rebenta sempre.',
@@ -338,7 +346,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas e raminhos.',
     petSafe: true,
-    shortDescription: 'Mediterrânico e resistente à seca. Quer sol e pouca água — o erro mais comum é regar demais.',
+    shortDescription:
+      'Mediterrânico e resistente à seca. Quer sol e pouca água — o erro mais comum é regar demais.',
     in30Seconds: [
       'Gosta de seco e soalheiro — rega pouco.',
       'Vivaz e lenhoso; dura anos.',
@@ -445,9 +454,11 @@ export const AROMATICA_PLANTS: Plant[] = [
     needsSupplementalLight: false,
     pollination: 'insetos',
     edibleParts: 'Folhas (secas ou frescas, como tempero).',
-    toxicNote: 'As folhas são tóxicas para cães, gatos e cavalos se ingeridas. Uso culinário humano é seguro (retira-se a folha antes de comer).',
+    toxicNote:
+      'As folhas são tóxicas para cães, gatos e cavalos se ingeridas. Uso culinário humano é seguro (retira-se a folha antes de comer).',
     petSafe: false,
-    shortDescription: 'Um arbusto perene que dá folhas de tempero o ano todo. Cresce devagar mas dura uma vida.',
+    shortDescription:
+      'Um arbusto perene que dá folhas de tempero o ano todo. Cresce devagar mas dura uma vida.',
     in30Seconds: [
       'Vivaz e muito resistente; vive anos num vaso grande.',
       'Cresce devagar — começa por uma muda, não por semente.',
@@ -457,8 +468,10 @@ export const AROMATICA_PLANTS: Plant[] = [
       'Mais fácil a partir de muda ou estaca (a semente é lenta e caprichosa). Tolera seca e frio; só não gosta de solo encharcado.',
     wateringNotes: 'Rega moderada; deixa secar entre regas. Em vaso, garante boa drenagem.',
     feedingNotes: 'Pouco exigente. Um composto na primavera chega.',
-    harvestNotes: 'Colhe folhas individuais quando precisas; as mais velhas têm mais aroma. Seca bem à sombra.',
-    portugalNotes: 'Muito bem adaptado ao clima português; aguenta o frio do litoral e o calor. Ótimo em vaso na varanda.',
+    harvestNotes:
+      'Colhe folhas individuais quando precisas; as mais velhas têm mais aroma. Seca bem à sombra.',
+    portugalNotes:
+      'Muito bem adaptado ao clima português; aguenta o frio do litoral e o calor. Ótimo em vaso na varanda.',
     expectations: 'Tempero para a vida toda a partir de uma planta — mas tem paciência no arranque.',
     commonMistake: 'Tentar por semente e desistir — começa por muda. E não regar a mais.',
     stages: [
@@ -509,7 +522,8 @@ export const AROMATICA_PLANTS: Plant[] = [
       'Semeia diretamente (não gosta de transplante). Para bolbo tenro, amontoa um pouco de terra à volta e rega com regularidade.',
     wateringNotes: 'Rega regular para bolbos tenros; a seca torna-o fibroso e faz espigar.',
     feedingNotes: 'Solo com algum composto chega. Não precisa de muito azoto.',
-    harvestNotes: 'Colhe o bolbo quando tiver o tamanho de um punho, cortando à superfície do solo. Se deixares a base no terreno, rebenta folhagem fina que podes usar como erva aromática. Não esperes demais — passado o ponto, o bolbo fica fibroso e sobe a flor.',
+    harvestNotes:
+      'Colhe o bolbo quando tiver o tamanho de um punho, cortando à superfície do solo. Se deixares a base no terreno, rebenta folhagem fina que podes usar como erva aromática. Não esperes demais — passado o ponto, o bolbo fica fibroso e sobe a flor.',
     portugalNotes:
       'Cresce bem no clima ameno do litoral. Dá-lhe um canto só seu — é mau companheiro para a maioria das hortícolas.',
     expectations: 'Bolbos em ~3 meses; folhas e sementes como bónus.',
@@ -553,7 +567,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Talos e folhas.',
     petSafe: true,
-    shortDescription: 'Exigente com a água e a paciência, mas perfumado e estaladiço. Para quem já tem prática.',
+    shortDescription:
+      'Exigente com a água e a paciência, mas perfumado e estaladiço. Para quem já tem prática.',
     in30Seconds: [
       'Quer água constante — nunca deixar secar.',
       'Demora e é delicado; não é para a primeira horta.',
@@ -607,7 +622,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     edibleParts: 'Folhas planas e flores.',
     toxicNote: 'Como toda a família da cebola/alho, é tóxico para cães e gatos.',
     petSafe: false,
-    shortDescription: 'Folha plana com sabor suave a alho. Vivaz e fácil — corta e volta a crescer durante anos.',
+    shortDescription:
+      'Folha plana com sabor suave a alho. Vivaz e fácil — corta e volta a crescer durante anos.',
     in30Seconds: [
       'Sabor a alho suave, sem bolbo.',
       'Vivaz: planta uma vez, colhe durante anos.',
@@ -658,7 +674,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas e raminhos.',
     petSafe: true,
-    shortDescription: 'Aromática mediterrânica de sabor a pimenta — a companheira clássica do feijão e das leguminosas.',
+    shortDescription:
+      'Aromática mediterrânica de sabor a pimenta — a companheira clássica do feijão e das leguminosas.',
     in30Seconds: [
       'Tempero pimentado para feijoadas e grelhados.',
       'Gosta de sol e pouca água.',
@@ -709,7 +726,8 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas e raminhos.',
     petSafe: true,
-    shortDescription: 'Como o tomilho comum, mas com aroma cítrico. Resistente à seca e perfeito para peixe e chá.',
+    shortDescription:
+      'Como o tomilho comum, mas com aroma cítrico. Resistente à seca e perfeito para peixe e chá.',
     in30Seconds: [
       'Aroma a limão; ótimo em peixe e infusões.',
       'Gosta de sol e pouca água — vivaz e lenhoso.',
@@ -811,13 +829,15 @@ export const AROMATICA_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'Folhas (frescas).',
     petSafe: true,
-    shortDescription: 'Erva fina de sabor delicado a anis, da cozinha francesa. Rápida e amante de meia-sombra.',
+    shortDescription:
+      'Erva fina de sabor delicado a anis, da cozinha francesa. Rápida e amante de meia-sombra.',
     in30Seconds: [
       'Sabor subtil a anis; junta-se no fim, cru.',
       'Prefere meia-sombra e fresco — espiga com calor.',
       'Da semente à folha em ~6 semanas.',
     ],
-    growingTips: 'Semeia diretamente em sucessão; não gosta de transplante. Sombra parcial atrasa o espigamento.',
+    growingTips:
+      'Semeia diretamente em sucessão; não gosta de transplante. Sombra parcial atrasa o espigamento.',
     wateringNotes: 'Solo húmido e fresco; o calor/seca faz espigar.',
     feedingNotes: 'Pouco exigente.',
     harvestNotes: 'Corta as folhas jovens; usa fresco (o calor estraga o aroma).',

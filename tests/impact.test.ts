@@ -15,7 +15,12 @@ describe('attractsPollinators', () => {
 describe('gardenImpact', () => {
   it('conta espécies distintas e colheitas concluídas', () => {
     const impact = gardenImpact(
-      [item('tomate', 'colhida'), item('tomate', 'ativa'), item('alface', 'colhida'), item('cenoura', 'ativa')],
+      [
+        item('tomate', 'colhida'),
+        item('tomate', 'ativa'),
+        item('alface', 'colhida'),
+        item('cenoura', 'ativa'),
+      ],
       5,
     )
     expect(impact.speciesCount).toBe(3) // tomate, alface, cenoura

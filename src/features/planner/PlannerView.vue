@@ -151,7 +151,11 @@ function kindMeta(k: BedKind) {
             v-for="k in kinds"
             :key="k.v"
             class="rounded-xl border px-2 py-2 text-center text-xs transition"
-            :class="kind === k.v ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              kind === k.v
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="kind = k.v"
           >
             <div class="text-lg">{{ k.emoji }}</div>
@@ -181,12 +185,16 @@ function kindMeta(k: BedKind) {
       class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 sm:items-center"
       @click.self="showShopping = false"
     >
-      <div class="w-full max-w-md rounded-t-2xl sm:rounded-2xl bg-white dark:bg-dark-surface p-5 safe-bottom max-h-[80vh] overflow-y-auto">
+      <div
+        class="w-full max-w-md rounded-t-2xl sm:rounded-2xl bg-white dark:bg-dark-surface p-5 safe-bottom max-h-[80vh] overflow-y-auto"
+      >
         <h3 class="font-display text-lg font-bold mb-3">🛒 Lista de compras</h3>
         <p class="text-xs font-semibold uppercase tracking-wide text-green-600 mb-1">Sementes</p>
         <ul class="mb-4 space-y-1 text-sm">
           <li v-for="s in shoppingList.seeds" :key="s" class="flex gap-2"><span>☐</span>{{ s }}</li>
-          <li v-if="!shoppingList.seeds.length" class="text-neutral-400">Ainda não marcaste plantas no plano.</li>
+          <li v-if="!shoppingList.seeds.length" class="text-neutral-400">
+            Ainda não marcaste plantas no plano.
+          </li>
         </ul>
         <p class="text-xs font-semibold uppercase tracking-wide text-green-600 mb-1">Material</p>
         <ul class="mb-4 space-y-1 text-sm">

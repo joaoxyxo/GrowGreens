@@ -21,13 +21,25 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Vitamina C', effect: 'Imunidade e absorção do ferro vegetal.' },
     ],
     tip: 'O efeito do alimento inteiro supera o dos suplementos — come as folhas, não pastilhas.',
-    caution: 'Espinafre e acelga têm oxalatos (quem tem pedras nos rins deve moderar). Folhas muito adubadas acumulam nitratos — colhe-as bem desenvolvidas e varia a alimentação.',
+    caution:
+      'Espinafre e acelga têm oxalatos (quem tem pedras nos rins deve moderar). Folhas muito adubadas acumulam nitratos — colhe-as bem desenvolvidas e varia a alimentação.',
   },
   {
     code: 'brassicas',
     name: 'Brássicas (crucíferas)',
     emoji: '🥦',
-    plants: ['brocolos', 'rabanete', 'rucula', 'couve-galega', 'couve-flor', 'couve-lombarda', 'nabo', 'couve-de-bruxelas', 'couve-chinesa', 'mizuna'],
+    plants: [
+      'brocolos',
+      'rabanete',
+      'rucula',
+      'couve-galega',
+      'couve-flor',
+      'couve-lombarda',
+      'nabo',
+      'couve-de-bruxelas',
+      'couve-chinesa',
+      'mizuna',
+    ],
     whyGood: [
       'Contêm glucosinolatos, precursores do sulforafano, estudado pelo seu potencial anticancerígeno.',
       'O consumo regular associa-se a menor mortalidade por todas as causas.',
@@ -40,13 +52,26 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Fibra', effect: 'Saúde intestinal.' },
     ],
     tip: 'Comer parte crua (rúcula, rabanete) preserva a vitamina C; cozinhar pouco mantém mais nutrientes.',
-    caution: 'Em grandes quantidades cruas podem afetar a tiroide em pessoas sensíveis — variedade é a chave.',
+    caution:
+      'Em grandes quantidades cruas podem afetar a tiroide em pessoas sensíveis — variedade é a chave.',
   },
   {
     code: 'frutos_raizes',
     name: 'Frutos e raízes',
     emoji: '🍅',
-    plants: ['tomate', 'pimento', 'cenoura', 'beterraba', 'courgette', 'pepino', 'abobora', 'beringela', 'melao', 'batata', 'alho-frances'],
+    plants: [
+      'tomate',
+      'pimento',
+      'cenoura',
+      'beterraba',
+      'courgette',
+      'pepino',
+      'abobora',
+      'beringela',
+      'melao',
+      'batata',
+      'alho-frances',
+    ],
     whyGood: [
       'O tomate é a principal fonte de licopeno, ligado à saúde cardiovascular.',
       'Cenoura e beterraba dão beta-caroteno e nitratos benéficos.',
@@ -58,7 +83,8 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Potássio', effect: 'Equilíbrio de fluidos e tensão arterial.' },
     ],
     tip: 'O tomate cozinhado com um fio de azeite liberta MAIS licopeno do que cru. Come os dois!',
-    caution: 'Não comas batatas verdes ou rebentadas nem partes verdes das solanáceas (folhas de tomate/beringela/batata) — contêm solanina, tóxica. Guarda a batata ao escuro.',
+    caution:
+      'Não comas batatas verdes ou rebentadas nem partes verdes das solanáceas (folhas de tomate/beringela/batata) — contêm solanina, tóxica. Guarda a batata ao escuro.',
   },
   {
     code: 'leguminosas',
@@ -76,13 +102,25 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Folato e ferro', effect: 'Energia e formação de sangue.' },
     ],
     tip: 'Combina com uma fonte de vitamina C (ex.: pimento) para absorver melhor o ferro vegetal.',
-    caution: 'Coze bem os grãos antes de comer — crus ou mal cozidos têm lectinas que causam mal-estar. Pessoas com favismo (deficiência de G6PD) devem evitar favas.',
+    caution:
+      'Coze bem os grãos antes de comer — crus ou mal cozidos têm lectinas que causam mal-estar. Pessoas com favismo (deficiência de G6PD) devem evitar favas.',
   },
   {
     code: 'aromaticas',
     name: 'Aromáticas',
     emoji: '🌿',
-    plants: ['manjericao', 'salsa', 'hortela', 'alecrim', 'coentros', 'cebolinho', 'tomilho', 'oregaos', 'louro', 'funcho'],
+    plants: [
+      'manjericao',
+      'salsa',
+      'hortela',
+      'alecrim',
+      'coentros',
+      'cebolinho',
+      'tomilho',
+      'oregaos',
+      'louro',
+      'funcho',
+    ],
     whyGood: [
       'Concentram antioxidantes e óleos essenciais num volume pequeno.',
       'Dão muito sabor — ajudam a reduzir o sal nas refeições.',
@@ -93,10 +131,14 @@ export const NUTRIENT_GROUPS: NutrientGroup[] = [
       { nutrient: 'Antioxidantes (polifenóis)', effect: 'Combatem o stress oxidativo.' },
       { nutrient: 'Vitamina K', effect: 'Saúde óssea e do sangue.' },
       { nutrient: 'Óleos essenciais', effect: 'Aroma e propriedades antimicrobianas.' },
-      { nutrient: 'Ferro e cálcio (salsa, tomilho)', effect: 'Em pequenas doses, complementam a alimentação.' },
+      {
+        nutrient: 'Ferro e cálcio (salsa, tomilho)',
+        effect: 'Em pequenas doses, complementam a alimentação.',
+      },
     ],
     tip: 'Adiciona as folhas frescas no fim da cozedura para preservar o aroma e os nutrientes.',
-    caution: 'A salsa em grande quantidade e a sálvia/funcho em óleos concentrados não são aconselhados na gravidez. Como tempero no prato, sem problema.',
+    caution:
+      'A salsa em grande quantidade e a sálvia/funcho em óleos concentrados não são aconselhados na gravidez. Como tempero no prato, sem problema.',
   },
 ]
 

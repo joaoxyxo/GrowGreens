@@ -38,7 +38,6 @@ const categories: { v: PlantCategory | 'todas'; label: string }[] = [
   { v: 'aromatica', label: 'Aromáticas' },
 ]
 
-
 // Índice de pesquisa pré-normalizado (uma só vez) — evita re-normalizar os textos
 // de todas as plantas a cada tecla premida.
 const searchBlob = new Map(
@@ -80,7 +79,11 @@ const results = computed(() => {
           v-for="c in categories"
           :key="c.v"
           class="flex-shrink-0 whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium transition"
-          :class="catFilter === c.v ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'"
+          :class="
+            catFilter === c.v
+              ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+              : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'
+          "
           @click="catFilter = c.v"
         >
           {{ c.label }}
@@ -89,21 +92,33 @@ const results = computed(() => {
       <div class="flex flex-wrap gap-2 mt-1 mb-4">
         <button
           class="rounded-full border px-3 py-1 text-xs font-medium transition"
-          :class="sowableOnly ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'"
+          :class="
+            sowableOnly
+              ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+              : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'
+          "
           @click="sowableOnly = !sowableOnly"
         >
           🌱 Semear este mês
         </button>
         <button
           class="rounded-full border px-3 py-1 text-xs font-medium transition"
-          :class="diffFilter === 'facil' ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'"
+          :class="
+            diffFilter === 'facil'
+              ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+              : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'
+          "
           @click="diffFilter = diffFilter === 'facil' ? 'todas' : 'facil'"
         >
           ⭐ Fáceis
         </button>
         <button
           class="rounded-full border px-3 py-1 text-xs font-medium transition"
-          :class="locFilter === 'interior' ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'"
+          :class="
+            locFilter === 'interior'
+              ? 'border-green-500 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+              : 'border-neutral-200 dark:border-dark-surface2 text-neutral-600 dark:text-neutral-300'
+          "
           @click="locFilter = locFilter === 'interior' ? 'todas' : 'interior'"
         >
           🏠 Interior
@@ -111,7 +126,10 @@ const results = computed(() => {
       </div>
 
       <!-- Resultados -->
-      <div v-if="results.length" class="grid grid-cols-2 gap-3 [content-visibility:auto] [contain-intrinsic-size:auto_140px]">
+      <div
+        v-if="results.length"
+        class="grid grid-cols-2 gap-3 [content-visibility:auto] [contain-intrinsic-size:auto_140px]"
+      >
         <PlantCard
           v-for="p in results"
           :key="p.slug"

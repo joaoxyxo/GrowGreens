@@ -25,10 +25,15 @@ test('catálogo: a pesquisa filtra as plantas', async ({ page }) => {
 test('horta: adicionar uma planta e vê-la na horta', async ({ page }) => {
   await gotoCatalog(page)
 
-  await page.getByRole('link', { name: /Alface/ }).first().click()
+  await page
+    .getByRole('link', { name: /Alface/ })
+    .first()
+    .click()
   await expect(page).toHaveURL(/\/planta\/alface/)
   // O botão fica no fundo, tapado pela TabBar fixa — dispara o handler via DOM.
-  await page.getByRole('button', { name: /Adicionar à minha horta/ }).evaluate((el) => (el as HTMLElement).click())
+  await page
+    .getByRole('button', { name: /Adicionar à minha horta/ })
+    .evaluate((el) => (el as HTMLElement).click())
   // Modal de adicionar (overlay acima da TabBar)
   await expect(page.getByRole('heading', { name: /Adicionar Alface/ })).toBeVisible()
   await page.getByRole('button', { name: 'Adicionar 🌱' }).click()

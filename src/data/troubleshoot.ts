@@ -174,7 +174,8 @@ export const SYMPTOMS: Symptom[] = [
     id: 'raizes-com-galhas',
     emoji: '🪱',
     label: 'Planta mirrada e a murchar com calor; raízes com nódulos ao arrancar',
-    likely: 'Nemátodes-das-galhas no solo — vermes microscópicos que deformam as raízes e travam a absorção de água.',
+    likely:
+      'Nemátodes-das-galhas no solo — vermes microscópicos que deformam as raízes e travam a absorção de água.',
     whatToDo: [
       'Arranca e destrói as plantas afetadas (não compostar).',
       'Faz rotação de culturas nesse canteiro durante alguns anos e adiciona matéria orgânica.',
@@ -186,7 +187,8 @@ export const SYMPTOMS: Symptom[] = [
     id: 'folhas-crivadas',
     emoji: '⚫',
     label: 'Folhas jovens crivadas de pequenos buracos redondos (como tiros de chumbo)',
-    likely: 'Áltica (pulga-da-terra), minúsculos besouros saltadores que atacam brássicas jovens (rúcula, rabanete) no tempo quente e seco.',
+    likely:
+      'Áltica (pulga-da-terra), minúsculos besouros saltadores que atacam brássicas jovens (rúcula, rabanete) no tempo quente e seco.',
     whatToDo: [
       'Cobre as plântulas com rede fina logo após a sementeira.',
       'Mantém o solo húmido — a áltica gosta de seco e quente.',
@@ -198,7 +200,8 @@ export const SYMPTOMS: Symptom[] = [
     id: 'nuvem-brancos',
     emoji: '⚪',
     label: 'Nuvem de insetos brancos minúsculos ao tocar na planta',
-    likely: 'Mosca-branca, comum em tomate e pimento (e em estufa/interior) — suga a seiva e deixa as folhas pegajosas e amareladas.',
+    likely:
+      'Mosca-branca, comum em tomate e pimento (e em estufa/interior) — suga a seiva e deixa as folhas pegajosas e amareladas.',
     whatToDo: [
       'Pendura armadilhas adesivas amarelas perto das plantas.',
       'Pulveriza o verso das folhas com sabão potássico ou óleo de nim, ao fim do dia.',

@@ -81,13 +81,15 @@ export const LEGUMINOSA_PLANTS: Plant[] = [
     pollination: 'autofertil',
     edibleParts: 'Grão (e vagem, nas variedades de comer com casca).',
     petSafe: true,
-    shortDescription: 'Cultura de tempo fresco, doce acabada de colher. Semeia-se no outono/inverno no litoral.',
+    shortDescription:
+      'Cultura de tempo fresco, doce acabada de colher. Semeia-se no outono/inverno no litoral.',
     in30Seconds: [
       'Gosta de frio — semeia de outubro a fevereiro cá.',
       'Precisa de um apoio para trepar.',
       'A ervilha fresca do quintal não tem comparação com a comprada.',
     ],
-    growingTips: 'Semeia direto e dá-lhe rede ou ramos para trepar. Demolhar as sementes acelera a germinação.',
+    growingTips:
+      'Semeia direto e dá-lhe rede ou ramos para trepar. Demolhar as sementes acelera a germinação.',
     wateringNotes: 'Rega regular; a chuva de inverno costuma chegar. Evita encharcamento.',
     feedingNotes: 'Fixa azoto; não precisa de adubo azotado. Composto chega.',
     harvestNotes: 'Colhe as vagens cheias mas ainda tenras; colher estimula mais produção.',
@@ -135,7 +137,8 @@ export const LEGUMINOSA_PLANTS: Plant[] = [
     edibleParts: 'As sementes (favas) e as vagens muito jovens.',
     toxicNote: 'Pessoas com deficiência de G6PD (favismo) não devem comer favas. Coze sempre antes de comer.',
     petSafe: true,
-    shortDescription: 'A leguminosa de inverno por excelência. Semeia-se no outono e enriquece o solo com azoto.',
+    shortDescription:
+      'A leguminosa de inverno por excelência. Semeia-se no outono e enriquece o solo com azoto.',
     in30Seconds: [
       'Semeia-se no outono e aguenta o frio todo.',
       'Fixa azoto — deixa a terra melhor para a cultura seguinte.',
@@ -146,8 +149,7 @@ export const LEGUMINOSA_PLANTS: Plant[] = [
     wateringNotes: 'A chuva do inverno costuma chegar; rega na floração se houver seca.',
     feedingNotes: 'Não precisa de azoto — fabrica o seu. Um pouco de composto chega.',
     harvestNotes: 'Colhe as vagens de baixo para cima, quando as favas se notam mas ainda tenras.',
-    portugalNotes:
-      'Cultura tradicional de inverno em Portugal. Semeia de outubro a dezembro no litoral.',
+    portugalNotes: 'Cultura tradicional de inverno em Portugal. Semeia de outubro a dezembro no litoral.',
     expectations: 'Da sementeira de outono à colheita de primavera; várias vagens por planta.',
     commonMistake: 'Não pinçar as pontas — os afídeos atacam os rebentos tenros em força.',
     stages: [
@@ -252,13 +254,18 @@ export const LEGUMINOSA_PLANTS: Plant[] = [
       'Fixa azoto: deixa o solo mais rico.',
       'Cada vagem dá 1-2 grãos; é preciso espaço.',
     ],
-    growingTips: 'Semeia direto na primavera, em solo bem drenado e ao sol. Não regues em excesso — prefere seco a encharcado. Não precisa de adubo azotado (fixa o seu).',
+    growingTips:
+      'Semeia direto na primavera, em solo bem drenado e ao sol. Não regues em excesso — prefere seco a encharcado. Não precisa de adubo azotado (fixa o seu).',
     wateringNotes: 'Rega moderada no crescimento e quase nula na maturação; o excesso favorece doenças.',
     feedingNotes: 'Como leguminosa, dispensa azoto. Um pouco de composto à sementeira chega.',
-    harvestNotes: 'Para grão seco, colhe quando as plantas amarelecem e as vagens secam. Para grão verde, abre a vagem ainda tenra.',
-    portugalNotes: 'Cultura tradicional de sequeiro no interior e sul; no litoral, escolhe um canteiro soalheiro e bem drenado.',
-    expectations: 'Cerca de 3,5-4 meses até ao grão seco. O rendimento por planta é modesto — vale mais pela rusticidade e pelo solo.',
-    commonMistake: 'Regar demais — o grão-de-bico apodrece com água parada. Trata-o como cultura de sequeiro.',
+    harvestNotes:
+      'Para grão seco, colhe quando as plantas amarelecem e as vagens secam. Para grão verde, abre a vagem ainda tenra.',
+    portugalNotes:
+      'Cultura tradicional de sequeiro no interior e sul; no litoral, escolhe um canteiro soalheiro e bem drenado.',
+    expectations:
+      'Cerca de 3,5-4 meses até ao grão seco. O rendimento por planta é modesto — vale mais pela rusticidade e pelo solo.',
+    commonMistake:
+      'Regar demais — o grão-de-bico apodrece com água parada. Trata-o como cultura de sequeiro.',
     stages: [
       { stage: 'germinacao', durationDays: [7, 14], text: 'Em solo já morno; não encharcar.' },
       { stage: 'plantula', durationDays: [20, 30], text: 'Cresce em arbusto baixo e ramificado.' },
@@ -299,19 +306,26 @@ export const LEGUMINOSA_PLANTS: Plant[] = [
     pollination: 'autofertil',
     edibleParts: 'Grão seco (e rebentos germinados).',
     petSafe: true,
-    shortDescription: 'Leguminosa rústica de sequeiro que fixa azoto. Cresce em mata-baixa e tolera bem a seca e o frio ligeiro.',
+    shortDescription:
+      'Leguminosa rústica de sequeiro que fixa azoto. Cresce em mata-baixa e tolera bem a seca e o frio ligeiro.',
     in30Seconds: [
       'Resistente à seca e ao frio ligeiro.',
       'Fixa azoto — melhora o solo.',
       'Rende pouco por planta; semeia em mancha.',
     ],
-    growingTips: 'Semeia direto no fim do inverno/primavera, em solo leve e bem drenado, ao sol. Quase não precisa de rega nem adubo azotado. As sementes também germinam bem como rebentos.',
-    wateringNotes: 'Rega mínima; é cultura de sequeiro. O excesso de água favorece doenças e apodrece a raiz.',
+    growingTips:
+      'Semeia direto no fim do inverno/primavera, em solo leve e bem drenado, ao sol. Quase não precisa de rega nem adubo azotado. As sementes também germinam bem como rebentos.',
+    wateringNotes:
+      'Rega mínima; é cultura de sequeiro. O excesso de água favorece doenças e apodrece a raiz.',
     feedingNotes: 'Não precisa de azoto (fixa o seu). Um pouco de composto à sementeira chega.',
-    harvestNotes: 'Colhe quando as plantas e as vagens secam (fim da primavera/verão). Debulha as vagens para o grão seco.',
-    portugalNotes: 'Tradicional de sequeiro no interior; no litoral, escolhe um canteiro soalheiro e bem drenado e semeia cedo.',
-    expectations: 'Cerca de 3,5-4 meses até ao grão seco. Rendimento modesto — vale pela rusticidade e por enriquecer o solo.',
-    commonMistake: 'Regar demais ou semear em solo pesado e encharcado — apodrece. Trata-a como cultura de sequeiro.',
+    harvestNotes:
+      'Colhe quando as plantas e as vagens secam (fim da primavera/verão). Debulha as vagens para o grão seco.',
+    portugalNotes:
+      'Tradicional de sequeiro no interior; no litoral, escolhe um canteiro soalheiro e bem drenado e semeia cedo.',
+    expectations:
+      'Cerca de 3,5-4 meses até ao grão seco. Rendimento modesto — vale pela rusticidade e por enriquecer o solo.',
+    commonMistake:
+      'Regar demais ou semear em solo pesado e encharcado — apodrece. Trata-a como cultura de sequeiro.',
     stages: [
       { stage: 'germinacao', durationDays: [7, 12], text: 'Germina em solo fresco; não encharcar.' },
       { stage: 'plantula', durationDays: [20, 30], text: 'Mata-baixa ramificada e fina.' },

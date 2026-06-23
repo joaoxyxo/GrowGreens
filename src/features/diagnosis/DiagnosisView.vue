@@ -52,7 +52,14 @@ function onPhoto(e: Event) {
 <template>
   <div>
     <PageHeader title="Diagnóstico por foto" subtitle="A planta não está bem?" back />
-    <input ref="fileInput" type="file" accept="image/*" capture="environment" class="hidden" @change="onPhoto" />
+    <input
+      ref="fileInput"
+      type="file"
+      accept="image/*"
+      capture="environment"
+      class="hidden"
+      @change="onPhoto"
+    />
 
     <div class="px-4 pb-10">
       <AppCard class="mb-4 bg-sun-400/10 border-sun-400/30">
@@ -72,9 +79,17 @@ function onPhoto(e: Event) {
           <li>🍃 Uma planta de cada vez, bem focada.</li>
         </ul>
         <div v-if="previewUrl" class="mt-3">
-          <img :src="previewUrl" loading="lazy" decoding="async" class="h-48 w-full rounded-xl object-cover" alt="Foto da planta" />
+          <img
+            :src="previewUrl"
+            loading="lazy"
+            decoding="async"
+            class="h-48 w-full rounded-xl object-cover"
+            alt="Foto da planta"
+          />
         </div>
-        <BaseButton class="mt-3" block @click="pick">📷 {{ previewUrl ? 'Tirar outra foto' : 'Tirar foto' }}</BaseButton>
+        <BaseButton class="mt-3" block @click="pick"
+          >📷 {{ previewUrl ? 'Tirar outra foto' : 'Tirar foto' }}</BaseButton
+        >
       </AppCard>
 
       <div v-if="analysing" class="text-center text-sm text-neutral-500 py-4">A preparar a análise…</div>
@@ -126,15 +141,21 @@ function onPhoto(e: Event) {
 
           <!-- Navegação -->
           <div class="mt-4 flex items-center gap-3">
-            <BaseButton v-if="keyPath.length > 1" variant="ghost" size="sm" @click="keyBack">← Voltar</BaseButton>
-            <BaseButton v-if="keyPath.length > 1" variant="ghost" size="sm" @click="keyReset">Recomeçar</BaseButton>
+            <BaseButton v-if="keyPath.length > 1" variant="ghost" size="sm" @click="keyBack"
+              >← Voltar</BaseButton
+            >
+            <BaseButton v-if="keyPath.length > 1" variant="ghost" size="sm" @click="keyReset"
+              >Recomeçar</BaseButton
+            >
           </div>
         </AppCard>
       </section>
 
       <!-- Resolução por sintomas (sem IA) -->
       <h2 class="mb-1 font-display text-lg font-bold">Ou procura na lista de sintomas</h2>
-      <p class="mb-3 text-sm text-neutral-500 dark:text-neutral-400">Escolhe o que estás a ver — sem termos complicados.</p>
+      <p class="mb-3 text-sm text-neutral-500 dark:text-neutral-400">
+        Escolhe o que estás a ver — sem termos complicados.
+      </p>
       <div class="space-y-2">
         <div v-for="s in SYMPTOMS" :key="s.id">
           <button

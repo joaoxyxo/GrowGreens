@@ -106,11 +106,7 @@ export interface MicrogreenInfo {
   note: string
 }
 
-export type CalendarAction =
-  | 'sementeira_interior'
-  | 'sementeira_direta'
-  | 'transplante'
-  | 'colheita'
+export type CalendarAction = 'sementeira_interior' | 'sementeira_direta' | 'transplante' | 'colheita'
 
 export interface CalendarEntry {
   plant: string // slug
@@ -183,12 +179,7 @@ export interface Recipe {
 
 // ---- Curso ----
 
-export type LessonStepKind =
-  | 'concept'
-  | 'choice'
-  | 'truefalse'
-  | 'order'
-  | 'summary'
+export type LessonStepKind = 'concept' | 'choice' | 'truefalse' | 'order' | 'summary'
 
 export interface LessonStep {
   kind: LessonStepKind

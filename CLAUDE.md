@@ -10,7 +10,7 @@ PWA local-first que ensina horticultura a principiantes, da semente à colheita,
 
 - **Vue 3** (`<script setup>`, Composition API) + **TypeScript**
 - **Vite 6** (build/dev) + **vite-plugin-pwa** (offline + instalável)
-- **Pinia** (estado), **Vue Router** (history mode, respeita `import.meta.env.BASE_URL`), **Vue I18n**
+- **Pinia** (estado), **Vue Router** (history mode, respeita `import.meta.env.BASE_URL`)
 - **Dexie** (IndexedDB) — dados do utilizador, local-first
 - **Tailwind CSS v4** (via `@tailwindcss/vite`)
 - Gestor de pacotes: **npm**

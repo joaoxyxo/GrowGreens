@@ -46,7 +46,9 @@ function lessonState(_unitIndex: number, lessonId: string): 'done' | 'current' |
           <span class="text-2xl" aria-hidden="true">🧠</span>
           <div class="flex-1">
             <p class="font-semibold text-sm">Revisão rápida</p>
-            <p class="text-xs text-neutral-500 dark:text-neutral-400">Relembra o que aprendeste e ganha XP.</p>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400">
+              Relembra o que aprendeste e ganha XP.
+            </p>
           </div>
           <span class="text-neutral-400" aria-hidden="true">→</span>
         </div>
@@ -70,13 +72,21 @@ function lessonState(_unitIndex: number, lessonId: string): 'done' | 'current' |
             class="flex items-center gap-3 rounded-2xl border px-4 py-3 transition"
             :class="[
               lessonState(ui, lid) === 'done' ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : '',
-              lessonState(ui, lid) === 'current' ? 'border-green-500 ring-2 ring-green-500/30 bg-white dark:bg-dark-surface' : '',
-              lessonState(ui, lid) === 'locked' ? 'border-neutral-200 dark:border-dark-surface2 opacity-50' : 'border-neutral-200 dark:border-dark-surface2',
+              lessonState(ui, lid) === 'current'
+                ? 'border-green-500 ring-2 ring-green-500/30 bg-white dark:bg-dark-surface'
+                : '',
+              lessonState(ui, lid) === 'locked'
+                ? 'border-neutral-200 dark:border-dark-surface2 opacity-50'
+                : 'border-neutral-200 dark:border-dark-surface2',
             ]"
           >
             <span
               class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold"
-              :class="lessonState(ui, lid) === 'done' ? 'bg-green-500 text-white' : 'bg-neutral-100 dark:bg-dark-surface2 text-neutral-500'"
+              :class="
+                lessonState(ui, lid) === 'done'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-neutral-100 dark:bg-dark-surface2 text-neutral-500'
+              "
             >
               <span v-if="lessonState(ui, lid) === 'done'">✓</span>
               <span v-else-if="lessonState(ui, lid) === 'locked'">🔒</span>
@@ -84,7 +94,9 @@ function lessonState(_unitIndex: number, lessonId: string): 'done' | 'current' |
             </span>
             <span class="flex-1">
               <span class="block text-sm font-medium">{{ LESSONS_BY_ID[lid].title }}</span>
-              <span class="block text-xs text-neutral-500 dark:text-neutral-400">{{ LESSONS_BY_ID[lid].subtitle }}</span>
+              <span class="block text-xs text-neutral-500 dark:text-neutral-400">{{
+                LESSONS_BY_ID[lid].subtitle
+              }}</span>
             </span>
             <span class="text-xs font-semibold text-sun-500">+{{ LESSONS_BY_ID[lid].xp }}</span>
           </component>

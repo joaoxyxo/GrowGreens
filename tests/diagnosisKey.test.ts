@@ -22,7 +22,10 @@ describe('chave de diagnóstico dicotómica', () => {
   it('todos os resultados apontam para sintomas existentes', () => {
     for (const node of Object.values(DIAGNOSIS_KEY)) {
       if (node.kind === 'result') {
-        expect(SYMPTOMS_BY_ID[node.symptomId], `resultado ${node.id} → ${node.symptomId} inexistente`).toBeTruthy()
+        expect(
+          SYMPTOMS_BY_ID[node.symptomId],
+          `resultado ${node.id} → ${node.symptomId} inexistente`,
+        ).toBeTruthy()
       }
     }
   })

@@ -91,8 +91,12 @@ function leave() {
       <div class="text-6xl mb-3" aria-hidden="true">🎉</div>
       <h2 class="font-display text-2xl font-bold">Lição concluída!</h2>
       <div class="mt-3 flex gap-2">
-        <span class="rounded-full bg-sun-400/15 px-3 py-1 text-sm font-semibold text-sun-500">+{{ lesson.xp }} XP</span>
-        <span class="rounded-full bg-flame-500/10 px-3 py-1 text-sm font-semibold text-flame-500">🔥 {{ progress.state.streak }}</span>
+        <span class="rounded-full bg-sun-400/15 px-3 py-1 text-sm font-semibold text-sun-500"
+          >+{{ lesson.xp }} XP</span
+        >
+        <span class="rounded-full bg-flame-500/10 px-3 py-1 text-sm font-semibold text-flame-500"
+          >🔥 {{ progress.state.streak }}</span
+        >
       </div>
       <BaseButton class="mt-8" block @click="leave">Continuar</BaseButton>
     </div>
@@ -116,8 +120,12 @@ function leave() {
               :key="i"
               class="rounded-2xl border-2 px-4 py-3 text-left font-medium transition"
               :class="[
-                !checked && selected === i ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2',
-                checked && i === step.correctIndex ? 'border-green-500 bg-green-100 dark:bg-green-900/40' : '',
+                !checked && selected === i
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                  : 'border-neutral-200 dark:border-dark-surface2',
+                checked && i === step.correctIndex
+                  ? 'border-green-500 bg-green-100 dark:bg-green-900/40'
+                  : '',
                 checked && selected === i && i !== step.correctIndex ? 'border-error bg-error/10' : '',
               ]"
               :disabled="checked"
@@ -137,15 +145,23 @@ function leave() {
               v-for="(item, i) in step.items"
               :key="i"
               class="flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left font-medium transition"
-              :class="orderPick.includes(i) ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+              :class="
+                orderPick.includes(i)
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                  : 'border-neutral-200 dark:border-dark-surface2'
+              "
               :disabled="checked"
               @click="pickOrder(i)"
             >
               <span
                 v-if="orderPick.includes(i)"
                 class="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-white"
-              >{{ orderPick.indexOf(i) + 1 }}</span>
-              <span v-else class="h-6 w-6 rounded-full border border-neutral-300 dark:border-dark-surface2"></span>
+                >{{ orderPick.indexOf(i) + 1 }}</span
+              >
+              <span
+                v-else
+                class="h-6 w-6 rounded-full border border-neutral-300 dark:border-dark-surface2"
+              ></span>
               {{ item }}
             </button>
           </div>
@@ -170,9 +186,14 @@ function leave() {
         <div
           v-if="checked && needsAnswer"
           class="mt-5 rounded-xl px-4 py-3 text-sm"
-          :class="isCorrect ? 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200' : 'bg-error/10 text-error'"
+          :class="
+            isCorrect
+              ? 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200'
+              : 'bg-error/10 text-error'
+          "
         >
-          <strong>{{ isCorrect ? 'Certo! ' : 'Quase. ' }}</strong>{{ step?.explanation }}
+          <strong>{{ isCorrect ? 'Certo! ' : 'Quase. ' }}</strong
+          >{{ step?.explanation }}
         </div>
       </div>
 

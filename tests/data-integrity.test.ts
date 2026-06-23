@@ -53,7 +53,10 @@ describe('integridade do núcleo agronómico', () => {
 
   it('nome científico é binomial e família termina em -aceae', () => {
     for (const p of PLANTS) {
-      expect(p.scientificName.trim().split(/\s+/).length, `${p.slug}: ${p.scientificName}`).toBeGreaterThanOrEqual(2)
+      expect(
+        p.scientificName.trim().split(/\s+/).length,
+        `${p.slug}: ${p.scientificName}`,
+      ).toBeGreaterThanOrEqual(2)
       expect(p.family, `${p.slug}: ${p.family}`).toMatch(/aceae$/)
     }
   })
@@ -139,7 +142,10 @@ describe('integridade do núcleo agronómico', () => {
   it('cada planta tem textos essenciais não vazios (in30Seconds, growingTips)', () => {
     for (const p of PLANTS) {
       expect(p.in30Seconds.length, `${p.slug} sem in30Seconds`).toBeGreaterThan(0)
-      expect(p.in30Seconds.every((t) => t.trim().length > 0), `${p.slug} in30Seconds vazio`).toBe(true)
+      expect(
+        p.in30Seconds.every((t) => t.trim().length > 0),
+        `${p.slug} in30Seconds vazio`,
+      ).toBe(true)
       expect(p.growingTips.trim().length, `${p.slug} sem growingTips`).toBeGreaterThan(0)
       expect(p.shortDescription.trim().length, `${p.slug} sem shortDescription`).toBeGreaterThan(0)
     }
@@ -161,7 +167,10 @@ describe('integridade do núcleo agronómico', () => {
 
   it('cada lição tem pelo menos um passo de resumo (summary)', () => {
     for (const l of LESSONS) {
-      expect(l.steps.some((s) => s.kind === 'summary'), `${l.id} sem summary`).toBe(true)
+      expect(
+        l.steps.some((s) => s.kind === 'summary'),
+        `${l.id} sem summary`,
+      ).toBe(true)
     }
   })
 
@@ -183,8 +192,14 @@ describe('integridade do núcleo agronómico', () => {
     for (const r of RECIPES) {
       expect(r.ingredients.length, `${r.slug} sem ingredientes`).toBeGreaterThan(0)
       expect(r.steps.length, `${r.slug} sem passos`).toBeGreaterThan(0)
-      expect(r.ingredients.every((i) => i.trim().length > 0), `${r.slug} ingrediente vazio`).toBe(true)
-      expect(r.steps.every((s) => s.trim().length > 0), `${r.slug} passo vazio`).toBe(true)
+      expect(
+        r.ingredients.every((i) => i.trim().length > 0),
+        `${r.slug} ingrediente vazio`,
+      ).toBe(true)
+      expect(
+        r.steps.every((s) => s.trim().length > 0),
+        `${r.slug} passo vazio`,
+      ).toBe(true)
     }
   })
 
@@ -205,7 +220,8 @@ describe('integridade do núcleo agronómico', () => {
 
   it('FAQ e glossário têm emoji em todas as entradas', () => {
     for (const f of FAQ) expect(f.emoji.trim().length, `FAQ "${f.q}" sem emoji`).toBeGreaterThan(0)
-    for (const t of GLOSSARY) expect(t.emoji.trim().length, `glossário "${t.term}" sem emoji`).toBeGreaterThan(0)
+    for (const t of GLOSSARY)
+      expect(t.emoji.trim().length, `glossário "${t.term}" sem emoji`).toBeGreaterThan(0)
   })
 
   it('nenhuma planta lista a si própria como companheira ou antagonista', () => {

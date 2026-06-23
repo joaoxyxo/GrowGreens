@@ -27,11 +27,13 @@ export function recommendPlants(settings: SettingsState, limit = 3): Plant[] {
     return { p, score }
   })
 
-  return scored
-    // Desempate por slug para ordenação determinística e estável.
-    .sort((a, b) => b.score - a.score || a.p.slug.localeCompare(b.p.slug))
-    .slice(0, limit)
-    .map((s) => s.p)
+  return (
+    scored
+      // Desempate por slug para ordenação determinística e estável.
+      .sort((a, b) => b.score - a.score || a.p.slug.localeCompare(b.p.slug))
+      .slice(0, limit)
+      .map((s) => s.p)
+  )
 }
 
 /**

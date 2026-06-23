@@ -124,7 +124,10 @@ export const LESSONS: Lesson[] = [
       },
       {
         kind: 'summary',
-        bullets: ['O sol disponível define o que podes cultivar.', 'Vaso e parapeito são suficientes para começar.'],
+        bullets: [
+          'O sol disponível define o que podes cultivar.',
+          'Vaso e parapeito são suficientes para começar.',
+        ],
       },
     ],
   },
@@ -146,7 +149,8 @@ export const LESSONS: Lesson[] = [
         question: 'Ordena as fases, da primeira à última:',
         items: ['Frutificação', 'Germinação', 'Crescimento', 'Floração'],
         correctOrder: [1, 2, 3, 0],
-        explanation: 'Germinação → Crescimento → Floração → Frutificação. A plântula está entre a germinação e o crescimento.',
+        explanation:
+          'Germinação → Crescimento → Floração → Frutificação. A plântula está entre a germinação e o crescimento.',
       },
       {
         kind: 'summary',
@@ -181,7 +185,10 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Exato — nesta fase a planta usa o alimento guardado dentro da semente.',
       },
-      { kind: 'summary', bullets: ['A semente = embrião + reservas.', 'Essas reservas alimentam os primeiros dias de vida.'] },
+      {
+        kind: 'summary',
+        bullets: ['A semente = embrião + reservas.', 'Essas reservas alimentam os primeiros dias de vida.'],
+      },
     ],
   },
   {
@@ -204,7 +211,10 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Falso. A maioria germina no escuro; a luz é precisa depois de surgirem as folhas.',
       },
-      { kind: 'summary', bullets: ['Germinar = água + calor + ar.', 'A luz vem depois das primeiras folhas.'] },
+      {
+        kind: 'summary',
+        bullets: ['Germinar = água + calor + ar.', 'A luz vem depois das primeiras folhas.'],
+      },
     ],
   },
   {
@@ -235,7 +245,11 @@ export const LESSONS: Lesson[] = [
       },
       {
         kind: 'summary',
-        bullets: ['Teste do dedo antes de cada rega.', 'Furos de drenagem são obrigatórios.', 'Mais plantas morrem afogadas do que de sede.'],
+        bullets: [
+          'Teste do dedo antes de cada rega.',
+          'Furos de drenagem são obrigatórios.',
+          'Mais plantas morrem afogadas do que de sede.',
+        ],
       },
     ],
   },
@@ -259,7 +273,10 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'O tomate precisa de sol pleno (6h+). Folhas e hortelã contentam-se com menos.',
       },
-      { kind: 'summary', bullets: ['Luz = energia para a planta.', 'Frutos exigem sol pleno; folhas toleram meia-sombra.'] },
+      {
+        kind: 'summary',
+        bullets: ['Luz = energia para a planta.', 'Frutos exigem sol pleno; folhas toleram meia-sombra.'],
+      },
     ],
   },
   {
@@ -282,7 +299,13 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Falso — é sinal de falta de luz. Aproxima-a da janela ou de uma luz.',
       },
-      { kind: 'summary', bullets: ['Caule comprido e pálido = pouca luz.', 'No inverno de Aveiro, pode ser preciso luz de apoio.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Caule comprido e pálido = pouca luz.',
+          'No inverno de Aveiro, pode ser preciso luz de apoio.',
+        ],
+      },
     ],
   },
   {
@@ -309,15 +332,28 @@ export const LESSONS: Lesson[] = [
         question: 'Onde plantarias o tomate?',
         options: ['Num canto à sombra', 'No sítio com mais sol pleno', 'Junto ao funcho'],
         correctIndex: 1,
-        explanation: 'O tomate é uma planta de fruto: quer sol pleno. O funcho é mau companheiro de quase tudo.',
+        explanation:
+          'O tomate é uma planta de fruto: quer sol pleno. O funcho é mau companheiro de quase tudo.',
       },
       {
         kind: 'order',
         title: 'Ordena os passos de planeamento',
-        items: ['Semear/transplantar', 'Avaliar sol e espaço', 'Escolher culturas da época', 'Marcar boas/más vizinhanças'],
+        items: [
+          'Semear/transplantar',
+          'Avaliar sol e espaço',
+          'Escolher culturas da época',
+          'Marcar boas/más vizinhanças',
+        ],
         correctOrder: [1, 2, 3, 0],
       },
-      { kind: 'summary', bullets: ['Primeiro o sol e o espaço.', 'Culturas da época + sucessão.', 'Boas vizinhanças juntas; funcho à parte.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Primeiro o sol e o espaço.',
+          'Culturas da época + sucessão.',
+          'Boas vizinhanças juntas; funcho à parte.',
+        ],
+      },
     ],
   },
   {
@@ -342,15 +378,18 @@ export const LESSONS: Lesson[] = [
       {
         kind: 'choice',
         question: 'Numa varanda virada a norte (pouca luz direta), o que dá melhor?',
-        options: [
-          'Tomate e pimento',
-          'Alface, rúcula e aromáticas',
-          'Melão e abóbora',
-        ],
+        options: ['Tomate e pimento', 'Alface, rúcula e aromáticas', 'Melão e abóbora'],
         correctIndex: 1,
         explanation: 'Folhas e aromáticas safam-se com pouca luz; os frutos de sol pleno produziriam pouco.',
       },
-      { kind: 'summary', bullets: ['Sul = mais sol (frutos); norte = folhas.', 'Conta as horas de sol direto.', 'Escolhe culturas à medida da luz que tens.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Sul = mais sol (frutos); norte = folhas.',
+          'Conta as horas de sol direto.',
+          'Escolhe culturas à medida da luz que tens.',
+        ],
+      },
     ],
   },
   {
@@ -379,7 +418,10 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Substrato de sementeira: leve, limpo e arejado — ideal para as raízes.',
       },
-      { kind: 'summary', bullets: ['Solo vivo = nutrientes para as plantas.', 'Em vaso, usa substrato, não terra do jardim.'] },
+      {
+        kind: 'summary',
+        bullets: ['Solo vivo = nutrientes para as plantas.', 'Em vaso, usa substrato, não terra do jardim.'],
+      },
     ],
   },
   {
@@ -402,7 +444,10 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Potássio (K) ajuda na frutificação. Azoto a mais nesta fase dá folha em vez de fruto.',
       },
-      { kind: 'summary', bullets: ['N = folhas, P = raízes/flores, K = frutos.', 'Ajusta o adubo à fase da planta.'] },
+      {
+        kind: 'summary',
+        bullets: ['N = folhas, P = raízes/flores, K = frutos.', 'Ajusta o adubo à fase da planta.'],
+      },
     ],
   },
   {
@@ -429,9 +474,17 @@ export const LESSONS: Lesson[] = [
         question: 'Onde tiveste tomate (solanácea) este ano, o que plantas a seguir?',
         options: ['Outra solanácea (batata)', 'Uma leguminosa (feijão/fava)', 'Tomate outra vez'],
         correctIndex: 1,
-        explanation: 'A leguminosa repõe azoto e pertence a outra família — quebra o ciclo de pragas/doenças do tomate.',
+        explanation:
+          'A leguminosa repõe azoto e pertence a outra família — quebra o ciclo de pragas/doenças do tomate.',
       },
-      { kind: 'summary', bullets: ['Não repitas a mesma família no mesmo sítio.', 'Leguminosas enriquecem o solo (azoto).', 'Rodar = menos pragas e solo mais equilibrado.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Não repitas a mesma família no mesmo sítio.',
+          'Leguminosas enriquecem o solo (azoto).',
+          'Rodar = menos pragas e solo mais equilibrado.',
+        ],
+      },
     ],
   },
   {
@@ -458,9 +511,17 @@ export const LESSONS: Lesson[] = [
         question: 'Carne e lacticínios são bons para o composto caseiro.',
         options: ['Verdadeiro', 'Falso'],
         correctIndex: 1,
-        explanation: 'Falso — atraem pragas e cheiram mal. Usa restos vegetais, borras, casca de ovo, folhas e cartão.',
+        explanation:
+          'Falso — atraem pragas e cheiram mal. Usa restos vegetais, borras, casca de ovo, folhas e cartão.',
       },
-      { kind: 'summary', bullets: ['Alterna verdes (azoto) e castanhos (carbono).', 'Areja e mantém húmido como esponja.', 'Evita carne, peixe e lacticínios.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Alterna verdes (azoto) e castanhos (carbono).',
+          'Areja e mantém húmido como esponja.',
+          'Evita carne, peixe e lacticínios.',
+        ],
+      },
     ],
   },
   {
@@ -493,7 +554,13 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Rega de manhã, na base, e bom espaçamento — a folha seca e o fungo não se instala.',
       },
-      { kind: 'summary', bullets: ['O inimigo do litoral é o fungo, não o frio.', 'Arejamento + rega de manhã na base = prevenção.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'O inimigo do litoral é o fungo, não o frio.',
+          'Arejamento + rega de manhã na base = prevenção.',
+        ],
+      },
     ],
   },
   {
@@ -516,7 +583,14 @@ export const LESSONS: Lesson[] = [
         correctIndex: 0,
         explanation: 'Manjericão + tomate é o par clássico — na horta e no prato.',
       },
-      { kind: 'summary', bullets: ['Manjericão protege o tomate.', 'Leguminosas enriquecem o solo.', 'Brássicas e tomate NÃO se dão bem.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Manjericão protege o tomate.',
+          'Leguminosas enriquecem o solo.',
+          'Brássicas e tomate NÃO se dão bem.',
+        ],
+      },
     ],
   },
   {
@@ -543,9 +617,17 @@ export const LESSONS: Lesson[] = [
         question: 'No clima do litoral, regar pouco e deixar drenar é mais seguro do que regar muito.',
         options: ['Verdadeiro', 'Falso'],
         correctIndex: 0,
-        explanation: 'Com humidade ambiente alta, o maior risco é o excesso de água e o apodrecimento das raízes.',
+        explanation:
+          'Com humidade ambiente alta, o maior risco é o excesso de água e o apodrecimento das raízes.',
       },
-      { kind: 'summary', bullets: ['Usa o teste do dedo antes de regar.', 'Excesso de água mata mais que a falta.', 'Drenagem é essencial no litoral húmido.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Usa o teste do dedo antes de regar.',
+          'Excesso de água mata mais que a falta.',
+          'Drenagem é essencial no litoral húmido.',
+        ],
+      },
     ],
   },
   {
@@ -574,7 +656,14 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'De manhã as folhas estão mais frescas e túrgidas — duram mais e sabem melhor.',
       },
-      { kind: 'summary', bullets: ['Colhe de manhã.', 'Corta-e-volta: folhas de fora primeiro.', 'Colher muitas vezes = mais produção.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Colhe de manhã.',
+          'Corta-e-volta: folhas de fora primeiro.',
+          'Colher muitas vezes = mais produção.',
+        ],
+      },
     ],
   },
   {
@@ -603,7 +692,14 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'A humidade a mais acelera o apodrecimento — seca bem antes de guardar.',
       },
-      { kind: 'summary', bullets: ['Folhas: lavar, secar e guardar frescas.', 'Raízes: fresco e escuro.', 'Aromáticas: secar ou congelar.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Folhas: lavar, secar e guardar frescas.',
+          'Raízes: fresco e escuro.',
+          'Aromáticas: secar ou congelar.',
+        ],
+      },
     ],
   },
   {
@@ -634,9 +730,17 @@ export const LESSONS: Lesson[] = [
           'Só depois de amarelecer',
         ],
         correctIndex: 1,
-        explanation: 'Pequena é mais saborosa e a planta continua a produzir. Curgetes enormes ficam fibrosas e travam a colheita.',
+        explanation:
+          'Pequena é mais saborosa e a planta continua a produzir. Curgetes enormes ficam fibrosas e travam a colheita.',
       },
-      { kind: 'summary', bullets: ['Folhas: jovens e em corte sucessivo.', 'Colhe antes de espigar (amargo).', 'Frutos: pela cor/firmeza; curgete pequena.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Folhas: jovens e em corte sucessivo.',
+          'Colhe antes de espigar (amargo).',
+          'Frutos: pela cor/firmeza; curgete pequena.',
+        ],
+      },
     ],
   },
   {
@@ -669,7 +773,14 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'A água sobe pelo substrato; as folhas ficam secas, reduzindo o risco de fungos.',
       },
-      { kind: 'summary', bullets: ['Capilaridade = regar por baixo, folhas secas.', 'Esvazia o prato para não encharcar.', 'Drenagem e substrato leve evitam apodrecimento.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Capilaridade = regar por baixo, folhas secas.',
+          'Esvazia o prato para não encharcar.',
+          'Drenagem e substrato leve evitam apodrecimento.',
+        ],
+      },
     ],
   },
   {
@@ -696,9 +807,17 @@ export const LESSONS: Lesson[] = [
         question: 'As sementes de um híbrido F1 dão plantas iguais à planta-mãe.',
         options: ['Verdadeiro', 'Falso'],
         correctIndex: 1,
-        explanation: 'Falso — os F1 não saem fiéis. Para guardar, escolhe variedades tradicionais/de polinização aberta.',
+        explanation:
+          'Falso — os F1 não saem fiéis. Para guardar, escolhe variedades tradicionais/de polinização aberta.',
       },
-      { kind: 'summary', bullets: ['Guarda variedades tradicionais, não F1.', 'Seca muito bem antes de guardar.', 'Frasco etiquetado, seco, fresco e escuro.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Guarda variedades tradicionais, não F1.',
+          'Seca muito bem antes de guardar.',
+          'Frasco etiquetado, seco, fresco e escuro.',
+        ],
+      },
     ],
   },
   {
@@ -727,7 +846,14 @@ export const LESSONS: Lesson[] = [
         correctIndex: 1,
         explanation: 'Falso — as de cebola e alho-francês perdem germinação em 1-2 anos. Usa-as cedo.',
       },
-      { kind: 'summary', bullets: ['Data sempre os envelopes.', 'Umas duram anos, outras só 1-2.', 'Testa a germinação no papel húmido em caso de dúvida.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Data sempre os envelopes.',
+          'Umas duram anos, outras só 1-2.',
+          'Testa a germinação no papel húmido em caso de dúvida.',
+        ],
+      },
     ],
   },
   {
@@ -754,9 +880,17 @@ export const LESSONS: Lesson[] = [
         question: 'Variedades locais costumam estar melhor adaptadas ao clima da região.',
         options: ['Verdadeiro', 'Falso'],
         correctIndex: 0,
-        explanation: 'Verdadeiro — foram selecionadas ao longo do tempo nesse clima e solo, por isso tendem a ser mais resistentes.',
+        explanation:
+          'Verdadeiro — foram selecionadas ao longo do tempo nesse clima e solo, por isso tendem a ser mais resistentes.',
       },
-      { kind: 'summary', bullets: ['Trocar sementes dá variedade de graça.', 'Variedades locais adaptam-se melhor.', 'Partilha sementes secas, limpas e etiquetadas.'] },
+      {
+        kind: 'summary',
+        bullets: [
+          'Trocar sementes dá variedade de graça.',
+          'Variedades locais adaptam-se melhor.',
+          'Partilha sementes secas, limpas e etiquetadas.',
+        ],
+      },
     ],
   },
 ]

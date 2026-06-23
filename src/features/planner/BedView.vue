@@ -83,12 +83,7 @@ function neighborFeedback(key: string, slug: string): { good: string[]; bad: str
   const plant = getPlant(slug)
   if (!plant) return { good: [], bad: [] }
   const [r, c] = key.split('-').map(Number)
-  const neighbors = [
-    `${r - 1}-${c}`,
-    `${r + 1}-${c}`,
-    `${r}-${c - 1}`,
-    `${r}-${c + 1}`,
-  ]
+  const neighbors = [`${r - 1}-${c}`, `${r + 1}-${c}`, `${r}-${c - 1}`, `${r}-${c + 1}`]
   const good: string[] = []
   const bad: string[] = []
   for (const nk of neighbors) {
@@ -217,7 +212,7 @@ async function removeBed() {
                 v-if="plantingDue(cellAt(bed, r - 1, c - 1)?.plantingId)"
                 class="absolute -top-1 -right-1 text-xs"
                 title="Precisa de rega"
-              >💧</span
+                >💧</span
               >
             </button>
           </template>
@@ -229,26 +224,36 @@ async function removeBed() {
       </p>
 
       <!-- Otimizador de consociação -->
-      <section v-if="bedPlants.length >= 1" class="mt-6 rounded-2xl border border-neutral-200 dark:border-dark-surface2 p-4">
+      <section
+        v-if="bedPlants.length >= 1"
+        class="mt-6 rounded-2xl border border-neutral-200 dark:border-dark-surface2 p-4"
+      >
         <h2 class="mb-2 font-display text-base font-bold">🤝 Vizinhança do canteiro</h2>
 
         <!-- Aviso de rotação: famílias concentradas -->
-        <div v-if="bedFamilyConcentration.length" class="mb-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 p-3">
+        <div
+          v-if="bedFamilyConcentration.length"
+          class="mb-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 p-3"
+        >
           <p class="text-xs font-semibold text-amber-700 dark:text-amber-400 mb-1">🔄 Rotação de culturas</p>
           <p class="text-sm text-neutral-700 dark:text-neutral-200">
             Tens
             <template v-for="(f, i) in bedFamilyConcentration" :key="f.family"
               ><strong>{{ f.count }} {{ f.family }}</strong
               ><span v-if="i < bedFamilyConcentration.length - 1">, </span></template
-            >. Concentrar a mesma família botânica aumenta o risco de pragas e doenças do solo — varia as famílias e
-            não as repitas neste espaço na próxima época.
+            >. Concentrar a mesma família botânica aumenta o risco de pragas e doenças do solo — varia as
+            famílias e não as repitas neste espaço na próxima época.
           </p>
         </div>
 
         <div v-if="bedAnalysis.conflicts.length" class="mb-2">
           <p class="text-xs font-semibold text-error mb-1">✕ Más vizinhanças a evitar</p>
           <ul class="space-y-0.5">
-            <li v-for="(c, i) in bedAnalysis.conflicts" :key="`c${i}`" class="text-sm text-neutral-700 dark:text-neutral-200">
+            <li
+              v-for="(c, i) in bedAnalysis.conflicts"
+              :key="`c${i}`"
+              class="text-sm text-neutral-700 dark:text-neutral-200"
+            >
               {{ getPlant(c.a)?.name }} ✕ {{ getPlant(c.b)?.name }}
             </li>
           </ul>
@@ -257,17 +262,27 @@ async function removeBed() {
         <div v-if="bedAnalysis.synergies.length" class="mb-2">
           <p class="text-xs font-semibold text-green-600 mb-1">✓ Boas associações</p>
           <ul class="space-y-0.5">
-            <li v-for="(s, i) in bedAnalysis.synergies" :key="`s${i}`" class="text-sm text-neutral-700 dark:text-neutral-200">
+            <li
+              v-for="(s, i) in bedAnalysis.synergies"
+              :key="`s${i}`"
+              class="text-sm text-neutral-700 dark:text-neutral-200"
+            >
               {{ getPlant(s.a)?.name }} + {{ getPlant(s.b)?.name }}
             </li>
           </ul>
         </div>
 
-        <p v-if="!bedAnalysis.conflicts.length && !bedAnalysis.synergies.length" class="text-sm text-neutral-500">
+        <p
+          v-if="!bedAnalysis.conflicts.length && !bedAnalysis.synergies.length"
+          class="text-sm text-neutral-500"
+        >
           Sem boas nem más associações conhecidas entre as plantas atuais.
         </p>
 
-        <div v-if="bedSuggestions.length" class="mt-3 border-t border-neutral-100 dark:border-dark-surface2 pt-3">
+        <div
+          v-if="bedSuggestions.length"
+          class="mt-3 border-t border-neutral-100 dark:border-dark-surface2 pt-3"
+        >
           <p class="text-xs font-semibold text-neutral-500 mb-1">Sugestões que combinam bem</p>
           <div class="flex flex-wrap gap-2">
             <RouterLink
@@ -316,7 +331,9 @@ async function removeBed() {
         <template v-else>
           <h3 class="font-display text-lg font-bold mb-3">Plantar aqui</h3>
           <BaseButton block @click="showPicker = true">Escolher planta</BaseButton>
-          <BaseButton class="mt-2" block variant="ghost" size="sm" @click="selectedKey = null">Cancelar</BaseButton>
+          <BaseButton class="mt-2" block variant="ghost" size="sm" @click="selectedKey = null"
+            >Cancelar</BaseButton
+          >
         </template>
       </div>
     </div>
@@ -372,7 +389,9 @@ async function removeBed() {
             <input v-model.number="editCols" type="range" min="1" max="10" class="w-full accent-green-500" />
           </div>
         </div>
-        <p class="mb-3 text-xs text-neutral-400">Reduzir o tamanho pode esconder lugares já plantados nas pontas.</p>
+        <p class="mb-3 text-xs text-neutral-400">
+          Reduzir o tamanho pode esconder lugares já plantados nas pontas.
+        </p>
         <div class="flex gap-2">
           <BaseButton variant="ghost" size="sm" @click="showEdit = false">Cancelar</BaseButton>
           <BaseButton block @click="saveEdit">Guardar</BaseButton>

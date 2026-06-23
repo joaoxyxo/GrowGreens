@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { calendarForPlant, plantSowableThisMonth, calendarFor, soilTipForMonth, MONTHLY_TIPS } from '@/data/calendar'
+import {
+  calendarForPlant,
+  plantSowableThisMonth,
+  calendarFor,
+  soilTipForMonth,
+  MONTHLY_TIPS,
+} from '@/data/calendar'
 
 describe('calendarForPlant', () => {
   it('devolve apenas entradas da planta pedida', () => {

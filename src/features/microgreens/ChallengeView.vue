@@ -110,14 +110,22 @@ async function shareHarvest() {
     subtitle: `${variety.value?.name ?? 'Microgreens'} · da semente ao prato`,
     emoji: variety.value?.emoji ?? '🌱',
   })
-  if (card) await shareOrDownload(card, 'growgreens-colheita.png', 'A minha primeira colheita com a GrowGreens 🌱')
+  if (card)
+    await shareOrDownload(card, 'growgreens-colheita.png', 'A minha primeira colheita com a GrowGreens 🌱')
 }
 </script>
 
 <template>
   <div>
     <PageHeader title="Desafio Microgreens" subtitle="Da semente ao prato em 7 dias" />
-    <input ref="fileInput" type="file" accept="image/*" capture="environment" class="hidden" @change="onPhoto" />
+    <input
+      ref="fileInput"
+      type="file"
+      accept="image/*"
+      capture="environment"
+      class="hidden"
+      @change="onPhoto"
+    />
 
     <div class="px-4 pb-10">
       <!-- Sem desafio: escolher variedade -->
@@ -125,12 +133,13 @@ async function shareHarvest() {
         <AppCard class="mb-4">
           <p class="text-sm text-neutral-600 dark:text-neutral-300">
             Vais cultivar microgreens em casa e colhê-los em cerca de uma semana. Precisas de:
-            <strong>sementes, um tabuleiro raso, substrato</strong> (ou fibra de coco), água e uma janela com luz.
-            Podes começar com menos de 20€.
+            <strong>sementes, um tabuleiro raso, substrato</strong> (ou fibra de coco), água e uma janela com
+            luz. Podes começar com menos de 20€.
           </p>
           <p class="mt-2 rounded-xl bg-warning/10 px-3 py-2 text-xs text-neutral-700 dark:text-neutral-200">
-            ⚠️ <strong>Segurança:</strong> cultiva só microgreens de variedades comestíveis (as desta lista). Evita
-            microgreens de solanáceas (tomate, batata, beringela, pimento) e de feijão comum — as plântulas são tóxicas.
+            ⚠️ <strong>Segurança:</strong> cultiva só microgreens de variedades comestíveis (as desta lista).
+            Evita microgreens de solanáceas (tomate, batata, beringela, pimento) e de feijão comum — as
+            plântulas são tóxicas.
           </p>
         </AppCard>
 
@@ -140,7 +149,11 @@ async function shareHarvest() {
             v-for="m in MICROGREENS"
             :key="m.slug"
             class="flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition"
-            :class="selectedVariety === m.slug ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              selectedVariety === m.slug
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="selectedVariety = m.slug"
           >
             <span class="text-2xl" aria-hidden="true">{{ m.emoji }}</span>
@@ -149,10 +162,14 @@ async function shareHarvest() {
               <span
                 v-if="m.beginner"
                 class="ml-2 rounded-full bg-green-100 dark:bg-green-900/30 px-2 py-0.5 text-xs text-green-700 dark:text-green-300"
-              >recomendado</span
+                >recomendado</span
               >
               <span class="block text-xs text-neutral-500 dark:text-neutral-400">
-                {{ m.flavour }} · {{ m.daysToHarvest[0] }}–{{ m.daysToHarvest[1] }} dias<template v-if="m.soakHours > 0"> · 💧 demolha {{ m.soakHours }}h</template>
+                {{ m.flavour }} · {{ m.daysToHarvest[0] }}–{{ m.daysToHarvest[1] }} dias<template
+                  v-if="m.soakHours > 0"
+                >
+                  · 💧 demolha {{ m.soakHours }}h</template
+                >
               </span>
             </span>
           </button>
@@ -200,7 +217,9 @@ async function shareHarvest() {
             <button
               class="flex w-full items-center gap-3 rounded-2xl border px-4 py-3 text-left transition"
               :class="[
-                dayState(d.day) === 'done' ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2 bg-white dark:bg-dark-surface',
+                dayState(d.day) === 'done'
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                  : 'border-neutral-200 dark:border-dark-surface2 bg-white dark:bg-dark-surface',
                 dayState(d.day) === 'locked' ? 'opacity-50' : '',
               ]"
               :disabled="dayState(d.day) === 'locked'"
@@ -208,7 +227,11 @@ async function shareHarvest() {
             >
               <span
                 class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold"
-                :class="dayState(d.day) === 'done' ? 'bg-green-500 text-white' : 'bg-neutral-100 dark:bg-dark-surface2 text-neutral-600 dark:text-neutral-300'"
+                :class="
+                  dayState(d.day) === 'done'
+                    ? 'bg-green-500 text-white'
+                    : 'bg-neutral-100 dark:bg-dark-surface2 text-neutral-600 dark:text-neutral-300'
+                "
               >
                 <span v-if="dayState(d.day) === 'done'">✓</span>
                 <span v-else>{{ d.day }}</span>
@@ -237,7 +260,9 @@ async function shareHarvest() {
               >
                 <strong>{{ variety?.emoji }} Para a tua variedade:</strong> {{ varietyNote(d.day) }}
               </div>
-              <div class="mt-3 rounded-xl bg-warning/10 px-3 py-2 text-xs text-neutral-700 dark:text-neutral-200">
+              <div
+                class="mt-3 rounded-xl bg-warning/10 px-3 py-2 text-xs text-neutral-700 dark:text-neutral-200"
+              >
                 <strong>⚠️ Atenção:</strong> {{ d.warning }}
               </div>
               <div v-if="dayState(d.day) !== 'done'" class="mt-4 flex gap-2">

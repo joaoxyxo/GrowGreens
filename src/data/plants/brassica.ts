@@ -38,7 +38,8 @@ export const BRASSICA_PLANTS: Plant[] = [
     wateringNotes: 'Rega constante e uniforme; falhas de água racham a raiz e deixam-na picante.',
     feedingNotes: 'Não precisa de adubo extra. Excesso de azoto = folha a mais, raiz a menos.',
     harvestNotes: 'Colhe assim que a raiz engrossa; não deixes passar das 6 semanas (fica dura e picante).',
-    portugalNotes: 'Cresce quase o ano todo no litoral atlântico, evitando só o pico do verão (fica picante e espiga). Excelente para intercalar entre culturas lentas (cenoura, couves) — colhes os rabanetes antes de as outras precisarem do espaço.',
+    portugalNotes:
+      'Cresce quase o ano todo no litoral atlântico, evitando só o pico do verão (fica picante e espiga). Excelente para intercalar entre culturas lentas (cenoura, couves) — colhes os rabanetes antes de as outras precisarem do espaço.',
     expectations: 'Resultado visível e comestível em 25-35 dias. Das culturas mais gratificantes.',
     commonMistake: 'Semear muito junto. Sem 3 dedos de espaço, não engrossa a raiz.',
     stages: [
@@ -80,7 +81,8 @@ export const BRASSICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Inflorescência (cabeça) e rebentos laterais.',
     petSafe: true,
-    shortDescription: 'Cultura de outono-inverno cheia de sulforafano. Exige espaço e paciência, mas compensa.',
+    shortDescription:
+      'Cultura de outono-inverno cheia de sulforafano. Exige espaço e paciência, mas compensa.',
     in30Seconds: [
       'Semeia no fim do verão para colher no outono-inverno.',
       'Depois da cabeça central, dá rebentos laterais durante semanas.',
@@ -91,13 +93,18 @@ export const BRASSICA_PLANTS: Plant[] = [
     feedingNotes: 'Exigente. Solo rico em composto e adubo de azoto na fase vegetativa.',
     harvestNotes: 'Corta a cabeça central compacta; deixa a planta para colher rebentos laterais.',
     portugalNotes: 'Muito bem adaptado ao clima fresco e húmido. Atenção à lagarta-da-couve e ao oídio.',
-    expectations: 'Cerca de 3 meses até à primeira cabeça, depois semanas de rebentos. Cultura de fundo de horta.',
+    expectations:
+      'Cerca de 3 meses até à primeira cabeça, depois semanas de rebentos. Cultura de fundo de horta.',
     commonMistake: 'Colher tarde — se as flores amarelas abrem, perdeu o ponto.',
     stages: [
       { stage: 'germinacao', durationDays: [5, 10], text: 'Em alvéolo, ao abrigo.' },
       { stage: 'plantula', durationDays: [20, 30], text: 'Transplanta com 4-5 folhas, 45 cm de espaço.' },
       { stage: 'vegetativo', durationDays: [40, 60], text: 'Folhagem grande. Adubar e regar bem.' },
-      { stage: 'floracao', durationDays: [10, 20], text: 'Forma a cabeça (botões florais). Colhe antes de abrir.' },
+      {
+        stage: 'floracao',
+        durationDays: [10, 20],
+        text: 'Forma a cabeça (botões florais). Colhe antes de abrir.',
+      },
       { stage: 'colheita', text: 'Cabeça central + rebentos laterais por semanas.' },
     ],
     companions: ['alface', 'beterraba', 'hortela'],
@@ -139,7 +146,8 @@ export const BRASSICA_PLANTS: Plant[] = [
       'Aguenta o inverno do litoral sem problema.',
       'A base da sopa portuguesa por excelência.',
     ],
-    growingTips: 'Transplanta com bastante espaço. Vai colhendo as folhas de baixo e a planta cresce em altura. Em Portugal, a couve "Penca" e a galega são as clássicas para caldo-verde.',
+    growingTips:
+      'Transplanta com bastante espaço. Vai colhendo as folhas de baixo e a planta cresce em altura. Em Portugal, a couve "Penca" e a galega são as clássicas para caldo-verde.',
     wateringNotes: 'Rega regular; tolera bem a chuva atlântica com boa drenagem.',
     feedingNotes: 'Gosta de solo rico. Composto e azoto sustentam a produção contínua.',
     harvestNotes: 'Colhe as folhas exteriores maiores; nunca tires o olho central.',
@@ -185,7 +193,8 @@ export const BRASSICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'A inflorescência (a "flor" branca) e folhas tenras.',
     petSafe: true,
-    shortDescription: 'A mais exigente das couves, mas das mais gratificantes. Quer fresco, água e paciência.',
+    shortDescription:
+      'A mais exigente das couves, mas das mais gratificantes. Quer fresco, água e paciência.',
     in30Seconds: [
       'Precisa de rega constante — stress de água arruína a cabeça.',
       'Dobra as folhas por cima da flor para a manter branca.',
@@ -203,7 +212,11 @@ export const BRASSICA_PLANTS: Plant[] = [
     stages: [
       { stage: 'germinacao', durationDays: [7, 12], text: 'Em alvéolo, à luz e húmido.' },
       { stage: 'plantula', durationDays: [25, 40], text: 'Transplanta com 4-5 folhas, 50 cm de espaço.' },
-      { stage: 'vegetativo', durationDays: [40, 70], text: 'Rega e aduba sem parar; folhagem forte primeiro.' },
+      {
+        stage: 'vegetativo',
+        durationDays: [40, 70],
+        text: 'Rega e aduba sem parar; folhagem forte primeiro.',
+      },
       { stage: 'colheita', text: 'Colhe a cabeça compacta antes de abrir.' },
     ],
     companions: ['beterraba', 'cebola', 'salsa'],
@@ -239,7 +252,8 @@ export const BRASSICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas (a "cabeça" repolhuda).',
     petSafe: true,
-    shortDescription: 'Couve de cabeça frisada, doce e resistente ao frio. A geada até a torna mais saborosa.',
+    shortDescription:
+      'Couve de cabeça frisada, doce e resistente ao frio. A geada até a torna mais saborosa.',
     in30Seconds: [
       'Aguenta o inverno do litoral sem problemas.',
       'A geada converte amido em açúcar — fica mais doce.',
@@ -299,7 +313,8 @@ export const BRASSICA_PLANTS: Plant[] = [
       'Gosta de fresco e húmido — perfeita para o litoral.',
       'Salteada em wok fica crocante e doce.',
     ],
-    growingTips: 'Semeia em sucessão na primavera e no outono. Com calor espiga depressa — prefere o tempo fresco.',
+    growingTips:
+      'Semeia em sucessão na primavera e no outono. Com calor espiga depressa — prefere o tempo fresco.',
     wateringNotes: 'Rega regular e abundante; o stress hídrico faz espigar.',
     feedingNotes: 'Solo rico em azoto para folha tenra; um composto à plantação chega.',
     harvestNotes: 'Colhe a roseta inteira pela base, ou folhas exteriores (corta-e-volta).',
@@ -345,7 +360,8 @@ export const BRASSICA_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Os pequenos repolhos ao longo do caule.',
     petSafe: true,
-    shortDescription: 'Paciência longa, mas resistente ao frio: dá dezenas de mini-couves no mesmo caule. A geada melhora o sabor.',
+    shortDescription:
+      'Paciência longa, mas resistente ao frio: dá dezenas de mini-couves no mesmo caule. A geada melhora o sabor.',
     in30Seconds: [
       'Cultura longa de outono/inverno — semeia cedo.',
       'A geada torna os repolhinhos mais doces.',
@@ -393,24 +409,34 @@ export const BRASSICA_PLANTS: Plant[] = [
     spacingCm: 10,
     potVolumeL: 4,
     frostTolerant: true,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'evitar', outono: 'possivel', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'evitar',
+      outono: 'possivel',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: false,
     pollination: 'nao_aplicavel',
     edibleParts: 'Folhas e hastes tenras (grelos); cozidas.',
     petSafe: true,
-    shortDescription: 'A folha do nabo, rápida e rústica — grelos para cozer num instante e clássicos da cozinha portuguesa.',
+    shortDescription:
+      'A folha do nabo, rápida e rústica — grelos para cozer num instante e clássicos da cozinha portuguesa.',
     in30Seconds: [
       'Cresce depressa: grelos em 5-8 semanas.',
       'Semeia denso e colhe folha jovem.',
       'Frio dá-lhe sabor; calor fá-la espigar.',
     ],
-    growingTips: 'Semeia direto e denso. Colhe as folhas jovens; deixa rebentar para várias colheitas. Protege das álticas com rede fina.',
+    growingTips:
+      'Semeia direto e denso. Colhe as folhas jovens; deixa rebentar para várias colheitas. Protege das álticas com rede fina.',
     wateringNotes: 'Rega regular para folhas tenras; a seca torna-as fibrosas e amargas.',
     feedingNotes: 'Solo com composto chega; gosta de algum azoto para folha.',
-    harvestNotes: 'Corta as folhas/hastes ainda tenras, antes de abrir flor. Os botões florais (grelos) também se comem.',
-    portugalNotes: 'Cultura tradicional de outono/inverno no litoral. Base de caldos e da clássica "esparregado de nabiças".',
+    harvestNotes:
+      'Corta as folhas/hastes ainda tenras, antes de abrir flor. Os botões florais (grelos) também se comem.',
+    portugalNotes:
+      'Cultura tradicional de outono/inverno no litoral. Base de caldos e da clássica "esparregado de nabiças".',
     expectations: 'Colheita rápida (pouco mais de mês e meio). Rende várias vezes em corte sucessivo.',
-    commonMistake: 'Semear no calor do verão — espiga logo. Prefere o fresco do outono e do início da primavera.',
+    commonMistake:
+      'Semear no calor do verão — espiga logo. Prefere o fresco do outono e do início da primavera.',
     stages: [
       { stage: 'germinacao', durationDays: [4, 8], text: 'Germina depressa; mantém húmido.' },
       { stage: 'plantula', durationDays: [10, 15], text: 'Desbasta ligeiramente; vigia a áltica.' },

@@ -32,7 +32,10 @@ test('curso: abrir e concluir uma lição', async ({ page }) => {
       const opts = page.locator('main .grid button')
       const n = await opts.count()
       for (let k = 0; k < n && !(await verificar.isEnabled().catch(() => false)); k++) {
-        await opts.nth(k).click().catch(() => {})
+        await opts
+          .nth(k)
+          .click()
+          .catch(() => {})
       }
       await verificar.click().catch(() => {})
     }

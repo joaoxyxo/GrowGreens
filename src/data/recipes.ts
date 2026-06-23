@@ -74,11 +74,7 @@ export const RECIPES: Recipe[] = [
     prepMinutes: 40,
     difficulty: 'facil',
     season: ['verao', 'outono'],
-    ingredients: [
-      '1 kg de tomate maduro',
-      '1 cebola, 2 dentes de alho',
-      'Azeite, sal, folhas de manjericão',
-    ],
+    ingredients: ['1 kg de tomate maduro', '1 cebola, 2 dentes de alho', 'Azeite, sal, folhas de manjericão'],
     steps: [
       'Refoga a cebola e o alho em azeite.',
       'Junta o tomate picado e deixa apurar 30 min em lume brando.',
@@ -218,12 +214,7 @@ export const RECIPES: Recipe[] = [
     prepMinutes: 20,
     difficulty: 'facil',
     season: ['verao', 'outono'],
-    ingredients: [
-      '1 beringela às fatias',
-      'Azeite, alho',
-      'Orégãos ou tomilho frescos',
-      'Sal e pimenta',
-    ],
+    ingredients: ['1 beringela às fatias', 'Azeite, alho', 'Orégãos ou tomilho frescos', 'Sal e pimenta'],
     steps: [
       'Salga as fatias 10 min e seca (tira o amargo); pincela com azeite.',
       'Grelha de ambos os lados até macias e douradas.',
@@ -294,7 +285,16 @@ export const RECIPES: Recipe[] = [
       'Tritura a base; junta a folha picada e as leguminosas e coze mais 5-10 min.',
       'Tempera e serve com um fio de azeite.',
     ],
-    plants: ['cebola', 'alho-frances', 'batata', 'cenoura', 'beterraba', 'couve-galega', 'acelga', 'feijao-verde'],
+    plants: [
+      'cebola',
+      'alho-frances',
+      'batata',
+      'cenoura',
+      'beterraba',
+      'couve-galega',
+      'acelga',
+      'feijao-verde',
+    ],
   },
   {
     slug: 'sandes-microgreens',
@@ -331,11 +331,7 @@ export const RECIPES: Recipe[] = [
       '200 ml de água ou bebida vegetal',
       'Sumo de meio limão',
     ],
-    steps: [
-      'Junta tudo no copo do liquidificador.',
-      'Tritura até ficar liso.',
-      'Bebe logo, ainda fresco.',
-    ],
+    steps: ['Junta tudo no copo do liquidificador.', 'Tritura até ficar liso.', 'Bebe logo, ainda fresco.'],
     plants: ['rabanete'],
   },
   {
@@ -635,9 +631,7 @@ export const RECIPES: Recipe[] = [
   },
 ]
 
-export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(
-  RECIPES.map((r) => [r.slug, r]),
-)
+export const RECIPES_BY_SLUG: Record<string, Recipe> = Object.fromEntries(RECIPES.map((r) => [r.slug, r]))
 
 export function recipesForPlant(slug: string): Recipe[] {
   return RECIPES.filter((r) => r.plants.includes(slug))

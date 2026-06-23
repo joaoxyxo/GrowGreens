@@ -111,7 +111,9 @@ async function importData(e: Event) {
       <!-- Cartão de nível -->
       <AppCard class="mb-4">
         <div class="flex items-center gap-3 mb-3">
-          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-2xl">
+          <div
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-2xl"
+          >
             🌿
           </div>
           <div class="flex-1">
@@ -125,9 +127,13 @@ async function importData(e: Event) {
         </div>
         <ProgressBar :value="levelPct" />
         <div class="mt-1 flex items-center justify-between text-xs text-neutral-500">
-          <span v-if="progress.nextLevel">{{ progress.nextLevel.min - progress.state.xp }} XP até {{ progress.nextLevel.name }}</span>
+          <span v-if="progress.nextLevel"
+            >{{ progress.nextLevel.min - progress.state.xp }} XP até {{ progress.nextLevel.name }}</span
+          >
           <span v-else>Nível máximo 🎉</span>
-          <span :title="'Protege a tua sequência se falhares um dia'">🛡️ {{ progress.state.freezes }} proteção(ões)</span>
+          <span :title="'Protege a tua sequência se falhares um dia'"
+            >🛡️ {{ progress.state.freezes }} proteção(ões)</span
+          >
         </div>
       </AppCard>
 
@@ -161,7 +167,8 @@ async function importData(e: Event) {
           </AppCard>
           <AppCard class="text-center">
             <p class="text-2xl font-bold text-green-600">
-              {{ impact.nutrientGroupsCovered.length }}<span class="text-sm text-neutral-400">/{{ impact.nutrientGroupsTotal }}</span>
+              {{ impact.nutrientGroupsCovered.length
+              }}<span class="text-sm text-neutral-400">/{{ impact.nutrientGroupsTotal }}</span>
             </p>
             <p class="text-xs text-neutral-500">grupos nutricionais</p>
           </AppCard>
@@ -171,8 +178,8 @@ async function importData(e: Event) {
           </AppCard>
         </div>
         <p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
-          {{ impact.pollinatorSpecies }} das tuas espécies favorecem abelhas e outros polinizadores — pilares de
-          uma horta saudável e da biodiversidade.
+          {{ impact.pollinatorSpecies }} das tuas espécies favorecem abelhas e outros polinizadores — pilares
+          de uma horta saudável e da biodiversidade.
         </p>
       </section>
 
@@ -187,7 +194,11 @@ async function importData(e: Event) {
         >
           <div
             class="flex h-14 w-14 items-center justify-center rounded-full text-2xl"
-            :class="unlocked.has(a.code) ? 'bg-sun-400/15' : 'bg-neutral-100 dark:bg-dark-surface2 grayscale opacity-40'"
+            :class="
+              unlocked.has(a.code)
+                ? 'bg-sun-400/15'
+                : 'bg-neutral-100 dark:bg-dark-surface2 grayscale opacity-40'
+            "
           >
             {{ a.emoji }}
           </div>
@@ -233,10 +244,14 @@ async function importData(e: Event) {
         <label class="block text-sm font-medium mb-1">Tema</label>
         <div class="flex gap-2">
           <button
-            v-for="t in (['system', 'light', 'dark'] as const)"
+            v-for="t in ['system', 'light', 'dark'] as const"
             :key="t"
             class="flex-1 rounded-lg border px-3 py-2 text-sm capitalize transition"
-            :class="settings.state.theme === t ? 'border-green-500 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              settings.state.theme === t
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="settings.state.theme = t"
           >
             {{ t === 'system' ? 'Sistema' : t === 'light' ? 'Claro' : 'Escuro' }}
@@ -250,7 +265,9 @@ async function importData(e: Event) {
             {{ settings.state.notificationsEnabled ? 'Ativadas ✓' : 'Ativar' }}
           </button>
         </div>
-        <div class="mt-2 flex items-center justify-between border-t border-neutral-100 dark:border-dark-surface2 pt-2">
+        <div
+          class="mt-2 flex items-center justify-between border-t border-neutral-100 dark:border-dark-surface2 pt-2"
+        >
           <span class="text-sm font-medium">Exportar lembretes (.ics)</span>
           <button class="text-sm font-medium text-green-600" @click="exportCalendar">Exportar</button>
         </div>
@@ -260,13 +277,17 @@ async function importData(e: Event) {
       </AppCard>
 
       <div class="mt-4 flex flex-col gap-2">
-        <button class="text-sm text-green-600 font-medium" @click="exportData">⬇️ Exportar os meus dados (JSON)</button>
+        <button class="text-sm text-green-600 font-medium" @click="exportData">
+          ⬇️ Exportar os meus dados (JSON)
+        </button>
         <label class="text-sm text-green-600 font-medium cursor-pointer">
           ⬆️ Importar dados (JSON)
           <input type="file" accept="application/json" class="hidden" @change="importData" />
         </label>
         <RouterLink to="/legal" class="text-sm text-neutral-500 underline">Privacidade e termos</RouterLink>
-        <button class="mt-1 text-left text-sm font-medium text-error" @click="resetData">🗑️ Apagar todos os dados</button>
+        <button class="mt-1 text-left text-sm font-medium text-error" @click="resetData">
+          🗑️ Apagar todos os dados
+        </button>
       </div>
     </div>
   </div>

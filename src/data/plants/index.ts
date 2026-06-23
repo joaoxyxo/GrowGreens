@@ -18,9 +18,7 @@ export const PLANTS: Plant[] = [
   ...AROMATICA_PLANTS,
 ]
 
-export const PLANTS_BY_SLUG: Record<string, Plant> = Object.fromEntries(
-  PLANTS.map((p) => [p.slug, p]),
-)
+export const PLANTS_BY_SLUG: Record<string, Plant> = Object.fromEntries(PLANTS.map((p) => [p.slug, p]))
 
 export function getPlant(slug: string): Plant | undefined {
   return PLANTS_BY_SLUG[slug]

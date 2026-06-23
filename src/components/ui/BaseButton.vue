@@ -23,7 +23,9 @@ withDefaults(
       variant === 'secondary'
         ? 'border border-green-500 text-green-700 dark:text-green-300 bg-transparent hover:bg-green-50 dark:hover:bg-green-900/30'
         : '',
-      variant === 'ghost' ? 'text-green-700 dark:text-green-300 hover:bg-green-50 dark:hover:bg-dark-surface2' : '',
+      variant === 'ghost'
+        ? 'text-green-700 dark:text-green-300 hover:bg-green-50 dark:hover:bg-dark-surface2'
+        : '',
       variant === 'danger' ? 'bg-error text-white hover:opacity-90' : '',
     ]"
   >

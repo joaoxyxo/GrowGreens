@@ -197,20 +197,35 @@ async function removePlanting() {
 }
 
 // Fotos do diário, em tira (linha do tempo visual)
-const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice().reverse())
+const photoEntries = computed(() =>
+  entries.value
+    .filter((e) => e.photo)
+    .slice()
+    .reverse(),
+)
 </script>
 
 <template>
   <div v-if="planting && plant">
     <PageHeader :title="planting.nickname" back />
-    <input ref="fileInput" type="file" accept="image/*" capture="environment" class="hidden" @change="onPhoto" />
+    <input
+      ref="fileInput"
+      type="file"
+      accept="image/*"
+      capture="environment"
+      class="hidden"
+      @change="onPhoto"
+    />
 
     <div class="px-4 pb-10">
       <AppCard class="mb-4">
         <div class="flex items-center gap-3">
           <div class="text-4xl" aria-hidden="true">{{ plant.emoji }}</div>
           <div class="flex-1">
-            <RouterLink :to="`/planta/${plant.slug}`" class="font-semibold text-green-700 dark:text-green-300">
+            <RouterLink
+              :to="`/planta/${plant.slug}`"
+              class="font-semibold text-green-700 dark:text-green-300"
+            >
               {{ plant.name }}
             </RouterLink>
             <p class="text-xs text-neutral-500 dark:text-neutral-400">
@@ -239,15 +254,22 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
         <div v-if="thermal" class="mt-4 border-t border-neutral-100 dark:border-dark-surface2 pt-3">
           <div class="flex items-center justify-between text-xs text-neutral-500 mb-1">
             <span>🌡️ Relógio térmico</span>
-            <span class="font-medium text-amber-600 dark:text-amber-400">{{ thermal.pct }}% para a colheita</span>
+            <span class="font-medium text-amber-600 dark:text-amber-400"
+              >{{ thermal.pct }}% para a colheita</span
+            >
           </div>
           <div class="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-dark-surface2">
-            <div class="h-full rounded-full bg-gradient-to-r from-amber-400 to-green-500 transition-all" :style="{ width: thermal.pct + '%' }" />
+            <div
+              class="h-full rounded-full bg-gradient-to-r from-amber-400 to-green-500 transition-all"
+              :style="{ width: thermal.pct + '%' }"
+            />
           </div>
           <p class="mt-2 text-xs text-neutral-600 dark:text-neutral-300">
             <template v-if="thermal.daysAhead > 0">
-              Colheita prevista por volta de <strong>{{ fmtDate(thermal.harvest) }}</strong>
-              (~{{ thermal.daysAhead }} dias), ao ritmo do calor desta época.
+              Colheita prevista por volta de <strong>{{ fmtDate(thermal.harvest) }}</strong> (~{{
+                thermal.daysAhead
+              }}
+              dias), ao ritmo do calor desta época.
             </template>
             <template v-else>Já acumulou calor suficiente — <strong>pronta a colher</strong>! 🧺</template>
           </p>
@@ -258,17 +280,25 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
             {{ showThermal ? 'Esconder' : 'A ciência por trás 🔬' }}
           </button>
           <p v-if="showThermal" class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-            As plantas crescem com o <strong>calor acumulado</strong>, não com os dias do calendário. Somamos os
-            "graus-dia" (temperatura média do dia acima de {{ thermal.baseTempC }}°C, a base desta cultura):
-            <strong>{{ thermal.accumulatedGDD }}</strong> de <strong>{{ thermal.targetGDD }}</strong> necessários. Por
-            isso a mesma planta demora mais a amadurecer no inverno do que no verão.
+            As plantas crescem com o <strong>calor acumulado</strong>, não com os dias do calendário. Somamos
+            os "graus-dia" (temperatura média do dia acima de {{ thermal.baseTempC }}°C, a base desta
+            cultura): <strong>{{ thermal.accumulatedGDD }}</strong> de
+            <strong>{{ thermal.targetGDD }}</strong> necessários. Por isso a mesma planta demora mais a
+            amadurecer no inverno do que no verão.
           </p>
         </div>
       </AppCard>
 
       <!-- Rotação neste local (histórico de famílias botânicas) -->
-      <AppCard v-if="rotationLocal" class="mb-4" :class="rotationLocal.repeatsFamily ? 'border-amber-400/50' : ''">
-        <h2 class="mb-1 text-sm font-semibold" :class="rotationLocal.repeatsFamily ? 'text-amber-600 dark:text-amber-400' : 'text-green-600'">
+      <AppCard
+        v-if="rotationLocal"
+        class="mb-4"
+        :class="rotationLocal.repeatsFamily ? 'border-amber-400/50' : ''"
+      >
+        <h2
+          class="mb-1 text-sm font-semibold"
+          :class="rotationLocal.repeatsFamily ? 'text-amber-600 dark:text-amber-400' : 'text-green-600'"
+        >
           🔄 Rotação em {{ rotationLocal.location }}
         </h2>
         <p class="text-sm text-neutral-700 dark:text-neutral-200">{{ rotationLocal.message }}</p>
@@ -295,7 +325,15 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
         <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Evolução</p>
         <div class="flex gap-2 overflow-x-auto no-scrollbar">
           <div v-for="e in photoEntries" :key="e.id" class="flex-shrink-0 text-center">
-            <img :src="photoUrls[e.id]" loading="lazy" decoding="async" width="80" height="80" class="h-20 w-20 rounded-xl object-cover" :alt="`Foto de ${fmtDate(e.createdAt)}`" />
+            <img
+              :src="photoUrls[e.id]"
+              loading="lazy"
+              decoding="async"
+              width="80"
+              height="80"
+              class="h-20 w-20 rounded-xl object-cover"
+              :alt="`Foto de ${fmtDate(e.createdAt)}`"
+            />
             <p class="mt-0.5 text-[10px] text-neutral-400">{{ fmtDate(e.createdAt, 'd MMM') }}</p>
           </div>
         </div>
@@ -316,7 +354,12 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
           placeholder="Escreve uma nota sobre a tua planta…"
           class="w-full resize-none rounded-xl border border-neutral-200 dark:border-dark-surface2 bg-white dark:bg-dark-surface px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
         ></textarea>
-        <img v-if="pendingPhotoUrl" :src="pendingPhotoUrl" class="mt-2 h-32 w-full rounded-xl object-cover" alt="Pré-visualização" />
+        <img
+          v-if="pendingPhotoUrl"
+          :src="pendingPhotoUrl"
+          class="mt-2 h-32 w-full rounded-xl object-cover"
+          alt="Pré-visualização"
+        />
         <div class="mt-2 flex justify-end gap-2">
           <BaseButton variant="ghost" size="sm" @click="pickPhoto">📷 Anexar foto</BaseButton>
           <BaseButton size="sm" @click="addEntry">Guardar</BaseButton>
@@ -333,7 +376,7 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
         >
           <div class="flex items-center justify-between">
             <span class="text-sm font-medium">{{ eventLabels[e.type] }}</span>
-            <span class="text-xs text-neutral-400">{{ fmtDate(e.createdAt, "d MMM · HH:mm") }}</span>
+            <span class="text-xs text-neutral-400">{{ fmtDate(e.createdAt, 'd MMM · HH:mm') }}</span>
           </div>
           <p v-if="e.note" class="mt-1 text-sm text-neutral-700 dark:text-neutral-200">{{ e.note }}</p>
           <img
@@ -354,7 +397,9 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
       <div class="mt-8 flex flex-col gap-2">
         <BaseButton variant="secondary" @click="markHarvested">🧺 Marcar como colhida</BaseButton>
         <BaseButton variant="ghost" @click="markLost">🥀 Perdi esta planta</BaseButton>
-        <button class="text-sm text-error underline self-center" @click="removePlanting">Remover planta</button>
+        <button class="text-sm text-error underline self-center" @click="removePlanting">
+          Remover planta
+        </button>
       </div>
     </div>
 
@@ -382,7 +427,13 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
           <option value="interior">Interior</option>
         </select>
         <label class="block text-sm font-medium mb-1">Regar a cada {{ editWater }} dias</label>
-        <input v-model.number="editWater" type="range" min="1" max="10" class="mb-4 w-full accent-green-500" />
+        <input
+          v-model.number="editWater"
+          type="range"
+          min="1"
+          max="10"
+          class="mb-4 w-full accent-green-500"
+        />
         <div class="flex gap-2">
           <BaseButton variant="ghost" size="sm" @click="showEdit = false">Cancelar</BaseButton>
           <BaseButton block @click="saveEdit">Guardar</BaseButton>

@@ -24,7 +24,10 @@ const progress = useProgressStore()
 const ui = useUiStore()
 
 const reminders = useReminders()
-const plantings = useLiveQuery(() => db.plantings.where('status').equals(PLANTING_STATUS.ACTIVE).toArray(), [])
+const plantings = useLiveQuery(
+  () => db.plantings.where('status').equals(PLANTING_STATUS.ACTIVE).toArray(),
+  [],
+)
 const challenge = useLiveQuery(() => db.challengeRuns.toArray(), [])
 
 const greeting = computed(() => {
@@ -51,13 +54,14 @@ const courseProgress = computed(() =>
 
 const sowable = computed(() => {
   const slugs = [...plantSowableThisMonth(settings.state.zoneCode, currentMonth())]
-  return slugs.map((s) => getPlant(s)).filter(Boolean).slice(0, 6)
+  return slugs
+    .map((s) => getPlant(s))
+    .filter(Boolean)
+    .slice(0, 6)
 })
 
 // Recomendações personalizadas (mostradas enquanto a horta está pouco povoada)
-const recommendations = computed(() =>
-  plantings.value.length < 3 ? recommendPlants(settings.state, 3) : [],
-)
+const recommendations = computed(() => (plantings.value.length < 3 ? recommendPlants(settings.state, 3) : []))
 
 // Em interior sem nada semeável este mês, sugerir microgreens (colheita garantida em ~1 semana).
 const suggestMicrogreens = computed(
@@ -88,14 +92,24 @@ async function addRecommended(slug: string) {
 // Hero: a ação única mais importante para hoje
 const hero = computed(() => {
   if (activeChallenge.value) {
-    return { title: 'Continua o teu desafio dos microgreens', cta: 'Ver a tarefa de hoje', to: '/desafio', emoji: '🌱' }
+    return {
+      title: 'Continua o teu desafio dos microgreens',
+      cta: 'Ver a tarefa de hoje',
+      to: '/desafio',
+      emoji: '🌱',
+    }
   }
   if (todayReminders.value.length) {
     const r = todayReminders.value[0]
     return { title: r.label, cta: 'Tratar agora', to: '/jardim', emoji: '💧', reminderId: r.id }
   }
   if (nextLesson.value) {
-    return { title: `Lição: ${nextLesson.value.title}`, cta: 'Aprender (3 min)', to: `/curso/licao/${nextLesson.value.id}`, emoji: '📗' }
+    return {
+      title: `Lição: ${nextLesson.value.title}`,
+      cta: 'Aprender (3 min)',
+      to: `/curso/licao/${nextLesson.value.id}`,
+      emoji: '📗',
+    }
   }
   return null
 })
@@ -133,7 +147,9 @@ watch(
     <!-- Header -->
     <div class="flex items-start justify-between">
       <div>
-        <h1 class="font-display text-2xl font-bold text-neutral-900 dark:text-neutral-100">{{ greeting }} 👋</h1>
+        <h1 class="font-display text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          {{ greeting }} 👋
+        </h1>
         <p class="text-sm text-neutral-500 dark:text-neutral-400">Faz boa horta hoje.</p>
       </div>
       <div class="flex gap-2">
@@ -152,7 +168,9 @@ watch(
             <p class="font-display text-lg font-bold leading-tight">{{ hero.title }}</p>
           </div>
         </div>
-        <div class="mt-3 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1.5 text-sm font-semibold">
+        <div
+          class="mt-3 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1.5 text-sm font-semibold"
+        >
           {{ hero.cta }} →
         </div>
       </div>
@@ -236,7 +254,9 @@ watch(
       <div class="space-y-2">
         <AppCard v-for="p in recommendations" :key="p.slug">
           <div class="flex items-center gap-3">
-            <RouterLink :to="`/planta/${p.slug}`" class="text-3xl" aria-hidden="true">{{ p.emoji }}</RouterLink>
+            <RouterLink :to="`/planta/${p.slug}`" class="text-3xl" aria-hidden="true">{{
+              p.emoji
+            }}</RouterLink>
             <div class="flex-1 min-w-0">
               <RouterLink :to="`/planta/${p.slug}`" class="font-semibold">{{ p.name }}</RouterLink>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 truncate">{{ p.shortDescription }}</p>
@@ -262,8 +282,8 @@ watch(
             <div class="flex-1 min-w-0">
               <p class="font-semibold">Experimenta microgreens</p>
               <p class="text-xs text-neutral-500 dark:text-neutral-400">
-                Em interior e sem nada para semear agora? Os microgreens crescem todo o ano dentro de
-                casa e dão colheita em ~1 semana.
+                Em interior e sem nada para semear agora? Os microgreens crescem todo o ano dentro de casa e
+                dão colheita em ~1 semana.
               </p>
             </div>
           </div>
@@ -288,11 +308,7 @@ watch(
         >
           <span aria-hidden="true">{{ p!.emoji }}</span> {{ p!.name }}
         </RouterLink>
-        <RouterLink
-          v-if="!sowable.length"
-          to="/desafio"
-          class="text-sm text-neutral-500"
-        >
+        <RouterLink v-if="!sowable.length" to="/desafio" class="text-sm text-neutral-500">
           Mês mais calmo para semear ao ar livre — que tal microgreens? Dão o ano todo, em casa. 🌱
         </RouterLink>
       </div>

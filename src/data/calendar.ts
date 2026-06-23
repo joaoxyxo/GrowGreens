@@ -82,7 +82,12 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'hortela', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9] },
   { plant: 'hortela', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7, 8, 9, 10] },
   { plant: 'alecrim', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
-  { plant: 'alecrim', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  {
+    plant: 'alecrim',
+    zone: 'litoral_norte',
+    action: 'colheita',
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  },
 
   // --- Novas culturas ---
   // Folhas
@@ -124,11 +129,21 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'cebolinho', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9] },
   { plant: 'cebolinho', zone: 'litoral_norte', action: 'colheita', months: [4, 5, 6, 7, 8, 9, 10] },
   { plant: 'tomilho', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
-  { plant: 'tomilho', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  {
+    plant: 'tomilho',
+    zone: 'litoral_norte',
+    action: 'colheita',
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  },
   { plant: 'oregaos', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
   { plant: 'oregaos', zone: 'litoral_norte', action: 'colheita', months: [5, 6, 7, 8, 9, 10] },
   { plant: 'louro', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
-  { plant: 'louro', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  {
+    plant: 'louro',
+    zone: 'litoral_norte',
+    action: 'colheita',
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  },
   { plant: 'funcho', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 8, 9] },
   { plant: 'funcho', zone: 'litoral_norte', action: 'colheita', months: [6, 7, 11, 12] },
   { plant: 'melao', zone: 'litoral_norte', action: 'sementeira_interior', months: [3, 4] },
@@ -156,7 +171,12 @@ export const CALENDAR: CalendarEntry[] = [
   { plant: 'segurelha', zone: 'litoral_norte', action: 'sementeira_direta', months: [4, 5, 6] },
   { plant: 'segurelha', zone: 'litoral_norte', action: 'colheita', months: [7, 8, 9] },
   { plant: 'tomilho-limao', zone: 'litoral_norte', action: 'transplante', months: [3, 4, 5, 9, 10] },
-  { plant: 'tomilho-limao', zone: 'litoral_norte', action: 'colheita', months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  {
+    plant: 'tomilho-limao',
+    zone: 'litoral_norte',
+    action: 'colheita',
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  },
   { plant: 'manjerona', zone: 'litoral_norte', action: 'transplante', months: [4, 5, 6] },
   { plant: 'manjerona', zone: 'litoral_norte', action: 'colheita', months: [6, 7, 8, 9] },
   { plant: 'cerefolio', zone: 'litoral_norte', action: 'sementeira_direta', months: [3, 4, 8, 9] },
@@ -222,8 +242,7 @@ export function calendarFor(zone: string, month: number) {
 function computeCalendarFor(zone: string, month: number) {
   const delta = ZONE_SHIFT[zone] ?? 0
   return CALENDAR.filter((base) => {
-    const months =
-      base.action === 'colheita' ? base.months : base.months.map((m) => shiftMonth(m, delta))
+    const months = base.action === 'colheita' ? base.months : base.months.map((m) => shiftMonth(m, delta))
     return months.includes(month)
   }).map((base) => ({
     ...base,

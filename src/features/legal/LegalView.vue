@@ -15,9 +15,9 @@ import AppCard from '@/components/ui/AppCard.vue'
           nem enviamos dados pessoais para servidores, e não usamos rastreadores de terceiros.
         </p>
         <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-2">
-          A previsão meteorológica é obtida do IPMA (dados abertos públicos) com base na região que escolheste,
-          sem identificação pessoal. Podes exportar ou apagar os teus dados a qualquer momento nas definições do
-          perfil.
+          A previsão meteorológica é obtida do IPMA (dados abertos públicos) com base na região que
+          escolheste, sem identificação pessoal. Podes exportar ou apagar os teus dados a qualquer momento nas
+          definições do perfil.
         </p>
       </AppCard>
 

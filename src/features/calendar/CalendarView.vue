@@ -4,7 +4,13 @@ import { RouterLink } from 'vue-router'
 import PageHeader from '@/components/PageHeader.vue'
 import AppCard from '@/components/ui/AppCard.vue'
 import { useSettingsStore } from '@/stores/settings'
-import { calendarFor, CALENDAR_ACTION_LABELS, CLIMATE_ZONES_BY_CODE, MONTHLY_TIPS, soilTipForMonth } from '@/data/calendar'
+import {
+  calendarFor,
+  CALENDAR_ACTION_LABELS,
+  CLIMATE_ZONES_BY_CODE,
+  MONTHLY_TIPS,
+  soilTipForMonth,
+} from '@/data/calendar'
 import { getPlant } from '@/data/plants'
 import { MONTH_NAMES, currentMonth } from '@/utils/date'
 import { useWeather, weatherTypeInfo, wateringAdvice, ZONE_TO_IPMA } from '@/composables/useWeather'
@@ -41,7 +47,10 @@ function nextMonth() {
 }
 
 onMounted(() => fetchFor(settings.state.zoneCode))
-watch(() => settings.state.zoneCode, (z) => fetchFor(z))
+watch(
+  () => settings.state.zoneCode,
+  (z) => fetchFor(z),
+)
 </script>
 
 <template>
@@ -65,13 +74,18 @@ watch(() => settings.state.zoneCode, (z) => fetchFor(z))
               :key="d.date"
               class="flex-shrink-0 w-16 text-center rounded-xl bg-neutral-50 dark:bg-dark-surface2 py-2"
             >
-              <p class="text-xs text-neutral-500">{{ i === 0 ? 'Hoje' : d.date.slice(8, 10) + '/' + d.date.slice(5, 7) }}</p>
+              <p class="text-xs text-neutral-500">
+                {{ i === 0 ? 'Hoje' : d.date.slice(8, 10) + '/' + d.date.slice(5, 7) }}
+              </p>
               <p class="text-xl" aria-hidden="true">{{ weatherTypeInfo(d.weatherType).emoji }}</p>
               <p class="text-xs font-semibold">{{ Math.round(d.tMax) }}°</p>
               <p class="text-[10px] text-neutral-400">{{ Math.round(d.tMin) }}°</p>
             </div>
           </div>
-          <p v-if="advice" class="mt-3 rounded-lg bg-sky-400/10 px-3 py-2 text-sm text-sky-600 dark:text-sky-300">
+          <p
+            v-if="advice"
+            class="mt-3 rounded-lg bg-sky-400/10 px-3 py-2 text-sm text-sky-600 dark:text-sky-300"
+          >
             {{ advice }}
           </p>
         </div>
@@ -79,9 +93,21 @@ watch(() => settings.state.zoneCode, (z) => fetchFor(z))
 
       <!-- Seletor de mês -->
       <div class="flex items-center justify-between mb-4">
-        <button class="rounded-full bg-neutral-100 dark:bg-dark-surface2 px-3 py-1.5 text-lg" aria-label="Mês anterior" @click="prevMonth">‹</button>
+        <button
+          class="rounded-full bg-neutral-100 dark:bg-dark-surface2 px-3 py-1.5 text-lg"
+          aria-label="Mês anterior"
+          @click="prevMonth"
+        >
+          ‹
+        </button>
         <h2 class="font-display text-xl font-bold">{{ MONTH_NAMES[month - 1] }}</h2>
-        <button class="rounded-full bg-neutral-100 dark:bg-dark-surface2 px-3 py-1.5 text-lg" aria-label="Mês seguinte" @click="nextMonth">›</button>
+        <button
+          class="rounded-full bg-neutral-100 dark:bg-dark-surface2 px-3 py-1.5 text-lg"
+          aria-label="Mês seguinte"
+          @click="nextMonth"
+        >
+          ›
+        </button>
       </div>
 
       <!-- Dica do mês -->
@@ -99,14 +125,17 @@ watch(() => settings.state.zoneCode, (z) => fetchFor(z))
         <p class="text-sm">
           <strong>❄️ Geada em {{ zone.name }}:</strong>
           última provável por volta de {{ MONTH_NAMES[zone.lastFrostMonth - 1] }}; primeira por volta de
-          {{ MONTH_NAMES[zone.firstFrostMonth - 1] }}. Protege as culturas sensíveis ao frio fora desta janela.
+          {{ MONTH_NAMES[zone.firstFrostMonth - 1] }}. Protege as culturas sensíveis ao frio fora desta
+          janela.
         </p>
       </AppCard>
 
       <!-- Secções -->
       <div class="space-y-5">
         <section v-for="s in sections" :key="s.action">
-          <h3 class="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-300">
+          <h3
+            class="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-300"
+          >
             <span aria-hidden="true">{{ CALENDAR_ACTION_LABELS[s.action].emoji }}</span> {{ s.title }}
           </h3>
           <div v-if="plantsFor(s.action).length" class="flex flex-wrap gap-2">

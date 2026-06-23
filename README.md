@@ -25,7 +25,7 @@ App web (PWA) que ensina horticultura a principiantes, **da semente à colheita*
 
 ## Stack
 
-Vue 3 + TypeScript + Vite · Tailwind CSS v4 · Pinia · Vue Router · Vue I18n · **Dexie (IndexedDB)** para dados local-first · `vite-plugin-pwa` (offline + instalável) · Vitest.
+Vue 3 + TypeScript + Vite · Tailwind CSS v4 · Pinia · Vue Router · **Dexie (IndexedDB)** para dados local-first · `vite-plugin-pwa` (offline + instalável) · Vitest.
 
 ## Instalar como app (PWA)
 
@@ -61,7 +61,7 @@ Lógica de domínio (utils, stores, repositórios) coberta por **182 testes unit
 
 ## Tamanho do bundle
 
-Referência (build de produção, gzip): **vendor** (Vue/Pinia/Router/Dexie/i18n) ~102 KB · **app** (entrada) ~9 KB · catálogo (`plants`, lazy) ~23 KB. As dependências ficam num chunk `vendor` separado (cacheável entre deploys) via `manualChunks`; as rotas e os dados grandes são lazy-loaded.
+Referência (build de produção, gzip): **vendor** (Vue/Pinia/Router/Dexie) ~80 KB · **app** (entrada) ~9 KB · catálogo (`plants`, lazy) ~23 KB. As dependências ficam num chunk `vendor` separado (cacheável entre deploys) via `manualChunks`; as rotas e os dados grandes são lazy-loaded.
 
 ## Arquitetura
 

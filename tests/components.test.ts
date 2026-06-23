@@ -71,7 +71,9 @@ describe('AppCard', () => {
 
 describe('EmptyState', () => {
   it('renderiza emoji, título e descrição', () => {
-    const w = mount(EmptyState, { props: { emoji: '🔍', title: 'Sem resultados', description: 'Tenta outra coisa.' } })
+    const w = mount(EmptyState, {
+      props: { emoji: '🔍', title: 'Sem resultados', description: 'Tenta outra coisa.' },
+    })
     expect(w.text()).toContain('🔍')
     expect(w.text()).toContain('Sem resultados')
     expect(w.text()).toContain('Tenta outra coisa.')
@@ -99,7 +101,10 @@ describe('DifficultyDots', () => {
 })
 
 describe('PageHeader', () => {
-  const router = createRouter({ history: createMemoryHistory(), routes: [{ path: '/', component: { template: '<div/>' } }] })
+  const router = createRouter({
+    history: createMemoryHistory(),
+    routes: [{ path: '/', component: { template: '<div/>' } }],
+  })
 
   it('renderiza título e subtítulo', () => {
     const w = mount(PageHeader, {
@@ -112,7 +117,10 @@ describe('PageHeader', () => {
 })
 
 describe('TabBar', () => {
-  const router = createRouter({ history: createMemoryHistory(), routes: [{ path: '/', component: { template: '<div/>' } }] })
+  const router = createRouter({
+    history: createMemoryHistory(),
+    routes: [{ path: '/', component: { template: '<div/>' } }],
+  })
 
   it('renderiza os tabs de navegação', async () => {
     router.push('/')

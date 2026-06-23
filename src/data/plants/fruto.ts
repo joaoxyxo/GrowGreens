@@ -23,31 +23,48 @@ export const FRUTO_PLANTS: Plant[] = [
     spacingCm: 50,
     potVolumeL: 20,
     frostTolerant: false,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'possivel', outono: 'evitar', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'possivel',
+      outono: 'evitar',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: true,
     pollination: 'autofertil',
     edibleParts: 'Fruto. As folhas e o caule são tóxicos.',
     petSafe: false,
     toxicNote: 'Folhas, caule e frutos verdes contêm solanina (tóxica). Come só o fruto maduro.',
-    shortDescription: 'O rei da horta de varanda. Sol, rega constante e um apoio para trepar — e terás tomates todo o verão.',
+    shortDescription:
+      'O rei da horta de varanda. Sol, rega constante e um apoio para trepar — e terás tomates todo o verão.',
     in30Seconds: [
       'Começa em interior (fev-mar) e leva para fora depois das geadas (maio).',
       'Precisa de sol pleno e de muita rega regular.',
       'Em interior, abana a planta na floração para os frutos vingarem.',
     ],
-    growingTips: 'Tutorar desde cedo. Remove os ladrões (rebentos nas axilas) nas variedades indeterminadas. Cherry é o mais fácil. Variedades populares em Portugal: "Coração de Boi", "Chucha"/rama e os cherry.',
+    growingTips:
+      'Tutorar desde cedo. Remove os ladrões (rebentos nas axilas) nas variedades indeterminadas. Cherry é o mais fácil. Variedades populares em Portugal: "Coração de Boi", "Chucha"/rama e os cherry.',
     wateringNotes: 'Rega abundante e CONSTANTE. Oscilações causam fendas e podridão apical (cu-preto).',
     feedingNotes: 'Azoto no crescimento; muda para potássio/fósforo na floração e frutificação.',
-    harvestNotes: 'Colhe quando tiver cor plena e ceder ligeiramente ao toque. Sabe muito melhor que o comprado.',
+    harvestNotes:
+      'Colhe quando tiver cor plena e ceder ligeiramente ao toque. Sabe muito melhor que o comprado.',
     portugalNotes:
       'Só para fora depois de meados de maio (risco de geada). No litoral húmido, espaço e tutoragem arejam e previnem o míldio — o maior inimigo do tomate cá.',
-    expectations: 'Primeiros frutos ~2,5-3 meses após transplante; produção até ao outono. Uma planta dá muito.',
+    expectations:
+      'Primeiros frutos ~2,5-3 meses após transplante; produção até ao outono. Uma planta dá muito.',
     commonMistake: 'Rega irregular — alterna seca e excesso e os frutos racham ou apodrecem na base.',
     stages: [
       { stage: 'germinacao', durationDays: [6, 12], text: 'Em interior, com calor (20-25 °C).' },
-      { stage: 'plantula', durationDays: [30, 45], text: 'Cresce em interior; endurece antes de ir para fora.' },
+      {
+        stage: 'plantula',
+        durationDays: [30, 45],
+        text: 'Cresce em interior; endurece antes de ir para fora.',
+      },
       { stage: 'vegetativo', durationDays: [20, 35], text: 'Transplanta, tutora e aduba com azoto.' },
-      { stage: 'floracao', durationDays: [10, 20], text: 'Flores amarelas; abana a planta para polinizar. Reduz azoto.' },
+      {
+        stage: 'floracao',
+        durationDays: [10, 20],
+        text: 'Flores amarelas; abana a planta para polinizar. Reduz azoto.',
+      },
       { stage: 'frutificacao', durationDays: [25, 45], text: 'Frutos engrossam; potássio + rega constante.' },
       { stage: 'colheita', text: 'Colhe maduro, ao longo de semanas.' },
     ],
@@ -79,7 +96,12 @@ export const FRUTO_PLANTS: Plant[] = [
     spacingCm: 40,
     potVolumeL: 15,
     frostTolerant: false,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'possivel', outono: 'evitar', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'possivel',
+      outono: 'evitar',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: true,
     pollination: 'autofertil',
     edibleParts: 'Fruto.',
@@ -90,13 +112,16 @@ export const FRUTO_PLANTS: Plant[] = [
       'Adora calor — o verão atlântico pode ser justo.',
       'Verde ou maduro (vermelho/amarelo): tu decides quando colher.',
     ],
-    growingTips: 'Germina com calor. Transplanta só com tempo quente estável (maio). Tutora se carregar de frutos.',
+    growingTips:
+      'Germina com calor. Transplanta só com tempo quente estável (maio). Tutora se carregar de frutos.',
     wateringNotes: 'Rega moderada e regular; não encharcar.',
     feedingNotes: 'Equilibrado no crescimento; potássio na frutificação.',
     harvestNotes: 'Colhe verde para mais produção, ou deixa amadurecer para mais doce e vitamina C.',
     portugalNotes: 'No litoral fresco, uma estufa caseira ou parede virada a sul ajuda muito. Sol é tudo.',
-    expectations: 'Cultura lenta (3-3,5 meses até aos primeiros frutos). Paciência: o calor é que manda o ritmo. Uma planta saudável produz vários pimentos e continua a dar até ao fim do verão.',
-    commonMistake: 'Pôr cá fora cedo demais — o frio paralisa-o e pode não recuperar. Espera por calor estável (noites acima de ~12 °C).',
+    expectations:
+      'Cultura lenta (3-3,5 meses até aos primeiros frutos). Paciência: o calor é que manda o ritmo. Uma planta saudável produz vários pimentos e continua a dar até ao fim do verão.',
+    commonMistake:
+      'Pôr cá fora cedo demais — o frio paralisa-o e pode não recuperar. Espera por calor estável (noites acima de ~12 °C).',
     stages: [
       { stage: 'germinacao', durationDays: [8, 16], text: 'Lenta; precisa de calor (24-28 °C).' },
       { stage: 'plantula', durationDays: [40, 55], text: 'Cresce devagar em interior.' },
@@ -144,7 +169,8 @@ export const FRUTO_PLANTS: Plant[] = [
       'Precisa de espaço, sol e bastante água.',
       'Flores macho e fêmea — precisa de insetos (ou da tua ajuda) para vingar.',
     ],
-    growingTips: 'Semeia 1-2 plantas; mais que isso é tomate a mais. Colhe jovem e muitas vezes para produzir mais.',
+    growingTips:
+      'Semeia 1-2 plantas; mais que isso é tomate a mais. Colhe jovem e muitas vezes para produzir mais.',
     wateringNotes: 'Muita água, na base (não nas folhas, para evitar oídio).',
     feedingNotes: 'Solo rico em composto; adubo equilibrado durante a produção.',
     harvestNotes: 'Colhe com 15-20 cm; se deixares engrossar, a planta abranda a produção.',
@@ -186,7 +212,12 @@ export const FRUTO_PLANTS: Plant[] = [
     spacingCm: 30,
     potVolumeL: 5,
     frostTolerant: true,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'possivel', outono: 'evitar', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'possivel',
+      outono: 'evitar',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: true,
     pollination: 'insetos',
     edibleParts: 'Fruto.',
@@ -197,13 +228,17 @@ export const FRUTO_PLANTS: Plant[] = [
       'Excelente em vaso suspenso ou jardineira.',
       'É perene: produz na primavera/verão durante alguns anos.',
     ],
-    growingTips: 'Planta com a coroa ao nível do solo (nem enterrada nem ao alto). Corta os estolhos para concentrar energia nos frutos.',
+    growingTips:
+      'Planta com a coroa ao nível do solo (nem enterrada nem ao alto). Corta os estolhos para concentrar energia nos frutos.',
     wateringNotes: 'Rega regular na base; folhas e frutos molhados apodrecem.',
     feedingNotes: 'Adubo rico em potássio durante a floração e frutificação.',
     harvestNotes: 'Colhe bem vermelho e maduro; não amadurece depois de colhido.',
-    portugalNotes: 'Planta no outono ou início da primavera. Em varanda, protege dos pássaros e poliniza à mão se faltarem insetos.',
-    expectations: 'Primeiros morangos na primavera seguinte se plantares no outono. É perene: produz vários anos e multiplica-se sozinha pelos estolhos (rebentos rasteiros) que enraízam.',
-    commonMistake: 'Enterrar a coroa (o ponto onde as folhas saem) — apodrece. A coroa fica ao nível do solo, nem acima nem abaixo.',
+    portugalNotes:
+      'Planta no outono ou início da primavera. Em varanda, protege dos pássaros e poliniza à mão se faltarem insetos.',
+    expectations:
+      'Primeiros morangos na primavera seguinte se plantares no outono. É perene: produz vários anos e multiplica-se sozinha pelos estolhos (rebentos rasteiros) que enraízam.',
+    commonMistake:
+      'Enterrar a coroa (o ponto onde as folhas saem) — apodrece. A coroa fica ao nível do solo, nem acima nem abaixo.',
     stages: [
       { stage: 'plantula', durationDays: [20, 40], text: 'Enraíza; coroa ao nível do solo.' },
       { stage: 'vegetativo', durationDays: [40, 80], text: 'Faz folhas e estolhos (corta-os).' },
@@ -244,7 +279,8 @@ export const FRUTO_PLANTS: Plant[] = [
     pollination: 'insetos',
     edibleParts: 'O fruto.',
     petSafe: true,
-    shortDescription: 'Trepadeira generosa e refrescante. Com um apoio para subir, produz sem parar no verão.',
+    shortDescription:
+      'Trepadeira generosa e refrescante. Com um apoio para subir, produz sem parar no verão.',
     in30Seconds: [
       'Dá-lhe uma rede ou cana para trepar — poupa espaço e fica mais saudável.',
       'Precisa de muita água e muito sol.',
@@ -255,13 +291,17 @@ export const FRUTO_PLANTS: Plant[] = [
     wateringNotes: 'Muita água e regular; falta de água dá pepinos amargos e tortos.',
     feedingNotes: 'Guloso: composto à plantação e adubo rico em potássio durante a frutificação.',
     harvestNotes: 'Corta os frutos com tesoura, jovens e firmes. Não deixes amarelecer na planta.',
-    portugalNotes:
-      'Cultura de verão no litoral. Semeia de abril/maio em diante, depois das últimas geadas.',
+    portugalNotes: 'Cultura de verão no litoral. Semeia de abril/maio em diante, depois das últimas geadas.',
     expectations: 'A partir das ~8 semanas, colheitas frequentes durante todo o verão.',
-    commonMistake: 'Deixar pepinos grandes e amarelos na planta — ela "pensa" que terminou e pára de produzir.',
+    commonMistake:
+      'Deixar pepinos grandes e amarelos na planta — ela "pensa" que terminou e pára de produzir.',
     stages: [
       { stage: 'germinacao', durationDays: [5, 10], text: 'Quer calor (>18°C) para germinar bem.' },
-      { stage: 'plantula', durationDays: [10, 20], text: 'Transplanta com cuidado; instala o apoio para trepar.' },
+      {
+        stage: 'plantula',
+        durationDays: [10, 20],
+        text: 'Transplanta com cuidado; instala o apoio para trepar.',
+      },
       { stage: 'floracao', durationDays: [10, 20], text: 'Flores macho e fêmea; as abelhas fazem o resto.' },
       { stage: 'frutificacao', durationDays: [20, 40], text: 'Rega e colhe frequentemente.' },
       { stage: 'colheita', text: 'Frutos jovens e firmes, com tesoura.' },
@@ -309,7 +349,8 @@ export const FRUTO_PLANTS: Plant[] = [
       'Semeia em cova com bastante composto. Deixa as ramas alastrar ou conduz para uma zona livre. Rega abundante.',
     wateringNotes: 'Muita água no crescimento e na frutificação; evita molhar as folhas (oídio).',
     feedingNotes: 'Muito gulosa: cova rica em estrume/composto curado e adubo durante o crescimento.',
-    harvestNotes: 'Colhe quando a casca está dura e o pé seco. Deixa "curar" ao sol uns dias antes de guardar.',
+    harvestNotes:
+      'Colhe quando a casca está dura e o pé seco. Deixa "curar" ao sol uns dias antes de guardar.',
     portugalNotes:
       'Semeia na primavera/início de verão no litoral para colher no outono. Dá-se muito bem aqui.',
     expectations: 'Em ~4 meses tens abóboras grandes que se guardam meses num sítio fresco.',
@@ -349,13 +390,19 @@ export const FRUTO_PLANTS: Plant[] = [
     spacingCm: 50,
     potVolumeL: 15,
     frostTolerant: false,
-    indoorViabilityBySeason: { primavera: 'possivel', verao: 'possivel', outono: 'evitar', inverno: 'evitar' },
+    indoorViabilityBySeason: {
+      primavera: 'possivel',
+      verao: 'possivel',
+      outono: 'evitar',
+      inverno: 'evitar',
+    },
     needsSupplementalLight: true,
     pollination: 'autofertil',
     edibleParts: 'O fruto.',
     toxicNote: 'Folhas e caules contêm solanina e não se comem. O fruto maduro é seguro.',
     petSafe: false,
-    shortDescription: 'Amante do calor e do sol. Exige um verão quente, mas recompensa com frutos brilhantes.',
+    shortDescription:
+      'Amante do calor e do sol. Exige um verão quente, mas recompensa com frutos brilhantes.',
     in30Seconds: [
       'Quer calor a sério — só arranca quando o tempo aquece.',
       'Estaca a planta; os frutos pesam.',
@@ -420,7 +467,8 @@ export const FRUTO_PLANTS: Plant[] = [
       'Semeia com o tempo já quente. Deixa poucos frutos por planta para ficarem doces e grandes. Coloca os frutos sobre uma tábua/palha para não apodrecerem no chão.',
     wateringNotes: 'Rega regular no crescimento; reduz quando os frutos estão a amadurecer (mais doçura).',
     feedingNotes: 'Guloso: composto à plantação e adubo rico em potássio durante a frutificação.',
-    harvestNotes: 'Está pronto quando cheira a melão e o pé se solta com facilidade (rachadela à volta do pedúnculo). A casca muda de cor e a parte de baixo amarelece. Depois de colhido não fica mais doce — por isso colhe-o no ponto certo.',
+    harvestNotes:
+      'Está pronto quando cheira a melão e o pé se solta com facilidade (rachadela à volta do pedúnculo). A casca muda de cor e a parte de baixo amarelece. Depois de colhido não fica mais doce — por isso colhe-o no ponto certo.',
     portugalNotes:
       'No litoral fresco custa mais que no interior/sul. Escolhe um canto bem quente e soalheiro ou cultiva em estufa.',
     expectations: 'Alguns melões por planta no fim do verão, se o calor ajudar.',
@@ -464,7 +512,8 @@ export const FRUTO_PLANTS: Plant[] = [
     needsSupplementalLight: true,
     pollination: 'autofertil',
     edibleParts: 'O fruto (picante).',
-    toxicNote: 'Folhas e caules (solanáceas) não se comem. A capsaicina do fruto irrita olhos e pele — lava as mãos.',
+    toxicNote:
+      'Folhas e caules (solanáceas) não se comem. A capsaicina do fruto irrita olhos e pele — lava as mãos.',
     petSafe: false,
     shortDescription: 'Picante e decorativa, dá-se bem em vaso ao sol. Uma planta rende imensas malaguetas.',
     in30Seconds: [
@@ -526,8 +575,10 @@ export const FRUTO_PLANTS: Plant[] = [
       'Precisa de espaço — não é para vaso pequeno.',
       'Colhe os capítulos fechados, antes de florir.',
     ],
-    growingTips: 'Dá-lhe um canteiro fundo e fértil com bom espaço. No inverno protege a coroa com palha; rebenta na primavera.',
-    wateringNotes: 'Rega regular no crescimento; tolera seca depois de instalada, mas a colheita pede humidade.',
+    growingTips:
+      'Dá-lhe um canteiro fundo e fértil com bom espaço. No inverno protege a coroa com palha; rebenta na primavera.',
+    wateringNotes:
+      'Rega regular no crescimento; tolera seca depois de instalada, mas a colheita pede humidade.',
     feedingNotes: 'Gulosa: composto generoso no plantio e renovação anual da matéria orgânica.',
     harvestNotes: 'Corta os capítulos ainda fechados e tenros; o central vem primeiro, depois os laterais.',
     portugalNotes: 'Adapta-se bem ao clima ameno do litoral. Multiplica-se por rebentos da base no inverno.',
@@ -572,21 +623,26 @@ export const FRUTO_PLANTS: Plant[] = [
     needsSupplementalLight: false,
     pollination: 'autofertil',
     edibleParts: 'Fruto maduro (dentro da bainha de papel); a planta e o fruto verde são tóxicos.',
-    toxicNote: 'Come apenas o fruto bem maduro (alaranjado). Folhas, caule e fruto verde contêm solanina — não ingerir.',
+    toxicNote:
+      'Come apenas o fruto bem maduro (alaranjado). Folhas, caule e fruto verde contêm solanina — não ingerir.',
     petSafe: false,
-    shortDescription: 'Pequenas bagas doces e ácidas dentro de uma "lanterna" de papel. Da família do tomate, gosta de calor.',
+    shortDescription:
+      'Pequenas bagas doces e ácidas dentro de uma "lanterna" de papel. Da família do tomate, gosta de calor.',
     in30Seconds: [
       'Fruto doce-ácido numa bainha de papel.',
       'Trata-se como o tomate, mas é mais rústica.',
       'Só o fruto maduro se come — o resto é tóxico.',
     ],
-    growingTips: 'Semeia em alfobre ao calor e transplanta depois do frio. Dá um arbusto largo — dá-lhe espaço e um tutor leve.',
+    growingTips:
+      'Semeia em alfobre ao calor e transplanta depois do frio. Dá um arbusto largo — dá-lhe espaço e um tutor leve.',
     wateringNotes: 'Rega regular sem encharcar; tolera alguma secura depois de instalada.',
     feedingNotes: 'Pouco exigente; excesso de azoto dá folha em vez de fruto.',
-    harvestNotes: 'Está pronta quando a bainha seca e fica cor de palha e o fruto cai sozinho — apanha-o do chão.',
+    harvestNotes:
+      'Está pronta quando a bainha seca e fica cor de palha e o fruto cai sozinho — apanha-o do chão.',
     portugalNotes: 'Adapta-se bem ao verão do litoral. Numa zona abrigada pode rebrotar no ano seguinte.',
     expectations: 'Cerca de 3,5-4,5 meses até aos primeiros frutos; depois produz em abundância até ao frio.',
-    commonMistake: 'Colher cedo demais — só está doce quando a bainha seca e o fruto cai. Verde é ácido e tóxico.',
+    commonMistake:
+      'Colher cedo demais — só está doce quando a bainha seca e o fruto cai. Verde é ácido e tóxico.',
     stages: [
       { stage: 'germinacao', durationDays: [10, 21], text: 'Ao calor, em alfobre.' },
       { stage: 'plantula', durationDays: [20, 35], text: 'Cresce devagar; transplanta com espaço.' },
@@ -628,19 +684,26 @@ export const FRUTO_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Turiões (rebentos jovens) na primavera.',
     petSafe: false,
-    toxicNote: 'As bagas vermelhas da planta adulta são tóxicas para pessoas e animais. Come apenas os turiões.',
-    shortDescription: 'Cultura perene de longo prazo: planta-se uma vez e colhe-se na primavera durante 10-15 anos.',
+    toxicNote:
+      'As bagas vermelhas da planta adulta são tóxicas para pessoas e animais. Come apenas os turiões.',
+    shortDescription:
+      'Cultura perene de longo prazo: planta-se uma vez e colhe-se na primavera durante 10-15 anos.',
     in30Seconds: [
       'Investimento a longo prazo: 1-2 anos até à 1.ª colheita.',
       'Depois produz turiões todas as primaveras, anos a fio.',
       'Pede um canteiro só para ele, fundo e fértil.',
     ],
-    growingTips: 'Planta as garras (raízes) num canteiro fundo e bem adubado. Não colhas no 1.º ano — deixa a planta fortalecer. A partir do 2.º-3.º ano, colhe os turiões na primavera durante algumas semanas.',
-    wateringNotes: 'Rega regular no estabelecimento; depois é resistente. Boa drenagem é essencial (a coroa apodrece em água parada).',
+    growingTips:
+      'Planta as garras (raízes) num canteiro fundo e bem adubado. Não colhas no 1.º ano — deixa a planta fortalecer. A partir do 2.º-3.º ano, colhe os turiões na primavera durante algumas semanas.',
+    wateringNotes:
+      'Rega regular no estabelecimento; depois é resistente. Boa drenagem é essencial (a coroa apodrece em água parada).',
     feedingNotes: 'Guloso: composto/estrume curado todos os anos, no outono ou após a colheita.',
-    harvestNotes: 'Corta os turiões com ~18-20 cm, rente ao solo, durante 6-8 semanas na primavera. Depois deixa-os crescer em folhagem para alimentar a coroa.',
-    portugalNotes: 'Dá-se bem no clima ameno; escolhe um canto permanente do quintal que não vás mexer durante anos.',
-    expectations: 'Paciência: pouca ou nenhuma colheita nos primeiros 1-2 anos, depois décadas de turiões na primavera.',
+    harvestNotes:
+      'Corta os turiões com ~18-20 cm, rente ao solo, durante 6-8 semanas na primavera. Depois deixa-os crescer em folhagem para alimentar a coroa.',
+    portugalNotes:
+      'Dá-se bem no clima ameno; escolhe um canto permanente do quintal que não vás mexer durante anos.',
+    expectations:
+      'Paciência: pouca ou nenhuma colheita nos primeiros 1-2 anos, depois décadas de turiões na primavera.',
     commonMistake: 'Colher no 1.º ano — enfraquece a coroa e arruína a produção futura. Espera.',
     stages: [
       { stage: 'germinacao', durationDays: [21, 42], text: 'Lenta a partir de semente (ou planta garras).' },
@@ -681,19 +744,24 @@ export const FRUTO_PLANTS: Plant[] = [
     pollination: 'autofertil',
     edibleParts: 'Vagens jovens (cápsulas), cozinhadas.',
     petSafe: true,
-    shortDescription: 'Planta de calor, de vagens tenras usadas em guisados e caris. Quer sol e verão quente.',
+    shortDescription:
+      'Planta de calor, de vagens tenras usadas em guisados e caris. Quer sol e verão quente.',
     in30Seconds: [
       'Adora calor — só arranca com o verão.',
       'Colhe as vagens novas (5-8 cm), tenras.',
       'Demolha a semente antes para germinar melhor.',
     ],
-    growingTips: 'Semeia com o tempo bem quente (ou começa em alfobre ao calor). Demolha as sementes 12-24h. Colhe a cada 2-3 dias para a planta continuar a produzir.',
+    growingTips:
+      'Semeia com o tempo bem quente (ou começa em alfobre ao calor). Demolha as sementes 12-24h. Colhe a cada 2-3 dias para a planta continuar a produzir.',
     wateringNotes: 'Rega regular no calor; tolera alguma secura mas a colheita pede humidade.',
     feedingNotes: 'Composto à plantação; reforço a meio do ciclo. Excesso de azoto dá folha em vez de vagem.',
-    harvestNotes: 'Colhe as vagens com 5-8 cm — passam depressa a fibrosas. Usa luvas (a planta pode ser irritante).',
-    portugalNotes: 'Precisa de verão quente; no litoral norte dá-se melhor num canto abrigado e soalheiro, ou em estufa.',
+    harvestNotes:
+      'Colhe as vagens com 5-8 cm — passam depressa a fibrosas. Usa luvas (a planta pode ser irritante).',
+    portugalNotes:
+      'Precisa de verão quente; no litoral norte dá-se melhor num canto abrigado e soalheiro, ou em estufa.',
     expectations: 'Cerca de 2 meses até às primeiras vagens; produz em contínuo enquanto fizer calor.',
-    commonMistake: 'Deixar as vagens crescer demais — ficam duras e fibrosas, incomestíveis. Colhe novas e a miúdo.',
+    commonMistake:
+      'Deixar as vagens crescer demais — ficam duras e fibrosas, incomestíveis. Colhe novas e a miúdo.',
     stages: [
       { stage: 'germinacao', durationDays: [7, 14], text: 'Ao calor; demolha a semente antes.' },
       { stage: 'plantula', durationDays: [15, 25], text: 'Cresce devagar até o calor instalar.' },

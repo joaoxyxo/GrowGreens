@@ -4,7 +4,10 @@ const ui = useUiStore()
 </script>
 
 <template>
-  <div class="fixed inset-x-0 top-3 z-50 flex flex-col items-center gap-2 px-4 pointer-events-none" aria-live="polite">
+  <div
+    class="fixed inset-x-0 top-3 z-50 flex flex-col items-center gap-2 px-4 pointer-events-none"
+    aria-live="polite"
+  >
     <TransitionGroup name="toast">
       <div
         v-for="t in ui.toasts"

@@ -118,7 +118,9 @@ function skip() {
           microgreens prontos a comer em <strong>7 dias</strong>.
         </p>
         <div class="mt-6 w-full max-w-sm text-left">
-          <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Como te chamas? (opcional)</label>
+          <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+            >Como te chamas? (opcional)</label
+          >
           <input
             v-model="name"
             type="text"
@@ -131,13 +133,19 @@ function skip() {
       <!-- 1: Objetivo -->
       <div v-else-if="step === 1">
         <h2 class="font-display text-2xl font-bold mb-1">Qual é o teu objetivo?</h2>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-5 text-sm">Ajuda-nos a personalizar a tua experiência.</p>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-5 text-sm">
+          Ajuda-nos a personalizar a tua experiência.
+        </p>
         <div class="grid gap-3">
           <button
             v-for="o in goals"
             :key="o.v"
             class="flex items-center gap-3 rounded-2xl border-2 px-4 py-4 text-left transition"
-            :class="goal === o.v ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              goal === o.v
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="goal = o.v"
           >
             <span class="text-2xl" aria-hidden="true">{{ o.emoji }}</span>
@@ -155,7 +163,11 @@ function skip() {
             v-for="o in spaces"
             :key="o.v"
             class="flex items-center gap-3 rounded-2xl border-2 px-4 py-4 text-left transition"
-            :class="space === o.v ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              space === o.v
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="space = o.v"
           >
             <span class="text-2xl" aria-hidden="true">{{ o.emoji }}</span>
@@ -167,13 +179,19 @@ function skip() {
       <!-- 3: Experiência -->
       <div v-else-if="step === 3">
         <h2 class="font-display text-2xl font-bold mb-1">Que experiência tens?</h2>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-5 text-sm">Não há resposta errada — começamos onde estiveres.</p>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-5 text-sm">
+          Não há resposta errada — começamos onde estiveres.
+        </p>
         <div class="grid gap-3">
           <button
             v-for="o in experiences"
             :key="o.v"
             class="flex items-center gap-3 rounded-2xl border-2 px-4 py-4 text-left transition"
-            :class="experience === o.v ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              experience === o.v
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="experience = o.v"
           >
             <span class="text-2xl" aria-hidden="true">{{ o.emoji }}</span>
@@ -193,7 +211,11 @@ function skip() {
             v-for="z in CLIMATE_ZONES"
             :key="z.code"
             class="rounded-2xl border-2 px-4 py-4 text-left transition"
-            :class="zone === z.code ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2'"
+            :class="
+              zone === z.code
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2'
+            "
             @click="zone = z.code"
           >
             <div class="font-medium">{{ z.name }}</div>

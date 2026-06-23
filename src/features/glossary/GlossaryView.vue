@@ -30,7 +30,9 @@ const results = computed(() => {
         </h2>
         <div class="space-y-2">
           <AppCard v-for="f in FAQ" :key="f.q">
-            <p class="font-semibold"><span aria-hidden="true">{{ f.emoji }}</span> {{ f.q }}</p>
+            <p class="font-semibold">
+              <span aria-hidden="true">{{ f.emoji }}</span> {{ f.q }}
+            </p>
             <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">{{ f.a }}</p>
           </AppCard>
         </div>

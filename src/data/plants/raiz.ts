@@ -139,16 +139,22 @@ export const RAIZ_PLANTS: Plant[] = [
       'Quase não dá trabalho durante o inverno.',
       'Bónus: afasta pragas das plantas vizinhas.',
     ],
-    growingTips: 'Planta dentes saudáveis em out-nov, a 5 cm de profundidade. Colhe quando as folhas secarem.',
+    growingTips:
+      'Planta dentes saudáveis em out-nov, a 5 cm de profundidade. Colhe quando as folhas secarem.',
     wateringNotes: 'Pouca rega; em excesso apodrece. A chuva de inverno costuma chegar.',
     feedingNotes: 'Composto na plantação. Reforço de azoto na primavera ajuda os bolbos.',
     harvestNotes: 'Colhe quando 1/3 a 1/2 das folhas amarelarem; seca à sombra antes de guardar.',
     portugalNotes: 'Plantação clássica de outono no litoral. Ótimo intercalado com alface e cenoura.',
-    expectations: 'Longo (6-7 meses), mas de baixíssima manutenção. Plantas no outono e esqueces até ao verão.',
+    expectations:
+      'Longo (6-7 meses), mas de baixíssima manutenção. Plantas no outono e esqueces até ao verão.',
     commonMistake: 'Plantar o dente ao contrário ou muito raso. Ponta para cima, bem enterrado.',
     stages: [
       { stage: 'germinacao', durationDays: [10, 20], text: 'O dente enraíza e lança folha.' },
-      { stage: 'vegetativo', durationDays: [120, 150], text: 'Cresce devagar no inverno; acelera na primavera.' },
+      {
+        stage: 'vegetativo',
+        durationDays: [120, 150],
+        text: 'Cresce devagar no inverno; acelera na primavera.',
+      },
       { stage: 'colheita', text: 'Quando as folhas secarem, arranca e cura à sombra.' },
     ],
     companions: ['cenoura', 'alface', 'morango', 'tomate'],
@@ -185,7 +191,8 @@ export const RAIZ_PLANTS: Plant[] = [
     edibleParts: 'Bolbo e folhas (cebolinho verde).',
     petSafe: false,
     toxicNote: 'Tóxica para cães e gatos.',
-    shortDescription: 'Base de quase tudo o que se cozinha. Mais simples a partir de bolbilhos (cebolas de plantar).',
+    shortDescription:
+      'Base de quase tudo o que se cozinha. Mais simples a partir de bolbilhos (cebolas de plantar).',
     in30Seconds: [
       'Mais fácil a partir de bolbilhos do que de semente.',
       'Precisa de sol e de não ser regada em excesso no fim.',
@@ -290,7 +297,8 @@ export const RAIZ_PLANTS: Plant[] = [
     edibleParts: 'O caule branco (fuste) e as folhas tenras.',
     toxicNote: 'Como todos os alhos e cebolas, é tóxico para cães e gatos.',
     petSafe: false,
-    shortDescription: 'Paciente mas muito rústico. Aguenta o inverno todo no terreno e colhe-se quando precisas.',
+    shortDescription:
+      'Paciente mas muito rústico. Aguenta o inverno todo no terreno e colhe-se quando precisas.',
     in30Seconds: [
       'Demora, mas dá quase nenhum trabalho.',
       'Amontoa terra à volta para "branquear" o fuste.',
@@ -307,7 +315,11 @@ export const RAIZ_PLANTS: Plant[] = [
     commonMistake: 'Não amontoar terra — o fuste branco fica curto. Vai chegando terra ao caule.',
     stages: [
       { stage: 'germinacao', durationDays: [10, 18], text: 'Sementeira em tabuleiro; plântulas finas.' },
-      { stage: 'plantula', durationDays: [40, 60], text: 'Transplanta para covas fundas com ~15 cm de espaço.' },
+      {
+        stage: 'plantula',
+        durationDays: [40, 60],
+        text: 'Transplanta para covas fundas com ~15 cm de espaço.',
+      },
       { stage: 'vegetativo', durationDays: [80, 120], text: 'Amontoa terra para branquear o fuste.' },
       { stage: 'colheita', text: 'Arranca quando o fuste tiver o tamanho que queres.' },
     ],
@@ -342,7 +354,8 @@ export const RAIZ_PLANTS: Plant[] = [
     needsSupplementalLight: false,
     pollination: 'nao_aplicavel',
     edibleParts: 'Os tubérculos.',
-    toxicNote: 'Folhas, rebentos e batatas verdes contêm solanina — tóxicos. Não comas partes verdes nem dês a animais.',
+    toxicNote:
+      'Folhas, rebentos e batatas verdes contêm solanina — tóxicos. Não comas partes verdes nem dês a animais.',
     petSafe: false,
     shortDescription: 'A colheita mais divertida de todas — é como uma caça ao tesouro debaixo da terra.',
     in30Seconds: [
@@ -353,7 +366,8 @@ export const RAIZ_PLANTS: Plant[] = [
     growingTips:
       'Usa batata-semente já com olhos/rebentos. Planta a ~12 cm e vai amontoando terra sobre os caules à medida que sobem.',
     wateringNotes: 'Rega regular, sobretudo na floração (é quando engrossam). Reduz perto da colheita.',
-    feedingNotes: 'Solo rico em composto. Evita excesso de azoto fresco (favorece doença e folha em vez de tubérculo).',
+    feedingNotes:
+      'Solo rico em composto. Evita excesso de azoto fresco (favorece doença e folha em vez de tubérculo).',
     harvestNotes: 'Colhe quando a rama amarelece e seca. Escava com cuidado para não picar os tubérculos.',
     portugalNotes:
       'Planta-se sobretudo na primavera no litoral (depois das últimas geadas) para colher no verão.',
@@ -361,8 +375,16 @@ export const RAIZ_PLANTS: Plant[] = [
     commonMistake: 'Não amontoar terra — os tubérculos expostos à luz ficam verdes e tóxicos.',
     stages: [
       { stage: 'germinacao', durationDays: [14, 28], text: 'O rebento do tubérculo emerge; mantém húmido.' },
-      { stage: 'vegetativo', durationDays: [30, 50], text: 'Amontoa terra sobre os caules conforme crescem.' },
-      { stage: 'floracao', durationDays: [10, 20], text: 'A flor marca o engrossar dos tubérculos; rega bem.' },
+      {
+        stage: 'vegetativo',
+        durationDays: [30, 50],
+        text: 'Amontoa terra sobre os caules conforme crescem.',
+      },
+      {
+        stage: 'floracao',
+        durationDays: [10, 20],
+        text: 'A flor marca o engrossar dos tubérculos; rega bem.',
+      },
       { stage: 'colheita', text: 'Quando a rama seca, escava o tesouro.' },
     ],
     companions: ['feijao-verde', 'couve-galega', 'salsa'],
@@ -398,18 +420,23 @@ export const RAIZ_PLANTS: Plant[] = [
     pollination: 'nao_aplicavel',
     edibleParts: 'Bolbos (e a rama tenra, como cebolinho).',
     petSafe: false,
-    toxicNote: 'Como todas as cebolas e alhos, é tóxica para cães e gatos. Mantém fora do alcance dos animais.',
-    shortDescription: 'Prima fina da cebola: cada bolbo plantado multiplica-se num molho. Fácil e muito rentável.',
+    toxicNote:
+      'Como todas as cebolas e alhos, é tóxica para cães e gatos. Mantém fora do alcance dos animais.',
+    shortDescription:
+      'Prima fina da cebola: cada bolbo plantado multiplica-se num molho. Fácil e muito rentável.',
     in30Seconds: [
       'Planta 1 bolbo, colhes um molho.',
       'Quase não dá trabalho — rega pouca.',
       'Plantar no outono/inverno, colher no verão.',
     ],
-    growingTips: 'Enterra os bolbinhos com a ponta à superfície, espaçados. Não regues em excesso. Para na rega quando a rama amarelece (perto da colheita).',
+    growingTips:
+      'Enterra os bolbinhos com a ponta à superfície, espaçados. Não regues em excesso. Para na rega quando a rama amarelece (perto da colheita).',
     wateringNotes: 'Rega moderada no crescimento; suspende quando a folhagem começa a secar.',
     feedingNotes: 'Pouco exigente; composto à plantação chega. Excesso de azoto atrasa a formação do bolbo.',
-    harvestNotes: 'Colhe quando a rama tomba e seca. Arranca, deixa curar ao sol uns dias e guarda em sítio seco e arejado.',
-    portugalNotes: 'Plantação tradicional no outono/inverno no litoral, colheita no início do verão. Conserva-se muitos meses.',
+    harvestNotes:
+      'Colhe quando a rama tomba e seca. Arranca, deixa curar ao sol uns dias e guarda em sítio seco e arejado.',
+    portugalNotes:
+      'Plantação tradicional no outono/inverno no litoral, colheita no início do verão. Conserva-se muitos meses.',
     expectations: 'Cerca de 3-4 meses; cada bolbo plantado dá um molho de 4-8 bolbos.',
     commonMistake: 'Regar demais ou enterrar fundo demais — apodrece. A ponta do bolbo fica à superfície.',
     stages: [

@@ -195,8 +195,13 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     title: 'Dia 1 — Paciência e humidade',
     show: 'Tabuleiro ainda tapado; provavelmente nada visível.',
     tell: 'Ainda no escuro. As sementes estão a beber água e a inchar. É normal não veres nada — não te preocupes.',
-    tasks: ['Espreita debaixo da tampa.', 'Borrifa se o substrato parecer seco à superfície.', 'Volta a tapar.'],
-    warning: 'Não regues a mais. Se vires água a acumular e cheiro estranho, areja um pouco — humidade a mais convida bolor.',
+    tasks: [
+      'Espreita debaixo da tampa.',
+      'Borrifa se o substrato parecer seco à superfície.',
+      'Volta a tapar.',
+    ],
+    warning:
+      'Não regues a mais. Se vires água a acumular e cheiro estranho, areja um pouco — humidade a mais convida bolor.',
     askPhoto: false,
   },
   {
@@ -216,7 +221,11 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     title: 'Dia 3 — Destapar e dar luz',
     show: '90% das sementes levantadas, caules pálidos/amarelados a esticar para cima.',
     tell: 'Hora de destapar e levar à luz! Estão amarelas porque estiveram no escuro — em 1-2 dias ficam verdes. É mesmo assim.',
-    tasks: ['Tira a tampa.', 'Põe num parapeito com luz (sem sol direto forte).', 'Começa a regar pela base ou borrifa de manhã.'],
+    tasks: [
+      'Tira a tampa.',
+      'Põe num parapeito com luz (sem sol direto forte).',
+      'Começa a regar pela base ou borrifa de manhã.',
+    ],
     warning: 'Se a maioria ainda não levantou, espera mais 1 dia tapado. Destapar cedo demais atrasa-as.',
     askPhoto: true,
   },
@@ -241,7 +250,8 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     show: 'Tapete denso e verde, com 3-5 cm de altura.',
     tell: 'Estão lindas. Em breve aparecem as primeiras folhas verdadeiras — sinal de que o sabor está no auge.',
     tasks: ['Mantém a rega pela base.', 'Verifica a humidade (nem encharcado nem seco).'],
-    warning: 'Folhas com pontos amarelos ou cheiro azedo = água parada na base. Reduz a rega e melhora o arejamento.',
+    warning:
+      'Folhas com pontos amarelos ou cheiro azedo = água parada na base. Reduz a rega e melhora o arejamento.',
     askPhoto: false,
   },
   {
@@ -261,7 +271,8 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     show: 'Corte rente ao substrato; microgreens na taça; o teu prato final.',
     tell: 'Parabéns — cultivaste comida do zero em 7 dias! Corta rente, por cima do substrato. Se cresceram limpas, nem precisas de lavar; se lavares, sê delicado e seca bem.',
     tasks: ['Corta rente ao substrato.', 'Prova!', 'Tira uma foto da colheita.'],
-    warning: 'Microgreens não voltam a crescer depois do corte — para mais, semeia um tabuleiro novo (boa altura para começar já o próximo!).',
+    warning:
+      'Microgreens não voltam a crescer depois do corte — para mais, semeia um tabuleiro novo (boa altura para começar já o próximo!).',
     askPhoto: true,
   },
 ]

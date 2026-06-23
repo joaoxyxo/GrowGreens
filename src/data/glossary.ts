@@ -6,73 +6,390 @@ export interface GlossaryTerm {
 
 // Glossário em linguagem simples — para o principiante absoluto.
 export const GLOSSARY: GlossaryTerm[] = [
-  { term: 'Substrato', emoji: '🟤', definition: 'A "terra" especial onde se semeia. É leve e limpa — não é a terra do jardim, que compacta e traz fungos.' },
-  { term: 'Germinar', emoji: '🌱', definition: 'O momento em que a semente "acorda" e nasce a primeira raiz e o primeiro rebento.' },
-  { term: 'Plântula', emoji: '🌿', definition: 'A planta bebé, logo depois de germinar, com as primeiras folhinhas.' },
-  { term: 'Cotilédones', emoji: '🍃', definition: 'As primeiras "folhas" que saem da semente. Não são folhas verdadeiras — são a despensa da planta.' },
-  { term: 'Transplantar', emoji: '🪴', definition: 'Mudar a planta de um sítio (ex.: vaso de sementeira) para o local definitivo.' },
-  { term: 'Repicar', emoji: '✋', definition: 'Separar e replantar plântulas que nasceram muito juntas, dando espaço a cada uma.' },
-  { term: 'Desbastar', emoji: '✂️', definition: 'Arrancar as plântulas a mais para as que ficam terem espaço para crescer.' },
-  { term: 'Endurecer (hardening-off)', emoji: '💪', definition: 'Habituar aos poucos uma planta de interior ao exterior, antes de a plantar lá fora.' },
-  { term: 'Estiolada', emoji: '📏', definition: 'Planta "esticada", comprida e pálida, à procura de luz. Sinal de que precisa de mais luz.' },
+  {
+    term: 'Substrato',
+    emoji: '🟤',
+    definition:
+      'A "terra" especial onde se semeia. É leve e limpa — não é a terra do jardim, que compacta e traz fungos.',
+  },
+  {
+    term: 'Germinar',
+    emoji: '🌱',
+    definition: 'O momento em que a semente "acorda" e nasce a primeira raiz e o primeiro rebento.',
+  },
+  {
+    term: 'Plântula',
+    emoji: '🌿',
+    definition: 'A planta bebé, logo depois de germinar, com as primeiras folhinhas.',
+  },
+  {
+    term: 'Cotilédones',
+    emoji: '🍃',
+    definition:
+      'As primeiras "folhas" que saem da semente. Não são folhas verdadeiras — são a despensa da planta.',
+  },
+  {
+    term: 'Transplantar',
+    emoji: '🪴',
+    definition: 'Mudar a planta de um sítio (ex.: vaso de sementeira) para o local definitivo.',
+  },
+  {
+    term: 'Repicar',
+    emoji: '✋',
+    definition: 'Separar e replantar plântulas que nasceram muito juntas, dando espaço a cada uma.',
+  },
+  {
+    term: 'Desbastar',
+    emoji: '✂️',
+    definition: 'Arrancar as plântulas a mais para as que ficam terem espaço para crescer.',
+  },
+  {
+    term: 'Endurecer (hardening-off)',
+    emoji: '💪',
+    definition: 'Habituar aos poucos uma planta de interior ao exterior, antes de a plantar lá fora.',
+  },
+  {
+    term: 'Estiolada',
+    emoji: '📏',
+    definition: 'Planta "esticada", comprida e pálida, à procura de luz. Sinal de que precisa de mais luz.',
+  },
   { term: 'Sol pleno', emoji: '☀️', definition: 'Pelo menos 6 horas de sol direto por dia.' },
-  { term: 'Meia-sombra', emoji: '⛅', definition: 'Algumas horas de sol e o resto à sombra, ou luz filtrada.' },
-  { term: 'Drenagem', emoji: '🕳️', definition: 'A água escoar bem. Vasos precisam de furos no fundo, senão as raízes apodrecem.' },
-  { term: 'Consociação', emoji: '🤝', definition: 'Plantar juntas espécies que se ajudam (ex.: manjericão protege o tomate).' },
-  { term: 'N-P-K', emoji: '🧪', definition: 'As 3 letras do adubo: Azoto (folhas), Fósforo (raízes/flores), Potássio (frutos).' },
-  { term: 'Míldio', emoji: '🍂', definition: 'Doença de fungo, comum no nosso clima húmido. Manchas amareladas e penugem cinzenta por baixo das folhas.' },
+  {
+    term: 'Meia-sombra',
+    emoji: '⛅',
+    definition: 'Algumas horas de sol e o resto à sombra, ou luz filtrada.',
+  },
+  {
+    term: 'Drenagem',
+    emoji: '🕳️',
+    definition: 'A água escoar bem. Vasos precisam de furos no fundo, senão as raízes apodrecem.',
+  },
+  {
+    term: 'Consociação',
+    emoji: '🤝',
+    definition: 'Plantar juntas espécies que se ajudam (ex.: manjericão protege o tomate).',
+  },
+  {
+    term: 'N-P-K',
+    emoji: '🧪',
+    definition: 'As 3 letras do adubo: Azoto (folhas), Fósforo (raízes/flores), Potássio (frutos).',
+  },
+  {
+    term: 'Míldio',
+    emoji: '🍂',
+    definition:
+      'Doença de fungo, comum no nosso clima húmido. Manchas amareladas e penugem cinzenta por baixo das folhas.',
+  },
   { term: 'Oídio', emoji: '⚪', definition: 'Fungo que cobre as folhas com um pó branco farinhento.' },
-  { term: 'Sementeira direta', emoji: '🌰', definition: 'Semear logo no local definitivo, sem passar por vaso de sementeira.' },
-  { term: 'Tutorar', emoji: '🪵', definition: 'Dar um apoio (cana, rede) para a planta trepar ou não tombar (ex.: tomate, ervilha).' },
-  { term: 'Microgreens', emoji: '🌱', definition: 'Plantinhas comestíveis colhidas muito cedo (5-10 dias), cheias de sabor e nutrientes.' },
-  { term: 'Composto', emoji: '♻️', definition: 'Adubo natural feito de restos orgânicos (cascas, folhas) que alimenta o solo.' },
-  { term: 'Espigar', emoji: '🌾', definition: 'Quando a planta de folha (alface, rúcula, coentros) dispara em flor com o calor. A folha fica amarga e dura — sinal de fim de colheita.' },
-  { term: 'Blackout', emoji: '🌑', definition: 'No cultivo de microgreens, os primeiros dias com as sementes tapadas no escuro, para germinarem fortes antes de verem luz.' },
-  { term: 'Corta-e-volta', emoji: '🔁', definition: 'Colher só as folhas de fora e deixar o centro — a planta volta a crescer e dá várias colheitas (ex.: alface, acelga).' },
-  { term: 'Branquear', emoji: '🤍', definition: 'Amontoar terra à volta do caule (alho-francês) para ele crescer branco, tenro e mais suave.' },
-  { term: 'Vivaz', emoji: '🌳', definition: 'Planta que vive vários anos e rebenta de novo a cada estação (ex.: cebolinho, orégãos, tomilho).' },
-  { term: 'Pinçar', emoji: '🤏', definition: 'Cortar as pontas tenras dos rebentos para a planta ramificar e ficar mais cheia (ou travar pragas, como na fava).' },
-  { term: 'Demolha', emoji: '💧', definition: 'Deixar as sementes grandes de molho em água umas horas antes de semear, para germinarem mais depressa.' },
-  { term: 'Sucessão', emoji: '📅', definition: 'Semear pouco e de poucas em poucas semanas, em vez de tudo de uma vez, para ter colheita escalonada e contínua.' },
-  { term: 'Mulch (cobertura)', emoji: '🍂', definition: 'Uma camada (palha, folhas, casca) sobre o solo que mantém a humidade, trava ervas e protege as raízes.' },
-  { term: 'Polinização cruzada', emoji: '🐝', definition: 'Quando o pólen de uma planta fecunda a flor de outra, muitas vezes pelos insetos. Importante em frutos como aboboráceas.' },
-  { term: 'Vernalização', emoji: '❄️', definition: 'O frio do inverno que algumas plantas precisam de sentir para depois florir ou formar cabeça (ex.: couves, alho).' },
-  { term: 'Rega por capilaridade', emoji: '🪣', definition: 'Regar por baixo: a água sobe do prato/reservatório pelo substrato. Mantém a humidade estável e não molha as folhas.' },
-  { term: 'Sachar', emoji: '🪛', definition: 'Mexer ligeiramente a camada de cima do solo para arejar e arrancar ervas daninhas pequenas.' },
-  { term: 'Amontoa', emoji: '⛰️', definition: 'Chegar terra à base da planta (batata, alho-francês) para proteger, branquear o caule ou fazer mais tubérculos.' },
-  { term: 'Tutoragem', emoji: '🪵', definition: 'Dar apoio (cana, rede, estaca) para a planta trepar ou não tombar — essencial em tomate, ervilha e pepino.' },
-  { term: 'Rotação de culturas', emoji: '🔄', definition: 'Não plantar a mesma família no mesmo sítio anos seguidos — evita esgotar o solo e a acumulação de pragas/doenças.' },
-  { term: 'Adubo verde', emoji: '🌾', definition: 'Plantas (ex.: favas, tremoço) semeadas para enriquecer o solo e depois enterradas, em vez de colhidas.' },
-  { term: 'pH', emoji: '🧪', definition: 'A acidez do solo (0-14). A maioria das hortícolas prefere ligeiramente ácido a neutro (6,0-7,0).' },
-  { term: 'Estaca', emoji: '🌱', definition: 'Um pedaço de caule cortado de uma planta-mãe que, posto em água ou substrato, cria raízes e origina uma nova planta (ex.: alecrim, hortelã).' },
-  { term: 'Estratificação', emoji: '❄️', definition: 'Expor as sementes ao frio (ex.: no frigorífico) durante umas semanas para "quebrar a dormência" e germinarem — preciso em algumas espécies.' },
-  { term: 'Rega de fundo', emoji: '🪣', definition: 'Pôr o vaso num prato com água: o substrato bebe por baixo (capilaridade). Mantém a folha seca e a humidade estável.' },
-  { term: 'Monda', emoji: '🧹', definition: 'Arrancar as ervas daninhas que competem com as culturas por água, luz e nutrientes.' },
-  { term: 'Alfobre (viveiro)', emoji: '🌱', definition: 'Canteiro ou tabuleiro onde se semeia denso para depois transplantar as plântulas para o local definitivo.' },
-  { term: 'Compasso', emoji: '📏', definition: 'A distância recomendada entre plantas (e entre linhas). Respeitá-lo dá espaço, luz e ar a cada planta.' },
-  { term: 'Cotilédone', emoji: '🌱', definition: 'As primeiras "folhas" que saem da semente (folhas seminais). Não são folhas verdadeiras — essas vêm a seguir e têm a forma típica da planta.' },
-  { term: 'Repicagem', emoji: '✋', definition: 'Transplantar as plântulas do alfobre denso para um espaço maior (vaso ou linha), dando-lhes lugar para engrossar antes do local definitivo.' },
-  { term: 'Mulching (cobertura)', emoji: '🍂', definition: 'Cobrir o solo (palha, folhas, casca) à volta das plantas para reter humidade, abafar ervas e proteger as raízes do calor e do frio.' },
-  { term: 'Espigar (subir a semente)', emoji: '🌾', definition: 'Quando uma hortícola de folha (alface, rúcula, coentros) sobe a flor com o calor e fica amarga. Sinal de que passou do ponto de colheita.' },
-  { term: 'Endurecimento (rustificação)', emoji: '🌬️', definition: 'Habituar gradualmente as plântulas criadas em interior ao exterior (sol, vento, frio) durante alguns dias, antes do transplante, para não sofrerem choque.' },
-  { term: 'Desladroar (tirar ladrões)', emoji: '✂️', definition: 'Remover os rebentos laterais ("ladrões") que nascem entre o caule e os ramos do tomateiro, para concentrar a energia nos frutos.' },
-  { term: 'Húmus de minhoca (vermicomposto)', emoji: '🪱', definition: 'Adubo escuro e rico produzido por minhocas a partir de restos orgânicos. Liberta nutrientes devagar e melhora a estrutura do solo.' },
-  { term: 'Calda bordalesa', emoji: '🟦', definition: 'Mistura tradicional de sulfato de cobre e cal usada em prevenção contra fungos (míldio). Usar com moderação — o cobre acumula-se no solo.' },
-  { term: 'Solanáceas', emoji: '🍅', definition: 'Família do tomate, pimento, beringela e batata. Partilham pragas/doenças, por isso convém rodá-las no mesmo canteiro.' },
-  { term: 'Brássicas (crucíferas)', emoji: '🥬', definition: 'Família das couves, brócolos, rúcula, rabanete e nabo. Atraem a lagarta-da-couve e a áltica; beneficiam de rede de proteção.' },
-  { term: 'Enxertia', emoji: '🔗', definition: 'Unir um pedaço de uma planta (garfo) a outra (cavalo) para que cresçam como uma só — usada em árvores de fruto e tomate para mais vigor ou resistência.' },
-  { term: 'Pousio', emoji: '🟫', definition: 'Deixar um canteiro a descansar uma época, sem cultivo (ou com adubo verde), para o solo recuperar nutrientes e estrutura.' },
-  { term: 'Terra de diatomáceas', emoji: '🦴', definition: 'Pó natural de algas fossilizadas que age como barreira física contra lesmas e insetos rastejantes. Aplica-se seco à volta das plantas.' },
-  { term: 'Polinizador', emoji: '🐝', definition: 'Inseto (abelha, abelhão, sirfídeo) que transporta pólen entre flores e permite a formação de fruto. Atrai-os com flores na horta.' },
-  { term: 'Estiagem', emoji: '🏜️', definition: 'Período prolongado de seca. Na horta pede mulch, rega mais profunda e menos frequente, e sombra para as culturas sensíveis.' },
-  { term: 'Pecíolo', emoji: '🌿', definition: 'O "pé" que liga a folha ao caule. Em algumas plantas (ruibarbo, aipo) é a parte que se come; noutras é tóxico ou fibroso.' },
-  { term: 'Ácido oxálico', emoji: '⚠️', definition: 'Composto presente em folhas como as do ruibarbo, espinafre e beterraba. Em grande quantidade é tóxico — por isso certas folhas não se comem.' },
-  { term: 'Perene (vivaz)', emoji: '♻️', definition: 'Planta que vive vários anos e volta a produzir época após época (ruibarbo, espargo, alcachofra, morango), sem ser preciso semear de novo.' },
-  { term: 'Anual', emoji: '📅', definition: 'Planta que completa o ciclo (semente → flor → semente) num só ano e depois morre. A maioria das hortícolas é anual (alface, tomate, feijão).' },
-  { term: 'Sequeiro', emoji: '🌾', definition: 'Cultivo sem rega, dependente só da chuva. Culturas de sequeiro (grão-de-bico, lentilha) toleram bem a seca e pedem solo bem drenado.' },
-  { term: 'Bolbo', emoji: '🧅', definition: 'Órgão de reserva subterrâneo (cebola, alho, chalota, tulipa). Planta-se inteiro e dá origem a uma nova planta ou a um molho de bolbos.' },
-  { term: 'Cura (de bolbos)', emoji: '☀️', definition: 'Secar cebolas, alhos e chalotas ao sol/arejados após a colheita, para a casca fechar e poderem conservar-se meses sem apodrecer.' },
-  { term: 'Estufa / túnel', emoji: '🏠', definition: 'Estrutura coberta que protege as plantas e acumula calor, permitindo antecipar sementeiras e cultivar espécies de calor no litoral mais fresco.' },
-  { term: 'Solarização', emoji: '🔆', definition: 'Cobrir o solo húmido com plástico transparente no verão para o sol o aquecer e reduzir pragas, doenças e sementes de ervas daninhas.' },
-  { term: 'Mancha (sementeira a lanço)', emoji: '🌱', definition: 'Espalhar a semente de forma densa numa zona, em vez de em linhas — útil para folhas de corte, nabiças e adubos verdes.' },
+  {
+    term: 'Sementeira direta',
+    emoji: '🌰',
+    definition: 'Semear logo no local definitivo, sem passar por vaso de sementeira.',
+  },
+  {
+    term: 'Tutorar',
+    emoji: '🪵',
+    definition: 'Dar um apoio (cana, rede) para a planta trepar ou não tombar (ex.: tomate, ervilha).',
+  },
+  {
+    term: 'Microgreens',
+    emoji: '🌱',
+    definition: 'Plantinhas comestíveis colhidas muito cedo (5-10 dias), cheias de sabor e nutrientes.',
+  },
+  {
+    term: 'Composto',
+    emoji: '♻️',
+    definition: 'Adubo natural feito de restos orgânicos (cascas, folhas) que alimenta o solo.',
+  },
+  {
+    term: 'Espigar',
+    emoji: '🌾',
+    definition:
+      'Quando a planta de folha (alface, rúcula, coentros) dispara em flor com o calor. A folha fica amarga e dura — sinal de fim de colheita.',
+  },
+  {
+    term: 'Blackout',
+    emoji: '🌑',
+    definition:
+      'No cultivo de microgreens, os primeiros dias com as sementes tapadas no escuro, para germinarem fortes antes de verem luz.',
+  },
+  {
+    term: 'Corta-e-volta',
+    emoji: '🔁',
+    definition:
+      'Colher só as folhas de fora e deixar o centro — a planta volta a crescer e dá várias colheitas (ex.: alface, acelga).',
+  },
+  {
+    term: 'Branquear',
+    emoji: '🤍',
+    definition: 'Amontoar terra à volta do caule (alho-francês) para ele crescer branco, tenro e mais suave.',
+  },
+  {
+    term: 'Vivaz',
+    emoji: '🌳',
+    definition:
+      'Planta que vive vários anos e rebenta de novo a cada estação (ex.: cebolinho, orégãos, tomilho).',
+  },
+  {
+    term: 'Pinçar',
+    emoji: '🤏',
+    definition:
+      'Cortar as pontas tenras dos rebentos para a planta ramificar e ficar mais cheia (ou travar pragas, como na fava).',
+  },
+  {
+    term: 'Demolha',
+    emoji: '💧',
+    definition:
+      'Deixar as sementes grandes de molho em água umas horas antes de semear, para germinarem mais depressa.',
+  },
+  {
+    term: 'Sucessão',
+    emoji: '📅',
+    definition:
+      'Semear pouco e de poucas em poucas semanas, em vez de tudo de uma vez, para ter colheita escalonada e contínua.',
+  },
+  {
+    term: 'Mulch (cobertura)',
+    emoji: '🍂',
+    definition:
+      'Uma camada (palha, folhas, casca) sobre o solo que mantém a humidade, trava ervas e protege as raízes.',
+  },
+  {
+    term: 'Polinização cruzada',
+    emoji: '🐝',
+    definition:
+      'Quando o pólen de uma planta fecunda a flor de outra, muitas vezes pelos insetos. Importante em frutos como aboboráceas.',
+  },
+  {
+    term: 'Vernalização',
+    emoji: '❄️',
+    definition:
+      'O frio do inverno que algumas plantas precisam de sentir para depois florir ou formar cabeça (ex.: couves, alho).',
+  },
+  {
+    term: 'Rega por capilaridade',
+    emoji: '🪣',
+    definition:
+      'Regar por baixo: a água sobe do prato/reservatório pelo substrato. Mantém a humidade estável e não molha as folhas.',
+  },
+  {
+    term: 'Sachar',
+    emoji: '🪛',
+    definition: 'Mexer ligeiramente a camada de cima do solo para arejar e arrancar ervas daninhas pequenas.',
+  },
+  {
+    term: 'Amontoa',
+    emoji: '⛰️',
+    definition:
+      'Chegar terra à base da planta (batata, alho-francês) para proteger, branquear o caule ou fazer mais tubérculos.',
+  },
+  {
+    term: 'Tutoragem',
+    emoji: '🪵',
+    definition:
+      'Dar apoio (cana, rede, estaca) para a planta trepar ou não tombar — essencial em tomate, ervilha e pepino.',
+  },
+  {
+    term: 'Rotação de culturas',
+    emoji: '🔄',
+    definition:
+      'Não plantar a mesma família no mesmo sítio anos seguidos — evita esgotar o solo e a acumulação de pragas/doenças.',
+  },
+  {
+    term: 'Adubo verde',
+    emoji: '🌾',
+    definition:
+      'Plantas (ex.: favas, tremoço) semeadas para enriquecer o solo e depois enterradas, em vez de colhidas.',
+  },
+  {
+    term: 'pH',
+    emoji: '🧪',
+    definition:
+      'A acidez do solo (0-14). A maioria das hortícolas prefere ligeiramente ácido a neutro (6,0-7,0).',
+  },
+  {
+    term: 'Estaca',
+    emoji: '🌱',
+    definition:
+      'Um pedaço de caule cortado de uma planta-mãe que, posto em água ou substrato, cria raízes e origina uma nova planta (ex.: alecrim, hortelã).',
+  },
+  {
+    term: 'Estratificação',
+    emoji: '❄️',
+    definition:
+      'Expor as sementes ao frio (ex.: no frigorífico) durante umas semanas para "quebrar a dormência" e germinarem — preciso em algumas espécies.',
+  },
+  {
+    term: 'Rega de fundo',
+    emoji: '🪣',
+    definition:
+      'Pôr o vaso num prato com água: o substrato bebe por baixo (capilaridade). Mantém a folha seca e a humidade estável.',
+  },
+  {
+    term: 'Monda',
+    emoji: '🧹',
+    definition: 'Arrancar as ervas daninhas que competem com as culturas por água, luz e nutrientes.',
+  },
+  {
+    term: 'Alfobre (viveiro)',
+    emoji: '🌱',
+    definition:
+      'Canteiro ou tabuleiro onde se semeia denso para depois transplantar as plântulas para o local definitivo.',
+  },
+  {
+    term: 'Compasso',
+    emoji: '📏',
+    definition:
+      'A distância recomendada entre plantas (e entre linhas). Respeitá-lo dá espaço, luz e ar a cada planta.',
+  },
+  {
+    term: 'Cotilédone',
+    emoji: '🌱',
+    definition:
+      'As primeiras "folhas" que saem da semente (folhas seminais). Não são folhas verdadeiras — essas vêm a seguir e têm a forma típica da planta.',
+  },
+  {
+    term: 'Repicagem',
+    emoji: '✋',
+    definition:
+      'Transplantar as plântulas do alfobre denso para um espaço maior (vaso ou linha), dando-lhes lugar para engrossar antes do local definitivo.',
+  },
+  {
+    term: 'Mulching (cobertura)',
+    emoji: '🍂',
+    definition:
+      'Cobrir o solo (palha, folhas, casca) à volta das plantas para reter humidade, abafar ervas e proteger as raízes do calor e do frio.',
+  },
+  {
+    term: 'Espigar (subir a semente)',
+    emoji: '🌾',
+    definition:
+      'Quando uma hortícola de folha (alface, rúcula, coentros) sobe a flor com o calor e fica amarga. Sinal de que passou do ponto de colheita.',
+  },
+  {
+    term: 'Endurecimento (rustificação)',
+    emoji: '🌬️',
+    definition:
+      'Habituar gradualmente as plântulas criadas em interior ao exterior (sol, vento, frio) durante alguns dias, antes do transplante, para não sofrerem choque.',
+  },
+  {
+    term: 'Desladroar (tirar ladrões)',
+    emoji: '✂️',
+    definition:
+      'Remover os rebentos laterais ("ladrões") que nascem entre o caule e os ramos do tomateiro, para concentrar a energia nos frutos.',
+  },
+  {
+    term: 'Húmus de minhoca (vermicomposto)',
+    emoji: '🪱',
+    definition:
+      'Adubo escuro e rico produzido por minhocas a partir de restos orgânicos. Liberta nutrientes devagar e melhora a estrutura do solo.',
+  },
+  {
+    term: 'Calda bordalesa',
+    emoji: '🟦',
+    definition:
+      'Mistura tradicional de sulfato de cobre e cal usada em prevenção contra fungos (míldio). Usar com moderação — o cobre acumula-se no solo.',
+  },
+  {
+    term: 'Solanáceas',
+    emoji: '🍅',
+    definition:
+      'Família do tomate, pimento, beringela e batata. Partilham pragas/doenças, por isso convém rodá-las no mesmo canteiro.',
+  },
+  {
+    term: 'Brássicas (crucíferas)',
+    emoji: '🥬',
+    definition:
+      'Família das couves, brócolos, rúcula, rabanete e nabo. Atraem a lagarta-da-couve e a áltica; beneficiam de rede de proteção.',
+  },
+  {
+    term: 'Enxertia',
+    emoji: '🔗',
+    definition:
+      'Unir um pedaço de uma planta (garfo) a outra (cavalo) para que cresçam como uma só — usada em árvores de fruto e tomate para mais vigor ou resistência.',
+  },
+  {
+    term: 'Pousio',
+    emoji: '🟫',
+    definition:
+      'Deixar um canteiro a descansar uma época, sem cultivo (ou com adubo verde), para o solo recuperar nutrientes e estrutura.',
+  },
+  {
+    term: 'Terra de diatomáceas',
+    emoji: '🦴',
+    definition:
+      'Pó natural de algas fossilizadas que age como barreira física contra lesmas e insetos rastejantes. Aplica-se seco à volta das plantas.',
+  },
+  {
+    term: 'Polinizador',
+    emoji: '🐝',
+    definition:
+      'Inseto (abelha, abelhão, sirfídeo) que transporta pólen entre flores e permite a formação de fruto. Atrai-os com flores na horta.',
+  },
+  {
+    term: 'Estiagem',
+    emoji: '🏜️',
+    definition:
+      'Período prolongado de seca. Na horta pede mulch, rega mais profunda e menos frequente, e sombra para as culturas sensíveis.',
+  },
+  {
+    term: 'Pecíolo',
+    emoji: '🌿',
+    definition:
+      'O "pé" que liga a folha ao caule. Em algumas plantas (ruibarbo, aipo) é a parte que se come; noutras é tóxico ou fibroso.',
+  },
+  {
+    term: 'Ácido oxálico',
+    emoji: '⚠️',
+    definition:
+      'Composto presente em folhas como as do ruibarbo, espinafre e beterraba. Em grande quantidade é tóxico — por isso certas folhas não se comem.',
+  },
+  {
+    term: 'Perene (vivaz)',
+    emoji: '♻️',
+    definition:
+      'Planta que vive vários anos e volta a produzir época após época (ruibarbo, espargo, alcachofra, morango), sem ser preciso semear de novo.',
+  },
+  {
+    term: 'Anual',
+    emoji: '📅',
+    definition:
+      'Planta que completa o ciclo (semente → flor → semente) num só ano e depois morre. A maioria das hortícolas é anual (alface, tomate, feijão).',
+  },
+  {
+    term: 'Sequeiro',
+    emoji: '🌾',
+    definition:
+      'Cultivo sem rega, dependente só da chuva. Culturas de sequeiro (grão-de-bico, lentilha) toleram bem a seca e pedem solo bem drenado.',
+  },
+  {
+    term: 'Bolbo',
+    emoji: '🧅',
+    definition:
+      'Órgão de reserva subterrâneo (cebola, alho, chalota, tulipa). Planta-se inteiro e dá origem a uma nova planta ou a um molho de bolbos.',
+  },
+  {
+    term: 'Cura (de bolbos)',
+    emoji: '☀️',
+    definition:
+      'Secar cebolas, alhos e chalotas ao sol/arejados após a colheita, para a casca fechar e poderem conservar-se meses sem apodrecer.',
+  },
+  {
+    term: 'Estufa / túnel',
+    emoji: '🏠',
+    definition:
+      'Estrutura coberta que protege as plantas e acumula calor, permitindo antecipar sementeiras e cultivar espécies de calor no litoral mais fresco.',
+  },
+  {
+    term: 'Solarização',
+    emoji: '🔆',
+    definition:
+      'Cobrir o solo húmido com plástico transparente no verão para o sol o aquecer e reduzir pragas, doenças e sementes de ervas daninhas.',
+  },
+  {
+    term: 'Mancha (sementeira a lanço)',
+    emoji: '🌱',
+    definition:
+      'Espalhar a semente de forma densa numa zona, em vez de em linhas — útil para folhas de corte, nabiças e adubos verdes.',
+  },
 ]

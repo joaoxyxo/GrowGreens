@@ -77,11 +77,9 @@ function leave() {
     <div v-else-if="finished" class="flex flex-1 flex-col items-center justify-center text-center">
       <div class="text-6xl mb-3" aria-hidden="true">🧠</div>
       <h2 class="font-display text-2xl font-bold">Revisão concluída!</h2>
-      <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-        Acertaste {{ correctCount }} de {{ total }}.
-      </p>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Acertaste {{ correctCount }} de {{ total }}.</p>
       <span class="mt-3 rounded-full bg-sun-400/15 px-3 py-1 text-sm font-semibold text-sun-500"
-      >+{{ correctCount * 5 }} XP de revisão</span
+        >+{{ correctCount * 5 }} XP de revisão</span
       >
       <BaseButton class="mt-8" block @click="leave">Concluir</BaseButton>
     </div>
@@ -97,7 +95,9 @@ function leave() {
             :key="i"
             class="rounded-2xl border-2 px-4 py-3 text-left font-medium transition"
             :class="[
-              !checked && selected === i ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-neutral-200 dark:border-dark-surface2',
+              !checked && selected === i
+                ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                : 'border-neutral-200 dark:border-dark-surface2',
               checked && i === q.correctIndex ? 'border-green-500 bg-green-100 dark:bg-green-900/40' : '',
               checked && selected === i && i !== q.correctIndex ? 'border-error bg-error/10' : '',
             ]"
@@ -110,9 +110,14 @@ function leave() {
         <div
           v-if="checked"
           class="mt-5 rounded-xl px-4 py-3 text-sm"
-          :class="selected === q.correctIndex ? 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200' : 'bg-error/10 text-error'"
+          :class="
+            selected === q.correctIndex
+              ? 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200'
+              : 'bg-error/10 text-error'
+          "
         >
-          <strong>{{ selected === q.correctIndex ? 'Certo! ' : 'Quase. ' }}</strong>{{ q.explanation }}
+          <strong>{{ selected === q.correctIndex ? 'Certo! ' : 'Quase. ' }}</strong
+          >{{ q.explanation }}
         </div>
       </div>
       <div class="pt-5">

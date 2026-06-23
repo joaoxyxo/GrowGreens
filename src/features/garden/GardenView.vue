@@ -64,11 +64,15 @@ watch(
     <div class="px-4 pb-10">
       <!-- Atalho para o plano (espelho digital) -->
       <RouterLink to="/jardim/plano" class="mb-4 block">
-        <div class="flex items-center gap-3 rounded-2xl border border-green-200 dark:border-green-900/40 bg-green-50 dark:bg-green-900/20 px-4 py-3">
+        <div
+          class="flex items-center gap-3 rounded-2xl border border-green-200 dark:border-green-900/40 bg-green-50 dark:bg-green-900/20 px-4 py-3"
+        >
           <span class="text-2xl" aria-hidden="true">🗺️</span>
           <div class="flex-1">
             <p class="font-semibold text-sm">Plano da horta</p>
-            <p class="text-xs text-neutral-500 dark:text-neutral-400">Desenha os teus canteiros e vasos e marca o que plantaste.</p>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400">
+              Desenha os teus canteiros e vasos e marca o que plantaste.
+            </p>
           </div>
           <span class="text-neutral-400" aria-hidden="true">→</span>
         </div>
@@ -106,7 +110,9 @@ watch(
       >
         <div class="flex flex-col gap-2">
           <RouterLink to="/catalogo"><BaseButton>Ver catálogo</BaseButton></RouterLink>
-          <RouterLink to="/desafio"><BaseButton variant="secondary">Desafio microgreens 🌱</BaseButton></RouterLink>
+          <RouterLink to="/desafio"
+            ><BaseButton variant="secondary">Desafio microgreens 🌱</BaseButton></RouterLink
+          >
         </div>
       </EmptyState>
 
@@ -125,7 +131,9 @@ watch(
             :key="p.id"
             class="flex items-center gap-3 rounded-xl bg-neutral-50 dark:bg-dark-surface2 px-3 py-2"
           >
-            <span class="text-2xl opacity-70" aria-hidden="true">{{ getPlant(p.plantSlug)?.emoji ?? '🌱' }}</span>
+            <span class="text-2xl opacity-70" aria-hidden="true">{{
+              getPlant(p.plantSlug)?.emoji ?? '🌱'
+            }}</span>
             <span class="flex-1 text-sm">{{ p.nickname }}</span>
             <Badge tone="green">colhida</Badge>
           </div>

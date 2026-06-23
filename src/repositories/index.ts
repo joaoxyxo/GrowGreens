@@ -184,7 +184,9 @@ export const remindersRepo = {
   async completeAllForPlanting(plantingId: string) {
     const reminders = await db.reminders.where('plantingId').equals(plantingId).toArray()
     await Promise.all(
-      reminders.filter((r) => !r.done).map((r) => db.reminders.update(r.id, { done: true, recurrenceDays: undefined })),
+      reminders
+        .filter((r) => !r.done)
+        .map((r) => db.reminders.update(r.id, { done: true, recurrenceDays: undefined })),
     )
   },
   remove: (id: string) => db.reminders.delete(id),

@@ -18,9 +18,7 @@ export async function compressImage(file: Blob, maxSize = 1280, quality = 0.72):
     if (!ctx) return file
     ctx.drawImage(bitmap, 0, 0, w, h)
     bitmap.close?.()
-    const blob = await new Promise<Blob | null>((resolve) =>
-      canvas.toBlob(resolve, 'image/webp', quality),
-    )
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/webp', quality))
     // Só usa o comprimido se for realmente mais pequeno
     return blob && blob.size < file.size ? blob : file
   } catch {

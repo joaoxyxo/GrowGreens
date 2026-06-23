@@ -43,7 +43,11 @@ const sunLabels: Record<string, string> = {
   meia_sombra: 'Meia-sombra',
   sombra: 'Sombra',
 }
-const locLabels: Record<string, string> = { interior: 'Interior', exterior: 'Exterior', ambos: 'Interior e exterior' }
+const locLabels: Record<string, string> = {
+  interior: 'Interior',
+  exterior: 'Exterior',
+  ambos: 'Interior e exterior',
+}
 
 const plantCalendar = computed(() =>
   plant.value ? calendarForPlantZone(plant.value.slug, settings.state.zoneCode) : [],
@@ -142,10 +146,14 @@ async function confirmAdd() {
 
       <!-- Detalhes técnicos -->
       <AppCard class="mt-3">
-        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-green-600">Detalhes de sementeira</h2>
+        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-green-600">
+          Detalhes de sementeira
+        </h2>
         <dl class="grid grid-cols-2 gap-y-2 text-sm">
           <dt class="text-neutral-500">Germinação</dt>
-          <dd v-if="plant.daysToGerminate" class="text-right font-medium">{{ plant.daysToGerminate[0] }}–{{ plant.daysToGerminate[1] }} dias</dd>
+          <dd v-if="plant.daysToGerminate" class="text-right font-medium">
+            {{ plant.daysToGerminate[0] }}–{{ plant.daysToGerminate[1] }} dias
+          </dd>
           <dd v-else class="text-right text-neutral-400">—</dd>
           <dt class="text-neutral-500">Profundidade</dt>
           <dd class="text-right font-medium">{{ plant.sowingDepthCm }} cm</dd>
@@ -156,7 +164,17 @@ async function confirmAdd() {
           <dt class="text-neutral-500">Horas de sol (mín.)</dt>
           <dd class="text-right font-medium">{{ plant.sunHoursMin }}h/dia</dd>
           <dt class="text-neutral-500">Método</dt>
-          <dd class="text-right font-medium">{{ plant.sowingMethod === 'sementeira_direta' ? 'Sementeira direta' : plant.sowingMethod === 'transplante' ? 'Transplante' : plant.sowingMethod === 'bolbo' ? 'Bolbo/dente' : 'Direta ou transplante' }}</dd>
+          <dd class="text-right font-medium">
+            {{
+              plant.sowingMethod === 'sementeira_direta'
+                ? 'Sementeira direta'
+                : plant.sowingMethod === 'transplante'
+                  ? 'Transplante'
+                  : plant.sowingMethod === 'bolbo'
+                    ? 'Bolbo/dente'
+                    : 'Direta ou transplante'
+            }}
+          </dd>
         </dl>
       </AppCard>
 
@@ -168,14 +186,19 @@ async function confirmAdd() {
       <!-- Sucessão de sementeira -->
       <AppCard v-if="succession" class="mt-3 bg-green-500/5 border-green-500/30">
         <p class="text-sm">
-          <strong>🔁 Semeia em sucessão:</strong> para teres colheita contínua, semeia outra leva a cada
-          ~{{ succession.days }} dias. A próxima seria por volta de <strong>{{ succession.nextDate }}</strong>.
+          <strong>🔁 Semeia em sucessão:</strong> para teres colheita contínua, semeia outra leva a cada ~{{
+            succession.days
+          }}
+          dias. A próxima seria por volta de <strong>{{ succession.nextDate }}</strong
+          >.
         </p>
       </AppCard>
 
       <!-- Calendário -->
       <section v-if="plantCalendar.length" class="mt-6">
-        <h2 class="mb-2 font-display text-lg font-bold">Quando, em {{ settings.state.zoneCode === 'litoral_norte' ? 'Ovar/Aveiro' : 'Portugal' }}</h2>
+        <h2 class="mb-2 font-display text-lg font-bold">
+          Quando, em {{ settings.state.zoneCode === 'litoral_norte' ? 'Ovar/Aveiro' : 'Portugal' }}
+        </h2>
         <AppCard>
           <div v-for="e in plantCalendar" :key="e.action" class="mb-2 last:mb-0">
             <p class="text-sm font-medium">
@@ -196,7 +219,7 @@ async function confirmAdd() {
             <p class="text-sm font-semibold capitalize text-green-700 dark:text-green-300">
               {{ s.stage.replace('_', ' ') }}
               <span v-if="s.durationDays" class="font-normal text-neutral-400"
-              >· {{ s.durationDays[0] }}–{{ s.durationDays[1] }} dias</span
+                >· {{ s.durationDays[0] }}–{{ s.durationDays[1] }} dias</span
               >
             </p>
             <p class="text-sm text-neutral-700 dark:text-neutral-200 mt-0.5">{{ s.text }}</p>
@@ -207,31 +230,44 @@ async function confirmAdd() {
       <!-- Cuidados -->
       <section class="mt-6 space-y-2">
         <h2 class="mb-1 font-display text-lg font-bold">Cuidados</h2>
-        <AppCard><p class="text-sm"><strong>💧 Rega:</strong> {{ plant.wateringNotes }}</p></AppCard>
-        <AppCard><p class="text-sm"><strong>🌱 Nutrição:</strong> {{ plant.feedingNotes }}</p></AppCard>
-        <AppCard><p class="text-sm"><strong>🧺 Colheita:</strong> {{ plant.harvestNotes }}</p></AppCard>
+        <AppCard
+          ><p class="text-sm"><strong>💧 Rega:</strong> {{ plant.wateringNotes }}</p></AppCard
+        >
+        <AppCard
+          ><p class="text-sm"><strong>🌱 Nutrição:</strong> {{ plant.feedingNotes }}</p></AppCard
+        >
+        <AppCard
+          ><p class="text-sm"><strong>🧺 Colheita:</strong> {{ plant.harvestNotes }}</p></AppCard
+        >
         <AppCard>
-          <p class="text-sm">
-            <strong>🌊 No litoral atlântico:</strong> {{ plant.portugalNotes }}
-          </p>
+          <p class="text-sm"><strong>🌊 No litoral atlântico:</strong> {{ plant.portugalNotes }}</p>
         </AppCard>
         <AppCard v-if="plant.pollination !== 'nao_aplicavel'">
           <p class="text-sm">
             <strong>🐝 Polinização:</strong>
-            <span v-if="plant.pollination === 'autofertil'"> Autofértil — em interior, abana a planta na floração para os frutos vingarem.</span>
-            <span v-else-if="plant.pollination === 'insetos'"> Precisa de insetos. Em varanda alta, poliniza à mão.</span>
+            <span v-if="plant.pollination === 'autofertil'">
+              Autofértil — em interior, abana a planta na floração para os frutos vingarem.</span
+            >
+            <span v-else-if="plant.pollination === 'insetos'">
+              Precisa de insetos. Em varanda alta, poliniza à mão.</span
+            >
             <span v-else-if="plant.pollination === 'manual'"> Precisa de polinização manual.</span>
             <span v-else> Polinizada pelo vento.</span>
           </p>
         </AppCard>
         <AppCard v-if="plant.needsSupplementalLight">
-          <p class="text-sm"><strong>💡 Luz no inverno:</strong> No inverno do litoral, a luz natural pode não chegar — um parapeito muito soalheiro ou uma luz de cultivo ajuda.</p>
+          <p class="text-sm">
+            <strong>💡 Luz no inverno:</strong> No inverno do litoral, a luz natural pode não chegar — um
+            parapeito muito soalheiro ou uma luz de cultivo ajuda.
+          </p>
         </AppCard>
       </section>
 
       <!-- Segurança -->
       <AppCard v-if="plant.toxicNote || !plant.petSafe" class="mt-4 border-warning/40">
-        <p class="text-sm"><strong>⚠️ Segurança:</strong> {{ plant.toxicNote || 'Mantém longe de animais.' }}</p>
+        <p class="text-sm">
+          <strong>⚠️ Segurança:</strong> {{ plant.toxicNote || 'Mantém longe de animais.' }}
+        </p>
         <p class="text-xs text-neutral-500 mt-1">Partes comestíveis: {{ plant.edibleParts }}</p>
       </AppCard>
 
@@ -263,7 +299,9 @@ async function confirmAdd() {
           </AppCard>
           <AppCard>
             <p class="text-xs font-semibold text-error mb-1">✕ Evitar perto</p>
-            <p class="text-sm">{{ plant.antagonists.map((c) => getPlant(c)?.name ?? c).join(', ') || '—' }}</p>
+            <p class="text-sm">
+              {{ plant.antagonists.map((c) => getPlant(c)?.name ?? c).join(', ') || '—' }}
+            </p>
           </AppCard>
         </div>
       </section>
@@ -276,7 +314,9 @@ async function confirmAdd() {
             <span class="text-2xl" aria-hidden="true">{{ rotation.info.emoji }}</span>
             <div>
               <p class="text-sm font-semibold">Grupo: {{ rotation.info.name }}</p>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400">Família botânica: {{ rotation.family }}</p>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">
+                Família botânica: {{ rotation.family }}
+              </p>
             </div>
           </div>
           <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-200">{{ rotation.info.role }}</p>
@@ -288,8 +328,8 @@ async function confirmAdd() {
             Aromáticas e perenes ficam fora da rotação anual — podem permanecer no mesmo lugar.
           </p>
           <p class="mt-2 text-xs text-amber-600 dark:text-amber-400">
-            ⚠️ Evita voltar a plantar a família <strong>{{ rotation.family }}</strong> no mesmo sítio durante ~3 anos
-            (partilham pragas e doenças do solo).
+            ⚠️ Evita voltar a plantar a família <strong>{{ rotation.family }}</strong> no mesmo sítio durante
+            ~3 anos (partilham pragas e doenças do solo).
           </p>
         </AppCard>
       </section>
@@ -313,7 +353,9 @@ async function confirmAdd() {
     </div>
 
     <!-- Barra fixa: adicionar -->
-    <div class="fixed inset-x-0 bottom-0 z-30 border-t border-neutral-200 dark:border-dark-surface2 bg-white/95 dark:bg-dark-bg/95 backdrop-blur p-3 safe-bottom">
+    <div
+      class="fixed inset-x-0 bottom-0 z-30 border-t border-neutral-200 dark:border-dark-surface2 bg-white/95 dark:bg-dark-bg/95 backdrop-blur p-3 safe-bottom"
+    >
       <div class="mx-auto max-w-2xl">
         <BaseButton block @click="openAdd">＋ Adicionar à minha horta</BaseButton>
       </div>
@@ -343,7 +385,13 @@ async function confirmAdd() {
           <option value="interior">Interior</option>
         </select>
         <label class="block text-sm font-medium mb-1">Lembrete de rega: a cada {{ waterEvery }} dias</label>
-        <input v-model.number="waterEvery" type="range" min="1" max="10" class="mb-4 w-full accent-green-500" />
+        <input
+          v-model.number="waterEvery"
+          type="range"
+          min="1"
+          max="10"
+          class="mb-4 w-full accent-green-500"
+        />
         <div class="flex gap-2">
           <BaseButton variant="ghost" size="sm" @click="showAdd = false">Cancelar</BaseButton>
           <BaseButton block @click="confirmAdd">Adicionar 🌱</BaseButton>
@@ -354,6 +402,10 @@ async function confirmAdd() {
 
   <div v-else>
     <PageHeader title="Planta" back />
-    <EmptyState emoji="🤔" title="Planta não encontrada" description="Volta ao catálogo para escolher outra." />
+    <EmptyState
+      emoji="🤔"
+      title="Planta não encontrada"
+      description="Volta ao catálogo para escolher outra."
+    />
   </div>
 </template>

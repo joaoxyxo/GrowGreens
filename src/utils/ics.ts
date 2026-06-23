@@ -34,12 +34,7 @@ function toICSStamp(d: Date): string {
  * quando aplicável). Funciona em qualquer calendário (iOS, Android, Google, Outlook).
  */
 export function buildICS(reminders: Reminder[], stamp: Date = new Date()): string {
-  const lines = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//GrowGreens//PT//',
-    'CALSCALE:GREGORIAN',
-  ]
+  const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//GrowGreens//PT//', 'CALSCALE:GREGORIAN']
   const dtstamp = toICSStamp(stamp)
   for (const r of reminders) {
     if (r.done) continue

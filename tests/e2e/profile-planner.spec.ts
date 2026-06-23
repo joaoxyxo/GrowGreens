@@ -19,15 +19,24 @@ test('planeador: criar canteiro e plantar uma célula', async ({ page }) => {
   await expect(page).toHaveURL(/\/jardim\/plano/)
 
   // Cria o primeiro espaço.
-  await page.getByRole('button', { name: /Criar o primeiro espaço|Espaço/ }).first().click()
+  await page
+    .getByRole('button', { name: /Criar o primeiro espaço|Espaço/ })
+    .first()
+    .click()
   await page.getByRole('button', { name: 'Criar', exact: true }).click()
   await expect(page).toHaveURL(/\/jardim\/plano\/.+/)
 
   // Planta na primeira célula vazia.
-  await page.getByRole('button', { name: /Célula vazia/ }).first().click()
+  await page
+    .getByRole('button', { name: /Célula vazia/ })
+    .first()
+    .click()
   await page.getByRole('button', { name: 'Escolher planta' }).click()
   await page.getByPlaceholder(/Procurar planta/).fill('alface')
-  await page.getByRole('button', { name: /Alface/ }).first().click()
+  await page
+    .getByRole('button', { name: /Alface/ })
+    .first()
+    .click()
 
   // A célula passa a ter a planta (aria-label muda para o nome).
   await expect(page.getByRole('button', { name: /Alface \(linha/ }).first()).toBeVisible()

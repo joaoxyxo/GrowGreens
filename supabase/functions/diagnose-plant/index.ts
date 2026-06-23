@@ -34,7 +34,10 @@ Deno.serve(async (req) => {
     const top = ph?.result?.disease?.suggestions?.[0]
     if (!top || top.probability < 0.5) {
       return new Response(
-        JSON.stringify({ status: 'incerto', hint: 'Tira nova foto da zona afetada, de perto e com boa luz.' }),
+        JSON.stringify({
+          status: 'incerto',
+          hint: 'Tira nova foto da zona afetada, de perto e com boa luz.',
+        }),
         { headers: { ...cors, 'Content-Type': 'application/json' } },
       )
     }
