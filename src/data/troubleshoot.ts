@@ -207,3 +207,5 @@ export const SYMPTOMS: Symptom[] = [
     related: ['mosca-branca'],
   },
 ]
+
+export const SYMPTOMS_BY_ID: Record<string, Symptom> = Object.fromEntries(SYMPTOMS.map((s) => [s.id, s]))
