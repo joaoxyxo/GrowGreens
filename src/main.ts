@@ -4,7 +4,6 @@ import { registerSW } from 'virtual:pwa-register'
 
 import App from './App.vue'
 import { router } from './router'
-import { i18n } from './i18n'
 import './assets/styles/main.css'
 
 import { useSettingsStore } from './stores/settings'
@@ -16,7 +15,6 @@ async function bootstrap() {
   const pinia = createPinia()
   app.use(pinia)
   app.use(router)
-  app.use(i18n)
 
   // Carregar estado persistido antes de montar
   const settings = useSettingsStore()
