@@ -10,16 +10,33 @@ import { useUiStore } from '@/stores/ui'
 import { ACHIEVEMENTS } from '@/data/achievements'
 import { CLIMATE_ZONES } from '@/data/calendar'
 import { LESSONS } from '@/data/course'
+import { NUTRIENT_GROUPS } from '@/data/health'
+import { getPlant } from '@/data/plants'
 import { remindersRepo } from '@/repositories'
+import { useLiveQuery } from '@/composables/useLiveQuery'
+import { db } from '@/lib/db/dexie'
+import { gardenImpact, type ImpactItem } from '@/utils/impact'
 import { downloadICS } from '@/utils/ics'
 import { exportData as buildBackup, downloadBackup, clearAllData } from '@/utils/backup'
 import { setMeta } from '@/lib/db/meta'
+import type { Planting } from '@/types/models'
 
 const settings = useSettingsStore()
 const progress = useProgressStore()
 const ui = useUiStore()
 
 const unlocked = computed(() => new Set(progress.state.achievements.map((a) => a.code)))
+
+// Painel de impacto da horta (derivado dos plantings + catálogo).
+const allPlantings = useLiveQuery(() => db.plantings.toArray(), [] as Planting[])
+const impact = computed(() => {
+  const items: ImpactItem[] = []
+  for (const p of allPlantings.value) {
+    const plant = getPlant(p.plantSlug)
+    if (plant) items.push({ plant, status: p.status })
+  }
+  return gardenImpact(items, NUTRIENT_GROUPS.length)
+})
 const levelPct = computed(() => {
   const cur = progress.level.min
   const nxt = progress.nextLevel?.min ?? cur + 1
@@ -129,6 +146,35 @@ async function importData(e: Event) {
           <p class="text-xs text-neutral-500">dias seguidos</p>
         </AppCard>
       </div>
+
+      <!-- Painel de impacto da horta -->
+      <section v-if="impact.speciesCount > 0" class="mb-6">
+        <h2 class="mb-2 font-display text-lg font-bold">🌍 Impacto da tua horta</h2>
+        <div class="grid grid-cols-2 gap-3">
+          <AppCard class="text-center">
+            <p class="text-2xl font-bold text-green-600">{{ impact.speciesCount }}</p>
+            <p class="text-xs text-neutral-500">espécies cultivadas</p>
+          </AppCard>
+          <AppCard class="text-center">
+            <p class="text-2xl font-bold text-green-600">{{ impact.harvestCount }}</p>
+            <p class="text-xs text-neutral-500">colheitas concluídas</p>
+          </AppCard>
+          <AppCard class="text-center">
+            <p class="text-2xl font-bold text-green-600">
+              {{ impact.nutrientGroupsCovered.length }}<span class="text-sm text-neutral-400">/{{ impact.nutrientGroupsTotal }}</span>
+            </p>
+            <p class="text-xs text-neutral-500">grupos nutricionais</p>
+          </AppCard>
+          <AppCard class="text-center">
+            <p class="text-2xl font-bold text-green-600">{{ impact.pollinatorScore }}%</p>
+            <p class="text-xs text-neutral-500">🐝 amigo dos polinizadores</p>
+          </AppCard>
+        </div>
+        <p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+          {{ impact.pollinatorSpecies }} das tuas espécies favorecem abelhas e outros polinizadores — pilares de
+          uma horta saudável e da biodiversidade.
+        </p>
+      </section>
 
       <!-- Conquistas -->
       <h2 class="mb-2 font-display text-lg font-bold">Conquistas</h2>

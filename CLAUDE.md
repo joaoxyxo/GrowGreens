@@ -2,7 +2,9 @@
 
 PWA local-first que ensina horticultura a principiantes, da semente à colheita, calibrada para o clima de Portugal (litoral atlântico). Funciona offline e instala-se como app. Interface em **pt-PT**.
 
-> Escala atual (referência): **61 plantas** no catálogo · **15 microgreens** · **30 receitas** · **70 termos** de glossário · **27 FAQ** · curso com **7 unidades / 24 lições** · **182 testes** unitários (Vitest, 22 ficheiros) + **9 E2E** (Playwright) verdes · lint 0.
+> Escala atual (referência): **61 plantas** no catálogo · **15 microgreens** · **30 receitas** · **70 termos** de glossário · **27 FAQ** · curso com **7 unidades / 24 lições** · **226 testes** unitários (Vitest) + **11 E2E** (Playwright) verdes · lint 0.
+>
+> Funcionalidades pedagógicas (agrónomo/professor): 🌡️ relógio térmico (graus-dia, `utils/phenology.ts` + `data/climate.ts`), 🔄 rotação de culturas (`utils/rotation.ts`), 🔑 chave de diagnóstico dicotómica (`data/diagnosisKey.ts`), 🤝 otimizador de consociação no canteiro (`utils/companionBed.ts`), 🌍 painel de impacto da horta (`utils/impact.ts`).
 
 ## Stack
 
