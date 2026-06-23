@@ -50,6 +50,8 @@ export interface Plant {
 
   daysToHarvest: [number, number]
   daysToGerminate?: [number, number]
+  /** Temperatura base (°C) para o cálculo de graus-dia. Omisso → default por categoria. */
+  baseTempC?: number
   sowingMethod: SowingMethod
   sunExposure: SunExposure
   sunHoursMin: number

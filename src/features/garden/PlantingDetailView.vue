@@ -11,8 +11,10 @@ import { getPlant } from '@/data/plants'
 import { achievementToast } from '@/data/achievements'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
+import { useSettingsStore } from '@/stores/settings'
 import { daysSince, fmtDate, isOverdue, isDueToday } from '@/utils/date'
 import { estimateStage } from '@/utils/growth'
+import { phenologyEstimate } from '@/utils/phenology'
 import { compressImage } from '@/utils/image'
 import { safe } from '@/utils/safe'
 import type { JournalEntry, JournalEventType, Reminder } from '@/types/models'
@@ -21,6 +23,7 @@ const route = useRoute()
 const router = useRouter()
 const progress = useProgressStore()
 const ui = useUiStore()
+const settings = useSettingsStore()
 
 const id = computed(() => route.params.id as string)
 const planting = useLiveQuery(() => db.plantings.get(id.value), undefined)
@@ -40,6 +43,21 @@ const dueReminders = computed(() =>
 const phase = computed(() => {
   if (!planting.value || !plant.value) return null
   return estimateStage(plant.value, daysSince(planting.value.sownAt))
+})
+
+// Relógio térmico: progresso por calor acumulado (graus-dia), só para plantas ativas.
+const showThermal = ref(false)
+const thermal = computed(() => {
+  if (!planting.value || !plant.value || planting.value.status !== 'ativa') return null
+  const est = phenologyEstimate(plant.value, planting.value.sownAt, settings.state.zoneCode)
+  return {
+    pct: Math.round(est.progress * 100),
+    accumulatedGDD: est.accumulatedGDD,
+    targetGDD: est.targetGDD,
+    baseTempC: est.baseTempC,
+    harvest: est.estimatedHarvestISO,
+    daysAhead: est.daysToHarvestEstimate,
+  }
 })
 
 async function doneReminder(rid: string) {
@@ -196,6 +214,36 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
               :class="i - 1 <= phase.index ? 'bg-green-500' : 'bg-neutral-200 dark:bg-dark-surface2'"
             />
           </div>
+        </div>
+
+        <!-- Relógio térmico: progresso por calor acumulado (graus-dia) -->
+        <div v-if="thermal" class="mt-4 border-t border-neutral-100 dark:border-dark-surface2 pt-3">
+          <div class="flex items-center justify-between text-xs text-neutral-500 mb-1">
+            <span>🌡️ Relógio térmico</span>
+            <span class="font-medium text-amber-600 dark:text-amber-400">{{ thermal.pct }}% para a colheita</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-dark-surface2">
+            <div class="h-full rounded-full bg-gradient-to-r from-amber-400 to-green-500 transition-all" :style="{ width: thermal.pct + '%' }" />
+          </div>
+          <p class="mt-2 text-xs text-neutral-600 dark:text-neutral-300">
+            <template v-if="thermal.daysAhead > 0">
+              Colheita prevista por volta de <strong>{{ fmtDate(thermal.harvest) }}</strong>
+              (~{{ thermal.daysAhead }} dias), ao ritmo do calor desta época.
+            </template>
+            <template v-else>Já acumulou calor suficiente — <strong>pronta a colher</strong>! 🧺</template>
+          </p>
+          <button
+            class="mt-1 text-xs text-amber-600 dark:text-amber-400 underline-offset-2 hover:underline"
+            @click="showThermal = !showThermal"
+          >
+            {{ showThermal ? 'Esconder' : 'A ciência por trás 🔬' }}
+          </button>
+          <p v-if="showThermal" class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+            As plantas crescem com o <strong>calor acumulado</strong>, não com os dias do calendário. Somamos os
+            "graus-dia" (temperatura média do dia acima de {{ thermal.baseTempC }}°C, a base desta cultura):
+            <strong>{{ thermal.accumulatedGDD }}</strong> de <strong>{{ thermal.targetGDD }}</strong> necessários. Por
+            isso a mesma planta demora mais a amadurecer no inverno do que no verão.
+          </p>
         </div>
       </AppCard>
 
