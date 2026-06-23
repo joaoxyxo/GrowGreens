@@ -18,6 +18,7 @@ import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import { MONTH_NAMES, fmtDate, addDaysISO, todayISO } from '@/utils/date'
 import { defaultWateringDays, successionDays } from '@/utils/growth'
+import { rotationGroupForPlant, nextRotationGroup, ROTATION_GROUPS } from '@/utils/rotation'
 
 const route = useRoute()
 const router = useRouter()
@@ -26,6 +27,16 @@ const progress = useProgressStore()
 const ui = useUiStore()
 
 const plant = computed(() => getPlant(route.params.slug as string))
+
+// Rotação de culturas: grupo da planta + grupo a seguir no mesmo local.
+const rotation = computed(() => {
+  if (!plant.value) return null
+  const group = rotationGroupForPlant(plant.value)
+  if (!group) return null
+  const info = ROTATION_GROUPS[group]
+  const next = nextRotationGroup(group)
+  return { info, next: next ? ROTATION_GROUPS[next] : null, family: plant.value.family }
+})
 
 const sunLabels: Record<string, string> = {
   sol_pleno: 'Sol pleno',
@@ -255,6 +266,32 @@ async function confirmAdd() {
             <p class="text-sm">{{ plant.antagonists.map((c) => getPlant(c)?.name ?? c).join(', ') || '—' }}</p>
           </AppCard>
         </div>
+      </section>
+
+      <!-- Rotação de culturas -->
+      <section v-if="rotation" class="mt-6">
+        <h2 class="mb-2 font-display text-lg font-bold">Rotação de culturas</h2>
+        <AppCard>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl" aria-hidden="true">{{ rotation.info.emoji }}</span>
+            <div>
+              <p class="text-sm font-semibold">Grupo: {{ rotation.info.name }}</p>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Família botânica: {{ rotation.family }}</p>
+            </div>
+          </div>
+          <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-200">{{ rotation.info.role }}</p>
+          <p v-if="rotation.next" class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+            ➜ Na época seguinte, neste local, planta <strong>{{ rotation.next.name.toLowerCase() }}</strong>
+            {{ rotation.next.emoji }}.
+          </p>
+          <p v-else class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+            Aromáticas e perenes ficam fora da rotação anual — podem permanecer no mesmo lugar.
+          </p>
+          <p class="mt-2 text-xs text-amber-600 dark:text-amber-400">
+            ⚠️ Evita voltar a plantar a família <strong>{{ rotation.family }}</strong> no mesmo sítio durante ~3 anos
+            (partilham pragas e doenças do solo).
+          </p>
+        </AppCard>
       </section>
 
       <!-- Saúde + receitas -->
