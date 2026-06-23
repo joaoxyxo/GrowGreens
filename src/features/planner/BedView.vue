@@ -12,6 +12,7 @@ import { useUiStore } from '@/stores/ui'
 import { useProgressStore } from '@/stores/progress'
 import { safe } from '@/utils/safe'
 import { defaultWateringDays, areCompanions, areAntagonists } from '@/utils/growth'
+import { analyzeBed, suggestCompanions } from '@/utils/companionBed'
 import { isOverdue, isDueToday } from '@/utils/date'
 import { useReminders } from '@/composables/useReminders'
 import { normalize } from '@/utils/text'
@@ -57,6 +58,15 @@ const pickerResults = computed(() => {
   const q = normalize(query.value.trim())
   return PLANTS.filter((p) => !q || normalize(p.name).includes(q)).slice(0, 40)
 })
+
+// Otimizador de consociação: plantas distintas do canteiro → análise + sugestões.
+const bedPlants = computed(() => {
+  if (!bed.value) return []
+  const slugs = [...new Set(Object.values(bed.value.cells).map((c) => c.plantSlug))]
+  return slugs.map((s) => getPlant(s)).filter((p): p is NonNullable<typeof p> => !!p)
+})
+const bedAnalysis = computed(() => analyzeBed(bedPlants.value))
+const bedSuggestions = computed(() => suggestCompanions(bedPlants.value, PLANTS, 4))
 
 function neighborFeedback(key: string, slug: string): { good: string[]; bad: string[] } {
   if (!bed.value) return { good: [], bad: [] }
@@ -207,6 +217,47 @@ async function removeBed() {
       <p class="mt-3 text-sm text-neutral-500">
         {{ Object.keys(bed.cells).length }} de {{ bed.rows * bed.cols }} lugares ocupados.
       </p>
+
+      <!-- Otimizador de consociação -->
+      <section v-if="bedPlants.length >= 1" class="mt-6 rounded-2xl border border-neutral-200 dark:border-dark-surface2 p-4">
+        <h2 class="mb-2 font-display text-base font-bold">🤝 Vizinhança do canteiro</h2>
+
+        <div v-if="bedAnalysis.conflicts.length" class="mb-2">
+          <p class="text-xs font-semibold text-error mb-1">✕ Más vizinhanças a evitar</p>
+          <ul class="space-y-0.5">
+            <li v-for="(c, i) in bedAnalysis.conflicts" :key="`c${i}`" class="text-sm text-neutral-700 dark:text-neutral-200">
+              {{ getPlant(c.a)?.name }} ✕ {{ getPlant(c.b)?.name }}
+            </li>
+          </ul>
+        </div>
+
+        <div v-if="bedAnalysis.synergies.length" class="mb-2">
+          <p class="text-xs font-semibold text-green-600 mb-1">✓ Boas associações</p>
+          <ul class="space-y-0.5">
+            <li v-for="(s, i) in bedAnalysis.synergies" :key="`s${i}`" class="text-sm text-neutral-700 dark:text-neutral-200">
+              {{ getPlant(s.a)?.name }} + {{ getPlant(s.b)?.name }}
+            </li>
+          </ul>
+        </div>
+
+        <p v-if="!bedAnalysis.conflicts.length && !bedAnalysis.synergies.length" class="text-sm text-neutral-500">
+          Sem boas nem más associações conhecidas entre as plantas atuais.
+        </p>
+
+        <div v-if="bedSuggestions.length" class="mt-3 border-t border-neutral-100 dark:border-dark-surface2 pt-3">
+          <p class="text-xs font-semibold text-neutral-500 mb-1">Sugestões que combinam bem</p>
+          <div class="flex flex-wrap gap-2">
+            <RouterLink
+              v-for="s in bedSuggestions"
+              :key="s.slug"
+              :to="`/planta/${s.slug}`"
+              class="rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1 text-sm text-green-700 dark:text-green-300"
+            >
+              {{ s.emoji }} {{ s.name }}
+            </RouterLink>
+          </div>
+        </div>
+      </section>
 
       <button class="mt-6 text-sm text-error underline" @click="removeBed">Apagar espaço</button>
     </div>
