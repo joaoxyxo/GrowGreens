@@ -9,13 +9,14 @@ import type {
   BedKind,
   BedCell,
 } from '@/types/models'
+import { PLANTING_STATUS } from '@/types/models'
 import { todayISO, addDaysISO } from '@/utils/date'
 import { getPlant } from '@/data/plants'
 
 // ---------- Plantings ----------
 export const plantingsRepo = {
-  all: () => db.plantings.where('status').notEqual('perdida').reverse().sortBy('updatedAt'),
-  active: () => db.plantings.where('status').equals('ativa').toArray(),
+  all: () => db.plantings.where('status').notEqual(PLANTING_STATUS.LOST).reverse().sortBy('updatedAt'),
+  active: () => db.plantings.where('status').equals(PLANTING_STATUS.ACTIVE).toArray(),
   get: (id: string) => db.plantings.get(id),
   async create(data: {
     plantSlug: string
@@ -34,7 +35,7 @@ export const plantingsRepo = {
       nickname,
       location: data.location,
       sownAt: data.sownAt ?? now,
-      status: 'ativa',
+      status: PLANTING_STATUS.ACTIVE,
       wateringEveryDays,
       createdAt: now,
       updatedAt: now,
@@ -68,14 +69,14 @@ export const plantingsRepo = {
     await db.transaction('rw', db.plantings, db.reminders, db.journal, async () => {
       await db.plantings.update(id, { ...patch, updatedAt: todayISO() })
       // Planta colhida ou perdida: já não faz sentido continuar a lembrar de a regar.
-      if (patch.status === 'colhida' || patch.status === 'perdida') {
+      if (patch.status === PLANTING_STATUS.HARVESTED || patch.status === PLANTING_STATUS.LOST) {
         const pending = await db.reminders.where('plantingId').equals(id).toArray()
         for (const r of pending) {
           if (!r.done) await db.reminders.update(r.id, { done: true, recurrenceDays: undefined })
         }
       }
       // Marco automático no diário ao mudar de estado.
-      if (patch.status === 'colhida') {
+      if (patch.status === PLANTING_STATUS.HARVESTED) {
         await db.journal.add({
           id: newId(),
           plantingId: id,
@@ -83,7 +84,7 @@ export const plantingsRepo = {
           note: 'Colheita registada. 🧺',
           createdAt: new Date().toISOString(),
         })
-      } else if (patch.status === 'perdida') {
+      } else if (patch.status === PLANTING_STATUS.LOST) {
         await db.journal.add({
           id: newId(),
           plantingId: id,

@@ -14,13 +14,14 @@ import { daysSince, isOverdue, isDueToday } from '@/utils/date'
 import { useProgressStore } from '@/stores/progress'
 import { useUiStore } from '@/stores/ui'
 import type { Planting } from '@/types/models'
+import { PLANTING_STATUS } from '@/types/models'
 
 const plantings = useLiveQuery(
-  () => db.plantings.where('status').equals('ativa').reverse().sortBy('updatedAt'),
+  () => db.plantings.where('status').equals(PLANTING_STATUS.ACTIVE).reverse().sortBy('updatedAt'),
   [] as Planting[],
 )
 const harvested = useLiveQuery(
-  () => db.plantings.where('status').equals('colhida').reverse().sortBy('updatedAt'),
+  () => db.plantings.where('status').equals(PLANTING_STATUS.HARVESTED).reverse().sortBy('updatedAt'),
   [] as Planting[],
 )
 const reminders = useReminders()

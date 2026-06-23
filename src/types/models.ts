@@ -1,6 +1,12 @@
 // ---- Tipos de domínio do utilizador (guardados localmente em Dexie) ----
 
-export type PlantingStatus = 'ativa' | 'colhida' | 'perdida'
+// Estados de uma planta na horta. Fonte única de verdade (evita magic strings).
+export const PLANTING_STATUS = {
+  ACTIVE: 'ativa',
+  HARVESTED: 'colhida',
+  LOST: 'perdida',
+} as const
+export type PlantingStatus = (typeof PLANTING_STATUS)[keyof typeof PLANTING_STATUS]
 export type JournalEventType = 'nota' | 'rega' | 'aduba' | 'transplante' | 'colheita' | 'foto'
 export type ReminderType = 'rega' | 'aduba' | 'tarefa'
 

@@ -15,9 +15,11 @@ import { useSettingsStore } from '@/stores/settings'
 import { daysSince, fmtDate, isOverdue, isDueToday } from '@/utils/date'
 import { estimateStage } from '@/utils/growth'
 import { phenologyEstimate } from '@/utils/phenology'
+import { rotationAdvice } from '@/utils/rotation'
 import { compressImage } from '@/utils/image'
 import { safe } from '@/utils/safe'
-import type { JournalEntry, JournalEventType, Reminder } from '@/types/models'
+import type { JournalEntry, JournalEventType, Reminder, Planting } from '@/types/models'
+import { PLANTING_STATUS } from '@/types/models'
 
 const route = useRoute()
 const router = useRouter()
@@ -45,10 +47,27 @@ const phase = computed(() => {
   return estimateStage(plant.value, daysSince(planting.value.sownAt))
 })
 
+// Rotação temporal: famílias botânicas já cultivadas NESTE local (outras plantas).
+const allPlantings = useLiveQuery(() => db.plantings.toArray(), [] as Planting[])
+const rotationLocal = computed(() => {
+  if (!planting.value || !plant.value) return null
+  const loc = planting.value.location
+  const recentFamilies = [
+    ...new Set(
+      allPlantings.value
+        .filter((p) => p.id !== planting.value!.id && p.location === loc)
+        .map((p) => getPlant(p.plantSlug)?.family)
+        .filter((f): f is string => !!f),
+    ),
+  ]
+  if (!recentFamilies.length) return null // sem histórico no local → nada a dizer
+  return { ...rotationAdvice(plant.value, recentFamilies), location: loc }
+})
+
 // Relógio térmico: progresso por calor acumulado (graus-dia), só para plantas ativas.
 const showThermal = ref(false)
 const thermal = computed(() => {
-  if (!planting.value || !plant.value || planting.value.status !== 'ativa') return null
+  if (!planting.value || !plant.value || planting.value.status !== PLANTING_STATUS.ACTIVE) return null
   const est = phenologyEstimate(plant.value, planting.value.sownAt, settings.state.zoneCode)
   return {
     pct: Math.round(est.progress * 100),
@@ -158,14 +177,14 @@ async function addEntry() {
 }
 
 async function markHarvested() {
-  await plantingsRepo.update(id.value, { status: 'colhida' })
+  await plantingsRepo.update(id.value, { status: PLANTING_STATUS.HARVESTED })
   await journalRepo.add({ plantingId: id.value, type: 'colheita', note: 'Colhida! 🧺' })
   ui.toast('Boa colheita! 🧺')
   router.push('/jardim')
 }
 
 async function markLost() {
-  await plantingsRepo.update(id.value, { status: 'perdida' })
+  await plantingsRepo.update(id.value, { status: PLANTING_STATUS.LOST })
   ui.toast('Acontece a toda a gente 🌱 Não desistas — tenta o rabanete, é à prova de falha!')
   router.push('/planta/rabanete')
 }
@@ -245,6 +264,14 @@ const photoEntries = computed(() => entries.value.filter((e) => e.photo).slice()
             isso a mesma planta demora mais a amadurecer no inverno do que no verão.
           </p>
         </div>
+      </AppCard>
+
+      <!-- Rotação neste local (histórico de famílias botânicas) -->
+      <AppCard v-if="rotationLocal" class="mb-4" :class="rotationLocal.repeatsFamily ? 'border-amber-400/50' : ''">
+        <h2 class="mb-1 text-sm font-semibold" :class="rotationLocal.repeatsFamily ? 'text-amber-600 dark:text-amber-400' : 'text-green-600'">
+          🔄 Rotação em {{ rotationLocal.location }}
+        </h2>
+        <p class="text-sm text-neutral-700 dark:text-neutral-200">{{ rotationLocal.message }}</p>
       </AppCard>
 
       <!-- Lembretes pendentes -->

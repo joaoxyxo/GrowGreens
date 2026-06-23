@@ -1,4 +1,5 @@
 import type { Plant } from '@/types/catalog'
+import { PLANTING_STATUS } from '@/types/models'
 
 // Painel de impacto da horta: métricas derivadas das plantas cultivadas, sem
 // necessidade de registo extra. Módulo puro.
@@ -33,7 +34,7 @@ export function gardenImpact(items: ImpactItem[], nutrientGroupsTotal: number): 
   let harvestCount = 0
   for (const it of items) {
     speciesMap.set(it.plant.slug, it.plant)
-    if (it.status === 'colhida') harvestCount++
+    if (it.status === PLANTING_STATUS.HARVESTED) harvestCount++
   }
   const species = [...speciesMap.values()]
   const nutrientGroupsCovered = [...new Set(species.map((p) => p.nutrientGroup))]
