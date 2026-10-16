@@ -9,6 +9,12 @@ App web (PWA) que ensina horticultura a principiantes, **da semente à colheita*
 
 > Da semente à colheita — começa com microgreens prontos a comer em 7 dias.
 
+<p align="center">
+  <a href="https://joaoxyxo.github.io/GrowGreens/"><img src="docs/screenshots/home.jpg" alt="Ecrã inicial da GrowGreens no telemóvel" width="300"></a>
+  <br>
+  <a href="https://joaoxyxo.github.io/GrowGreens/"><b>Experimentar a app →</b></a>
+</p>
+
 ## O que faz
 
 - **Desafio dos microgreens** — onboarding de 7 dias com guião dia a dia (adaptado à variedade), diário com fotos e **cartão de colheita partilhável**. A primeira colheita real.

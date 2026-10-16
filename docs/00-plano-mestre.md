@@ -1,6 +1,6 @@
 # GrowGreens — Plano-Mestre de Construção
 
-> Documento que liga todas as áreas do produto e define o caminho até uma aplicação **funcional** (palpável e completa). Lê-se em conjunto com a [Visão de Produto](../GrowGreens-Visao-Produto.md) e as cinco especificações em `docs/`.
+> Documento que liga todas as áreas do produto e define o caminho até uma aplicação **funcional** (palpável e completa). Lê-se em conjunto com a [Visão de Produto](./GrowGreens-Visao-Produto.md) e as cinco especificações em `docs/`.
 >
 > **Versão:** 1.0 · **Data:** junho 2026
 

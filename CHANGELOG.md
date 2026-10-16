@@ -1,6 +1,6 @@
 # Changelog
 
-Resumo da evolução do GrowGreens. O detalhe fino está no histórico git e em `Loop-tasks-TODO-LIST.md` (backlog por ciclos).
+Resumo da evolução do GrowGreens. O detalhe fino está no histórico git e em `docs/Loop-tasks-TODO-LIST.md` (backlog por ciclos).
 
 ## Não lançado (em curso)
 
